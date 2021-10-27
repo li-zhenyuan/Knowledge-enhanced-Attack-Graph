@@ -2,8 +2,8 @@ import argparse
 import logging
 import sys
 
-from preprocess.report_preprocess import read_html
-from attack_graph_extractor.ioc_regex_extractor import IoCIdentifier
+from preprocess.report_preprocess import preprocess_file
+from report_parser.ioc_protection import IoCIdentifier
 
 
 if __name__ == '__main__':
@@ -22,12 +22,12 @@ if __name__ == '__main__':
         logging.basicConfig(filename=log_path, filemode='a', level=logging.DEBUG)
 
     report_path = arguments.reportPath
-    report_text = read_html(report_path)
+    report_text = preprocess_file(report_path)
 
     running_mode = arguments.mode
     if running_mode == "iocExtraction":
-        ioc_identifier = IoCIdentifier()
-        ioc_identifier.ioc_identify(report_text)
+        ioc_identifier = IoCIdentifier(report_text)
+        ioc_identifier.ioc_protect()
         ioc_identifier.check_replace_result()
     else:
         print("Unknown running mode!")
