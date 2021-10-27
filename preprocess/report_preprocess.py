@@ -33,11 +33,13 @@ def read_html(report_file: str) -> str:
 
 def clear_text(report_text: str) -> str:
     cleartext = report_text.lower()
-    cleartext = " ".join(cleartext.split())
 
     cleartext = cleartext.replace("\\n", "\n")
-    cleartext = cleartext.replace("\\t", "\t")
+    cleartext = cleartext.replace("\\t", " ")
     cleartext = cleartext.replace("\\r", " ")
+    cleartext = cleartext.replace("\t", " ")
+
+    cleartext = " ".join(cleartext.split())
 
     multint = re.compile('[\n]+')
     cleartext = multint.sub('\n', cleartext)
