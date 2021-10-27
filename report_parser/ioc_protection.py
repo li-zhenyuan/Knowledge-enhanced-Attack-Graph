@@ -1,16 +1,13 @@
-from typing import List, Dict
+from typing import List, Dict, Tuple
 import re
 import json
 import logging
-import sys
-
-from preprocess.report_preprocess import read_html
 
 
 class IoCItem:          # original IoC item     # replaced IoC item
     ioc_string: str     # original IoC string   # replaced IoC string
     ioc_type: str       # IoC type
-    ioc_location: list  # original
+    ioc_location: Tuple[int, int]  # original
 
     def __init__(self, ioc_string, ioc_type, start_pos, end_pos):
         self.ioc_string = ioc_string
@@ -38,7 +35,7 @@ class IoCIdentifier:
     deleted_character_count: int
     replaced_text: str
     replaced_ioc_list: List[IoCItem]
-    replaced_ioc_dict: Dict[int,str]
+    replaced_ioc_dict: Dict[int, str]
 
     def __init__(self, text: str = None):
         self.ioc_list = []
@@ -52,7 +49,7 @@ class IoCIdentifier:
 
         self.report_text = text
 
-    def load_ioc_pattern(self, ioc_regexPattern_path: str="./ioc_regexPattern.json", ioc_replaceWord: str="./ioc_replaceWord.json"):
+    def load_ioc_pattern(self, ioc_regexPattern_path: str = "./ioc_regexPattern.json", ioc_replaceWord: str = "./ioc_replaceWord.json"):
         with open(ioc_regexPattern_path) as pattern_file:
             self.ioc_regexPattern = json.load(pattern_file)
         with open(ioc_replaceWord) as word_file:
@@ -86,7 +83,7 @@ class IoCIdentifier:
 
     def ioc_identify(self, text: str = None):
         logging.info("---ioc protection: Identify IoC items with regex in cti text!---")
-        self.report_text = text if text != None else self.report_text
+        self.report_text = text if text is not None else self.report_text
 
         # Find all IoC item in the text
         for ioc_type, regex_list in self.ioc_regexPattern.items():
@@ -115,7 +112,7 @@ class IoCIdentifier:
             self.replaced_text += f" {replaced_word} "
 
             replaced_word_end = len(self.replaced_text)
-            replaced_word_start = replaced_word_end - len(replaced_word) - 2 # -2 for two blank space
+            replaced_word_start = replaced_word_end - len(replaced_word) - 2  # -2 for two blank space
             replaced_ioc_item = IoCItem(original_ioc_string, ioc_item.ioc_type, replaced_word_start, replaced_word_end)
             self.replaced_ioc_list.append(replaced_ioc_item)
 

@@ -3,12 +3,13 @@ import logging
 import sys
 import os
 
+from typing import Tuple
 from spacy.tokens import Doc
 
 from preprocess.report_preprocess import preprocess_file, clear_text
 from report_parser.ioc_protection import IoCIdentifier
 from report_parser.report_parser import parsingModel_training, IoCNer
-from technique_knowledge_graph.attackGraph import parse_attackgraph_from_cti_report, AttackGraph
+from technique_knowledge_graph.attack_graph import AttackGraph
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
@@ -20,18 +21,23 @@ def ioc_protection(text: str) -> IoCIdentifier:
     return iid
 
 
-def report_parsing(text: str) -> Doc:
+def report_parsing(text: str) -> Tuple[IoCIdentifier, Doc]:
     iid = ioc_protection(text)
     text_without_ioc = iid.replaced_text
 
     ner_model = IoCNer("./new_cti.model")
     doc = ner_model.parser(text_without_ioc)
 
-    return doc
+    return iid, doc
 
 
-def attackGraph_generating(report_text: str) -> AttackGraph:
-    pass
+def attackGraph_generating(text: str) -> AttackGraph:
+    iid, doc = report_parsing(text)
+
+    ag = AttackGraph(doc, ioc_identifier=iid)
+    ag.generate()
+
+    return ag
 
 
 if __name__ == '__main__':

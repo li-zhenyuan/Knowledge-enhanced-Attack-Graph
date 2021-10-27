@@ -10,8 +10,6 @@ import spacy
 import random
 import json
 import logging
-import coreferee
-import os
 
 
 ner_labels = ["actor", "executable", "file", "network", "registry", "vulnerability", "system"]
@@ -27,6 +25,18 @@ def read_labeled_data(path: str) -> list:
 
     logging.info('---Read Labeled Data(%d)!---' % len(labeled_data))
     return labeled_data
+
+
+def load_ner_regexPattern(ner_regexPattern_path: str = "./ner_regexPattern.json") -> List[dict]:
+    with open(ner_regexPattern_path) as f:
+        pattern_dict = json.load(f)
+
+    ner_regexPatterns = []
+    for label, pattern_list in pattern_dict.items():
+        for pattern in pattern_list:
+            ner_regexPatterns.append({"label": label, "pattern": [{"TEXT": {"REGEX": pattern}}]})
+
+    return ner_regexPatterns
 
 
 class IoCNer:
@@ -103,17 +113,6 @@ class IoCNer:
         doc = self.nlp(sample)
         displacy.render(doc, style='ent')
 
-    def load_ner_regexPattern(self, ner_regexPattern_path: str="./ner_regexPattern.json") -> List[dict]:
-        with open(ner_regexPattern_path) as f:
-            pattern_dict = json.load(f)
-
-        ner_regexPatterns = []
-        for label, pattern_list in pattern_dict.items():
-            for pattern in pattern_list:
-                ner_regexPatterns.append({"label": label, "pattern": [{"TEXT": {"REGEX": pattern}}]})
-
-        return ner_regexPatterns
-
     config = {
         "phrase_matcher_attr": None,
         "validate": True,
@@ -127,14 +126,14 @@ class IoCNer:
         logging.info("---Add Regex-based NER Pipe!---")
 
         ruler = self.nlp.add_pipe("entity_ruler", config=self.config, before="ner")
-        ner_regexPatterns = self.load_ner_regexPattern()
+        ner_regexPatterns = load_ner_regexPattern()
         ruler.add_patterns(ner_regexPatterns)
 
     def add_coreference(self):
         self.nlp.add_pipe('coreferee')
 
     def parser(self, text: str, model_location="./new_cti.model"):
-        logging.info("---S1-1: Parse clean text to NLP doc!---")
+        logging.info("---report parsing: Parse clean text to NLP doc!---")
         self.nlp = spacy.load(model_location)
         self.ner_with_regex()
         self.add_coreference()
@@ -150,26 +149,3 @@ def parsingModel_training(traingSet_path: str):
     labeled_data = read_labeled_data(traingSet_path)
     spacy_data = ner_model.convert_data_format(labeled_data)
     ner_model.train_model(spacy_data)
-
-
-if __name__ == '__main__':
-    # https://zhuanlan.zhihu.com/p/158474472
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
-    ner_model = IoCNer("./new_cti.model")
-    # ner_model = IoCNer("en_core_web_trf")
-
-    sample = "APT3 has used PowerShell on victim systems to download and run payloads after exploitation."
-    sample = "Wizard Spider has used spearphishing attachments to deliver Microsoft documents containing macros or PDFs containing malicious links to download either Emotet, Bokbot, TrickBot, or Bazar."
-    sample = "Elderwood has delivered zero-day exploits and malware to victims via targeted emails containing a link to malicious content hosted on an uncommon Web server."
-    sample = "APT28 sent spearphishing emails which used a URL-shortener service to masquerade as a legitimate service and to redirect targets to credential harvesting sites."
-    sample = "Magic Hound sent shortened URL links over email to victims. The URLs linked to Word documents with malicious macros that execute PowerShells scripts to download Pupy."
-    sample = "DarkHydrus has sent spearphishing emails with password-protected RAR archives containing malicious Excel Web Query files (.iqy). The group has also sent spearphishing emails that contained malicious Microsoft Office documents that use the 'attachedTemplate' technique to load a template from a remote server."
-    sample = "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
-
-    doc = ner_model.nlp(sample)
-    ner_model.ner_with_regex()
-    ner_model.add_coreference()
-    doc = ner_model.nlp(sample)
-    print([(ent.report_text, ent.label_) for ent in doc.ents])
-    doc._.coref_chains.print()
