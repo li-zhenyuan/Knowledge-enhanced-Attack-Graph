@@ -144,4 +144,4 @@ class IoCIdentifier:
         for replaced_ioc_item in self.replaced_ioc_list:
             replaced_string = self.replaced_text[replaced_ioc_item.ioc_location[0]: replaced_ioc_item.ioc_location[1]]
             original_string = replaced_ioc_item.ioc_string
-            print("%d:%d:%s-%s" % (replaced_ioc_item.ioc_location[0], replaced_ioc_item.ioc_location[1], replaced_string, original_string))
+            print("%d:%d:%s- %s" % (replaced_ioc_item.ioc_location[0], replaced_ioc_item.ioc_location[1], replaced_string, original_string))

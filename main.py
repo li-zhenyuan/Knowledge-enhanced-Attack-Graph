@@ -1,17 +1,52 @@
 import argparse
 import logging
 import sys
+import os
 
-from preprocess.report_preprocess import preprocess_file
+from spacy.tokens import Doc
+
+from preprocess.report_preprocess import preprocess_file, clear_text
 from report_parser.ioc_protection import IoCIdentifier
+from report_parser.report_parser import parsingModel_training, IoCNer
+from technique_knowledge_graph.attackGraph import parse_attackgraph_from_cti_report, AttackGraph
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+
+def ioc_protection(text: str) -> IoCIdentifier:
+    iid = IoCIdentifier(text)
+    iid.ioc_protect()
+    # iid.check_replace_result()
+    return iid
+
+
+def report_parsing(text: str) -> Doc:
+    iid = ioc_protection(text)
+    text_without_ioc = iid.replaced_text
+
+    ner_model = IoCNer("./new_cti.model")
+    doc = ner_model.parser(text_without_ioc)
+
+    return doc
+
+
+def attackGraph_generating(report_text: str) -> AttackGraph:
+    pass
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
+    # Examples:
+    # python main.py -M iocProtection -R ./data/cti/html/003495c4cb6041c52db4b9f7ead95f05.html
+    # python main.py -M reportParsing -C Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable.
+    parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing'")
     parser.add_argument('-L', '--logPath', required=False, type=str, default="", help="Log file's path.")
-    parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode.")
-    parser.add_argument('-R', '--reportPath', required=True, type=str, default="", help="Target report's path.")
+    parser.add_argument('-C', '--ctiText', required=False, type=str, default="", help="Target CTI text.")
+    parser.add_argument('-R', '--reportPath', required=False, type=str, default="../AttacKG/data/cti/html/003495c4cb6041c52db4b9f7ead95f05.html", help="Target report's path.")
+    parser.add_argument('-O', '--outputPath', required=False, type=str, default=".", help="Output file's path.")
+    parser.add_argument('--trainingSetPath', required=False, type=str, default="../AttacKG/NLP/Doccano/20210813.jsonl", help="NLP model training dataset's path.")
+    parser.add_argument('--nlpModelPath', required=False, type=str, default="../AttacKG/new_cti.model", help="NLP model's path.")
 
     arguments = parser.parse_args(sys.argv[1:])
 
@@ -21,13 +56,24 @@ if __name__ == '__main__':
     else:
         logging.basicConfig(filename=log_path, filemode='a', level=logging.DEBUG)
 
+    logging.info(f"---Running arguments: {arguments}!---")
+
+    cti_text = arguments.ctiText
     report_path = arguments.reportPath
-    report_text = preprocess_file(report_path)
+    report_text = clear_text(cti_text) if len(cti_text) != 0 else preprocess_file(report_path)
 
     running_mode = arguments.mode
-    if running_mode == "iocExtraction":
-        ioc_identifier = IoCIdentifier(report_text)
-        ioc_identifier.ioc_protect()
-        ioc_identifier.check_replace_result()
+    print(f"Running mode: {running_mode}")
+    if running_mode == "iocProtection":
+        ioc_identifier = ioc_protection(report_text)
+    elif running_mode == "nlpModelTraining":
+        trainingSet_path = arguments.trainingSetPath
+        parsingModel_training(trainingSet_path)
+    elif running_mode == "reportParsing":
+        cti_doc = report_parsing(report_text)
+    elif running_mode == "attackGraphGeneration":
+        attack_graph = attackGraph_generating(report_text)
     else:
         print("Unknown running mode!")
+
+    logging.info(f"---Done!---")

@@ -1,0 +1,23 @@
+{
+    "actor": [
+        "APT[A-Za-z0-9-]+", "actor[s]*", "attacker[s]*"
+    ], 
+    "executable": [
+        "executeable[s]*", "payload[s]*", "malware[s]*", "stager[s]*", "script[s]*", "command[s]*", "ssh", "scp"
+    ], 
+    "file": [
+        "file[s]*", "document[s]*", "attachment[s]*"
+    ], 
+    "network": [
+        "network", "e[-]*mail[s]*", "dns", "c2", "c&c"
+    ], 
+    "registry": [
+        "registry"
+    ],
+    "vulnerability": [
+        "exploit"
+    ], 
+    "system": [
+        "task[s]*", "driver", "system", "service", "credential[s]*"
+    ]
+}
