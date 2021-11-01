@@ -35,9 +35,7 @@ def attackGraph_generating(text: str, output: str) -> AttackGraph:
     iid, doc = report_parsing(text)
 
     ag = AttackGraph(doc, ioc_identifier=iid)
-
-    if output != "":  # Todo
-        pass
+    ag.draw(output)
 
     return ag
 
@@ -53,7 +51,7 @@ if __name__ == '__main__':
     parser.add_argument('-L', '--logPath', required=False, type=str, default="", help="Log file's path.")
     parser.add_argument('-C', '--ctiText', required=False, type=str, default="", help="Target CTI text.")
     parser.add_argument('-R', '--reportPath', required=False, type=str, default="../AttacKG/data/cti/html/003495c4cb6041c52db4b9f7ead95f05.html", help="Target report's path.")
-    parser.add_argument('-O', '--outputPath', required=False, type=str, default=".", help="Output file's path.")
+    parser.add_argument('-O', '--outputPath', required=False, type=str, default="", help="Output file's path.")
     parser.add_argument('--trainingSetPath', required=False, type=str, default="../AttacKG/NLP/Doccano/20210813.jsonl", help="NLP model training dataset's path.")
     parser.add_argument('--nlpModelPath', required=False, type=str, default="../AttacKG/new_cti.model", help="NLP model's path.")
 

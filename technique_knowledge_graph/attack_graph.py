@@ -2,8 +2,9 @@ import math
 import Levenshtein
 import graphviz
 import networkx as nx
-from nltk import Tree
+from matplotlib import figure
 import matplotlib.pyplot as plt
+from nltk import Tree
 from pathlib import Path
 import time
 import spacy.tokens
@@ -33,76 +34,17 @@ def to_nltk_formatted_tree(node):
         return tok_format(node)
 
 
-# draw attack graph with matplot
-def draw_attackgraph_plt(nx_graph: nx.DiGraph, image_file: str = None):
-    graph_pos = nx.spring_layout(nx_graph)
-    nx.draw_networkx_nodes(nx_graph, graph_pos, node_size=10, node_color='blue', alpha=0.3)
-    nx.draw_networkx_edges(nx_graph, graph_pos)
-    nx.draw_networkx_labels(nx_graph, graph_pos, font_size=8)
-    edge_labels = nx.get_edge_attributes(nx_graph, 'action')
-    nx.draw_networkx_edge_labels(nx_graph, graph_pos, edge_labels=edge_labels)
-
-    if image_file is None:
-        plt.show()
-    else:
-        plt.savefig(image_file)
-
-
-node_shape = {
-    "actor": "doublecircle",
-    "executable": "oval",
-    "file": "rectangle",
-    "network": "diamond",
-    "registry": "parallelogram",
-    "vulnerability": "trapezium",
-    "system": "invhouse",
+# node_shape = "so^>v<dph8"
+# markers = {'.': 'point', ',': 'pixel', 'o': 'circle', 'v': 'triangle_down', '^': 'triangle_up', '<': 'triangle_left', '>': 'triangle_right', '1': 'tri_down', '2': 'tri_up', '3': 'tri_left', '4': 'tri_right', '8': 'octagon', 's': 'square', 'p': 'pentagon', '*': 'star', 'h': 'hexagon1', 'H': 'hexagon2', '+': 'plus', 'x': 'x', 'D': 'diamond', 'd': 'thin_diamond', '|': 'vline', '_': 'hline', 'P': 'plus_filled', 'X': 'x_filled', 0: 'tickleft', 1: 'tickright', 2: 'tickup', 3: 'tickdown', 4: 'caretleft', 5: 'caretright', 6: 'caretup', 7: 'caretdown', 8: 'caretleftbase', 9: 'caretrightbase', 10: 'caretupbase', 11: 'caretdownbase', 'None': 'nothing', None: 'nothing', ' ': 'nothing', '': 'nothing'}
+node_shape_dict = {
+    "actor": "o",
+    "executable": "o",
+    "file": "s",
+    "network": "d",
+    "registry": "p",
+    "vulnerability": "8",
+    "system": "^",
 }
-
-
-def draw_attackgraph_dot(g: nx.DiGraph, clusters: dict = None, output_file: str = None) -> graphviz.Graph:
-    dot = graphviz.Graph('G', filename=output_file)
-
-    logging.warning("---Draw attack graph with dot!---")
-
-    for node in g.nodes:
-        logging.debug(node)
-
-        nlp = ""
-        try:
-            nlp = g.nodes[node]["report_parser"]
-            nlp = " ".join(nlp.split())
-        except:
-            pass
-
-        regex = ""
-        try:
-            regex = g.nodes[node]["regex"]
-        except:
-            pass
-        node_label = "##".join([node, nlp, regex])
-
-        dot.node(node, label=node_label, shape=node_shape[g.nodes[node]["type"]])
-
-    for edge in g.edges:
-        dot.edge(edge[0], edge[1])
-
-    # https://graphviz.readthedocs.io/en/stable/examples.html
-    if clusters is not None:
-        for key, value in clusters.items():
-            with dot.subgraph(name=("cluster_" + key)) as t:
-                t.attr(style='filled', color='lightgrey')
-                t.attr(label=key)
-                for tech in value:
-                    t.node(tech)
-
-    if output_file is not None:
-        dot.format = "png"
-        try:
-            dot.render(output_file, view=False)
-        except:
-            logging.warning("%s dot rendering error!")
-
-    return dot
 
 
 class AttackGraphNode:
@@ -114,6 +56,7 @@ class AttackGraphNode:
 
     word_position: int
     position: int
+
     #
     def __init__(self, entity: Span):
         self.id = entity.root.i  # entity could include multiple words, we only record the entity root token's position (word num) as unique id
@@ -125,11 +68,6 @@ class AttackGraphNode:
         return f"Node #{self.id}: [type: '{self.type}', nlp: '{self.nlp}', ioc: '{self.ioc}']"
 
 
-# return token unique id for nx.graph
-def get_token_id(tok: spacy.tokens.token.Token) -> str:
-    return "_".join([tok.lower_, tok.ent_type_, str(tok.i)])
-
-
 class AttackGraph:
     attackgraph_nx: nx.DiGraph
     original_attackgraph_nx: nx.DiGraph
@@ -137,18 +75,48 @@ class AttackGraph:
 
     nlp_doc: spacy.tokens.doc.Doc
     ioc_identifier: IoCIdentifier
+
+    related_sentences: List[str]
     techniques: Dict[str, list]  # technique name -> [node_list]
 
     def __init__(self, doc, ioc_identifier=None):
-        self.attackgraph_nx = nx.DiGraph
-        self.original_attackgraph_nx = nx.DiGraph
+        self.attackgraph_nx = nx.DiGraph()
+        self.original_attackgraph_nx = nx.DiGraph()
         self.attackNode_dict = {}
 
         self.nlp_doc = doc
         self.ioc_identifier = ioc_identifier
+
+        self.related_sentences = []
         self.techniques = {}
 
         self.generate()
+
+    # http://sparkandshine.net/en/networkx-application-notes-a-better-way-to-visualize-graphs/
+    def draw(self, image_path: str = "") -> figure:
+        graph_pos = nx.spring_layout(self.attackgraph_nx)
+        for label in ner_labels:
+            nx.draw_networkx_nodes(self.attackgraph_nx,
+                                   graph_pos,
+                                   node_shape=node_shape_dict[label],
+                                   nodelist=[node.id for node in filter(lambda n: n.type == label, self.attackNode_dict.values())],
+                                   alpha=0.6)
+        nx.draw_networkx_labels(self.attackgraph_nx,
+                                graph_pos,
+                                labels={node: self.attackNode_dict[node].__str__() for node in self.attackgraph_nx.nodes},
+                                verticalalignment='top',
+                                horizontalalignment='left',
+                                font_size=8)
+        nx.draw_networkx_edges(self.attackgraph_nx, graph_pos)
+        nx.draw_networkx_edge_labels(self.attackgraph_nx,
+                                     graph_pos,
+                                     edge_labels=nx.get_edge_attributes(self.attackgraph_nx, 'action'),
+                                     font_size=8)
+
+        if image_path == "":
+            plt.show()
+        else:
+            plt.savefig(image_path)
 
     def generate(self):
         logging.info("---attack graph generation: Parsing NLP doc to get Attack Graph!---")
@@ -157,15 +125,11 @@ class AttackGraph:
         self.parse_coreference()
         self.parse_dependency()
 
-        self.node_merge()
-        self.simplify()
-        self.clear_contraction_info()
-
     def parse_entity(self):
         logging.info("---attack graph generation: Parsing NLP doc to get Attack Graph nodes!---")
 
         for entity in self.nlp_doc.ents:
-            if entity.root.ent_type_ in ner_labels:
+            if entity.root.ent_type_ in ner_labels:  # and re.match("NN.*", entity.root.tag_):
                 attack_node = AttackGraphNode(entity)
                 self.attackNode_dict[entity.root.i] = attack_node
 
@@ -189,7 +153,7 @@ class AttackGraph:
 
             # pasing the coreferences
             if coref_origin != 0:  # if coref_origin == 0, coref is not related to any iocs; otherwise, coref_origin record the position of related ioc
-                logging.debug("---coref_origiin:---\n %s-%s" % (coref_token, coref_token.ent_type_))
+                logging.debug("---coref_origin:---")
                 for coref_item in coref_set:
                     self.attackNode_dict[coref_item.root_index] = self.attackNode_dict[coref_origin]
 
@@ -207,7 +171,7 @@ class AttackGraph:
 
         node_queue = []
         tvb = ""
-        tnode = ""
+        tnode = -1
 
         root = sentence.root
         is_related_sentence = False
@@ -219,61 +183,17 @@ class AttackGraph:
             for child in node.children:
                 node_queue.append(child)
 
-            # process only the ioc_root
-            if node.i in self.entity_ignored_list:
-                continue
-
-            if node.ent_type_ in ner_labels and re.match("NN.*", node.tag_):
-                if node.ent_type_ == "actor":
-                    node.ent_type_ = "executable"
-
+            if node.i in self.attackNode_dict.keys():
                 is_related_sentence = True
+                self.attackgraph_nx.add_node(self.attackNode_dict[node.i].id)
 
-                # try getting node ioc value
-                regex = ""
-                if node.idx in self.ioc_identifier.replaced_ioc_dict.keys():
-                    regex = self.ioc_identifier.replaced_ioc_dict[node.idx]
-                    logging.debug("Recover IoC regex: %s" % regex)
-
-                nlp = ""
-                if node.i in self.entity_id_string_dict.keys():
-                    nlp = self.entity_id_string_dict[node.i]
-                else:
-                    nlp = node.report_text
-
-                n = get_token_id(node)  # + regex
-                logging.debug(n)
-                self.attackgraph_nx.add_node(n, type=node.ent_type_, nlp=nlp, regex=regex)
-
-                if tnode != "":
-                    self.attackgraph_nx.add_edge(tnode, n, action=tvb)
-                tnode = n
-
-            # edges with coreference nodes
-            if node.i in self.ioc_coref_dict.keys():
-                coref_node = self.nlp_doc[self.ioc_coref_dict[node.i]]
-
-                regex = ""
-                if node.idx in self.ioc_identifier.replaced_ioc_dict.keys():
-                    regex = self.ioc_identifier.replaced_ioc_dict[node.idx]
-                    logging.debug("Recover IoC regex: %s" % regex)
-
-                nlp = ""
-                if coref_node.i in self.entity_id_string_dict.keys():
-                    nlp = self.entity_id_string_dict[coref_node.i]
-                else:
-                    nlp = coref_node.report_text
-
-                n = get_token_id(coref_node)
-                logging.debug(n)
-                self.attackgraph_nx.add_node(n, type=coref_node.ent_type_, nlp=nlp, regex=regex)
-
-                if tnode != "":
-                    self.attackgraph_nx.add_edge(tnode, n, action=tvb)
-                tnode = n
+                if tnode != -1:
+                    self.attackgraph_nx.add_edge(tnode, node.i, action=tvb)
+                tnode = node.i
 
         if (is_related_sentence):
-            logging.debug("Related sentence: %s" % sentence.report_text)
+            self.related_sentences.append(sentence.text)
+            logging.debug("Related sentence: %s" % sentence.text)
 
         return self.attackgraph_nx
 
@@ -311,8 +231,8 @@ class AttackGraph:
 
             # check whether to merge the node or not
             if self.attackgraph_nx.nodes[source_node]["type"] == self.attackgraph_nx.nodes[neighor]["type"] \
-                and self.attackgraph_nx.in_degree(neighor) == 1 \
-                and (source_regex == "" or neighor_regex == ""):
+                    and self.attackgraph_nx.in_degree(neighor) == 1 \
+                    and (source_regex == "" or neighor_regex == ""):
                 self.attackgraph_nx = nx.contracted_nodes(self.attackgraph_nx, source_node, neighor, self_loops=False)
 
                 self.attackgraph_nx.nodes[source_node]["report_parser"] = source_nlp + " " + neighor_nlp
@@ -355,7 +275,7 @@ class AttackGraph:
                     similarity += 0.4
                 # print(Levenshtein.ratio(m_nlp, n_nlp))
                 # print(abs(n_position-m_position)+2)
-                similarity += Levenshtein.ratio(m_nlp, n_nlp) / math.log(abs(n_position-m_position)+2)
+                similarity += Levenshtein.ratio(m_nlp, n_nlp) / math.log(abs(n_position - m_position) + 2)
                 if (similarity >= 0.5 and ((m_ioc == '' and n_ioc == '') or m_ioc == n_ioc)):
                     self.merge_graph.add_edge(node_m, node_n)
 
