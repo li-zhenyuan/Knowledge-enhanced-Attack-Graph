@@ -93,25 +93,29 @@ class AttackGraph:
         self.generate()
 
     # http://sparkandshine.net/en/networkx-application-notes-a-better-way-to-visualize-graphs/
+    # https://networkx.org/documentation/latest/auto_examples/drawing/plot_chess_masters.html#sphx-glr-auto-examples-drawing-plot-chess-masters-py
     def draw(self, image_path: str = "") -> figure:
-        graph_pos = nx.spring_layout(self.attackgraph_nx)
+        fig, ax = plt.subplots(figsize=(24, 24))  # Todo: re-consider the figure size.
+
+        graph_pos = nx.spring_layout(self.attackgraph_nx, scale=2)
         for label in ner_labels:
             nx.draw_networkx_nodes(self.attackgraph_nx,
                                    graph_pos,
                                    node_shape=node_shape_dict[label],
                                    nodelist=[node.id for node in filter(lambda n: n.type == label, self.attackNode_dict.values())],
+                                   node_size=100,
                                    alpha=0.6)
         nx.draw_networkx_labels(self.attackgraph_nx,
                                 graph_pos,
                                 labels={node: self.attackNode_dict[node].__str__() for node in self.attackgraph_nx.nodes},
                                 verticalalignment='top',
                                 horizontalalignment='left',
-                                font_size=8)
+                                font_size=6)
         nx.draw_networkx_edges(self.attackgraph_nx, graph_pos)
         nx.draw_networkx_edge_labels(self.attackgraph_nx,
                                      graph_pos,
                                      edge_labels=nx.get_edge_attributes(self.attackgraph_nx, 'action'),
-                                     font_size=8)
+                                     font_size=6)
 
         if image_path == "":
             plt.show()
@@ -129,7 +133,7 @@ class AttackGraph:
         logging.info("---attack graph generation: Parsing NLP doc to get Attack Graph nodes!---")
 
         for entity in self.nlp_doc.ents:
-            if entity.root.ent_type_ in ner_labels:  # and re.match("NN.*", entity.root.tag_):
+            if entity.root.ent_type_ in ner_labels:  # and re.match("NN.*", entity.root.tag_):  # Todo
                 attack_node = AttackGraphNode(entity)
                 self.attackNode_dict[entity.root.i] = attack_node
 
