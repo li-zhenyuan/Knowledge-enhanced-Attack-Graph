@@ -10,6 +10,7 @@ import spacy
 import random
 import json
 import logging
+import coreferee
 
 
 ner_labels = ["actor", "executable", "file", "network", "registry", "vulnerability", "system"]
@@ -57,6 +58,16 @@ class IoCNer:
 
         # self.report_parser.max_length = 3000000
         self.create_optimizer()
+
+        # https://stackoverflow.com/questions/57667710/using-regex-for-phrase-pattern-in-entityruler
+        # https://python.plainenglish.io/a-closer-look-at-entityruler-in-spacy-rule-based-matching-44d01c43fb6
+        logging.info("---Add Regex-based NER Pipe!---")
+        ruler = self.nlp.add_pipe("entity_ruler", config=self.config, before="ner")
+        ner_regexPatterns = load_ner_regexPattern()
+        ruler.add_patterns(ner_regexPatterns)
+
+        logging.info("---Add coreferee Pipe!---")
+        self.nlp.add_pipe('coreferee')
 
     def convert_data_format(self, labeled_data: list) -> list:
         # Data format converting
@@ -120,23 +131,8 @@ class IoCNer:
         "ent_id_sep": "||",
     }
 
-    # https://stackoverflow.com/questions/57667710/using-regex-for-phrase-pattern-in-entityruler
-    # https://python.plainenglish.io/a-closer-look-at-entityruler-in-spacy-rule-based-matching-44d01c43fb6
-    def ner_with_regex(self):
-        logging.info("---Add Regex-based NER Pipe!---")
-
-        ruler = self.nlp.add_pipe("entity_ruler", config=self.config, before="ner")
-        ner_regexPatterns = load_ner_regexPattern()
-        ruler.add_patterns(ner_regexPatterns)
-
-    def add_coreference(self):
-        self.nlp.add_pipe('coreferee')
-
-    def parser(self, text: str, model_location="./new_cti.model"):
+    def parse(self, text: str):
         logging.info("---report parsing: Parse clean text to NLP doc!---")
-        self.nlp = spacy.load(model_location)
-        self.ner_with_regex()
-        self.add_coreference()
 
         nlp_doc = self.nlp(text)
         return nlp_doc
