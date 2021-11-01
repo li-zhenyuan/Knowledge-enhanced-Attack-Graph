@@ -1,4 +1,7 @@
+from __future__ import annotations
 import math
+from typing import Set
+
 import Levenshtein
 import graphviz
 import networkx as nx
@@ -51,26 +54,34 @@ class AttackGraphNode:
     id: str
     type: str
 
-    ioc: str
-    nlp: str
+    ioc: Set[str]
+    nlp: Set[str]
 
-    word_position: int
     position: int
 
-    #
     def __init__(self, entity: Span):
         self.id = entity.root.i  # entity could include multiple words, we only record the entity root token's position (word num) as unique id
         self.type = entity.root.ent_type_
-        self.nlp = entity.text
-        self.ioc = ""
+        self.nlp = set([entity.text])
+        self.ioc = set()
+        self.position = entity.root.idx
 
     def __str__(self):
-        return f"Node #{self.id}: [type: '{self.type}', nlp: '{self.nlp}', ioc: '{self.ioc}']"
+        return f"Node #{self.id}: [type: '{self.type}', nlp: '{self.nlp}', ioc: '{self.ioc}', position: '{self.position}']"
+
+    def get_similarity(self) -> float:
+        pass
+
+    def merge_node(self, node: AttackGraphNode):
+        self.nlp |= node.nlp
+        self.ioc |= node.ioc
+
+        node.nlp = self.nlp
+        node.ioc = self.ioc
 
 
 class AttackGraph:
     attackgraph_nx: nx.DiGraph
-    original_attackgraph_nx: nx.DiGraph
     attackNode_dict: Dict[int, AttackGraphNode]  # coref nodes should point to the same attackGraphNode
 
     nlp_doc: spacy.tokens.doc.Doc
@@ -81,7 +92,6 @@ class AttackGraph:
 
     def __init__(self, doc, ioc_identifier=None):
         self.attackgraph_nx = nx.DiGraph()
-        self.original_attackgraph_nx = nx.DiGraph()
         self.attackNode_dict = {}
 
         self.nlp_doc = doc
@@ -102,12 +112,13 @@ class AttackGraph:
             nx.draw_networkx_nodes(self.attackgraph_nx,
                                    graph_pos,
                                    node_shape=node_shape_dict[label],
-                                   nodelist=[node.id for node in filter(lambda n: n.type == label, self.attackNode_dict.values())],
+                                   nodelist=[node for node in filter(lambda n: self.attackNode_dict[n].type == label, self.attackgraph_nx.nodes)],
+                                   # nodelist=[node.id for node in filter(lambda n: n.type == label, self.attackNode_dict.values())],
                                    node_size=100,
                                    alpha=0.6)
         nx.draw_networkx_labels(self.attackgraph_nx,
                                 graph_pos,
-                                labels={node: self.attackNode_dict[node].__str__() for node in self.attackgraph_nx.nodes},
+                                labels={node: str(self.attackNode_dict[node]) for node in self.attackgraph_nx.nodes},
                                 verticalalignment='top',
                                 horizontalalignment='left',
                                 font_size=6)
@@ -129,6 +140,12 @@ class AttackGraph:
         self.parse_coreference()
         self.parse_dependency()
 
+        logging.info("---attack graph generation: Simplify the Attack Graph!---")
+
+        self.simplify()
+        # self.node_merge()
+
+
     def parse_entity(self):
         logging.info("---attack graph generation: Parsing NLP doc to get Attack Graph nodes!---")
 
@@ -140,7 +157,7 @@ class AttackGraph:
                 for token in entity:
                     self.attackNode_dict[token.i] = self.attackNode_dict[entity.root.i]
                     if (token.idx - 1) in self.ioc_identifier.replaced_ioc_dict.keys():
-                        self.attackNode_dict[entity.root.i].ioc = self.ioc_identifier.replaced_ioc_dict[token.idx - 1]
+                        self.attackNode_dict[entity.root.i].ioc.add(self.ioc_identifier.replaced_ioc_dict[token.idx - 1])
             else:
                 continue
 
@@ -205,11 +222,15 @@ class AttackGraph:
     visited_node_list: list
 
     def simplify(self):
+        logging.info(f"---attack graph generation: There are {self.attackgraph_nx.number_of_nodes()} nodes before simplification!---")
         source_node_list = self.locate_all_source_node()
         self.visited_node_list = []
 
         for source_node in source_node_list:
             self.simplify_foreach_subgraph(source_node)
+
+        self.clear_contraction_info()
+        logging.info(f"---attack graph generation: There are {self.attackgraph_nx.number_of_nodes()} nodes after simplification!---")
 
     def simplify_foreach_subgraph(self, source_node):
         if source_node not in self.visited_node_list:
@@ -217,32 +238,17 @@ class AttackGraph:
         else:
             return
 
-        source_nlp = self.attackgraph_nx.nodes[source_node]["report_parser"]
-        try:
-            source_regex = self.attackgraph_nx.nodes[source_node]["regex"]
-        except KeyError:
-            source_regex = ""
-
         neighbor_list = self.attackgraph_nx.neighbors(source_node)
         for neighor in neighbor_list:
-            self.simplify_foreach_subgraph(neighor)
-
-            neighor_nlp = self.attackgraph_nx.nodes[neighor]["report_parser"]
-            try:
-                neighor_regex = self.attackgraph_nx.nodes[neighor]["regex"]
-            except KeyError:
-                neighor_regex = ""
+            self.simplify_foreach_subgraph(neighor)  # recursion
 
             # check whether to merge the node or not
-            if self.attackgraph_nx.nodes[source_node]["type"] == self.attackgraph_nx.nodes[neighor]["type"] \
-                    and self.attackgraph_nx.in_degree(neighor) == 1 \
-                    and (source_regex == "" or neighor_regex == ""):
+            if self.attackNode_dict[source_node].type == self.attackNode_dict[neighor].type \
+                    and self.attackgraph_nx.in_degree(neighor) == 1:
                 self.attackgraph_nx = nx.contracted_nodes(self.attackgraph_nx, source_node, neighor, self_loops=False)
+                self.attackNode_dict[source_node].merge_node(self.attackNode_dict[neighor])
 
-                self.attackgraph_nx.nodes[source_node]["report_parser"] = source_nlp + " " + neighor_nlp
-                self.attackgraph_nx.nodes[source_node]["regex"] = source_regex + neighor_regex
-
-    def locate_all_source_node(self):
+    def locate_all_source_node(self) -> List:
         self.source_node_list = []
 
         for node in self.attackgraph_nx.nodes():
@@ -252,6 +258,10 @@ class AttackGraph:
         return self.source_node_list
 
     merge_graph: nx.Graph
+
+    def clear_contraction_info(self):
+        for nodes in self.attackgraph_nx.nodes():
+            self.attackgraph_nx.nodes[nodes]["contraction"] = ""
 
     def node_merge(self):
         self.original_attackgraph_nx = nx.DiGraph(self.attackgraph_nx)
@@ -293,6 +303,4 @@ class AttackGraph:
                 self.attackgraph_nx = nx.contracted_nodes(self.attackgraph_nx, a, b, self_loops=False)
             # self.attackgraph_nx.nodes[a]["contraction"] = ""
 
-    def clear_contraction_info(self):
-        for nodes in self.attackgraph_nx.nodes():
-            self.attackgraph_nx.nodes[nodes]["contraction"] = ""
+        logging.info(f"---attack graph generation: There are {self.attackgraph_nx.number_of_nodes()} nodes after node merge!---")

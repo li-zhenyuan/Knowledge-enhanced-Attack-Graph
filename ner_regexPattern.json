@@ -9,7 +9,7 @@
         "file[s]*", "document[s]*", "attachment[s]*"
     ], 
     "network": [
-        "network", "e[-]*mail[s]*", "dns", "c2", "c&c"
+        "network", "host[s]*", "url[s]*", "e[-]*mail[s]*", "dns", "c2", "c&c"
     ], 
     "registry": [
         "registry"

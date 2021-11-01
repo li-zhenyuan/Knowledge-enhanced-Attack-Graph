@@ -58,10 +58,11 @@ if __name__ == '__main__':
     arguments = parser.parse_args(sys.argv[1:])
 
     log_path = arguments.logPath
+    log_level = logging.DEBUG
     if log_path == "":
-        logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+        logging.basicConfig(stream=sys.stdout, level=log_level)
     else:
-        logging.basicConfig(filename=log_path, filemode='a', level=logging.DEBUG)
+        logging.basicConfig(filename=log_path, filemode='a', level=log_level)
 
     logging.info(f"---Running arguments: {arguments}!---")
 
