@@ -55,24 +55,6 @@ class IoCIdentifier:
         with open(ioc_replaceWord) as word_file:
             self.ioc_replaceWord = json.load(word_file)
 
-    # check if the iocs have overlaps, and leave only the longest
-    def ioc_overlap_remove(self):
-        if len(self.ioc_list) == 0:
-            return
-
-        # Sort the IoC item list
-        self.ioc_list.sort(key=get_iocitem_key)
-
-        last_word = self.ioc_list[0].ioc_location[1]
-        cleared_ioc_list = [self.ioc_list[0]]
-        for i in range(1, len(self.ioc_list)):
-            # no overlap
-            if last_word <= self.ioc_list[i].ioc_location[0]:
-                cleared_ioc_list.append(self.ioc_list[i])
-                last_word = self.ioc_list[i].ioc_location[1]
-
-        self.ioc_list = cleared_ioc_list
-
     def ioc_protect(self) -> str:
         logging.info("---ioc protection: Identify and replace IoC items with regex in cti text!---")
 
@@ -95,6 +77,24 @@ class IoCIdentifier:
                     self.ioc_list.append(ioc_item)
 
         self.ioc_overlap_remove()
+
+    # check if the iocs have overlaps, and leave only the longest
+    def ioc_overlap_remove(self):
+        if len(self.ioc_list) == 0:
+            return
+
+        # Sort the IoC item list
+        self.ioc_list.sort(key=get_iocitem_key)
+
+        last_word = self.ioc_list[0].ioc_location[1]
+        cleared_ioc_list = [self.ioc_list[0]]
+        for i in range(1, len(self.ioc_list)):
+            # no overlap
+            if last_word <= self.ioc_list[i].ioc_location[0]:
+                cleared_ioc_list.append(self.ioc_list[i])
+                last_word = self.ioc_list[i].ioc_location[1]
+
+        self.ioc_list = cleared_ioc_list
 
     def ioc_replace(self):
         logging.info("---ioc protection: Replace IoC items with protecting words!---")
@@ -122,6 +122,8 @@ class IoCIdentifier:
             text_block_start = ioc_item.ioc_location[1]
 
             logging.debug("Replaced with: %s - %s" % (self.report_text[ioc_item.ioc_location[0]: ioc_item.ioc_location[1]], self.replaced_text[replaced_ioc_item.ioc_location[0]: replaced_ioc_item.ioc_location[1]]))
+
+        self.replaced_text += self.report_text[text_block_start: len(self.report_text)]
 
     def to_jsonl(self) -> str:
         iocs = []

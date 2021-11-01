@@ -4,6 +4,7 @@
 
 from typing import List
 from spacy import displacy
+from spacy.tokens import Doc
 from spacy.training import Example
 
 import spacy
@@ -46,6 +47,13 @@ class IoCNer:
     nlp = None
     optimizer = None
 
+    config = {
+        "phrase_matcher_attr": None,
+        "validate": True,
+        "overwrite_ents": False,
+        "ent_id_sep": "||",
+    }
+
     def __init__(self, model_location=None):
         self.model_location = model_location
 
@@ -68,6 +76,12 @@ class IoCNer:
 
         logging.info("---Add coreferee Pipe!---")
         self.nlp.add_pipe('coreferee')
+
+    def parse(self, text: str) -> Doc:
+        logging.info("---report parsing: Parse clean text to NLP doc!---")
+
+        nlp_doc = self.nlp(text)
+        return nlp_doc
 
     def convert_data_format(self, labeled_data: list) -> list:
         # Data format converting
@@ -123,19 +137,6 @@ class IoCNer:
                    sample: str = "APT3 has used PowerShell on victim systems to download and run payloads after exploitation."):
         doc = self.nlp(sample)
         displacy.render(doc, style='ent')
-
-    config = {
-        "phrase_matcher_attr": None,
-        "validate": True,
-        "overwrite_ents": False,
-        "ent_id_sep": "||",
-    }
-
-    def parse(self, text: str):
-        logging.info("---report parsing: Parse clean text to NLP doc!---")
-
-        nlp_doc = self.nlp(text)
-        return nlp_doc
 
 
 def parsingModel_training(traingSet_path: str):

@@ -35,8 +35,8 @@
     ],
 
     "Registry": [
-        "\\b((kcu|hklm|hkcu|hkey_local_machine|hkey_current_user|software).{0,1}\\\\[\\\\A-Za-z0-9-_]+)\\b",
-        "\\b((hklm|hkcu|hkey_local_machine|hku)\\\\\\\\[\\\\\\\\A-Za-z0-9-_]+)\\b"
+        "\\b((kcu|hklm|hkcu|hkey_local_machine|hkey_current_user|software).{0,1}\\\\[\\\\a-z0-9-_]+)\\b",
+        "\\b((hklm|hkcu|hkey_local_machine|hku)\\\\\\\\[\\\\\\\\a-z0-9-_]+)\\b"
     ],
     
     "Vulnerability": [
