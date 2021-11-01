@@ -46,7 +46,6 @@ class IoCIdentifier:
         self.deleted_character_count = 0
 
         self.load_ioc_pattern()
-
         self.report_text = text
 
     def load_ioc_pattern(self, ioc_regexPattern_path: str = "./ioc_regexPattern.json", ioc_replaceWord: str = "./ioc_replaceWord.json"):
@@ -115,6 +114,7 @@ class IoCIdentifier:
             replaced_word_start = replaced_word_end - len(replaced_word) - 2  # -2 for two blank space
             replaced_ioc_item = IoCItem(original_ioc_string, ioc_item.ioc_type, replaced_word_start, replaced_word_end)
             self.replaced_ioc_list.append(replaced_ioc_item)
+            self.replaced_ioc_dict[replaced_word_start] = original_ioc_string
 
             round_deleted_character_count = len(original_ioc_string) - len(replaced_word)
             self.deleted_character_count += round_deleted_character_count

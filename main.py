@@ -31,11 +31,13 @@ def report_parsing(text: str) -> Tuple[IoCIdentifier, Doc]:
     return iid, doc
 
 
-def attackGraph_generating(text: str) -> AttackGraph:
+def attackGraph_generating(text: str, output: str) -> AttackGraph:
     iid, doc = report_parsing(text)
 
     ag = AttackGraph(doc, ioc_identifier=iid)
-    ag.generate()
+
+    if output != "":  # Todo
+        pass
 
     return ag
 
@@ -45,8 +47,9 @@ if __name__ == '__main__':
 
     # Examples:
     # python main.py -M iocProtection -R ./data/cti/html/003495c4cb6041c52db4b9f7ead95f05.html
-    # python main.py -M reportParsing -C Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable.
-    parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing'")
+    # python main.py -M reportParsing -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
+    # python main.py -M attackGraphGeneration -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
+    parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing', 'attackGraphGeneration'")
     parser.add_argument('-L', '--logPath', required=False, type=str, default="", help="Log file's path.")
     parser.add_argument('-C', '--ctiText', required=False, type=str, default="", help="Target CTI text.")
     parser.add_argument('-R', '--reportPath', required=False, type=str, default="../AttacKG/data/cti/html/003495c4cb6041c52db4b9f7ead95f05.html", help="Target report's path.")
@@ -78,7 +81,7 @@ if __name__ == '__main__':
     elif running_mode == "reportParsing":
         cti_doc = report_parsing(report_text)
     elif running_mode == "attackGraphGeneration":
-        attack_graph = attackGraph_generating(report_text)
+        attack_graph = attackGraph_generating(report_text, arguments.outputPath)
     else:
         print("Unknown running mode!")
 
