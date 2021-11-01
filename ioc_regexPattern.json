@@ -13,36 +13,36 @@
     ],
 
     "DocumentFile": [
-        "\\b([A-Za-z0-9-_\\.]+\\.(sys|htm|html|jpg|png|vb|scr|pif|chm|zip|rar|cab|pdf|doc|docx|ppt|pptx|xls|xlsx|swf|gif))\\b"
+        "\\b([a-z0-9-_\\.]+\\.(sys|htm|html|jpg|png|vb|scr|pif|chm|zip|rar|cab|pdf|doc|docx|ppt|pptx|xls|xlsx|swf|gif))\\b"
     ],
     "ExecutableFile": [
-        "\\b([A-Za-z0-9-_\\.]+\\.(exe|dll|jar|bat|ps1|js))\\b"
+        "\\b([a-z0-9-_\\.]+\\.(exe|dll|jar|bat|ps1|js))\\b"
     ],
 
     "MD5": [
-        "\\b([a-f0-9]{32}|[A-F0-9]{32})\\b"
+        "\\b([a-f0-9]{32})\\b"
     ],
     "SHA1": [
-        "\\b([a-f0-9]{40}|[A-F0-9]{40})\\b"
+        "\\b([a-f0-9]{40})\\b"
     ],
     "SHA256": [
-        "\\b([a-f0-9]{64}|[A-F0-9]{64})\\b"
+        "\\b([a-f0-9]{64})\\b"
     ],
 
     "FilePath": [
-        "\\b[A-Z]:\\\\[A-Za-z0-9-_\\.\\\\]+\\b",
-        "[~]*/[A-Za-z0-9-_\\./]{2,}\\b[%A-Za-z0-9]*\\\\[A-Za-z0-9-_\\.\\\\%]+\\b"
+        "\\b[a-z]:\\\\[a-z0-9-_\\.\\\\]+\\b",
+        "[~]*/[a-z0-9-_\\./]{2,}\\b[%a-z0-9]*\\\\[a-z0-9-_\\.\\\\%]+\\b"
     ],
 
     "Registry": [
-        "\\b((KCU|HKLM|HKCU|HKEY_LOCAL_MACHINE|HKEY_CURRENT_USER|SOFTWARE).{0,1}\\\\[\\\\A-Za-z0-9-_]+)\\b",
-        "\\b((HKLM|HKCU|HKEY_LOCAL_MACHINE|HKU)\\\\\\\\[\\\\\\\\A-Za-z0-9-_]+)\\b"
+        "\\b((kcu|hklm|hkcu|hkey_local_machine|hkey_current_user|software).{0,1}\\\\[\\\\A-Za-z0-9-_]+)\\b",
+        "\\b((hklm|hkcu|hkey_local_machine|hku)\\\\\\\\[\\\\\\\\A-Za-z0-9-_]+)\\b"
     ],
     
     "Vulnerability": [
-        "\\b(CVE\\-[0-9]{4}\\-[0-9]{4,6})\\b"
+        "\\b(cve\\-[0-9]{4}\\-[0-9]{4,6})\\b"
     ],
     "Arguments": [
-        "\\s[-/\\\\][0-9a-zA-Z]+\\s"
+        "\\s[-/\\\\][0-9a-z]+\\s"
     ]
 }
