@@ -4,12 +4,16 @@ import sys
 import os
 
 from typing import Tuple
+
+from typing import List
 from spacy.tokens import Doc
 
+from mitre_ttps.mitreGraphReader import MitreGraphReader
 from preprocess.report_preprocess import preprocess_file, clear_text
 from report_parser.ioc_protection import IoCIdentifier
 from report_parser.report_parser import parsingModel_training, IoCNer
 from technique_knowledge_graph.attack_graph import AttackGraph
+from technique_knowledge_graph.technique_template import TemplateNode, TechniqueTemplate
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
@@ -31,13 +35,42 @@ def report_parsing(text: str) -> Tuple[IoCIdentifier, Doc]:
     return iid, doc
 
 
-def attackGraph_generating(text: str, output: str) -> AttackGraph:
+def attackGraph_generating(text: str, output: str = None) -> AttackGraph:
     iid, doc = report_parsing(text)
 
     ag = AttackGraph(doc, ioc_identifier=iid)
-    ag.draw(output)
+    if output is not None:
+        ag.draw(output)
 
     return ag
+
+
+def techniqueTemplate_generating(output_path: str = None) -> List[TechniqueTemplate]:
+    template_list = []
+
+    mgr = MitreGraphReader()
+    super_sub_dict = mgr.get_super_sub_technique_dict()
+    for super_technique, sub_technique_list in super_sub_dict.items():
+        sample_list = []
+        for sub_technique in sub_technique_list:
+            sample_list += mgr.find_examples_for_technique(sub_technique)
+        techniqueTemplate_generating_perTech(super_technique[12:18], sample_list, output_path)
+
+    return template_list
+
+
+def techniqueTemplate_generating_perTech(technique_name: str, techniqueSample_list: List[str], output_path: str = None) -> TechniqueTemplate:
+    technique_template = TechniqueTemplate(technique_name)
+
+    for sample in techniqueSample_list:
+        sample_graph = attackGraph_generating(sample)
+        technique_template.update_template(sample_graph)
+
+    if output_path is not None:
+        technique_template.pretty_print(f"{output_path}/{technique_name}.png")
+        technique_template.dump_to_file(f"{output_path}/{technique_name}.json")
+
+    return technique_template
 
 
 if __name__ == '__main__':
@@ -47,7 +80,8 @@ if __name__ == '__main__':
     # python main.py -M iocProtection -R ./data/cti/html/003495c4cb6041c52db4b9f7ead95f05.html
     # python main.py -M reportParsing -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
     # python main.py -M attackGraphGeneration -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
-    parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing', 'attackGraphGeneration'")
+    # python main.py -M techniqueTemplateGeneration
+    parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing', 'attackGraphGeneration', 'techniqueTemplateGeneration'")
     parser.add_argument('-L', '--logPath', required=False, type=str, default="", help="Log file's path.")
     parser.add_argument('-C', '--ctiText', required=False, type=str, default="", help="Target CTI text.")
     parser.add_argument('-R', '--reportPath', required=False, type=str, default="../AttacKG/data/cti/html/003495c4cb6041c52db4b9f7ead95f05.html", help="Target report's path.")
@@ -81,6 +115,8 @@ if __name__ == '__main__':
         cti_doc = report_parsing(report_text)
     elif running_mode == "attackGraphGeneration":
         attack_graph = attackGraph_generating(report_text, arguments.outputPath)
+    elif running_mode == "techniqueTemplateGeneration":
+        techniqueTemplate_generating()
     else:
         print("Unknown running mode!")
 

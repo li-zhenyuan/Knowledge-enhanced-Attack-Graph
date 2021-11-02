@@ -38,7 +38,6 @@ def to_nltk_formatted_tree(node):
 
 
 # node_shape = "so^>v<dph8"
-# markers = {'.': 'point', ',': 'pixel', 'o': 'circle', 'v': 'triangle_down', '^': 'triangle_up', '<': 'triangle_left', '>': 'triangle_right', '1': 'tri_down', '2': 'tri_up', '3': 'tri_left', '4': 'tri_right', '8': 'octagon', 's': 'square', 'p': 'pentagon', '*': 'star', 'h': 'hexagon1', 'H': 'hexagon2', '+': 'plus', 'x': 'x', 'D': 'diamond', 'd': 'thin_diamond', '|': 'vline', '_': 'hline', 'P': 'plus_filled', 'X': 'x_filled', 0: 'tickleft', 1: 'tickright', 2: 'tickup', 3: 'tickdown', 4: 'caretleft', 5: 'caretright', 6: 'caretup', 7: 'caretdown', 8: 'caretleftbase', 9: 'caretrightbase', 10: 'caretupbase', 11: 'caretdownbase', 'None': 'nothing', None: 'nothing', ' ': 'nothing', '': 'nothing'}
 node_shape_dict = {
     "actor": "o",
     "executable": "o",
@@ -50,13 +49,27 @@ node_shape_dict = {
 }
 
 
+def get_iocSet_similarity(set_m: Set[str], set_n: Set[str]) -> float:
+    return get_stringSet_similarity(set_m, set_n)
+
+
+def get_nlpSet_similarity(set_m: Set[str], set_n: Set[str]) -> float:
+    return get_stringSet_similarity(set_m, set_n)
+
+
 def get_stringSet_similarity(set_m: Set[str], set_n: Set[str]) -> float:
     max_similarity = 0.0
     for m in set_m:
         for n in set_n:
-            similarity = Levenshtein.ratio(m, m)
+            similarity = get_string_similarity(m, n)
             max_similarity = max_similarity if max_similarity > similarity else similarity
     return max_similarity
+
+
+# https://blog.csdn.net/dcrmg/article/details/79228589
+def get_string_similarity(a: str, b: str) -> float:
+    similarity_score = Levenshtein.ratio(a, b)
+    return similarity_score
 
 
 class AttackGraphNode:
@@ -88,7 +101,7 @@ class AttackGraphNode:
         similarity = 0.0
         if self.type == node.type:
             similarity += 0.4
-        similarity += (max(get_stringSet_similarity(self.ioc, node.ioc), get_stringSet_similarity(self.nlp, node.nlp)) / math.log(abs(self.id - node.id) + 2))
+        similarity += max(get_stringSet_similarity(self.ioc, node.ioc), get_stringSet_similarity(self.nlp, node.nlp))
         return similarity
 
     def merge_node(self, node: AttackGraphNode):
@@ -291,7 +304,8 @@ class AttackGraph:
                 node_m = self.attackNode_dict[node_list[m]]
                 node_n = self.attackNode_dict[node_list[n]]
 
-                if node_m.is_similar_with(node_n) and ((len(node_m.ioc) == 0 and len(node_n.ioc) == '') or len(node_m.ioc & node_n.ioc) != 0):
+                if node_m.get_similarity(node_n) / math.log(abs(node_m.id - node_n.id) + 2) >= 0.5 \
+                        and ((len(node_m.ioc) == 0 and len(node_n.ioc) == '') or len(node_m.ioc & node_n.ioc) != 0):
                     merge_graph.add_edge(node_list[m], node_list[n])
 
         for subgraph in nx.connected_components(merge_graph):
