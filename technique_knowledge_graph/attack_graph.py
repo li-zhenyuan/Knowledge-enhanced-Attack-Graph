@@ -50,6 +50,15 @@ node_shape_dict = {
 }
 
 
+def get_stringSet_similarity(set_m: Set[str], set_n: Set[str]) -> float:
+    max_similarity = 0.0
+    for m in set_m:
+        for n in set_n:
+            similarity = Levenshtein.ratio(m, m)
+            max_similarity = max_similarity if max_similarity > similarity else similarity
+    return max_similarity
+
+
 class AttackGraphNode:
     id: str
     type: str
@@ -69,8 +78,18 @@ class AttackGraphNode:
     def __str__(self):
         return f"Node #{self.id}: [type: '{self.type}', nlp: '{self.nlp}', ioc: '{self.ioc}', position: '{self.position}']"
 
-    def get_similarity(self) -> float:
-        pass
+    def is_similar_with(self, node: AttackGraphNode) -> bool:
+        if self.get_similarity(node) >= 0.5:
+            return True
+        else:
+            return False
+
+    def get_similarity(self, node: AttackGraphNode) -> float:  # Todo
+        similarity = 0.0
+        if self.type == node.type:
+            similarity += 0.4
+        similarity += (max(get_stringSet_similarity(self.ioc, node.ioc), get_stringSet_similarity(self.nlp, node.nlp)) / math.log(abs(self.id - node.id) + 2))
+        return similarity
 
     def merge_node(self, node: AttackGraphNode):
         self.nlp |= node.nlp
@@ -143,7 +162,7 @@ class AttackGraph:
         logging.info("---attack graph generation: Simplify the Attack Graph!---")
 
         self.simplify()
-        # self.node_merge()
+        self.node_merge()
 
 
     def parse_entity(self):
@@ -229,7 +248,7 @@ class AttackGraph:
         for source_node in source_node_list:
             self.simplify_foreach_subgraph(source_node)
 
-        self.clear_contraction_info()
+        # self.clear_contraction_info()
         logging.info(f"---attack graph generation: There are {self.attackgraph_nx.number_of_nodes()} nodes after simplification!---")
 
     def simplify_foreach_subgraph(self, source_node):
@@ -243,7 +262,7 @@ class AttackGraph:
             self.simplify_foreach_subgraph(neighor)  # recursion
 
             # check whether to merge the node or not
-            if self.attackNode_dict[source_node].type == self.attackNode_dict[neighor].type \
+            if self.attackNode_dict[source_node].is_similar_with(self.attackNode_dict[neighor]) \
                     and self.attackgraph_nx.in_degree(neighor) == 1:
                 self.attackgraph_nx = nx.contracted_nodes(self.attackgraph_nx, source_node, neighor, self_loops=False)
                 self.attackNode_dict[source_node].merge_node(self.attackNode_dict[neighor])
@@ -257,8 +276,6 @@ class AttackGraph:
 
         return self.source_node_list
 
-    merge_graph: nx.Graph
-
     def clear_contraction_info(self):
         for nodes in self.attackgraph_nx.nodes():
             self.attackgraph_nx.nodes[nodes]["contraction"] = ""
@@ -266,41 +283,24 @@ class AttackGraph:
     def node_merge(self):
         self.original_attackgraph_nx = nx.DiGraph(self.attackgraph_nx)
 
-        self.merge_graph = nx.Graph()
+        merge_graph = nx.Graph()
         node_list = list(self.attackgraph_nx.nodes())
 
         for m in range(0, len(node_list)):
             for n in range(m + 1, len(node_list)):
-                node_m = node_list[m]
-                node_n = node_list[n]
+                node_m = self.attackNode_dict[node_list[m]]
+                node_n = self.attackNode_dict[node_list[n]]
 
-                m_position = int(node_m.split('#')[-1])
-                n_position = int(node_n.split('#')[-1])
+                if node_m.is_similar_with(node_n) and ((len(node_m.ioc) == 0 and len(node_n.ioc) == '') or len(node_m.ioc & node_n.ioc) != 0):
+                    merge_graph.add_edge(node_list[m], node_list[n])
 
-                m_type = self.attackgraph_nx.nodes[node_m]['type']
-                n_type = self.attackgraph_nx.nodes[node_n]['type']
-                m_nlp = self.attackgraph_nx.nodes[node_m]['report_parser']
-                n_nlp = self.attackgraph_nx.nodes[node_n]['report_parser']
-                m_ioc = self.attackgraph_nx.nodes[node_m]['regex']
-                n_ioc = self.attackgraph_nx.nodes[node_n]['regex']
-
-                similarity = 0
-                if m_type == n_type:
-                    similarity += 0.4
-                # print(Levenshtein.ratio(m_nlp, n_nlp))
-                # print(abs(n_position-m_position)+2)
-                similarity += Levenshtein.ratio(m_nlp, n_nlp) / math.log(abs(n_position - m_position) + 2)
-                if (similarity >= 0.5 and ((m_ioc == '' and n_ioc == '') or m_ioc == n_ioc)):
-                    self.merge_graph.add_edge(node_m, node_n)
-
-                    # print(' '.join([node_m, node_n, str(Levenshtein.ratio(m_nlp, n_nlp)), str(similarity)]))
-
-        for subgraph in nx.connected_components(self.merge_graph):
+        for subgraph in nx.connected_components(merge_graph):
             subgraph_list = list(subgraph)
             # print(subgraph_list)
             a = subgraph_list[0]
             for b in subgraph_list[1:]:
                 self.attackgraph_nx = nx.contracted_nodes(self.attackgraph_nx, a, b, self_loops=False)
+                self.attackNode_dict[a].merge_node(self.attackNode_dict[b])
             # self.attackgraph_nx.nodes[a]["contraction"] = ""
 
         logging.info(f"---attack graph generation: There are {self.attackgraph_nx.number_of_nodes()} nodes after node merge!---")
