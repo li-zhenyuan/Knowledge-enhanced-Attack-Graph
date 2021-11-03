@@ -3,19 +3,14 @@ import math
 from typing import Set
 
 import Levenshtein
-import graphviz
-import networkx as nx
 from matplotlib import figure
 import matplotlib.pyplot as plt
 from nltk import Tree
-from pathlib import Path
-import time
 import spacy.tokens
 from spacy.tokens import Span
 
 from report_parser.report_parser import *
 from report_parser.ioc_protection import *
-from preprocess.report_preprocess import *
 from mitre_ttps.mitreGraphReader import *
 
 
@@ -73,7 +68,7 @@ def get_string_similarity(a: str, b: str) -> float:
 
 
 class AttackGraphNode:
-    id: str
+    id: int
     type: str
 
     ioc: Set[str]
@@ -84,7 +79,7 @@ class AttackGraphNode:
     def __init__(self, entity: Span):
         self.id = entity.root.i  # entity could include multiple words, we only record the entity root token's position (word num) as unique id
         self.type = entity.root.ent_type_
-        self.nlp = set([entity.text])
+        self.nlp = {entity.text}
         self.ioc = set()
         self.position = entity.root.idx
 
@@ -137,7 +132,8 @@ class AttackGraph:
     # http://sparkandshine.net/en/networkx-application-notes-a-better-way-to-visualize-graphs/
     # https://networkx.org/documentation/latest/auto_examples/drawing/plot_chess_masters.html#sphx-glr-auto-examples-drawing-plot-chess-masters-py
     def draw(self, image_path: str = "") -> figure:
-        fig, ax = plt.subplots(figsize=(24, 24))  # Todo: re-consider the figure size.
+        fig_size = math.ceil(math.sqrt(self.attackgraph_nx.number_of_nodes())) * 10
+        plt.subplots(figsize=(fig_size, fig_size))  # Todo: re-consider the figure size.
 
         graph_pos = nx.spring_layout(self.attackgraph_nx, scale=2)
         for label in ner_labels:
@@ -165,6 +161,10 @@ class AttackGraph:
         else:
             plt.savefig(image_path)
 
+    # Todo
+    def to_json(self):
+        pass
+
     def generate(self):
         logging.info("---attack graph generation: Parsing NLP doc to get Attack Graph!---")
 
@@ -176,7 +176,6 @@ class AttackGraph:
 
         self.simplify()
         self.node_merge()
-
 
     def parse_entity(self):
         logging.info("---attack graph generation: Parsing NLP doc to get Attack Graph nodes!---")
@@ -244,7 +243,7 @@ class AttackGraph:
                     self.attackgraph_nx.add_edge(tnode, node.i, action=tvb)
                 tnode = node.i
 
-        if (is_related_sentence):
+        if is_related_sentence:
             self.related_sentences.append(sentence.text)
             logging.debug("Related sentence: %s" % sentence.text)
 
@@ -284,7 +283,7 @@ class AttackGraph:
         self.source_node_list = []
 
         for node in self.attackgraph_nx.nodes():
-            if self.attackgraph_nx.in_degree[node] == 0:
+            if self.attackgraph_nx.in_degree(node) == 0:
                 self.source_node_list.append(node)
 
         return self.source_node_list

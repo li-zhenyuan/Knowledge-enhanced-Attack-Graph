@@ -1,13 +1,6 @@
 from __future__ import annotations
 
-import math
-import networkx as nx
 from networkx.drawing.nx_agraph import to_agraph
-from multiprocessing import Pool, Process
-import logging
-import re
-import Levenshtein
-import json
 
 from technique_knowledge_graph.attack_graph import *
 from mitre_ttps.mitreGraphReader import *
@@ -37,16 +30,16 @@ class TemplateNode(AttackGraphNode):
 
     def dump_to_dict(self) -> dict:
         node_data = {
-            "type": self.node_type,
-            "description": self.nlp,
+            "type": self.type,
+            "nlp": self.nlp,
             "ioc": self.ioc,
             "count": self.instance_count}
 
         return node_data
 
     def load_from_dict(self, node_data: dict):
-        self.node_type = node_data["type"]
-        self.nlp = node_data["description"]
+        self.type = node_data["type"]
+        self.nlp = node_data["nlp"]
         self.ioc = node_data["ioc"]
         self.instance_count = node_data["count"]
 
@@ -152,11 +145,11 @@ class TechniqueTemplate:
         for node in self.technique_node_list:
             ioc_instance_count += len(node.ioc)
 
-        output = ','.join([self.technique_name[14:19], str(variants_count), str(ioc_instance_count), '\n'])
-        print(output)
+        csv_output = ','.join([self.technique_name[14:19], str(variants_count), str(ioc_instance_count), '\n'])
+        print(csv_output)
 
         with open('technique_variants_count.csv', 'a+') as output_file:
-            output_file.write(output)
+            output_file.write(csv_output)
 
     def calculate_normalization(self):
         for node in self.technique_node_list:

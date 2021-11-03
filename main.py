@@ -13,7 +13,7 @@ from preprocess.report_preprocess import preprocess_file, clear_text
 from report_parser.ioc_protection import IoCIdentifier
 from report_parser.report_parser import parsingModel_training, IoCNer
 from technique_knowledge_graph.attack_graph import AttackGraph
-from technique_knowledge_graph.technique_template import TemplateNode, TechniqueTemplate
+from technique_knowledge_graph.technique_template import TechniqueTemplate
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
