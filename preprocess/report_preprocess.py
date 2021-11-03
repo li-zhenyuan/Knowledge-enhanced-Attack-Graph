@@ -18,6 +18,13 @@ def read_pdf(report_file: str):
     return report_text
 
 
+def read_txt(report_file: str) -> str:
+    with open(report_file, 'r') as txt_content:
+        txt = str(txt_content.read())
+
+        return txt
+
+
 # Remove special characters with regex
 # https://www.nhooo.com/note/qa3hxo.html
 # https://www.shuzhiduo.com/A/8Bz8PNpXzx/
@@ -62,7 +69,9 @@ def preprocess_file(report_file: str) -> str:
     logging.info(f"---preprocess: Reading and clearing CTI report: {report_file}!---")
     file_path, extension = os.path.splitext(report_file)
 
-    if extension == ".html":
+    if extension == ".txt":
+        report_text = read_txt(report_file)
+    elif extension == ".html":
         report_text = read_html(report_file)
     elif extension == ".pdf":
         report_text = read_pdf(report_file)

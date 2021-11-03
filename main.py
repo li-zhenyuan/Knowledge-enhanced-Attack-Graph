@@ -4,15 +4,15 @@ import sys
 import os
 
 from typing import Tuple
-
 from typing import List
 from spacy.tokens import Doc
 
-from mitre_ttps.mitreGraphReader import MitreGraphReader
+from mitre_ttps.mitreGraphReader import MitreGraphReader, picked_techniques
 from preprocess.report_preprocess import preprocess_file, clear_text
 from report_parser.ioc_protection import IoCIdentifier
 from report_parser.report_parser import parsingModel_training, IoCNer
 from technique_knowledge_graph.attack_graph import AttackGraph
+from technique_knowledge_graph.technique_identifier import TechniqueIdentifier, AttackMatcher
 from technique_knowledge_graph.technique_template import TechniqueTemplate
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -45,12 +45,15 @@ def attackGraph_generating(text: str, output: str = None) -> AttackGraph:
     return ag
 
 
-def techniqueTemplate_generating(output_path: str = None) -> List[TechniqueTemplate]:
+def techniqueTemplate_generating(output_path: str = None, technique_list: List[str] = None) -> List[TechniqueTemplate]:
     template_list = []
 
     mgr = MitreGraphReader()
     super_sub_dict = mgr.get_super_sub_technique_dict()
     for super_technique, sub_technique_list in super_sub_dict.items():
+        if technique_list is not None and super_technique[12:18] not in technique_list:
+            continue
+
         sample_list = []
         for sub_technique in sub_technique_list:
             sample_list += mgr.find_examples_for_technique(sub_technique)
@@ -73,6 +76,43 @@ def techniqueTemplate_generating_perTech(technique_name: str, techniqueSample_li
     return technique_template
 
 
+def load_techniqueTemplate_fromFils(templatePath: str) -> List[TechniqueTemplate]:
+    template_file_list = os.listdir(templatePath)
+    template_list = []
+
+    for template_file in template_file_list:
+        technique_name, ext = os.path.splitext(template_file)
+        if ext != ".json":
+            continue
+
+        template = TechniqueTemplate(technique_name)
+        template.load_from_file(os.path.join(templatePath, template_file))
+        template_list.append(template)
+
+    return template_list
+
+
+def technique_identifying(text: str, technique_list: List[str], template_path: str) -> AttackMatcher:
+    ag = attackGraph_generating(text)
+    if template_path == "":
+        tt_list = techniqueTemplate_generating(technique_list=technique_list)
+    else:
+        tt_list = load_techniqueTemplate_fromFils(template_path)
+
+    attackMatcher = technique_identifying_forAttackGraph(ag, tt_list)
+    return attackMatcher
+
+
+def technique_identifying_forAttackGraph(graph: AttackGraph, template_list: List[TechniqueTemplate]) -> AttackMatcher:
+    attackMatcher = AttackMatcher(graph)
+    for template in template_list:
+        attackMatcher.add_technique_identifier(TechniqueIdentifier(template))
+    attackMatcher.attack_matching()
+    attackMatcher.print_match_result()
+
+    return attackMatcher
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
@@ -81,10 +121,11 @@ if __name__ == '__main__':
     # python main.py -M reportParsing -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
     # python main.py -M attackGraphGeneration -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
     # python main.py -M techniqueTemplateGeneration
-    parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing', 'attackGraphGeneration', 'techniqueTemplateGeneration'")
+    parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing', 'attackGraphGeneration', 'techniqueTemplateGeneration', 'techniqueIdentification")
     parser.add_argument('-L', '--logPath', required=False, type=str, default="", help="Log file's path.")
     parser.add_argument('-C', '--ctiText', required=False, type=str, default="", help="Target CTI text.")
     parser.add_argument('-R', '--reportPath', required=False, type=str, default="../AttacKG/data/cti/html/003495c4cb6041c52db4b9f7ead95f05.html", help="Target report's path.")
+    parser.add_argument('-T', '--templatePath', required=False, type=str, default="", help="Technique template's path.")
     parser.add_argument('-O', '--outputPath', required=False, type=str, default="", help="Output file's path.")
     parser.add_argument('--trainingSetPath', required=False, type=str, default="../AttacKG/NLP/Doccano/20210813.jsonl", help="NLP model training dataset's path.")
     parser.add_argument('--nlpModelPath', required=False, type=str, default="../AttacKG/new_cti.model", help="NLP model's path.")
@@ -117,6 +158,8 @@ if __name__ == '__main__':
         attack_graph = attackGraph_generating(report_text, arguments.outputPath)
     elif running_mode == "techniqueTemplateGeneration":
         techniqueTemplate_generating()
+    elif running_mode == "techniqueIdentification":
+        technique_identifying(report_text, picked_techniques, arguments.templatePath)
     else:
         print("Unknown running mode!")
 

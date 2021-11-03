@@ -161,8 +161,7 @@ class AttackGraph:
         else:
             plt.savefig(image_path)
 
-    # Todo
-    def to_json(self):
+    def to_json(self):  # Todo
         pass
 
     def generate(self):
