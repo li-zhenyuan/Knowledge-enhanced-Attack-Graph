@@ -5,6 +5,7 @@ from networkx.drawing.nx_agraph import to_agraph
 from technique_knowledge_graph.attack_graph import *
 from mitre_ttps.mitreGraphReader import *
 
+import simplejson as json
 
 class TemplateNode(AttackGraphNode):
     instance_count: int
@@ -165,7 +166,7 @@ class TechniqueTemplate:
         for tn in self.technique_node_list:
             node_list.append(tn.dump_to_dict())
         data_dict["nodes"] = node_list
-        data_dict["edges"] = list(self.technique_edge_dict.items())
+        data_dict["edges"] = self.technique_edge_dict.items()
         data_dict["instances"] = list(self.technique_instance_dict)
         data_dict["total_count"] = self.total_instance_count
 
@@ -173,7 +174,7 @@ class TechniqueTemplate:
 
     def dump_to_json(self) -> str:
         data_dict = self.dump_to_dict()
-        data_json = json.dumps(data_dict)
+        data_json = json.dumps(data_dict, iterable_as_array=True)
         return data_json
 
     def dump_to_file(self, file_name: str = "template"):

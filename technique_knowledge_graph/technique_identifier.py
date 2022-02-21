@@ -1,8 +1,10 @@
 import itertools
 import time
 import xlsxwriter
+import sys
+sys.path.extend([".", "technique_knowledge_graph"])
 
-from technique_template import *
+from technique_knowledge_graph.technique_template import *
 
 
 # Record TechniqueTemplate Matching Record

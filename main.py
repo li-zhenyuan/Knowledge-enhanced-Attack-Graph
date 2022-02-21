@@ -1,6 +1,8 @@
 import argparse
 import logging
 import sys
+sys.path.extend([".", "technique_knowledge_graph"])
+
 import os
 
 from typing import Tuple
@@ -70,8 +72,9 @@ def techniqueTemplate_generating_perTech(technique_name: str, techniqueSample_li
         technique_template.update_template(sample_graph)
 
     if output_path is not None:
+        logging.warning(f"---technique template: Saving to {output_path}/{technique_name}!---")
         technique_template.pretty_print(f"{output_path}/{technique_name}.png")
-        technique_template.dump_to_file(f"{output_path}/{technique_name}.json")
+        technique_template.dump_to_file(f"{output_path}/{technique_name}")
 
     return technique_template
 
@@ -114,6 +117,8 @@ def technique_identifying_forAttackGraph(graph: AttackGraph, template_list: List
 
 
 if __name__ == '__main__':
+    logging.basicConfig(stream=sys.stdout, level=logging.WARNING)
+
     parser = argparse.ArgumentParser()
 
     # Examples:
@@ -121,6 +126,9 @@ if __name__ == '__main__':
     # python main.py -M reportParsing -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
     # python main.py -M attackGraphGeneration -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
     # python main.py -M techniqueTemplateGeneration
+    # python main.py -M attackGraphGeneration -R "C:\Users\workshop\Documents\GitHub\AttacKG\data\picked_html_APTs\Log4Shell.html" -O ./output.pdf
+    # python main.py -M techniqueTemplateGeneration -O C:/Users/workshop/Documents/GitHub/Knowledge-enhanced-Attack-Graph/templates
+    # python main.py -M techniqueIdentification -T "C:\Users\workshop\Documents\GitHub\AttacKG\data\technique_template" -R "C:\Users\workshop\Documents\GitHub\AttacKG\data\picked_html_APTs\Log4Shell.html" -O ./output.pdf
     parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing', 'attackGraphGeneration', 'techniqueTemplateGeneration', 'techniqueIdentification")
     parser.add_argument('-L', '--logPath', required=False, type=str, default="", help="Log file's path.")
     parser.add_argument('-C', '--ctiText', required=False, type=str, default="", help="Target CTI text.")
@@ -157,7 +165,7 @@ if __name__ == '__main__':
     elif running_mode == "attackGraphGeneration":
         attack_graph = attackGraph_generating(report_text, arguments.outputPath)
     elif running_mode == "techniqueTemplateGeneration":
-        techniqueTemplate_generating()
+        techniqueTemplate_generating(output_path=arguments.outputPath)
     elif running_mode == "techniqueIdentification":
         technique_identifying(report_text, picked_techniques, arguments.templatePath)
     else:

@@ -1,5 +1,7 @@
 import os
 import json
+import re
+
 import networkx as nx
 import logging
 import sys
@@ -152,6 +154,7 @@ class MitreGraphReader:
 
         for n in self.mitre_graph.neighbors(technique_id):
             if self.mitre_graph.nodes[n]["types"] == "examples":
+                n = re.sub("\[[0-9]+\]+", "", n)
                 example_list.append(n)
 
         logging.info("---%s have %d examples---" % (technique_id, len(example_list)))
