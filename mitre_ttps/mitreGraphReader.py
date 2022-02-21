@@ -75,7 +75,7 @@ class MitreGraphReader:
     mitre_graph: nx.Graph
     link_file_map: dict
 
-    def __init__(self, gml_location: str = r"./Mitre_TTPs/Tactic_Technique_Reference_Example.gml", link_file_map_file:str = r"./data/cti/html/html_url_hash.csv"):
+    def __init__(self, gml_location: str = r"./Tactic_Technique_Reference_Example.gml", link_file_map_file:str = r"./html_url_hash.csv"):
         self.mitre_graph = nx.read_gml(gml_location)
         self.link_file_map = read_csv_as_dict(link_file_map_file)
 
