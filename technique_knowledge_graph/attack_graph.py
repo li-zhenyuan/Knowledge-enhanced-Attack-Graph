@@ -303,7 +303,7 @@ class AttackGraph:
                 node_m = self.attackNode_dict[node_list[m]]
                 node_n = self.attackNode_dict[node_list[n]]
 
-                if node_m.get_similarity(node_n) / math.log(abs(node_m.id - node_n.id) + 2) >= 0.5 \
+                if node_m.get_similarity(node_n) / math.log(abs(node_m.id - node_n.id) + 2) >= 0.4 \
                         and ((len(node_m.ioc) == 0 and len(node_n.ioc) == '') or len(node_m.ioc & node_n.ioc) != 0):
                     merge_graph.add_edge(node_list[m], node_list[n])
 
