@@ -87,7 +87,7 @@ class AttackGraphNode:
         return f"Node #{self.id}: [type: '{self.type}', nlp: '{self.nlp}', ioc: '{self.ioc}', position: '{self.position}']"
 
     def is_similar_with(self, node: AttackGraphNode) -> bool:
-        if self.get_similarity(node) >= 0.5:
+        if self.get_similarity(node) >= 0.4:
             return True
         else:
             return False
@@ -277,6 +277,7 @@ class AttackGraph:
                     and self.attackgraph_nx.in_degree(neighor) == 1:
                 self.attackgraph_nx = nx.contracted_nodes(self.attackgraph_nx, source_node, neighor, self_loops=False)
                 self.attackNode_dict[source_node].merge_node(self.attackNode_dict[neighor])
+                self.attackNode_dict.pop(neighor)
 
     def locate_all_source_node(self) -> List:
         self.source_node_list = []
@@ -313,6 +314,7 @@ class AttackGraph:
             for b in subgraph_list[1:]:
                 self.attackgraph_nx = nx.contracted_nodes(self.attackgraph_nx, a, b, self_loops=False)
                 self.attackNode_dict[a].merge_node(self.attackNode_dict[b])
+                self.attackNode_dict.pop(b)
             # self.attackgraph_nx.nodes[a]["contraction"] = ""
 
         logging.info(f"---attack graph generation: There are {self.attackgraph_nx.number_of_nodes()} nodes after node merge!---")
