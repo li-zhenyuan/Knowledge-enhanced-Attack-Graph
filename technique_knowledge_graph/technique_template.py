@@ -11,10 +11,16 @@ class TemplateNode(AttackGraphNode):
     instance_count: int
 
     def __init__(self, attack_node: AttackGraphNode):
-        self.instance_count = 1
-        self.type = attack_node.type
-        self.nlp = attack_node.nlp
-        self.ioc = attack_node.ioc
+        if attack_node is None:
+            self.instance_count = 0
+            self.type = ""
+            self.nlp = []
+            self.ioc = []
+        else:
+            self.instance_count = 1
+            self.type = attack_node.type
+            self.nlp = attack_node.nlp
+            self.ioc = attack_node.ioc
 
         logging.debug("---technique template: Init TemplateNode %s!---" % (self))
 
@@ -187,7 +193,7 @@ class TechniqueTemplate:
 
         node_list = data_dict["nodes"]
         for node_info in node_list:
-            tn = TemplateNode(("", "", ""))
+            tn = TemplateNode(None)
             tn.load_from_dict(node_info)
             if tn.instance_count <= 2:
                 tn.instance_count = 0
