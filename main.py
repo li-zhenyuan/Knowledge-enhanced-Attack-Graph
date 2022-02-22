@@ -39,11 +39,14 @@ def report_parsing(text: str) -> Tuple[IoCIdentifier, Doc]:
 
 
 def attackGraph_generating(text: str, output: str = None) -> AttackGraph:
+    text = text.lower()
     iid, doc = report_parsing(text)
 
     ag = AttackGraph(doc, ioc_identifier=iid)
+    print(ag.to_json())
     if output is not None:
         ag.draw(output)
+        ag.to_json_file(output + "_artifacts.json")
 
     return ag
 
@@ -96,23 +99,24 @@ def load_techniqueTemplate_fromFils(templatePath: str) -> List[TechniqueTemplate
     return template_list
 
 
-def technique_identifying(text: str, technique_list: List[str], template_path: str) -> AttackMatcher:
+def technique_identifying(text: str, technique_list: List[str], template_path: str, output_file: str = "output") -> AttackMatcher:
     ag = attackGraph_generating(text)
     if template_path == "":
         tt_list = techniqueTemplate_generating(technique_list=technique_list)
     else:
         tt_list = load_techniqueTemplate_fromFils(template_path)
 
-    attackMatcher = technique_identifying_forAttackGraph(ag, tt_list)
+    attackMatcher = technique_identifying_forAttackGraph(ag, tt_list, output_file)
     return attackMatcher
 
 
-def technique_identifying_forAttackGraph(graph: AttackGraph, template_list: List[TechniqueTemplate]) -> AttackMatcher:
+def technique_identifying_forAttackGraph(graph: AttackGraph, template_list: List[TechniqueTemplate], output_file: str) -> AttackMatcher:
     attackMatcher = AttackMatcher(graph)
     for template in template_list:
         attackMatcher.add_technique_identifier(TechniqueIdentifier(template))
     attackMatcher.attack_matching()
     attackMatcher.print_match_result()
+    attackMatcher.to_json_file(output_file + "_techniques.json")
 
     return attackMatcher
 
@@ -130,9 +134,9 @@ if __name__ == '__main__':
     # python main.py -M reportParsing -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
     # python main.py -M attackGraphGeneration -C "Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable."
     # python main.py -M techniqueTemplateGeneration
-    # python main.py -M attackGraphGeneration -R "C:\Users\workshop\Documents\GitHub\AttacKG\data\picked_html_APTs\Log4Shell.html" -O ./output.pdf
-    # python main.py -M techniqueTemplateGeneration -O C:/Users/workshop/Documents/GitHub/Knowledge-enhanced-Attack-Graph/templates
-    # python main.py -M techniqueIdentification -T C:/Users/workshop/Documents/GitHub/Knowledge-enhanced-Attack-Graph/templates -R "C:\Users\workshop\Documents\GitHub\AttacKG\data\picked_html_APTs\Log4Shell.html" -O ./output.pdf
+    # python main.py -M attackGraphGeneration -R ./reports_sample/Log4Shell.html -O ./output
+    # python main.py -M techniqueTemplateGeneration -O ./templates
+    # python main.py -M techniqueIdentification -T ./templates -R ./reports_sample/Log4Shell.html -O ./output
     parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing', 'attackGraphGeneration', 'techniqueTemplateGeneration', 'techniqueIdentification")
     parser.add_argument('-L', '--logPath', required=False, type=str, default="", help="Log file's path.")
     parser.add_argument('-C', '--ctiText', required=False, type=str, default="", help="Target CTI text.")
@@ -171,7 +175,7 @@ if __name__ == '__main__':
     elif running_mode == "techniqueTemplateGeneration":
         techniqueTemplate_generating(output_path=arguments.outputPath)
     elif running_mode == "techniqueIdentification":
-        attack_matcher = technique_identifying(report_text, picked_techniques, arguments.templatePath)
+        attack_matcher = technique_identifying(report_text, picked_techniques, arguments.templatePath, arguments.outputPath)
     else:
         print("Unknown running mode!")
 

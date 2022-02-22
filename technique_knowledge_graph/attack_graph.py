@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from nltk import Tree
 import spacy.tokens
 from spacy.tokens import Span
+# import simplejson as json
 
 from report_parser.report_parser import *
 from report_parser.ioc_protection import *
@@ -161,8 +162,20 @@ class AttackGraph:
         else:
             plt.savefig(image_path)
 
-    def to_json(self):  # Todo
-        pass
+    def to_json(self):
+        node_dict = {}
+        for nid, node in self.attackNode_dict.items():
+            node_dict[nid] = {}
+            node_dict[nid]["type"] = node.type
+            node_dict[nid]["nlp"] = tuple(node.nlp)
+            node_dict[nid]["ioc"] = tuple(node.ioc)
+
+        json_string = json.dumps(node_dict)
+        return json_string
+
+    def to_json_file(self, output_file):
+        with open(output_file, "w+") as output:
+            output.write(self.to_json())
 
     def generate(self):
         logging.info("---attack graph generation: Parsing NLP doc to get Attack Graph!---")
@@ -303,7 +316,7 @@ class AttackGraph:
                 node_m = self.attackNode_dict[node_list[m]]
                 node_n = self.attackNode_dict[node_list[n]]
 
-                if node_m.get_similarity(node_n) / math.log(abs(node_m.id - node_n.id) + 2) >= 0.4 \
+                if node_m.get_similarity(node_n) / math.log(abs(node_m.id - node_n.id) + 2) >= 0.3 \
                         and ((len(node_m.ioc) == 0 and len(node_n.ioc) == '') or len(node_m.ioc & node_n.ioc) != 0):
                     merge_graph.add_edge(node_list[m], node_list[n])
 

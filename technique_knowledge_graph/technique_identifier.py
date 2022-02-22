@@ -215,17 +215,27 @@ class AttackMatcher:
 
         return self.technique_matching_score
 
-    def print_selected_techniques(self) -> dict:
+    def to_json(self) -> dict:
         selected_techniques_dict = {}
 
         for k, v in self.technique_matching_score.items():
             if v >= 0.9:
-                selected_techniques_dict[k] = []
+                # selected_techniques_dict[k] = tuple(self.technique_matching_subgraph[k])
+                involved_node_dict = {}
                 for node in self.technique_matching_subgraph[k]:
-                    if self.attack_graph_nx.nodes[node]["regex"] != "":
-                        selected_techniques_dict[k].append((self.attack_graph_nx.nodes[node]["type"], self.attack_graph_nx.nodes[node]["regex"]))
+                    if self.attack_graph.attackNode_dict[node].ioc != "":
+                        involved_node_dict[node] = {
+                            "type": self.attack_graph.attackNode_dict[node].type,
+                            "nlp": tuple(self.attack_graph.attackNode_dict[node].nlp),
+                            "ioc": tuple(self.attack_graph.attackNode_dict[node].ioc)}
+                selected_techniques_dict[k] = involved_node_dict
 
-        return selected_techniques_dict
+        json_string = json.dumps(selected_techniques_dict)
+        return json_string
+
+    def to_json_file(self, output_file):
+        with open(output_file, "w+") as output:
+            output.write(self.to_json())
 
 
 class Evaluation:
