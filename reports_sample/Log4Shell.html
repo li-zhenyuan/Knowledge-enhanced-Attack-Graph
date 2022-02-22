@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-900italic-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-900-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-700italic-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-700-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-500italic-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-500-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-300italic-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-300-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-100italic-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-100-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/safari-pinned-tab.svg" color="#e2211c">
+	<link rel="shortcut icon" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#e2211c">
+	<meta name="msapplication-config" content="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#e2211c">
+
+	<title>APT ‘Aquatic Panda’ Targets Universities with Log4Shell Exploit Tools | Threatpost</title>
+<script>
+var gAMP_urlhost =  'https://threatpost.com/';
+var gAMP_urlpath =  '/aquatic-panda-log4shell-exploit-tools/177312/';
+var gAMP_urlquery =  'googfc';
+var gAMP_contentid =  '177312';
+var gAMP_category =  'vulnerabilities';
+var gAMP_contenttags =  '';
+</script>
+
+<!--  Start Header Code for Threatpost.com ROS -->
+<script async src='https://tagan.adlightning.com/math-aids-threatpost/op.js'></script>
+<script async src='//www.googletagservices.com/tag/js/gpt.js'></script>
+<script src='https://qd.admetricspro.com/js/threatpost/ros-layout.js'></script>
+<script async src='https://qd.admetricspro.com/js/threatpost/cmp.js'></script>
+<script async src='https://qd.admetricspro.com/js/threatpost/uspcmp.js'></script>
+<script async src='https://qd.admetricspro.com/js/threatpost/targeting.js'></script>
+<script async src='https://qd.admetricspro.com/js/threatpost/prebid.js'></script>
+<script src='https://qd.admetricspro.com/js/threatpost/engine.js'></script>
+<!--  End Header Code for Threatpost.com -->
+<!-- AdMetricsPro Video Head Code for threatpost.com -->
+<script>
+!function(n){if(!window.cnx){window.cnx={},window.cnx.cmd=[];var t=n.createElement('iframe');t.display='none',t.onload=function(){var n=t.contentWindow.document,c=n.createElement('script');c.src='//cd.connatix.com/connatix.player.js',c.setAttribute('async','1'),c.setAttribute('type','text/javascript'),n.body.appendChild(c)},n.head.appendChild(t)}}(document);
+</script>
+<!-- AdMetricsPro Video Head Code for threatpost.com -->
+
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta name="keywords" content="Hacks, Malware, Vulnerabilities, Web Security, Mobile Security, Privacy" />
+<meta name="description" content="Researchers from CrowdStrike disrupted an attempt by the threat group to steal industrial intelligence and military secrets from an academic institution." />
+<meta property="og:image" content="https://media.threatpost.com/wp-content/uploads/sites/103/2021/12/30110920/Log4J_shell_thrpst.jpg" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="APT ‘Aquatic Panda’ Targets Universities with Log4Shell Exploit Tools" />
+<meta property="og:description" content="Researchers from CrowdStrike disrupted an attempt by the threat group to steal industrial intelligence and military secrets from an academic institution." />
+<meta property="og:url" content="https://threatpost.com/aquatic-panda-log4shell-exploit-tools/177312/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@threatpost" />
+<meta name="twitter:creator" content="@threatpost" />
+<meta name="twitter:title" content="APT ‘Aquatic Panda’ Targets Universities with Log4Shell Exploit Tools" />
+<meta name="twitter:description" content="Researchers from CrowdStrike disrupted an attempt by the threat group to steal industrial intelligence and military secrets from an academic institution." />
+<meta name="twitter:image" content="https://media.threatpost.com/wp-content/uploads/sites/103/2021/12/30110920/Log4J_shell_thrpst.jpg" />
+<link rel="canonical" href="https://threatpost.com/aquatic-panda-log4shell-exploit-tools/177312/" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://threatpost.com/","name":"Threatpost"}},{"@type":"ListItem","position":2,"item":{"@id":"https://threatpost.com/category/web-security/","name":"Web Security"}},{"@type":"ListItem","position":3,"item":{"@id":"https://threatpost.com/aquatic-panda-log4shell-exploit-tools/177312/","name":"APT \u2018Aquatic Panda\u2019 Targets Universities with Log4Shell Exploit Tools"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://threatpost.com/aquatic-panda-log4shell-exploit-tools/177312/"},"headline":"APT &#8216;Aquatic Panda&#8217; Targets Universities with Log4Shell Exploit Tools","image":["https://media.threatpost.com/wp-content/uploads/sites/103/2021/12/30110920/Log4J_shell_thrpst.jpg",{"@type":"ImageObject","url":"https://media.threatpost.com/wp-content/uploads/sites/103/2021/12/30110920/Log4J_shell_thrpst-e1643986376319.jpg","width":800,"height":474}],"datePublished":"2021-12-30T16:16:23+00:00","dateModified":"2021-12-30T16:16:23+00:00","author":{"@type":"Person","name":"Elizabeth Montalbano"},"publisher":{"@type":"Organization","name":"Threatpost","logo":{"@type":"ImageObject","url":"https://media.threatpost.com/wp-content/uploads/sites/103/2018/12/04121519/amp_logo.png","width":60,"height":60}},"description":"Researchers from CrowdStrike disrupted an attempt by the threat group to steal industrial intelligence and military secrets from an academic institution."}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 14.07ms meta | 0.35ms boot -->
+
+<link rel='dns-prefetch' href='//kasperskycontenthub.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//threatpost.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Threatpost - English - Global - threatpost.com &raquo; Feed" href="https://threatpost.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Threatpost - English - Global - threatpost.com &raquo; Comments Feed" href="https://threatpost.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Threatpost - English - Global - threatpost.com &raquo; APT &#8216;Aquatic Panda&#8217; Targets Universities with Log4Shell Exploit Tools Comments Feed" href="https://threatpost.com/aquatic-panda-log4shell-exploit-tools/177312/feed/" />
+<link rel='stylesheet' id='select-2-css-group-css' href='//assets.threatpost.com/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/wds-rss-builder/includes/css/select2.min.css,wp-content/plugins/wds-rss-builder/includes/css/wds-rss.css,wp-content/plugins/honeypot-comments/public/assets/css/public.css,wp-content/plugins/kspr_twitter_pullquote/css/style.css,wp-content/plugins/pullquote-shortcode/css/pullquote-shortcode.css,wp-content/themes/threatpost-2018/assets/css/main.css,wp-content/plugins/kaspersky-social-sharing/assets/css/style.css,wp-content/plugins/kaspersky-social-sharing/assets/css/custom.css&#038;ver=37d392cc' type='text/css' media='all' />
+<script type='text/javascript' src='https://threatpost.com/wp-content/plugins/kaspersky-enable-jquery-migrate-helper/js/jquery/jquery-1.12.4-wp.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<script type='text/javascript' id='notification_strings-js-extra'>
+/* <![CDATA[ */
+var gdprDynamicStrings = {"notification_text":"We use cookies to make your experience of our websites better. By using and further navigating this website you accept this. Detailed information about the use of cookies on this website is available by clicking on <a href=\"https:\/\/threatpost.com\/web-privacy-policy\/\" target=\"_blank\">more information<\/a>.","button_text":"ACCEPT AND CLOSE"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='kss_js-js-extra'>
+/* <![CDATA[ */
+var kss = {"twitter_account":"threatpost"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//assets.threatpost.com/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/kaspersky-cookies-notification/scripts/alert_text.js,wp-content/plugins/kaspersky-cookies-notification/scripts/alert.js,wp-content/plugins/honeypot-comments/public/assets/js/public.js,wp-content/plugins/kspr_twitter_pullquote/js/kaspersky-twitter-pullquote.js,wp-content/themes/threatpost-2018/assets/js/loadmore.js,wp-content/plugins/kaspersky-social-sharing/assets/js/social-share.js&#038;ver=37d392cc'></script>
+<link rel="https://api.w.org/" href="https://threatpost.com/wp-json/" /><link rel="alternate" type="application/json" href="https://threatpost.com/wp-json/wp/v2/posts/177312" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://threatpost.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://threatpost.com/wp-includes/wlwmanifest.xml" /> 
+<link rel="alternate" type="application/json+oembed" href="https://threatpost.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthreatpost.com%2Faquatic-panda-log4shell-exploit-tools%2F177312%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://threatpost.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthreatpost.com%2Faquatic-panda-log4shell-exploit-tools%2F177312%2F&#038;format=xml" />
+<script type="text/javascript">
+var sNew = document.createElement("script");
+sNew.async = true;
+sNew.src = "https://kasperskycontenthub.com/?dm=ed1f9e435dc885292eab65620c51f3fb&action=load&blogid=103&siteid=1&t=795336931&back=https%3A%2F%2Fthreatpost.com%2Faquatic-panda-log4shell-exploit-tools%2F177312%2F"
+var s0 = document.getElementsByTagName('script')[0];
+s0.parentNode.insertBefore(sNew, s0);
+</script>
+<meta name="propeller" content="9f5583a6c271e2179a68ee93b9050160"><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PM29HLF');</script>
+<!-- End Google Tag Manager -->
+        <script type="text/javascript">
+            var jQueryMigrateHelperHasSentDowngrade = false;
+
+			window.onerror = function( msg, url, line, col, error ) {
+				// Break out early, do not processing if a downgrade reqeust was already sent.
+				if ( jQueryMigrateHelperHasSentDowngrade ) {
+					return true;
+                }
+
+				var xhr = new XMLHttpRequest();
+				var nonce = '501016a361';
+				var jQueryFunctions = [
+					'andSelf',
+					'browser',
+					'live',
+					'boxModel',
+					'support.boxModel',
+					'size',
+					'swap',
+					'clean',
+					'sub',
+                ];
+				var match_pattern = /\)\.(.+?) is not a function/;
+                var erroredFunction = msg.match( match_pattern );
+
+                // If there was no matching functions, do not try to downgrade.
+                if ( typeof erroredFunction !== 'object' || typeof erroredFunction[1] === "undefined" || -1 === jQueryFunctions.indexOf( erroredFunction[1] ) ) {
+                    return true;
+                }
+
+                // Set that we've now attempted a downgrade request.
+                jQueryMigrateHelperHasSentDowngrade = true;
+
+				xhr.open( 'POST', 'https://threatpost.com/wp-admin/admin-ajax.php' );
+				xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+				xhr.onload = function () {
+					var response,
+                        reload = false;
+
+					if ( 200 === xhr.status ) {
+                        try {
+                        	response = JSON.parse( xhr.response );
+
+                        	reload = response.data.reload;
+                        } catch ( e ) {
+                        	reload = false;
+                        }
+                    }
+
+					// Automatically reload the page if a deprecation caused an automatic downgrade, ensure visitors get the best possible experience.
+					if ( reload ) {
+						location.reload();
+                    }
+				};
+
+				xhr.send( encodeURI( 'action=jquery-migrate-downgrade-version&_wpnonce=' + nonce ) );
+
+				// Suppress error alerts in older browsers
+				return true;
+			}
+        </script>
+
+		</head>
+
+<body class="" style=""  >
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PM29HLF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="adRUPTad interstitial" data-adunit="interstitial">
+	<!-- GPT AdSlot 1 for Ad unit '2x2-Skin' ### Size: [[2,2]] -->
+	<div id='div-gpt-ad-6794670-1'>
+		<script>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-6794670-1'); });
+		</script>
+	</div>
+	<!-- End AdSlot 1 -->
+</div>
+
+
+<div class="c-ad-section">
+	<div class="o-container-fluid">
+		<div class="c-ad u-bg--none@sm">
+			<div class="c-ad__container">
+								<div class="textwidget custom-html-widget"><div class="adRUPTad header" data-adunit="header" data-size-mapping="header">
+<!-- GPT AdSlot 2 for Ad unit '970x250-ATF' ### Size: [[970,250],[728,90]] -->
+<div id='div-gpt-ad-6794670-2'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-6794670-2'); });
+  </script>
+</div>
+<!-- End AdSlot 2 -->
+</div></div><div class="textwidget custom-html-widget"><div id="modal_newsletter" class="mfp-hide">
+<div id="default-modal" class="c-modal c-modal--narrow">
+<div class="c-modal__header">
+	<a href="#" class="c-modal__close c-modal__close--dark js-modal-close"><svg class="icon fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018//assets/sprite/icons.svg#icon-remove"></use></svg></a>
+	</div>
+<div class="c-modal__main">
+<div class="c-section c-section--bg c-section--dark c-newsletter-modal" style="background-image: url(https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/photo-newsletter.jpg);">
+<div class="c-section__overlay"></div>
+<div class="o-container-fluid">
+<p><span class="c-label c-label--white-transparent">Newsletter</span></p>
+<div class="o-row">
+<div class="o-col-6@sm c-newsletter-modal__content">
+<div class="c-newsletter-modal__header">
+<h3><strong>Subscribe to our <em>Threatpost Today</em> newsletter</strong></h3>
+<p>Join thousands of people who receive the latest breaking cybersecurity news every day.</p>
+</div>
+<div class="c-note c-note--dash u-hidden u-block@md"><p>The administrator of your personal data will be Threatpost, Inc., 500 Unicorn Park, Woburn, MA 01801. Detailed information on the processing of personal data can be found in the <a href="https://threatpost.com/web-privacy-policy/">privacy policy</a>. In addition, you will find them in the message confirming the subscription to the newsletter.</p></div>
+</div>
+<div class="o-col-6@sm">
+
+
+                <div class='gf_browser_chrome gform_wrapper' id='gform_wrapper_5' style='display:none'><div id='gf_5' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_5' id='gform_5'  action='/aquatic-panda-log4shell-exploit-tools/177312/#gf_5'>
+                        <div class='gform_body'><ul id='gform_fields_5' class='gform_fields top_label form_sublabel_below description_below'><li id='field_5_8'  class='gfield field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_5_8' ></label><div class='ginput_container ginput_container_text'><input name='input_8' id='input_5_8' type='text' value='' class='medium'    placeholder='Your name'  aria-invalid="false" /></div></li><li id='field_5_1'  class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_5_1' ><span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_5_1' type='text' value='' class='medium'   placeholder='Your e-mail address' aria-required="true" aria-invalid="false" />
+                        </div></li><li id='field_5_9'  class='gfield js-kaspersky-gform-recaptcha-placeholder gform_hidden field_sublabel_below field_description_below gfield_visibility_hidden' ><input name='input_9' id='input_5_9' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></li><li id='field_5_2'  class='gfield input-without-label label-gdpr gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label'  ><span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_checkbox'><ul class='gfield_checkbox' id='input_5_2'><li class='gchoice_5_2_1'>
+								<input name='input_2.1' type='checkbox'  value='I agree'  id='choice_5_2_1'   />
+								<label for='choice_5_2_1' id='label_5_2_1'>I agree to my personal data being stored and used to receive the newsletter</label>
+							</li></ul></div></li><li id='field_5_5'  class='gfield input-without-label label-gdpr gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label'  ><span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_checkbox'><ul class='gfield_checkbox' id='input_5_5'><li class='gchoice_5_5_1'>
+								<input name='input_5.1' type='checkbox'  value='I agree'  id='choice_5_5_1'   />
+								<label for='choice_5_5_1' id='label_5_5_1'>I agree to accept information and occasional commercial offers from Threatpost partners</label>
+							</li></ul></div></li><li id='field_5_10'  class='gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_5_10' >Phone</label><div class='ginput_container'><input name='input_10' id='input_5_10' type='text' value='' /></div><div class='gfield_description' id='gfield_description__10'>This field is for validation purposes and should be left unchanged.</div></li>
+                            </ul></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_5' class='gform_button button' value='Subscribe'  onclick='if(window["gf_submitting_5"]){return false;}  window["gf_submitting_5"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_5"]){return false;} window["gf_submitting_5"]=true;  jQuery("#gform_5").trigger("submit",[true]); }' /> <input type='hidden' name='gform_ajax' value='form_id=5&amp;title=&amp;description=&amp;tabindex=0' />
+            <input type='hidden' class='gform_hidden' name='is_submit_5' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='5' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_5' value='WyJbXSIsImIwODQwZTA2ZGQ0NzYwODcyOTBkZjNmZDM1NDk2Y2ZkIl0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_5' id='gform_target_page_number_5' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_5' id='gform_source_page_number_5' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        <p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js" name="ak_js" value="72"/><script>document.getElementById( "ak_js" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+                        </div>
+                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_5' id='gform_ajax_frame_5'>This iframe contains the logic required to handle Ajax powered Gravity Forms.</iframe>
+                <script type='text/javascript'>jQuery(document).ready(function($){gformInitSpinner( 5, 'https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/loader.svg' );jQuery('#gform_ajax_frame_5').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_5');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_5').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_5').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_5').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_5').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_5').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_5').val();gformInitSpinner( 5, 'https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/loader.svg' );jQuery(document).trigger('gform_page_loaded', [5, current_page]);window['gf_submitting_5'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_5').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_5').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [5]);window['gf_submitting_5'] = false;}, 50);}else{jQuery('#gform_5').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [5, current_page]);} );} );</script><script type='text/javascript'> jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 5) {gf_global["number_formats"][5] = {"8":{"price":false,"value":false},"1":{"price":false,"value":false},"9":{"price":false,"value":false},"2":{"price":false,"value":false},"5":{"price":false,"value":false},"10":{"price":false,"value":false}};if(window['jQuery']){if(!window['gf_form_conditional_logic'])window['gf_form_conditional_logic'] = new Array();window['gf_form_conditional_logic'][5] = { logic: { 0: {"field":{"actionType":"show","logicType":"all","rules":[{"fieldId":"2","operator":"is","value":"I agree"},{"fieldId":"5","operator":"is","value":"I agree"}]},"section":null} }, dependents: { 0: [0] }, animation: 1, defaults: [], fields: {"8":[0],"1":[0],"9":[0],"2":[0],"5":[0],"10":[0]} }; if(!window['gf_number_format'])window['gf_number_format'] = 'decimal_dot';jQuery(document).ready(function(){gf_apply_rules(5, [0], true);jQuery('#gform_wrapper_5').show();jQuery(document).trigger('gform_post_conditional_logic', [5, null, true]);} );} if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );</script><script type='text/javascript'> jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [5, 1]) } ); </script>
+
+<footer class="c-note c-note--border u-hidden@md"><p>The administrator of your personal data will be Threatpost, Inc., 500 Unicorn Park, Woburn, MA 01801. Detailed information on the processing of personal data can be found in the <a href="https://threatpost.com/web-privacy-policy/">privacy policy</a>. In addition, you will find them in the message confirming the subscription to the newsletter.</p></footer>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>							</div>
+		</div>
+	</div>
+</div>
+
+<div class="c-page-wrapper">
+
+	<header class="c-site-header js-sticky-header">
+		<div class="o-container-fluid">
+
+			<a href="#" class="c-menu-toggle js-menu-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+
+			<a class="c-site-logo c-site-logo--larger@md" href="https://threatpost.com/">
+									<div>Threatpost</div>
+							</a>
+
+			<div class="c-site-header__nav">
+				<nav class="c-nav-primary"><ul class="c-main-menu"><li id="menu-item-177582" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-177582"><a href="https://threatpost.com/microsite/threatpost-podcasts-going-beyond-the-headlines/"><span>Podcasts</span></a></li>
+<li id="menu-item-133110" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133110"><a href="https://threatpost.com/category/malware-2/"><span>Malware</span></a></li>
+<li id="menu-item-133112" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-133112"><a href="https://threatpost.com/category/vulnerabilities/"><span>Vulnerabilities</span></a></li>
+<li id="menu-item-141047" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141047"><a href="https://threatpost.com/microsite/infosec-insiders-community/"><span>InfoSec Insiders</span></a></li>
+<li id="menu-item-176258" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-176258"><a href="https://threatpost.com/category/webinars/"><span>Webinars</span></a></li>
+</ul></nav>
+				<div class="c-site-header__aside">
+					<nav class="c-nav-social">
+					<ul id="menu-social-menu" class="menu"><li><a href="https://www.facebook.com/Threatpost/" title="Facebook" class="facebook" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-facebook'></use></svg></a></li><li><a href="https://twitter.com/threatpost/" title="Twitter" class="twitter" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-twitter'></use></svg></a></li><li><a href="https://www.linkedin.com/company/threatpost/" title="LinkedIn" class="linkedin" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-linkedin'></use></svg></a></li><li><a href="https://www.youtube.com/user/threatpost" title="YouTube" class="youtube" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-youtube'></use></svg></a></li><li><a href="https://feedly.com/threatpost" title="Feedly" class="feedly" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-feedly'></use></svg></a></li><li><a href="https://www.instagram.com/Threatpost/" title="Instagram" class="instagram" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-instagram'></use></svg></a></li><li><a href="https://threatpost.com/feed" title="RSS" class="rss" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-rss'></use></svg></a></li></ul>					</nav>
+					<!-- <nav class="c-nav-utility">
+						<a href="https://threatpost.com/" class="c-button c-button--secondary-transparent c-button--smaller"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-user'></use></svg> Log in</a>
+					</nav> -->
+					<div class="c-site-search">
+						<div class="c-site-search__wrap js-main-search">
+							<form class="c-site-search__form" role="search" method="get" action="https://threatpost.com/">
+								<input type="text" class="c-site-search__field" name="s" placeholder="Search">
+								<button type="submit" class="c-button c-button--secondary c-button--smaller c-site-search__button" value="Search"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-search'></use></svg> Search</button>
+								<div class="c-site-search__overlay"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div><!-- /.o-container -->
+	</header>
+
+	<div class="c-main">
+
+	<div class="c-section c-section--divider-internal c-nav-links">
+		<div class="o-container-fluid">
+			<nav>
+				<ul>
+					<li class="c-nav-links__prev">
+						<a href="https://threatpost.com/ecommerce-bots-domain-registration-account-fraud/177305/" rel="prev"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-arrow-left-2'></use></svg><span class="c-nav-links__title">Threat Advisory: E-commerce Bots Use Domain Registration Services for Mass Account Fraud</span><span class="c-nav-links__desc">Previous article</span></a>					</li>
+					<li class="c-nav-links__next">
+						<a href="https://threatpost.com/rise-cyber-recon-security-strategy/177317/" rel="next"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-arrow-right-2'></use></svg><span class="c-nav-links__title">What the Rise in Cyber-Recon Means for Your Security Strategy</span><span class="c-nav-links__desc">Next article</span></a>					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div class="c-section">
+		<div class="o-container-fluid">
+			<div class="o-row c-fixed-sidebar-layout--336@md">
+				<div class="o-col">
+											<article class="c-article js-reading-wrapper">
+							<header class="c-article__header">
+																<h1 class="c-article__title">APT &#8216;Aquatic Panda&#8217; Targets Universities with Log4Shell Exploit Tools</h1>
+																<figure>
+									<img src="https://media.threatpost.com/wp-content/uploads/sites/103/2021/12/30110920/Log4J_shell_thrpst-e1643986376319.jpg" alt="" />
+								</figure>
+															</header>
+							<div class="o-row c-fixed-sidebar-layout--140--left@lg">
+								<div class="o-col c-sidebar c-article__info">
+									<div class="c-article__meta">
+																				<div class="c-article__author-avatar">
+											<a href="https://threatpost.com/author/elizabethmontalbano/"><img alt='' src='https://media.threatpost.com/wp-content/uploads/sites/103/2021/05/05095657/Liz-Montalbano-headshot.jpg' srcset='https://media.threatpost.com/wp-content/uploads/sites/103/2021/05/05095657/Liz-Montalbano-headshot.jpg 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></a>
+										</div>
+										<div class="c-article__meta-content">
+											<div class="c-article__author">
+																																						<span>Author: </span>
+																																					<a class="c-article__author-name" href="https://threatpost.com/author/elizabethmontalbano/">Elizabeth Montalbano</a>
+											</div>
+																					<div class="c-article__time">
+												<time datetime="2021-12-30T11:16:23-05:00">December 30, 2021 <span> 11:16 am</span></time>
+											</div>
+										</div>
+									</div>
+									<div class="c-sticky-sidebar js-sticky-sidebar">
+										<div class="c-article__progress">
+											<div class="c-article__progress-wrapper">
+												<div class="c-article__progress-bar rpi-progress-bar">
+													<div class="c-article__progress-bar__position rpi-progress-bar__position"></div>
+													<div class="rpi-progress-bar__percentage"></div>
+												</div>
+											</div>
+											<div class="c-article__progress-time">
+												<span class="js-reading-time"></span> minute read
+											</div>
+										</div>
+
+										
+																				<div class="c-article__comment-link u-hidden u-block@md">
+											<a href="#discussion" class="c-label c-label--secondary-transparent"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-comments'></use></svg> Write a comment</a>
+										</div>
+										
+										<div class="c-article__sharing">
+											<p><strong>Share this article:</strong></p>
+											<nav class="c-nav-sharing c-nav-sharing__fixed-height c-nav-sharing__no-wrap@lg c-nav-sharing__show-more@lg c-share-popup js-sharing-popup">
+												<div class="social-likes social-likes_notext" data-title="APT &#8216;Aquatic Panda&#8217; Targets Universities with Log4Shell Exploit Tools" data-url="https://threatpost.com/aquatic-panda-log4shell-exploit-tools/177312/" data-counters="no" data-zeroes="yes"><div class="facebook" title="Share via Facebook"></div>
+<div class="twitter" title="Share via Twitter"></div><div class="linkedin" title="Share via LinkedIn"></div>
+<div class="reddit" title="Share via Reddit"></div>
+<div class="flipboard" title="Share via Flipboard"></div>
+</div>												<ul class="">
+													<li class="c-nav-sharing__button c-nav-sharing__more"><a href="#"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-dots'></use></svg></a></li>
+													<li class="c-nav-sharing__button c-nav-sharing__less"><a href="#"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-remove'></use></svg></a></li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+								<div class="o-col">
+									<div class="c-article__main">
+																														<div class="c-article__intro" name="overview">
+											<p>Researchers from CrowdStrike disrupted an attempt by the threat group to steal industrial intelligence and military secrets from an academic institution.</p>
+										</div>
+																				<div class="c-article__content js-reading-content">
+											<p>Cyber criminals, under the moniker Aquatic Panda, are the latest advanced persistent threat group (APT) to exploit the <a href="https://threatpost.com/zero-day-in-ubiquitous-apache-log4j-tool-under-active-attack/176937/" target="_blank" rel="noopener">Log4Shell</a> vulnerability.</p>
+<p>Researchers from CrowdStrike Falcon OverWatch recently disrupted the threat actors using Log4Shell exploit tools on a vulnerable VMware installation during an attack that involved of a large undisclosed academic institution, according to research released Wednesday.</p>
+<p>&#8220;Aquatic Panda is a China-based [APT] with a dual mission of intelligence collection and industrial espionage,&#8221; wrote Benjamin Wiley, the author of the <a href="https://www.crowdstrike.com/blog/overwatch-exposes-aquatic-panda-in-possession-of-log-4-shell-exploit-tools/">CrowdStrike report</a>.<br />
+<a href="https://threatpost.com/infosec-insider-subscription-page/?utm_source=ART&amp;utm_medium=ART&amp;utm_campaign=InfosecInsiders_Newsletter_Promo/" target="_blank" rel="noopener"><img loading="lazy" class="aligncenter wp-image-168544 size-full" src="https://media.threatpost.com/wp-content/uploads/sites/103/2021/07/10165815/infosec_insiders_in_article_promo.png" alt="Infosec Insiders Newsletter" width="700" height="50" /></a><br />
+Wiley said researchers uncovered the suspicious activity tied to the target&#8217;s infrastructure. &#8220;This led OverWatch to hunt for unusual child processes associated with the VMware Horizon Tomcat web server service during routine operations,&#8221; he wrote.</p>
+<p>OverWatch quickly notified the organization of the activity so the target could &#8220;begin their incident response protocol,&#8221; researchers said.</p>
+<p>CrowdStrike, among other security firms, has been monitoring for suspicious activity around a vulnerability tracked as <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228">CVE-2021-44228</a> and colloquially known as Log4Shell that was found in the Apache Log4j logging library in early December and immediately <a href="https://threatpost.com/log4shell-attacks-origin-botnet/176977/" target="_blank" rel="noopener">set upon</a> by attackers.</p>
+<h2><strong>Ever-Widening Attack Surface</strong></h2>
+<p>Due to its ubiquitous use, many common infrastructure products from Microsoft, Apple, Twitter, CloudFlare and others are vulnerable to Log4Shell attacks. Recently, VMware also <a href="https://kb.vmware.com/s/article/87073" target="_blank" rel="noopener">issued guidance</a> that some components of its Horizon service are vulnerable to Log4j exploits, leading OverWatch to add the VMware Horizon Tomcat web server service to their processes-to-watch list, researchers said.</p>
+<p>The Falcon OverWatch team noticed the Aquatic Panda intrusion when the threat actor performed multiple connectivity checks via DNS lookups for a subdomain under dns[.]1433[.]eu[.]org, executed under the Apache Tomcat service running on the VMware Horizon instance, they wrote in the post.</p>
+<p>&#8220;The threat actor then executed a series of Linux commands, including attempting to execute a bash-based interactive shell with a hardcoded IP address as well as curl and wget commands in order to retrieve threat-actor tooling hosted on remote infrastructure,&#8221; researchers wrote.</p>
+<p>The commands were executed on a Windows host under the Apache Tomcat service, researchers said. They triaged the initial activity and immediately sent a critical detection to the victim organization, later sharing additional details directly with their security team, they said.</p>
+<p>Eventually, researchers assessed that a modified version of the Log4j exploit was likely used during the course of the threat actor&#8217;s operations, and that the infrastructure used in the attack is linked to Aquatic Panda, they said.</p>
+<h2><strong>Tracking the Attack</strong></h2>
+<p>OverWatch researchers tracked the threat actor&#8217;s activity closely during the intrusion to provide continuous updates to academic institution as its security administrators scrambled to mitigate the attack, they said.</p>
+<p>Aquatic Panda engaged in reconnaissance from the host, using native OS binaries to understand current privilege levels as well as system and domain details. Researchers also observed the group attempt discover and stop a third-party endpoint detection and response (EDR) service, they said.</p>
+<p>The threat actors downloaded additional scripts and then executed a Base64-encoded command via PowerShell to retrieve malware from their toolkit. They also retrieved three files with VBS file extensions from remote infrastructure, which they then decoded.</p>
+<p>&#8220;Based on the telemetry available, OverWatch believes these files likely constituted a reverse shell, which was loaded into memory via DLL search-order hijacking,&#8221; researchers wrote.</p>
+<p>Aquatic Panda eventually made multiple attempts to harvest credentials by dumping the memory of the LSASS process using living-off-the-land binaries rdrleakdiag.exe and cdump.exe, a renamed copy of createdump.exe.</p>
+<p>&#8220;The threat actor used winRAR to compress the memory dump in preparation for exfiltration before attempting to cover their tracks by deleting all executables from the ProgramData and Windows\temp\ directories,&#8221; researchers wrote.</p>
+<p>The victim organization eventually patched the vulnerable application, which prevented further action from Aquatic Panda on the host and stopped the attack, researchers said.</p>
+<h2><strong>New Year, Same Exploit</strong></h2>
+<p>As 2021 comes to a close, it&#8217;s likely Log4Shell and exploits developed so attackers can use it for nefarious activity will carry their disruption into the new year.</p>
+<p>&#8220;The discussion globally around Log4j has been intense, putting many organizations on edge,&#8221; OverWatch researchers wrote. &#8220;No organization wants to hear about such a potentially destructive vulnerability affecting its networks.&#8221;</p>
+<p>Indeed, the flaw already has created considerable headache for organizations and security researchers alike since its discovery earlier this month. Attackers immediately jumped on Log4Shell, <a href="https://threatpost.com/apache-log4j-log4shell-mutations/176962/" target="_blank" rel="noopener">spawning 60 variants</a> of the original exploit created for the flaw in a 24-hour period when it was first revealed. Though Apache moved quickly to patch it, the fix <a href="https://threatpost.com/apache-patch-log4shell-log4j-dos-attacks/177064/" target="_blank" rel="noopener">also turned problematic</a>, creating a <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45046" target="_blank" rel="noopener">vulnerability</a> of its own.</p>
+<p>Moreover, Aquatic Panda also is not the first organized cybercrime group to recognize the opportunity to exploit Log4Shell, and likely not be the last. On Dec. 20, the Russia-based Conti ransomware gang—known for its sophistication and ruthlessness&#8211;became the first professional crimeware outfit <a href="https://threatpost.com/conti-ransomware-gang-has-full-log4shell-attack-chain/177173/" target="_blank" rel="noopener">to adopt and weaponize</a> the Log4Shell vulnerability with the creation of a holistic attack chain.</p>
+<p>CrowdStrike urged organizations to remain abreast of the latest mitigations available for Log4Shell and overall Log4j vulnerabilities as the situation evolves.</p>
+<p><strong><em>Check out our free </em></strong><a href="https://threatpost.com/category/webinars/" target="_blank" rel="noopener"><strong><em>upcoming live and on-demand online town halls</em></strong></a> <strong><em>– unique, dynamic discussions with cybersecurity experts and the Threatpost community.</em></strong></p>
+											<footer class="c-article__footer">
+												<div class="c-article__footer__container">
+																										<div class="c-article__footer__col">
+														<a href="#discussion" class="c-button c-button--secondary">Write a comment</a>
+													</div>
+																										<div class="c-article__footer__col">
+														<div class="c-article__sharing">
+															<p><strong>Share this article:</strong></p>
+															<nav class="c-nav-sharing">
+																<div class="social-likes social-likes_notext" data-title="APT &#8216;Aquatic Panda&#8217; Targets Universities with Log4Shell Exploit Tools" data-url="https://threatpost.com/aquatic-panda-log4shell-exploit-tools/177312/" data-counters="no" data-zeroes="yes"><div class="facebook" title="Share via Facebook"></div>
+<div class="twitter" title="Share via Twitter"></div><div class="linkedin" title="Share via LinkedIn"></div>
+<div class="reddit" title="Share via Reddit"></div>
+<div class="flipboard" title="Share via Flipboard"></div>
+</div>															</nav>
+														</div>
+													</div>
+												</div>
+
+																								<div class="c-article__footer__container">
+													<div class="c-article__footer__col"></div>
+													<div class="c-article__footer__col">
+														<ul class="c-list-categories">
+																															<li><a class="c-label c-label--secondary-transparent" href="https://threatpost.com/category/vulnerabilities/">Vulnerabilities</a></li>
+																															<li><a class="c-label c-label--secondary-transparent" href="https://threatpost.com/category/web-security/">Web Security</a></li>
+																													</ul>
+													</div>
+												</div>
+												
+											</footer>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					
+					
+		<div class="c-post-list-slider">
+		<h3 class="c-section-title"><a href="#"><span>Suggested articles</span></a></h3>
+		<div class="o-row js-slider-3">
+
+																		<div class="o-col-4@md">
+						
+							<article class="c-card c-card__image-top">
+																<figure>
+									<a href="https://threatpost.com/log4shell-cve-2021-44228/178225/">
+										<img width="540" height="270" src="https://media.threatpost.com/wp-content/uploads/sites/103/2021/12/30110920/Log4J_shell_thrpst-e1643986376319-540x270.jpg" class="attachment-article-2_1 size-article-2_1 wp-post-image" alt="" loading="lazy" />																			</a>
+								</figure>
+																								<h2 class="c-card__title"><a href="https://threatpost.com/log4shell-cve-2021-44228/178225/">&#8216;Long Live Log4Shell&#8217;: CVE-2021-44228 Not Dead Yet</a></h2>
+								<p>The ubiquitous Log4j bug will be with us for years. John Hammond, senior security researcher at Huntress, discusses what&#8217;s next.</p>
+								<footer class="c-card__info">
+																		
+																			<div class="c-card__time">
+											<time datetime="2022-02-04T13:58:28-05:00">February 4, 2022</time>
+										</div>
+									
+																	</footer>
+							</article>
+
+													</div>
+																								<div class="o-col-4@md">
+						
+							<article class="c-card c-card__image-top">
+																<figure>
+									<a href="https://threatpost.com/argo-cd-security-bug-kubernetes-cloud-apps/178239/">
+										<img width="540" height="270" src="https://media.threatpost.com/wp-content/uploads/sites/103/2019/03/02162457/Containers-540x270.jpg" class="attachment-article-2_1 size-article-2_1 wp-post-image" alt="" loading="lazy" />																			</a>
+								</figure>
+																								<h2 class="c-card__title"><a href="https://threatpost.com/argo-cd-security-bug-kubernetes-cloud-apps/178239/">Argo CD Security Bug Opens Kubernetes Cloud Apps to Attackers</a></h2>
+								<p>The popular continuous-delivery platform has a path-traversal bug (CVE-2022-24348) that could allow cyberattackers to hop from one application ecosystem to another.</p>
+								<footer class="c-card__info">
+																		
+																			<div class="c-card__time">
+											<time datetime="2022-02-04T13:26:07-05:00">February 4, 2022</time>
+										</div>
+									
+																	</footer>
+							</article>
+
+													</div>
+																								<div class="o-col-4@md">
+						
+							<article class="c-card c-card__image-top">
+																<figure>
+									<a href="https://threatpost.com/attackers-intuit-cancel-tax-accounts/178219/">
+										<img width="540" height="270" src="https://media.threatpost.com/wp-content/uploads/sites/103/2022/02/04082039/tax-1040-Form-2021-540x270.jpg" class="attachment-article-2_1 size-article-2_1 wp-post-image" alt="" loading="lazy" />																			</a>
+								</figure>
+																								<h2 class="c-card__title"><a href="https://threatpost.com/attackers-intuit-cancel-tax-accounts/178219/">Attackers Target Intuit Users by Threatening to Cancel Tax Accounts</a></h2>
+								<p>The usual tax-season barrage of cybercriminal activity is already underway with a phishing campaign impersonating the popular accounting and tax-filing software.</p>
+								<footer class="c-card__info">
+																		
+																			<div class="c-card__time">
+											<time datetime="2022-02-04T08:28:01-05:00">February 4, 2022</time>
+										</div>
+									
+																	</footer>
+							</article>
+
+													</div>
+										</div>
+	</div>
+
+	
+					
+					<div class="c-discussion" name="discussion" id="comments">
+						<h3 class="c-section-title"><span>Discussion</span></h3>
+
+						
+												<div class="c-comment-reply">
+								<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave A Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/aquatic-panda-log4shell-exploit-tools/177312/#respond" style="display:none;">Cancel Reply</a></small></h3><form action="https://threatpost.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><div class="o-row"><div class="o-col-12@md"><div class="c-form-element"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Write a reply..."></textarea></div></div></div><div class="o-row"><div class="o-col-6@md"><div class="c-form-element"><input id="author" name="author" placeholder="Your name" type="text" value="" size="30" /></div></div>
+<div class="o-col-6@md"><div class="c-form-element"><input id="email" name="email" placeholder="Your email" type="text" value="" size="30" /></div></div>
+
+</div><p class="form-submit"><input name="submit" type="submit" id="submit" class="c-button c-button--primary" value="Send Comment" /> <input type='hidden' name='comment_post_ID' value='177312' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="682e5fd4cf" /></p><!-- the following input field has been added by the Honeypot Comments plugin to thwart spambots -->
+	<input type="hidden" id="Y4AwuR0pssmL9net01VjIfDEV" name="uzXjYIFnoE71dcY2t8d1UQBDg" /><script type="text/javascript">
+                document.addEventListener("input", function (event) {
+                    if (!event.target.closest("#comment")) return;
+
+                    var captchaContainer = null;
+                    captchaContainer = grecaptcha.render("recaptcha-submit-btn-area", {
+                        "sitekey" : "6LfsdrAaAAAAAMVKgei6k0EaDBTgmKv6ZQrG7aEs",
+                        "theme" : "standard"
+                    });
+                });
+            </script>
+
+            <script src="https://www.google.com/recaptcha/api.js?hl=en&render=explicit" async defer></script>            <div id="recaptcha-submit-btn-area">&nbsp;</div>
+            <noscript>
+            <style type='text/css'>#form-submit-save {display:none;}</style>
+            <input name="submit" type="submit" id="submit-alt" tabindex="6"
+                value="Submit Comment"/>
+            </noscript><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js" name="ak_js" value="164"/><script>document.getElementById( "ak_js" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>						</div>
+											</div>
+				</div>
+
+								<div class="o-col c-sidebar">
+					
+					
+											<div id="custom_html-3" class="widget_text widget-odd widget-first widget-1 c-ad ad-unit c-widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="c-ad__container">
+<div class="adRUPTad medrectangle" data-adunit="medrectangle">
+	<!-- GPT AdSlot 3 for Ad unit '300x250-ATF' ### Size: [[300,250]] -->
+<div id='div-gpt-ad-6794670-3'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-6794670-3'); });
+  </script>
+</div>
+<!-- End AdSlot 3 -->
+	</div>
+</div></div></div><div id="threatpost_category_posts-2" class="widget-even widget-2 c-widget widget_threatpost_category_posts">
+			<div class="c-widget">
+								<h3 class="c-section-title"><span>InfoSec Insider</span></h3>
+				
+				<ul class="c-list-cards">
+									<li>
+						<article class="c-card c-card--small">
+														<figure>
+								<a href="https://threatpost.com/log4shell-cve-2021-44228/178225/" title="&#8216;Long Live Log4Shell&#8217;: CVE-2021-44228 Not Dead Yet"><img width="64" height="64" src="https://media.threatpost.com/wp-content/uploads/sites/103/2021/12/30110920/Log4J_shell_thrpst-e1643986376319-64x64.jpg" class="attachment-article-1_1 size-article-1_1 wp-post-image" alt="" loading="lazy" /></a>
+							</figure>
+							
+							<h2 class="c-card__title"><a href="https://threatpost.com/log4shell-cve-2021-44228/178225/">&#8216;Long Live Log4Shell&#8217;: CVE-2021-44228 Not Dead Yet</a></h2>
+							<footer class="c-card__info">
+								<div class="c-card__time">
+									<time datetime="2022-02-04T13:58:28-05:00">February 4, 2022</time>
+								</div>
+															</footer>
+						</article>
+					</li>
+										<li>
+						<article class="c-card c-card--small">
+														<figure>
+								<a href="https://threatpost.com/supply-chain-security-predicament/178166/" title="Supply-Chain Security Is Not a Problem…It&#8217;s a Predicament"><img width="64" height="64" src="https://media.threatpost.com/wp-content/uploads/sites/103/2022/02/02140943/supply-chain2-64x64.jpeg" class="attachment-article-1_1 size-article-1_1 wp-post-image" alt="" loading="lazy" /></a>
+							</figure>
+							
+							<h2 class="c-card__title"><a href="https://threatpost.com/supply-chain-security-predicament/178166/">Supply-Chain Security Is Not a Problem…It&#8217;s a Predicament</a></h2>
+							<footer class="c-card__info">
+								<div class="c-card__time">
+									<time datetime="2022-02-02T14:23:41-05:00">February 2, 2022</time>
+								</div>
+															</footer>
+						</article>
+					</li>
+										<li>
+						<article class="c-card c-card--small">
+														<figure>
+								<a href="https://threatpost.com/account-takeover-cat-mouse-game/178128/" title="The Account Takeover Cat-and-Mouse Game"><img width="64" height="64" src="https://media.threatpost.com/wp-content/uploads/sites/103/2022/01/01155844/cat-and-mouse-64x64.jpeg" class="attachment-article-1_1 size-article-1_1 wp-post-image" alt="" loading="lazy" /></a>
+							</figure>
+							
+							<h2 class="c-card__title"><a href="https://threatpost.com/account-takeover-cat-mouse-game/178128/">The Account Takeover Cat-and-Mouse Game</a></h2>
+							<footer class="c-card__info">
+								<div class="c-card__time">
+									<time datetime="2022-02-01T15:59:53-05:00">February 1, 2022</time>
+								</div>
+															</footer>
+						</article>
+					</li>
+										<li>
+						<article class="c-card c-card--small">
+														<figure>
+								<a href="https://threatpost.com/tips-activate-cyber-defense/177955/" title="New Year, New Threats: 4 Tips to Activate Your Best Cyber-Defense"><img width="64" height="64" src="https://media.threatpost.com/wp-content/uploads/sites/103/2022/01/26151713/knight-cyber-defense-64x64.jpeg" class="attachment-article-1_1 size-article-1_1 wp-post-image" alt="" loading="lazy" /></a>
+							</figure>
+							
+							<h2 class="c-card__title"><a href="https://threatpost.com/tips-activate-cyber-defense/177955/">New Year, New Threats: 4 Tips to Activate Your Best Cyber-Defense</a></h2>
+							<footer class="c-card__info">
+								<div class="c-card__time">
+									<time datetime="2022-01-26T15:23:24-05:00">January 26, 2022</time>
+								</div>
+															</footer>
+						</article>
+					</li>
+										<li>
+						<article class="c-card c-card--small">
+														<figure>
+								<a href="https://threatpost.com/cybercriminals-supply-chain-protect-inbox/178002/" title="Cybercriminals Love Supply-Chain Chaos: Here&#8217;s How to Protect Your Inbox"><img width="64" height="64" src="https://media.threatpost.com/wp-content/uploads/sites/103/2021/10/25144231/supply-chain-64x64.png" class="attachment-article-1_1 size-article-1_1 wp-post-image" alt="" loading="lazy" /></a>
+							</figure>
+							
+							<h2 class="c-card__title"><a href="https://threatpost.com/cybercriminals-supply-chain-protect-inbox/178002/">Cybercriminals Love Supply-Chain Chaos: Here&#8217;s How to Protect Your Inbox</a></h2>
+							<footer class="c-card__info">
+								<div class="c-card__time">
+									<time datetime="2022-01-26T14:37:12-05:00">January 26, 2022</time>
+								</div>
+															</footer>
+						</article>
+					</li>
+									</ul>
+			</div>
+		</div><div id="custom_html-4" class="widget_text widget-odd widget-3 c-widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="c-newsletter-widget">
+<div class="c-label-wrapper"><span class="c-label c-label--white-transparent">Newsletter</span></div>
+<h3>Subscribe to <em>Threatpost Today</em></h3>
+<p>Join thousands of people who receive the latest breaking cybersecurity news every day.</p>
+<a class="c-button c-button--primary c-button--full js-modal-open" href="#modal_newsletter">Subscribe now</a>
+</div></div></div><div id="threatpost_tweets-2" class="widget-even widget-4 c-widget threatpost_tweets widget_text">            <div class="c-twitter-post-widget">
+                <div class="c-label-wrapper">
+                    <span class="c-label c-label--white">Twitter</span>
+                </div>
+                <p>Wormhole Crypto wants its users to know everything is fine. Totally cool.  <a href="http://twitter.com/LisaVaasCybSec" target="_blank">@LisaVaasCybSec</a> <a href="http://twitter.com/search?q=%23Cryptocurrency" target="_blank">#Cryptocurrency</a> <a href="http://twitter.com/search?q=%23Crypto" target="_blank">#Crypto</a>… <a href="https://t.co/ffhGAGwq3o" target="_blank">https://t.co/ffhGAGwq3o</a></p>
+                <footer class="c-twitter-post__footer">
+                    <p>15 hours ago</p>
+                    <a class="c-button c-button--white-transparent c-button--full twitter-follow-button" href="https://twitter.com/threatpost" target="_blank">Follow @threatpost</a>
+                </footer>
+            </div>
+            </div><div id="custom_html-5" class="widget_text widget-odd widget-last widget-5 c-ad ad-unit c-widget widget_custom_html"><div class="textwidget custom-html-widget"><div class="adRUPTad tower" data-adunit="tower">
+<!-- GPT AdSlot 5 for Ad unit '300x600-ATF' ### Size: [[300,600],[300,250]] -->
+<div id='div-gpt-ad-6794670-5'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-6794670-5'); });
+  </script>
+</div>
+<!-- End AdSlot 5 -->
+</div></div></div>					
+				</div>			</div>
+		</div>
+	</div>
+
+
+
+	</div>
+
+		
+	
+			<div class="c-ad-section c-ad-section--footer">
+			<div class="o-container-fluid">
+				<div class="o-row c-fixed-sidebar-layout--336@sm">
+				<div class="o-col">
+						<div class="c-ad u-bg--none@sm">
+							<div class="c-ad__container" style="width:100%;max-width:400px;">
+								<!-- AdMetricsPro Video Body Tag for threatpost.com -->
+								<script id="74c2ec1bc8f84f7cb2ff365ad0b58123">
+								cnx.cmd.push(function() {
+									cnx({
+									playerId: "c2ecd04f-0dca-4ffa-8761-d93b34717380"
+									}).render("74c2ec1bc8f84f7cb2ff365ad0b58123");
+								});
+								</script>
+								<!-- AdMetricsPro Video Body Tag for threatpost.com -->
+							</div>
+						</div>
+					</div>
+					<div class="o-col c-sidebar c-sidebar--pt-small"></div>
+				</div>
+			</div>
+		</div>
+	
+				<div class="c-section c-section--bg u-border--top c-newsletter-section">
+			<div class="o-container-fluid">
+				<div class="textwidget custom-html-widget"><div class="o-row">
+<div class="o-col-7@sm o-col-8@md o-col-9@lg">
+<h3>Subscribe to our newsletter, <em>Threatpost Today</em>!</h3>
+<p>Get the latest breaking news delivered daily to your inbox.</p>
+</div>
+<div class="o-col-5@sm o-col-4@md o-col-3@lg"><a class="c-button c-button--secondary c-button--full js-modal-open" href="#modal_newsletter">Subscribe now</a></div>
+</div>
+</div>			</div>
+		</div>
+	
+
+	<footer class="c-site-footer c-section--dark">
+		<div class="o-container-fluid">
+			<div class="o-row c-site-footer__layout">
+				<div class="o-col-6@md c-site-logo-group">
+					<a class="c-site-logo c-site-logo--white c-site-logo--larger@md" href="https://threatpost.com/">
+						<div>Threatpost</div>
+					</a>
+					<p class="c-site-tagline"><a href="https://threatpost.com/">The First Stop For Security News</a></p>
+				</div>
+				<div class="o-col-6@md u-text-right u-hidden u-block@md">
+					<nav class="c-nav-secondary">
+						<ul id="menu-footer-threatpost-menu-2" class="c-main-menu"><li id="menu-item-133105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-133105"><a href="https://threatpost.com/"><span>Home</span></a></li>
+<li id="menu-item-133106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133106"><a href="https://threatpost.com/about-threatpost/"><span>About Us</span></a></li>
+<li id="menu-item-133107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133107"><a href="https://threatpost.com/contact-us/"><span>Contact Us</span></a></li>
+<li id="menu-item-147168" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147168"><a href="https://media.threatpost.com/wp-content/uploads/sites/103/2021/12/09015533/ThreatpostMK_TEMPLATE.pdf"><span>Advertise With Us</span></a></li>
+<li id="menu-item-133108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133108"><a href="https://threatpost.com/rss-feeds/"><span>RSS Feeds</span></a></li>
+</ul>					</nav>
+				</div>
+				<div class="o-col-6@md">
+					<nav class="c-site-info">
+										<ul id="menu-footer-threatpost-menu-1" class="c-small-links"><li>Copyright &copy; 2022 Threatpost</li><li id="menu-item-133103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133103"><a href="https://threatpost.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-133943" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133943"><a href="https://threatpost.com/tos/">Terms and Conditions</a></li>
+<li id="menu-item-133958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133958"><a href="https://threatpost.com/advertise/">Advertise</a></li>
+</ul>					</nav>
+					<nav class="c-nav-social">
+						<ul id="menu-social-menu-1" class="menu"><li><a href="https://www.facebook.com/Threatpost/" title="Facebook" class="facebook" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-facebook'></use></svg></a></li><li><a href="https://twitter.com/threatpost/" title="Twitter" class="twitter" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-twitter'></use></svg></a></li><li><a href="https://www.linkedin.com/company/threatpost/" title="LinkedIn" class="linkedin" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-linkedin'></use></svg></a></li><li><a href="https://www.youtube.com/user/threatpost" title="YouTube" class="youtube" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-youtube'></use></svg></a></li><li><a href="https://feedly.com/threatpost" title="Feedly" class="feedly" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-feedly'></use></svg></a></li><li><a href="https://www.instagram.com/Threatpost/" title="Instagram" class="instagram" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-instagram'></use></svg></a></li><li><a href="https://threatpost.com/feed" title="RSS" class="rss" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-rss'></use></svg></a></li></ul>					</nav>
+				</div>
+				<div class="o-col-6@md u-text-right u-hidden u-block@md">
+										<h3 class="c-section-title"><span>Topics</span></h3>
+
+					<ul id="menu-topics" class="c-small-links"><li id="menu-item-133149" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133149"><a target="_blank" rel="noopener" href="https://threatpost.com/category/bh/">Black Hat</a></li>
+<li id="menu-item-133150" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133150"><a href="https://threatpost.com/category/breaking-news/">Breaking News</a></li>
+<li id="menu-item-133151" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133151"><a href="https://threatpost.com/category/cloud-security/">Cloud Security</a></li>
+<li id="menu-item-133152" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133152"><a href="https://threatpost.com/category/critical-infrastructure/">Critical Infrastructure</a></li>
+<li id="menu-item-133153" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133153"><a href="https://threatpost.com/category/cryptography/">Cryptography</a></li>
+<li id="menu-item-133154" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133154"><a href="https://threatpost.com/category/facebook/">Facebook</a></li>
+<li id="menu-item-133156" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133156"><a href="https://threatpost.com/category/government/">Government</a></li>
+<li id="menu-item-133157" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133157"><a href="https://threatpost.com/category/hacks/">Hacks</a></li>
+<li id="menu-item-133158" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133158"><a href="https://threatpost.com/category/iot/">IoT</a></li>
+<li id="menu-item-133159" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133159"><a href="https://threatpost.com/category/malware-2/">Malware</a></li>
+<li id="menu-item-133160" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133160"><a href="https://threatpost.com/category/mobile-security/">Mobile Security</a></li>
+<li id="menu-item-133161" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133161"><a href="https://threatpost.com/category/podcasts/">Podcasts</a></li>
+<li id="menu-item-133162" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133162"><a href="https://threatpost.com/category/privacy/">Privacy</a></li>
+<li id="menu-item-133163" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133163"><a href="https://threatpost.com/category/rsac/">RSAC</a></li>
+<li id="menu-item-133164" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133164"><a href="https://threatpost.com/category/sas/">Security Analyst Summit</a></li>
+<li id="menu-item-133167" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133167"><a href="https://threatpost.com/category/videos/">Videos</a></li>
+<li id="menu-item-133168" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-133168"><a href="https://threatpost.com/category/vulnerabilities/">Vulnerabilities</a></li>
+<li id="menu-item-133169" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-133169"><a href="https://threatpost.com/category/web-security/">Web Security</a></li>
+</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</div>
+
+
+
+
+
+
+
+	<div class="c-site-nav">
+		<div class="c-site-nav__header">
+			<div class="o-container-fluid">
+				<a href="#" class="c-menu-toggle js-menu-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+				<a class="c-site-logo c-site-logo--larger@md" href="https://threatpost.com/">
+					<div>Threatpost</div>
+				</a>
+				<div class="c-site-nav__header__aside">
+					<nav class="c-nav-social">
+					<ul id="menu-social-menu-2" class="menu"><li><a href="https://www.facebook.com/Threatpost/" title="Facebook" class="facebook" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-facebook'></use></svg></a></li><li><a href="https://twitter.com/threatpost/" title="Twitter" class="twitter" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-twitter'></use></svg></a></li><li><a href="https://www.linkedin.com/company/threatpost/" title="LinkedIn" class="linkedin" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-linkedin'></use></svg></a></li><li><a href="https://www.youtube.com/user/threatpost" title="YouTube" class="youtube" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-youtube'></use></svg></a></li><li><a href="https://feedly.com/threatpost" title="Feedly" class="feedly" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-feedly'></use></svg></a></li><li><a href="https://www.instagram.com/Threatpost/" title="Instagram" class="instagram" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-instagram'></use></svg></a></li><li><a href="https://threatpost.com/feed" title="RSS" class="rss" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-rss'></use></svg></a></li></ul>					</nav>
+					<!-- <nav class="c-nav-utility">
+						<a href="https://threatpost.com/" class="c-button c-button--secondary-transparent c-button--smaller"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-user'></use></svg> Log in</a>
+					</nav> -->
+				</div>
+			</div>
+		</div>
+		<div class="c-site-nav__main">
+			<div class="o-container-fluid">
+				<div class="o-row">
+					<div class="o-col-6@md"><div class="c-site-nav__list js-nav-toggle-container">
+							<div class="c-site-nav__list__header js-nav-toggle-button">
+								<h3 class="c-section-title"><span>Topics</span></h3>
+                            </div><ul class="o-stack-1 o-stack-2@sm c-main-menu"><li><a href="https://threatpost.com/category/cloud-security/"><span>Cloud Security</span></a></li><li><a href="https://threatpost.com/category/malware-2/"><span>Malware</span></a></li><li><a href="https://threatpost.com/category/vulnerabilities/"><span>Vulnerabilities</span></a></li><li><a href="https://threatpost.com/category/privacy/"><span>Privacy</span></a></li></ul>
+                            <a href="#" class="c-label c-label--secondary-transparent u-hidden@md js-nav-toggle-button">Show all</a>
+                            <div class="c-site-nav__list__content js-nav-toggle-content">
+                            <ul class="o-stack-1 o-stack-2@sm c-main-menu"><li><a href="https://threatpost.com/category/bh/"><span>Black Hat</span></a></li><li><a href="https://threatpost.com/category/critical-infrastructure/"><span>Critical Infrastructure</span></a></li><li><a href="https://threatpost.com/category/cryptography/"><span>Cryptography</span></a></li><li><a href="https://threatpost.com/category/facebook/"><span>Facebook</span></a></li><li><a href="https://threatpost.com/category/featured/"><span>Featured</span></a></li><li><a href="https://threatpost.com/category/government/"><span>Government</span></a></li><li><a href="https://threatpost.com/category/hacks/"><span>Hacks</span></a></li><li><a href="https://threatpost.com/category/iot/"><span>IoT</span></a></li><li><a href="https://threatpost.com/category/mobile-security/"><span>Mobile Security</span></a></li><li><a href="https://threatpost.com/category/podcasts/"><span>Podcasts</span></a></li><li><a href="https://threatpost.com/category/rsac/"><span>RSAC</span></a></li><li><a href="https://threatpost.com/category/sas/"><span>Security Analyst Summit</span></a></li><li><a href="https://threatpost.com/category/slideshow/"><span>Slideshow</span></a></li><li><a href="https://threatpost.com/category/videos/"><span>Videos</span></a></li><li><a href="https://threatpost.com/category/web-security/"><span>Web Security</span></a></li></ul></div></div></div><div class="o-col-3@md"><div class="c-site-nav__list js-nav-toggle-container">
+							<div class="c-site-nav__list__header js-nav-toggle-button">
+								<h3 class="c-section-title"><span>Authors</span></h3>
+                            </div><div class="c-site-nav__list__content js-nav-toggle-content"><ul class="o-stack-1  c-main-menu"><li><a href="https://threatpost.com/author/sealstara/"><span>Tara Seals</span></a></li><li><a href="https://threatpost.com/author/thomas/"><span>Tom Spring</span></a></li><li><a href="https://threatpost.com/author/lisavaas/"><span>Lisa Vaas</span></a></li></ul></div></div></div><div class="o-col-3@md"><div class="c-site-nav__list js-nav-toggle-container">
+							<div class="c-site-nav__list__header js-nav-toggle-button">
+								<h3 class="c-section-title"><span>Threatpost</span></h3>
+                            </div><div class="c-site-nav__list__content js-nav-toggle-content"><ul class="o-stack-1  c-main-menu"><li><a href="https://threatpost.com/"><span>Home</span></a></li><li><a href="https://threatpost.com/about-threatpost/"><span>About Us</span></a></li><li><a href="https://threatpost.com/contact-us/"><span>Contact Us</span></a></li><li><a href="https://threatpost.com/advertise/"><span>Advertise With Us</span></a></li><li><a href="https://threatpost.com/rss-feeds/"><span>RSS Feeds</span></a></li></ul></div></div></div>				</div>
+
+				<div class="o-row">
+					<div class="o-col-6@md o-offset-3@md">
+						<div class="c-site-search c-site-nav__search">
+							<form class="c-site-search__form" role="search" method="get" action="https://threatpost.com/">
+								<input type="text" class="c-site-search__field" name="s" placeholder="Search">
+								<button type="submit" class="c-button c-button--secondary c-button--smaller c-site-search__button" value="Search"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-search'></use></svg> Search</button>
+								<div class="c-site-search__overlay"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="c-site-nav__footer u-hidden@md">
+			<div class="o-container-fluid">
+				<nav class="c-nav-social">
+					<ul id="menu-social-menu-3" class="menu"><li><a href="https://www.facebook.com/Threatpost/" title="Facebook" class="facebook" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-facebook'></use></svg></a></li><li><a href="https://twitter.com/threatpost/" title="Twitter" class="twitter" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-twitter'></use></svg></a></li><li><a href="https://www.linkedin.com/company/threatpost/" title="LinkedIn" class="linkedin" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-linkedin'></use></svg></a></li><li><a href="https://www.youtube.com/user/threatpost" title="YouTube" class="youtube" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-youtube'></use></svg></a></li><li><a href="https://feedly.com/threatpost" title="Feedly" class="feedly" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-feedly'></use></svg></a></li><li><a href="https://www.instagram.com/Threatpost/" title="Instagram" class="instagram" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-instagram'></use></svg></a></li><li><a href="https://threatpost.com/feed" title="RSS" class="rss" target="_blank"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-rss'></use></svg></a></li></ul>				</nav>
+				<!-- <a href="https://threatpost.com/" class="c-button c-button--secondary-transparent c-button--smaller u-size--full"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-user'></use></svg> Log in</a> -->
+			</div>
+		</div>
+	</div>
+<div id="modal_infosec_desc" class="c-modal c-modal--small mfp-hide">
+    <div class="c-modal__header">
+        <a href="#" class="c-modal__close c-modal__close--dark js-modal-close"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-remove'></use></svg></a>
+    </div>
+    <div class="c-modal__main">
+        <div class="c-section c-section--bg c-section--dark">
+            <div class="o-container-fluid">
+                <div class="u-mb-spacer-base">
+                    <div class="c-label c-label--secondary-blue">InfoSec Insider</div>
+                </div>
+                <h3>Infosec Insider Post</h3>
+                <p>Infosec Insider content is written by a trusted community of Threatpost cybersecurity subject matter experts. Each contribution has a goal of bringing a unique voice to important cybersecurity topics. Content strives to be of the highest quality, objective and non-commercial.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal_sponsored_desc" class="c-modal c-modal--small mfp-hide">
+    <div class="c-modal__header">
+        <a href="#" class="c-modal__close c-modal__close--dark js-modal-close"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-remove'></use></svg></a>
+    </div>
+    <div class="c-modal__main">
+        <div class="c-section c-section--bg c-section--dark">
+            <div class="o-container-fluid">
+                <div class="u-mb-spacer-base">
+                    <div class="c-label c-label--secondary-yellow">Sponsored</div>
+                </div>
+                <h3>Sponsored Content</h3>
+                <p>Sponsored Content is paid for by an advertiser. Sponsored content is written and edited by members of our sponsor community. This content creates an opportunity for a sponsor to provide insight and commentary from their point-of-view directly to the Threatpost audience. The Threatpost editorial team does not participate in the writing or editing of Sponsored Content.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <script type="text/javascript">
+            if ( typeof _recaptcha_wordpress_savedcomment != 'undefined') {
+                document.getElementById('comment').value =
+                    _recaptcha_wordpress_savedcomment;
+            }
+            </script><script type='text/javascript' src='https://kasperskycontenthub.com/threatpost-global/wp-content/plugins/kaspersky-embeds/js/scripts.js?ver=1.0' id='kspr_embeds-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=explicit&#038;ver=202124050927' id='kaspersky-dynamic-gravity-forms-google-recaptcha-js'></script>
+<script type='text/javascript' src='//assets.threatpost.com/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/gravityforms/js/jquery.json.min.js&#038;ver=37d392cc' id='gform_json-js'></script>
+<script type='text/javascript' id='gform_gravityforms-js-extra'>
+/* <![CDATA[ */
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2},"base_url":"https:\/\/threatpost.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/threatpost.com\/wp-content\/plugins\/gravityforms\/images\/spinner.gif"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://threatpost.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.4.17.15' id='gform_gravityforms-js'></script>
+<script type='text/javascript' src='//assets.threatpost.com/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/gravityforms/js/conditional_logic.min.js&#038;ver=37d392cc' id='gform_conditional_logic-js'></script>
+<script type='text/javascript' src='//assets.threatpost.com/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/gravityforms/js/placeholders.jquery.min.js&#038;ver=37d392cc' id='gform_placeholder-js'></script>
+<script type='text/javascript' id='kaspersky-dynamic-gravity-forms-main-js-extra'>
+/* <![CDATA[ */
+var kasperskyDynamicaReCaptchaData = {"ajaxUrl":"https:\/\/threatpost.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//assets.threatpost.com/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/kaspersky-gravity-forms-dynamic-recaptcha/assets/js/main.js,wp-content/themes/threatpost-2018/assets/js/main.js,wp-includes/js/wp-embed.min.js&#038;ver=37d392cc'></script>
+
+
+<!-- Powered by Whitelist IP For Limit Login Attempts | URL: http://club.orbisius.com/products/wordpress-plugins/whitelist-ip-for-limit-login-attempts/ -->
+
+</body>
+</html>
