@@ -6,6 +6,20 @@ AttacKG: Constructing Knowledge-enhanced Attack Graphs from Cyber Threat Intelli
 
 ## Instructions
 
+Setup:
+
+```
+pip install -r [requirements.txt/requirements_linux.txt]
+```
+
+Running:
+```
+# Generating attack graph for CTI report
+python main.py -M attackGraphGeneration -R ./reports_sample/Log4Shell.html -O ./output.pdf
+# Identifing techniques in CTI report
+python main.py -M techniqueIdentification -T ./templates -R ./reports_sample/Log4Shell.html -O ./output.pdf
+```
+
 ---
 
 ## Paper
