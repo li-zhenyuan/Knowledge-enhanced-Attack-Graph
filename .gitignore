@@ -128,6 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-*.json
 *.png
+
+templates/
 new_cti.model

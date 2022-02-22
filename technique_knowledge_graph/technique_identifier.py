@@ -7,6 +7,15 @@ sys.path.extend([".", "technique_knowledge_graph"])
 from technique_knowledge_graph.technique_template import *
 
 
+class NodeMatchInstance:
+    matched_node: AttackGraphNode
+    matched_score: float
+
+    def __init__(self, node, score):
+        self.matched_node = node
+        self.matched_score = score
+
+
 # Record TechniqueTemplate Matching Record
 class TechniqueIdentifier:
     technique_template: TechniqueTemplate
@@ -26,40 +35,26 @@ class TechniqueIdentifier:
         self.edge_count = len(self.technique_template.technique_edge_dict.keys())
 
     def node_alignment(self, attack_node: AttackGraphNode):
-        index = 0
+        index = -1
         for technique_node in self.technique_template.technique_node_list:
-            node_similarity_score = technique_node.get_similarity(attack_node)
+            index += 1
 
+            # complete template node list
             if technique_node.instance_count == 0:
-                index += 1
+                self.node_match_record[index] = None
                 continue
 
             # accept node as a match
+            node_similarity_score = technique_node.get_similarity(attack_node)
             if node_similarity_score >= TechniqueTemplate.NODE_SIMILAR_ACCEPT_THRESHOLD:
-                if index in self.node_match_record.keys():
+                if index not in self.node_match_record.keys():
                     self.node_match_record[index] = []
                 self.node_match_record[index].append((attack_node, node_similarity_score))
 
-            index += 1
-
-    def to_nodematchrecord_list(self):
-        k_list = []
-        v_list = []
-        for k, v in self.node_match_record.items():
-            k_list.append(k)
-            if v is None:
-                v_list.append([''])
-            else:
-                v_list.append(v)
-
+    def subgraph_alignment(self, subgraph: set, attack_graph: AttackGraph):
         self.node_match_record = {}
-        for item in itertools.product(*v_list):
-            for i in range(0, len(k_list)):
-                self.node_match_record[k_list[i]] = v_list[i]
-
-    def subgraph_alignment(self, subgraph: set, nx_graph: nx.DiGraph):
         for node in subgraph:
-            self.node_alignment(node, nx_graph)
+            self.node_alignment(attack_graph.attackNode_dict[node])
 
         k_list = []
         v_list = []
@@ -72,7 +67,7 @@ class TechniqueIdentifier:
 
         self.node_match_record = {}
         best_match_score = 0
-        best_match_record = None
+        best_match_record = {}
         for item in itertools.product(*v_list):
             for i in range(0, len(k_list)):
                 if item[i] == '':
@@ -85,7 +80,11 @@ class TechniqueIdentifier:
                 sink_index = template_edge[1]
 
                 # No matched node for edge
-                if self.node_match_record[source_index] is None or self.node_match_record[sink_index] is None:
+                try:
+                    if self.node_match_record[source_index] is None or self.node_match_record[sink_index] is None:
+                        self.edge_match_record[template_edge] = 0.0
+                        continue
+                except:
                     self.edge_match_record[template_edge] = 0.0
                     continue
 
@@ -96,7 +95,7 @@ class TechniqueIdentifier:
                     distance = 1
                 else:
                     try:
-                        distance = nx.shortest_path_length(nx_graph, source_node, sink_node)
+                        distance = nx.shortest_path_length(attack_graph.attackgraph_nx, source_node, sink_node)
                     except:
                         self.edge_match_record[template_edge] = 0.0
                         continue
@@ -123,12 +122,13 @@ class TechniqueIdentifier:
         if self.node_match_record is None:
             return 0
         index = 0
-        for node_index, node_similarity in self.node_match_record.items():
-            if self.technique_template.technique_node_list[node_index].node_type == "actor":
+        for node_index, node_node_similarity in self.node_match_record.items():
+            if self.technique_template.technique_node_list[node_index].type == "actor":
                 continue
 
-            if node_similarity is not None:
-                node_alignment_score += node_similarity[1] * self.technique_template.technique_node_list[node_index].instance_count  # math.sqrt
+            if node_node_similarity is not None:
+                # ToDo: Need to select the larger similarity score
+                node_alignment_score += node_node_similarity[1] * self.technique_template.technique_node_list[node_index].instance_count  # math.sqrt
 
             index += 1
 
@@ -148,6 +148,7 @@ class TechniqueIdentifier:
 
 # Matching process, involve multiple TechniqueIdentifier at one time
 class AttackMatcher:
+    attack_graph: AttackGraph
     attack_graph_nx: nx.DiGraph
     technique_identifier_list: list
     technique_matching_score: dict
@@ -156,14 +157,15 @@ class AttackMatcher:
 
     normalized_factor: float
 
-    def __init__(self, nx_graph: nx.DiGraph):
-        self.attack_graph_nx = nx_graph
+    def __init__(self, attack_graph: AttackGraph):
+        self.attack_graph = attack_graph
+        self.attack_graph_nx = attack_graph.attackgraph_nx
         self.technique_identifier_list = []
         self.technique_matching_score = {}
         self.technique_matching_subgraph = {}
         self.technique_matching_record = {}
 
-        self.normalized_factor = nx_graph.number_of_nodes() + nx_graph.number_of_edges()
+        self.normalized_factor = self.attack_graph_nx.number_of_nodes() + self.attack_graph_nx.number_of_edges()
 
     def add_technique_identifier(self, technique_identifier: TechniqueIdentifier):
         if technique_identifier.edge_count == 0:
@@ -171,12 +173,7 @@ class AttackMatcher:
 
         self.technique_identifier_list.append(technique_identifier)
 
-    def attack_matching(self, nx_graph: nx.DiGraph = None):
-        if nx_graph is not None:
-            self.attack_graph_nx = nx_graph
-        else:
-            nx_graph = self.attack_graph_nx
-
+    def attack_matching(self):
         # subgraph_list = nx.strongly_connected_components(self.attack_graph_nx)
         subgraph_list = nx.connected_components(self.attack_graph_nx.to_undirected())
         for subgraph in subgraph_list:
@@ -184,11 +181,7 @@ class AttackMatcher:
             # matching_result = []
 
             for technique_identifier in self.technique_identifier_list:
-                # print(technique_identifier.technique_template.technique_name)
-                technique_identifier.init_node_match_record()
-                technique_identifier.init_edge_match_record()
-
-                technique_identifier.subgraph_alignment(subgraph, nx_graph)
+                technique_identifier.subgraph_alignment(subgraph, self.attack_graph)
 
             # for node in subgraph:
             #     # Try to find a match in technique_identifier_list
@@ -226,7 +219,7 @@ class AttackMatcher:
         selected_techniques_dict = {}
 
         for k, v in self.technique_matching_score.items():
-            if v >= 1.4:
+            if v >= 0.9:
                 selected_techniques_dict[k] = []
                 for node in self.technique_matching_subgraph[k]:
                     if self.attack_graph_nx.nodes[node]["regex"] != "":

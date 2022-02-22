@@ -4,6 +4,7 @@ import sys
 sys.path.extend([".", "technique_knowledge_graph"])
 
 import os
+import networkx as nx
 
 from typing import Tuple
 from typing import List
@@ -116,8 +117,11 @@ def technique_identifying_forAttackGraph(graph: AttackGraph, template_list: List
     return attackMatcher
 
 
+attack_graph = None
+attack_matcher = None
+
 if __name__ == '__main__':
-    logging.basicConfig(stream=sys.stdout, level=logging.WARNING)
+    # logging.basicConfig(stream=sys.stdout, level=logging.WARNING)
 
     parser = argparse.ArgumentParser()
 
@@ -128,7 +132,7 @@ if __name__ == '__main__':
     # python main.py -M techniqueTemplateGeneration
     # python main.py -M attackGraphGeneration -R "C:\Users\workshop\Documents\GitHub\AttacKG\data\picked_html_APTs\Log4Shell.html" -O ./output.pdf
     # python main.py -M techniqueTemplateGeneration -O C:/Users/workshop/Documents/GitHub/Knowledge-enhanced-Attack-Graph/templates
-    # python main.py -M techniqueIdentification -T "C:\Users\workshop\Documents\GitHub\AttacKG\data\technique_template" -R "C:\Users\workshop\Documents\GitHub\AttacKG\data\picked_html_APTs\Log4Shell.html" -O ./output.pdf
+    # python main.py -M techniqueIdentification -T C:/Users/workshop/Documents/GitHub/Knowledge-enhanced-Attack-Graph/templates -R "C:\Users\workshop\Documents\GitHub\AttacKG\data\picked_html_APTs\Log4Shell.html" -O ./output.pdf
     parser.add_argument('-M', '--mode', required=True, type=str, default="", help="The running mode options: 'iocProtection', 'nlpModelTraining', 'reportParsing', 'attackGraphGeneration', 'techniqueTemplateGeneration', 'techniqueIdentification")
     parser.add_argument('-L', '--logPath', required=False, type=str, default="", help="Log file's path.")
     parser.add_argument('-C', '--ctiText', required=False, type=str, default="", help="Target CTI text.")
@@ -167,7 +171,7 @@ if __name__ == '__main__':
     elif running_mode == "techniqueTemplateGeneration":
         techniqueTemplate_generating(output_path=arguments.outputPath)
     elif running_mode == "techniqueIdentification":
-        technique_identifying(report_text, picked_techniques, arguments.templatePath)
+        attack_matcher = technique_identifying(report_text, picked_techniques, arguments.templatePath)
     else:
         print("Unknown running mode!")
 
