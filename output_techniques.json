@@ -1,0 +1,669 @@
+{
+    "T1007": {
+        "666": {
+            "type": "system",
+            "nlp": [
+                "service"
+            ],
+            "ioc": []
+        },
+        "661": {
+            "type": "network",
+            "nlp": [
+                "host"
+            ],
+            "ioc": []
+        },
+        "655": {
+            "type": "executable",
+            "nlp": [
+                "commands"
+            ],
+            "ioc": []
+        }
+    },
+    "T1025": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1039": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1052": {
+        "785": {
+            "type": "file",
+            "nlp": [
+                "native"
+            ],
+            "ioc": []
+        },
+        "796": {
+            "type": "system",
+            "nlp": [
+                "system"
+            ],
+            "ioc": []
+        },
+        "782": {
+            "type": "network",
+            "nlp": [
+                "host"
+            ],
+            "ioc": []
+        },
+        "799": {
+            "type": "file",
+            "nlp": [
+                "details"
+            ],
+            "ioc": []
+        }
+    },
+    "T1059": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1071": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1072": {
+        "203": {
+            "type": "executable",
+            "nlp": [
+                "domain registration",
+                "30",
+                "services",
+                "malware",
+                "article"
+            ],
+            "ioc": []
+        },
+        "245": {
+            "type": "vulnerability",
+            "nlp": [
+                "exploit"
+            ],
+            "ioc": []
+        }
+    },
+    "T1080": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1091": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1098": {
+        "785": {
+            "type": "file",
+            "nlp": [
+                "native"
+            ],
+            "ioc": []
+        },
+        "796": {
+            "type": "system",
+            "nlp": [
+                "system"
+            ],
+            "ioc": []
+        },
+        "782": {
+            "type": "network",
+            "nlp": [
+                "host"
+            ],
+            "ioc": []
+        },
+        "799": {
+            "type": "file",
+            "nlp": [
+                "details"
+            ],
+            "ioc": []
+        }
+    },
+    "T1105": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1127": {
+        "961": {
+            "type": "executable",
+            "nlp": [
+                "programdata",
+                "executables"
+            ],
+            "ioc": []
+        },
+        "966": {
+            "type": "network",
+            "nlp": [
+                "windows\\"
+            ],
+            "ioc": []
+        },
+        "968": {
+            "type": "file",
+            "nlp": [
+                "directories"
+            ],
+            "ioc": []
+        },
+        "940": {
+            "type": "actor",
+            "nlp": [
+                "actor"
+            ],
+            "ioc": []
+        },
+        "942": {
+            "type": "file",
+            "nlp": [
+                "attempting",
+                "winrar",
+                "preparation"
+            ],
+            "ioc": []
+        },
+        "956": {
+            "type": "actor",
+            "nlp": [
+                "actor"
+            ],
+            "ioc": []
+        }
+    },
+    "T1187": {
+        "906": {
+            "type": "system",
+            "nlp": [
+                "credentials",
+                "executable"
+            ],
+            "ioc": [
+                "createdump.exe",
+                "rdrleakdiag.exe",
+                "cdump.exe"
+            ]
+        },
+        "903": {
+            "type": "file",
+            "nlp": [
+                "attempts"
+            ],
+            "ioc": []
+        }
+    },
+    "T1190": {
+        "289": {
+            "type": "file",
+            "nlp": [
+                "criminals"
+            ],
+            "ioc": []
+        },
+        "308": {
+            "type": "vulnerability",
+            "nlp": [
+                "exploit",
+                "vulnerability"
+            ],
+            "ioc": []
+        }
+    },
+    "T1203": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1204": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1480": {
+        "203": {
+            "type": "executable",
+            "nlp": [
+                "domain registration",
+                "30",
+                "services",
+                "malware",
+                "article"
+            ],
+            "ioc": []
+        },
+        "245": {
+            "type": "vulnerability",
+            "nlp": [
+                "exploit"
+            ],
+            "ioc": []
+        }
+    },
+    "T1547": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1559": {
+        "849": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        },
+        "859": {
+            "type": "network",
+            "nlp": [
+                "remote"
+            ],
+            "ioc": []
+        },
+        "853": {
+            "type": "file",
+            "nlp": [
+                "files",
+                "file"
+            ],
+            "ioc": []
+        },
+        "863": {
+            "type": "actor",
+            "nlp": [
+                "scripts",
+                "command",
+                "powershell",
+                "actors",
+                "malware"
+            ],
+            "ioc": []
+        }
+    },
+    "T1566": {
+        "785": {
+            "type": "file",
+            "nlp": [
+                "native"
+            ],
+            "ioc": []
+        },
+        "796": {
+            "type": "system",
+            "nlp": [
+                "system"
+            ],
+            "ioc": []
+        },
+        "782": {
+            "type": "network",
+            "nlp": [
+                "host"
+            ],
+            "ioc": []
+        },
+        "799": {
+            "type": "file",
+            "nlp": [
+                "details"
+            ],
+            "ioc": []
+        }
+    }
+}

@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../AttacKG/neuralcoref" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.8 (AttacKG)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (Knowledge-enhanced-Attack-Graph)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PackageRequirementsSettings">
