@@ -1,0 +1,99 @@
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.25.0 -- An enhanced Interactive Python. Type '?' for help.
+PyDev console: using IPython 7.25.0
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
+runfile('C:/Users/xiaowan/Documents/GitHub/AttacKG/Attack_Graph/attackGraph.py', wdir='C:/Users/xiaowan/Documents/GitHub/AttacKG')
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-13 16:38:57.289323: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-13 16:38:57.289995: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Wed Apr 13 16:39:07 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-13 16:39:09.720528: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-13 16:39:10.131359: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce 920MX computeCapability: 5.0
+coreClock: 0.993GHz coreCount: 2 deviceMemorySize: 2.00GiB deviceMemoryBandwidth: 14.92GiB/s
+2022-04-13 16:39:10.132820: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-13 16:39:10.133792: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-13 16:39:10.134532: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-13 16:39:10.135292: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-13 16:39:10.136920: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-13 16:39:10.137863: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-13 16:39:10.138629: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-13 16:39:10.139450: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-13 16:39:10.139916: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-13 16:39:10.141505: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-13 16:39:10.142863: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-13 16:39:10.143330: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(34, 71), match='http://128.55.12.167:8641/config.html'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(108, 118), match='--ls8h.com'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(232, 242), match='--ls8h.com'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(41, 54), match='128.55.12.167'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(301, 314), match='128.55.12.167'>
+DEBUG:root:Find IoC matching: DocFile - <re.Match object; span=(60, 71), match='config.html'>
+DEBUG:root:Replaced with: http://128.55.12.167:8641/config.html - network
+DEBUG:root:Replaced with: --ls8h.com - network
+DEBUG:root:Replaced with: --ls8h.com - network
+DEBUG:root:Replaced with: 128.55.12.167 - network
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-13 16:39:15.695023: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ Xxnetwork-network
+DEBUG:root:XXnetwork-network
+DEBUG:root:---coref_origiin:---
+ attacker-actor
+DEBUG:root:attacker-actor
+DEBUG:root:---coref_origiin:---
+ files-file
+DEBUG:root:them-
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:Recover IoC regex: http://128.55.12.167:8641/config.html
+DEBUG:root:network#network#6
+DEBUG:root:dns#network#9
+DEBUG:root:xxnetwork#network#13
+DEBUG:root:Related sentence: The attack started by browsing to network, selecting DNS, entering hostname Xxnetwork, file 938527054, and clicking the Visit button.
+DEBUG:root:firefox#executable#28
+DEBUG:root:dns#network#34
+DEBUG:root:xxnetwork#network#36
+DEBUG:root:xxnetwork#network#13
+DEBUG:root:Related sentence: This triggered the Firefox backdoor to connect out via DNS to XXnetwork.  
+DEBUG:root:Recover IoC regex: 128.55.12.167
+DEBUG:root:network:8640#network#48
+DEBUG:root:c2#network#50
+DEBUG:root:Related sentence: Drakon APT was downloaded and executed and connected to network:8640 for C2.
+DEBUG:root:attacker#executable#54
+DEBUG:root:driver#system#63
+DEBUG:root:system#system#61
+DEBUG:root:file#file#60
+DEBUG:root:files#file#71
+DEBUG:root:files#file#71
+DEBUG:root:Related sentence: The attacker escalated privileges using the new File System Filter Driver, which looks for processes opening specific files which don’t exist and elevates them.
+DEBUG:root:attacker#executable#85
+DEBUG:root:attacker#executable#54
+DEBUG:root:files#file#91
+DEBUG:root:file#file#97
+DEBUG:root:passwd#system#96
+DEBUG:root:network#network#90
+DEBUG:root:Related sentence: Once SYSTEM, the attacker exfil’ed the host and network files as well as a passwd file in the home directory.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:network#network#6
+DEBUG:root:firefox#executable#28
+DEBUG:root:dns#network#34
+DEBUG:root:network:8640#network#48
+DEBUG:root:attacker#executable#54
+DEBUG:root:driver#system#63
+DEBUG:root:file#file#97
+DEBUG:root:passwd#system#96
+DEBUG:root:network#network#90
+DEBUG:graphviz.files:write 1113 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']

@@ -1,0 +1,187 @@
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.25.0 -- An enhanced Interactive Python. Type '?' for help.
+PyDev console: using IPython 7.25.0
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
+runfile('C:/Users/xiaowan/Documents/GitHub/AttacKG/Attack_Graph/attackGraph.py', wdir='C:/Users/xiaowan/Documents/GitHub/AttacKG')
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-13 16:52:22.098980: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-13 16:52:22.099682: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Wed Apr 13 16:52:29 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-13 16:52:31.564258: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-13 16:52:31.969026: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce 920MX computeCapability: 5.0
+coreClock: 0.993GHz coreCount: 2 deviceMemorySize: 2.00GiB deviceMemoryBandwidth: 14.92GiB/s
+2022-04-13 16:52:31.970388: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-13 16:52:31.971389: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-13 16:52:31.972445: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-13 16:52:31.973521: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-13 16:52:31.974457: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-13 16:52:31.975408: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-13 16:52:31.976221: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-13 16:52:31.977257: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-13 16:52:31.977742: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-13 16:52:31.979123: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-13 16:52:31.980376: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-13 16:52:31.980820: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(917, 926), match='cmstp.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2238, 2250), match='regsvr32.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2434, 2443), match='cmstp.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2624, 2633), match='cmstp.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2759, 2773), match='powershell.exe'>
+DEBUG:root:Find IoC matching: Vulnerability - <re.Match object; span=(614, 628), match='CVE-2017-11882'>
+DEBUG:root:Find IoC matching: Vulnerability - <re.Match object; span=(630, 643), match='CVE-2017-8570'>
+DEBUG:root:Find IoC matching: Vulnerability - <re.Match object; span=(648, 661), match='CVE-2018-8174'>
+DEBUG:root:Replaced with: CVE-2017-11882 - exploit
+DEBUG:root:Replaced with: CVE-2017-8570 - exploit
+DEBUG:root:Replaced with: CVE-2018-8174 - exploit
+DEBUG:root:Replaced with: cmstp.exe - executable
+DEBUG:root:Replaced with: regsvr32.exe - executable
+DEBUG:root:Replaced with: cmstp.exe - executable
+DEBUG:root:Replaced with: cmstp.exe - executable
+DEBUG:root:Replaced with: powershell.exe - executable
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-13 16:52:36.558372: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ JScript-executable
+DEBUG:root:JScript-executable
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:attachment#file#14
+DEBUG:root:email#network#7
+DEBUG:root:stage#network#23
+DEBUG:root:Related sentence: 
+        All observed attacks start with an email message, containing either a malicious attachment or a URL which leads to the first stage of the attack.
+DEBUG:root:email#network#38
+DEBUG:root:emails#network#32
+DEBUG:root:lists#network#43
+DEBUG:root:Related sentence: The text of the emails is likely taken from legitimate email, such as mailing lists that targeted organizations may be subscribed to.
+DEBUG:root:email#network#81
+DEBUG:root:Related sentence: Below are three examples, with the first one purporting to be sent by the European Banking Federation and is using a newly registered domain for the spoofed sender email address.
+DEBUG:root:attachment#file#85
+DEBUG:root:file#file#90
+DEBUG:root:pdf#executable#89
+DEBUG:root:file#file#107
+DEBUG:root:rtf#network#106
+DEBUG:root:exploits#vulnerability#109
+DEBUG:root:Recover IoC regex: CVE-2017-11882
+DEBUG:root:exploit#vulnerability#111
+DEBUG:root:Related sentence: The attachment is a malicious PDF file that entices the user to click on a URL to download and open a weaponized RTF file containing exploits for exploit, exploit and exploit.
+DEBUG:root:payload#executable#119
+DEBUG:root:jscript#executable#122
+DEBUG:root:more_eggs#executable#127
+DEBUG:root:attacker#executable#131
+DEBUG:root:system#system#136
+DEBUG:root:Related sentence: The final payload is a JScript backdoor also known as More_eggs that allows the attacker to control the affected system remotely.
+DEBUG:root:profile#file#155
+DEBUG:root:microsoft#file#152
+DEBUG:root:command#executable#162
+DEBUG:root:profiles#file#172
+DEBUG:root:Related sentence: The Microsoft Connection Manager Profile Installer (executable) is a command-line program used to install Connection Manager service profiles.
+DEBUG:root:file#file#179
+DEBUG:root:inf#file#181
+DEBUG:root:profile#file#190
+DEBUG:root:Related sentence: Cmstp accepts an installation information file (INF) as a parameter and installs a service profile leveraged for remote access connections.
+DEBUG:root:file#file#200
+DEBUG:root:inf#executable#199
+DEBUG:root:Related sentence: A malicious INF file can be supplied as a parameter to download and execute remote code.
+DEBUG:root:scriptlets#executable#224
+DEBUG:root:com#executable#223
+DEBUG:root:files#file#227
+DEBUG:root:servers#network#231
+DEBUG:root:sct#executable#226
+DEBUG:root:Related sentence: Cmstp may also be used to load and execute COM scriptlets (SCT files) from remote servers.
+DEBUG:root:file#file#255
+DEBUG:root:script#executable#242
+DEBUG:root:document#file#248
+DEBUG:root:Related sentence: 
+        Microsoft allows developers to create COM+ objects in script code stored in an XML document, a so-called scriptlet file.
+DEBUG:root:scriptlet#executable#277
+DEBUG:root:jscript#executable#263
+DEBUG:root:vbscript#executable#265
+DEBUG:root:default#file#274
+DEBUG:root:windows#executable#272
+DEBUG:root:perl#network#288
+DEBUG:root:python#executable#290
+DEBUG:root:Related sentence: Although it is common to use JScript or VBScript, as they are available in Windows by default, a scriptlet can contain COM+ objects implemented in other languages, including Perl and Python, which would be fully functional if the respective interpreters are installed.
+DEBUG:root:attacker#executable#317
+DEBUG:root:code#network#321
+DEBUG:root:applocker#executable#307
+DEBUG:root:script#executable#325
+DEBUG:root:parameters#network#341
+DEBUG:root:script#executable#310
+DEBUG:root:scriptlet#executable#314
+DEBUG:root:xml#network#324
+DEBUG:root:file#file#335
+DEBUG:root:Related sentence: 
+        To bypass AppLocker and launching script code within a scriptlet, the attacker includes the malicious code within an XML script tag placed within the registration tag of the scriptlet file and calls cmstp with appropriate parameters.
+DEBUG:root:jscript#executable#356
+DEBUG:root:jscript#executable#263
+DEBUG:root:server#network#388
+DEBUG:root:stage#network#350
+DEBUG:root:server#network#365
+DEBUG:root:dll#executable#366
+DEBUG:root:filename#file#371
+DEBUG:root:Related sentence: 
+        An earlier part of the second stage is implemented as an encrypted JScript scriptlet which eventually drops a randomly named COM server DLL binary with a .txt filename extension, for example, 9242.txt, in the user's home folder and registers the server using the executable utility.
+DEBUG:root:powershell#executable#422
+DEBUG:root:Related sentence: The dropper then launches the next stage of the attack by starting PowerShell, msxsl or executable as described above.
+DEBUG:root:powershell#executable#433
+DEBUG:root:scriptlet#executable#441
+DEBUG:root:jscript#executable#440
+DEBUG:root:server#network#452
+DEBUG:root:command#executable#446
+DEBUG:root:c2#network#450
+DEBUG:root:Related sentence: 
+        The PowerShell chain is launched from an obfuscated JScript scriptlet previously downloaded from the command and control (C2) server and launched using executable.
+DEBUG:root:powershell#executable#460
+DEBUG:root:powershell#executable#470
+DEBUG:root:script#executable#485
+DEBUG:root:Related sentence: The first PowerShell stage is a simple downloader that downloads the next PowerShell stage and launches a child instance of executable using the downloaded, randomly named script as the argument.
+DEBUG:root:powershell#executable#492
+DEBUG:root:script#executable#493
+DEBUG:root:layers#network#499
+DEBUG:root:Related sentence: The downloaded PowerShell script code is obfuscated in several layers before the last layer is reached.
+DEBUG:root:memory#network#513
+DEBUG:root:powershell#executable#520
+DEBUG:root:Related sentence: The last layer loads shellcode into memory and creates a thread within the PowerShell interpreter process space.
+DEBUG:root:payload#executable#538
+DEBUG:root:strike#file#542
+DEBUG:root:attacker#executable#548
+DEBUG:root:powershell#executable#528
+DEBUG:root:Related sentence: 
+        On the PowerShell side of the infection chain, the downloaded final payload is a Cobalt Strike beacon, which provides the attacker with rich backdoor functionality.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:attachment#file#14
+DEBUG:root:email#network#38
+DEBUG:root:pdf#executable#89
+DEBUG:root:rtf#network#106
+DEBUG:root:exploits#vulnerability#109
+DEBUG:root:system#system#136
+DEBUG:root:inf#executable#199
+DEBUG:root:com#executable#223
+DEBUG:root:windows#executable#272
+DEBUG:root:perl#network#288
+DEBUG:root:python#executable#290
+DEBUG:root:code#network#321
+DEBUG:root:parameters#network#341
+DEBUG:root:xml#network#324
+DEBUG:root:dll#executable#366
+DEBUG:root:scriptlet#executable#441
+DEBUG:root:c2#network#450
+DEBUG:root:layers#network#499
+DEBUG:root:memory#network#513
+DEBUG:root:strike#file#542
+DEBUG:graphviz.files:write 3106 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

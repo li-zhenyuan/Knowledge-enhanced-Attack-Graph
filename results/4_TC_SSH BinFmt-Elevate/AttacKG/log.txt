@@ -1,0 +1,70 @@
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.25.0 -- An enhanced Interactive Python. Type '?' for help.
+PyDev console: using IPython 7.25.0
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
+runfile('C:/Users/xiaowan/Documents/GitHub/AttacKG/Attack_Graph/attackGraph.py', wdir='C:/Users/xiaowan/Documents/GitHub/AttacKG')
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-13 16:47:47.199027: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-13 16:47:47.199806: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Wed Apr 13 16:47:57 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-13 16:48:01.729879: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-13 16:48:02.149074: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce 920MX computeCapability: 5.0
+coreClock: 0.993GHz coreCount: 2 deviceMemorySize: 2.00GiB deviceMemoryBandwidth: 14.92GiB/s
+2022-04-13 16:48:02.150220: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-13 16:48:02.151024: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-13 16:48:02.151761: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-13 16:48:02.152501: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-13 16:48:02.153240: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-13 16:48:02.154009: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-13 16:48:02.154735: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-13 16:48:02.155508: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-13 16:48:02.155993: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-13 16:48:02.157221: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-13 16:48:02.158813: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-13 16:48:02.159386: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-13 16:48:06.639039: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ SSH-executable
+DEBUG:root:it-
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:files#file#1
+DEBUG:root:scp#executable#3
+DEBUG:root:ssh#executable#7
+DEBUG:root:Related sentence: Copied files via SCP and connected via SSH from the ta1-pivot-2 host.
+DEBUG:root:files#file#17
+DEBUG:root:driver#system#25
+DEBUG:root:escalation#network#24
+DEBUG:root:Related sentence: Sent files to the target included the privilege escalation driver load_helper and an elevate client.
+DEBUG:root:ssh#executable#37
+DEBUG:root:credentials#file#40
+DEBUG:root:Related sentence: Connected to target using SSH with stolen credentials.
+DEBUG:root:driver#system#45
+DEBUG:root:ssh#executable#37
+DEBUG:root:Related sentence: Loaded the driver, and used it to gain root privileges.
+DEBUG:root:passwd#system#62
+DEBUG:root:files#file#75
+DEBUG:root:documents#file#74
+DEBUG:root:Related sentence: As root, exfil’d /etc/passwd, /etc/shadow, and the admin’s home directory Documents files.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:scp#executable#3
+DEBUG:root:files#file#17
+DEBUG:root:driver#system#25
+DEBUG:root:escalation#network#24
+DEBUG:root:passwd#system#62
+DEBUG:graphviz.files:write 628 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

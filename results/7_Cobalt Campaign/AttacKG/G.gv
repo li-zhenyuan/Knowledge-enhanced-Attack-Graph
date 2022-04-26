@@ -1,0 +1,53 @@
+graph G {
+	"attachment#file#14" [label="attachment#file#14##attachment INF##" shape=rectangle]
+	"email#network#38" [label="email#network#38##email first stage of##" shape=diamond]
+	"pdf#executable#89" [label="pdf#executable#89##PDF##" shape=oval]
+	"rtf#network#106" [label="rtf#network#106##RTF##" shape=diamond]
+	"exploits#vulnerability#109" [label="exploits#vulnerability#109##exploits exploit##CVE-2017-11882" shape=trapezium]
+	"system#system#136" [label="system#system#136##system##" shape=trapezium]
+	"inf#executable#199" [label="inf#executable#199##INF##" shape=oval]
+	"com#executable#223" [label="com#executable#223##COM##" shape=oval]
+	"windows#executable#272" [label="windows#executable#272##Windows##" shape=oval]
+	"perl#network#288" [label="perl#network#288##Perl##" shape=diamond]
+	"python#executable#290" [label="python#executable#290##Python##" shape=oval]
+	"code#network#321" [label="code#network#321##malicious code##" shape=diamond]
+	"parameters#network#341" [label="parameters#network#341##appropriate parameters##" shape=diamond]
+	"xml#network#324" [label="xml#network#324##XML##" shape=diamond]
+	"dll#executable#366" [label="dll#executable#366##DLL##" shape=oval]
+	"scriptlet#executable#441" [label="scriptlet#executable#441##scriptlet More_eggs##" shape=oval]
+	"c2#network#450" [label="c2#network#450##C2##" shape=diamond]
+	"layers#network#499" [label="layers#network#499##several layers before##" shape=diamond]
+	"memory#network#513" [label="memory#network#513##memory##" shape=diamond]
+	"strike#file#542" [label="strike#file#542##Cobalt Strike##" shape=rectangle]
+	"attachment#file#14" -- "pdf#executable#89"
+	"attachment#file#14" -- "rtf#network#106"
+	"attachment#file#14" -- "windows#executable#272"
+	"attachment#file#14" -- "inf#executable#199"
+	"attachment#file#14" -- "email#network#38"
+	"attachment#file#14" -- "scriptlet#executable#441"
+	"attachment#file#14" -- "parameters#network#341"
+	"pdf#executable#89" -- "attachment#file#14"
+	"rtf#network#106" -- "exploits#vulnerability#109"
+	"com#executable#223" -- "attachment#file#14"
+	"windows#executable#272" -- "perl#network#288"
+	"perl#network#288" -- "python#executable#290"
+	"code#network#321" -- "scriptlet#executable#441"
+	"code#network#321" -- "parameters#network#341"
+	"parameters#network#341" -- "scriptlet#executable#441"
+	"parameters#network#341" -- "com#executable#223"
+	"parameters#network#341" -- "dll#executable#366"
+	"parameters#network#341" -- "code#network#321"
+	"xml#network#324" -- "attachment#file#14"
+	"dll#executable#366" -- "attachment#file#14"
+	"scriptlet#executable#441" -- "strike#file#542"
+	"scriptlet#executable#441" -- "code#network#321"
+	"scriptlet#executable#441" -- "layers#network#499"
+	"scriptlet#executable#441" -- "attachment#file#14"
+	"scriptlet#executable#441" -- "parameters#network#341"
+	"scriptlet#executable#441" -- "xml#network#324"
+	"scriptlet#executable#441" -- "system#system#136"
+	"scriptlet#executable#441" -- "com#executable#223"
+	"scriptlet#executable#441" -- "c2#network#450"
+	"memory#network#513" -- "scriptlet#executable#441"
+	"strike#file#542" -- "scriptlet#executable#441"
+}

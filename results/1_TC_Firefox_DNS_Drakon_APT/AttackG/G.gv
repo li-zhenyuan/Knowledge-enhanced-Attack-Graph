@@ -1,0 +1,20 @@
+graph G {
+	"network#network#6" [label="network#network#6##network##http://128.55.12.167:8641/config.html" shape=diamond]
+	"firefox#executable#28" [label="firefox#executable#28##Firefox##" shape=oval]
+	"dns#network#34" [label="dns#network#34##DNS##" shape=diamond]
+	"network:8640#network#48" [label="network:8640#network#48##network:8640 C2##128.55.12.167" shape=diamond]
+	"attacker#executable#54" [label="attacker#executable#54##attacker##" shape=oval]
+	"driver#system#63" [label="driver#system#63##Driver##" shape=trapezium]
+	"file#file#97" [label="file#file#97##file##" shape=rectangle]
+	"passwd#system#96" [label="passwd#system#96##passwd##" shape=trapezium]
+	"network#network#90" [label="network#network#90##network##" shape=diamond]
+	"network#network#6" -- "dns#network#34"
+	"firefox#executable#28" -- "dns#network#34"
+	"dns#network#34" -- "network#network#90"
+	"attacker#executable#54" -- "driver#system#63"
+	"attacker#executable#54" -- "file#file#97"
+	"driver#system#63" -- "file#file#97"
+	"file#file#97" -- "passwd#system#96"
+	"file#file#97" -- "file#file#97"
+	"passwd#system#96" -- "network#network#90"
+}

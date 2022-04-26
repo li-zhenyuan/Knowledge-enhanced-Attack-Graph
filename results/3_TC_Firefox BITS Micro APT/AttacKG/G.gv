@@ -1,0 +1,21 @@
+graph G {
+	"hosts#network#25" [label="hosts#network#25##hosts##" shape=diamond]
+	"network#network#32" [label="network#network#32##network##http://215.237.119.171/config.html" shape=diamond]
+	"network#network#46" [label="network#network#46##network##http://68.149.51.179/ctfhost2.exe" shape=diamond]
+	"bits#executable#42" [label="bits#executable#42##BITS Micro##" shape=oval]
+	"file#file#75" [label="file#file#75##file##" shape=rectangle]
+	"apt#file#88" [label="apt#file#88##Micro APT##" shape=rectangle]
+	"c2#network#100" [label="c2#network#100##C2##" shape=diamond]
+	"attacker#executable#104" [label="attacker#executable#104##attacker##" shape=oval]
+	"enforcement#executable#130" [label="enforcement#executable#130##enforcement##" shape=oval]
+	"driver#system#160" [label="driver#system#160##driver##" shape=trapezium]
+	"hosts#network#25" -- "bits#executable#42"
+	"network#network#46" -- "bits#executable#42"
+	"bits#executable#42" -- "network#network#32"
+	"file#file#75" -- "apt#file#88"
+	"apt#file#88" -- "c2#network#100"
+	"apt#file#88" -- "driver#system#160"
+	"attacker#executable#104" -- "apt#file#88"
+	"enforcement#executable#130" -- "driver#system#160"
+	"driver#system#160" -- "enforcement#executable#130"
+}

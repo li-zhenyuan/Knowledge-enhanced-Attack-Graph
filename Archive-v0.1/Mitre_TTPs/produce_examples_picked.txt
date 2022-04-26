@@ -1,0 +1,1787 @@
+admin@338 has sent emails with malicious Microsoft Office documents attached.
+APT-C-36 has used spearphishing emails with password protected RAR attachment to avoid being detected by the email gateway. 
+APT1 has sent spearphishing emails containing malicious attachments.
+APT12 has sent emails with malicious Microsoft Office documents and PDFs attached.
+APT19 sent spearphishing emails with malicious attachments in RTF and XLSM formats to deliver initial exploits.
+APT28 sent spearphishing emails containing malicious Microsoft Office attachments.
+APT29 has used spearphishing emails with an attachment to deliver files with exploits to initial victims.
+APT30 has used spearphishing emails with malicious DOC attachments.
+APT32 has sent spearphishing emails with a malicious executable disguised as a document or spreadsheet.
+APT33 has sent spearphishing e-mails with archive attachments.
+APT37 delivers malware using spearphishing emails with malicious HWP attachments.
+APT39 leveraged spearphishing emails with malicious attachments to initially compromise victims. 
+APT41 sent spearphishing emails with attachments such as compiled HTML (.chm) files to initially compromise their victims.
+BlackTech has used spearphishing e-mails with malicious documents to deliver malware.
+BRONZE BUTLER used spearphishing emails with malicious Microsoft Word attachments to infect victims.
+Cobalt Group has sent spearphishing emails with various attachment types to corporate and personal email accounts of victim organizations. Attachment types have included .rtf, .doc, .xls, archives containing LNK files, and password protected archives containing .exe and .scr executables.
+Darkhotel has sent spearphishing emails with malicious RAR attachments.
+DarkHydrus has sent spearphishing emails with password-protected RAR archives containing malicious Excel Web Query files (.iqy). The group has also sent spearphishing emails that contained malicious Microsoft Office documents that use the "attachedTemplate" technique to load a template from a remote server.
+Dragonfly 2.0 used spearphishing with Microsoft Office attachments to target victims.
+Elderwood has delivered zero-day exploits and malware to victims via targeted emails containing malicious attachments.
+Emotet has been delivered by phishing emails containing attachments. 
+FIN4 has used spearphishing emails containing attachments (which are often stolen, legitimate documents sent from compromised accounts) with embedded malicious macros.
+FIN6 has targeted victims with e-mails containing malicious attachments.
+FIN7 sent spearphishing emails with either malicious Microsoft Documents or RTF files attached.
+FIN8 has distributed targeted emails containing Word documents with embedded malicious macros.
+Frankenstein has used spearphishing emails to send trojanized Microsoft Word documents. 
+Gallmaker sent emails with malicious Microsoft Office documents attached.
+Gamaredon Group has delivered spearphishing emails with malicious attachments to targets.
+Gorgon Group sent emails to victims with malicious Microsoft Office documents attached.
+Hancitor has been delivered via phishing emails with malicious attachments.
+IcedID has been delivered via phishing e-mails with malicious attachments.
+Inception has used weaponized documents attached to spearphishing emails for reconnaissance and initial compromise.
+Kimsuky has used emails containing Word, Excel and/or HWP (Hangul Word Processor) documents in their spearphishing campaigns.
+Lazarus Group has targeted victims with spearphishing emails containing malicious Microsoft Word documents.
+Leviathan has sent spearphishing emails with malicious attachments, including .rtf, .doc, and .xls files.
+Machete has delivered spearphishing emails that contain a zipped file with malicious contents.
+Magic Hound has used personalized spearphishing attachments.
+menuPass has sent malicious Office documents via email as part of spearphishing campaigns as well as executables disguised as documents.
+Metamorfo has been delivered to victims via emails containing malicious HTML attachments. 
+Mofang delivered spearphishing emails with malicious documents, PDFs, or Excel files attached.
+Molerats has sent phishing emails with malicious attachments. 
+MuddyWater has compromised third parties and used compromised accounts to send spearphishing emails with targeted attachments to recipients.
+Naikon has used malicious e-mail attachments to deliver malware.
+OceanSalt has been delivered via spearphishing emails with Microsoft Office attachments.
+OilRig has sent spearphising emails with malicious attachments to potential victims using compromised and/or spoofed email accounts.
+Patchwork has used spearphishing with an attachment to deliver files with exploits to initial victims.
+PLATINUM has sent spearphishing emails with attachments to victims as its primary initial access vector.
+PoetRAT was distributed via malicious Word documents.
+Pony has been delivered via spearphishing attachments.
+Rancor has attached a malicious document to an email to gain initial access.
+REvil has been distributed via malicious e-mail attachments including MS Word Documents.
+Rifdoor has been distributed in e-mails with malicious Excel or Word documents.
+RTM has been delivered via spearphishing attachments disguised as PDF documents.
+RTM has used spearphishing attachments to distribute its malware.
+Sandworm Team has delivered malicious Microsoft Office attachments via spearphishing emails.
+Sharpshooter has sent malicious attachments via emails to targets.
+Silence has sent emails with malicious DOCX, CHM, LNK and ZIP attachments. 
+TA459 has targeted victims using spearphishing emails with malicious Microsoft Word attachments.
+TA505 has used spearphishing emails with malicious attachments to initially compromise victims.
+The White Company has sent phishing emails with malicious Microsoft Word attachments to victims.
+TrickBot has used an email with an Excel sheet containing a malicious macro to deploy the malware
+Tropic Trooper sent spearphishing emails that contained malicious Microsoft Office and fake installer file attachments.
+Turla has used spearphishing emails to deliver BrainTest as a malicious attachment.
+Valak has been delivered via spearphishing e-mails with password protected ZIP files.
+Windshift has sent spearphishing emails with attachment to harvest credentials and deliver malware.
+Wizard Spider has used spearphishing attachments to deliver Microsoft documents containing macros or PDFs containing malicious links to download either Emotet, Bokbot, TrickBot, or Bazar.
+APT1 has sent spearphishing emails containing hyperlinks to malicious files.
+APT28 sent spearphishing emails which used a URL-shortener service to masquerade as a legitimate service and to redirect targets to credential harvesting sites.
+APT29 has used spearphishing with a link to trick victims into clicking on a link to a zip file containing malicious files.
+APT32 has sent spearphishing emails containing malicious links.
+APT33 has sent spearphishing emails containing links to .hta files.
+APT39 leveraged spearphishing emails with malicious links to initially compromise victims. 
+BlackTech has used spearphishing e-mails with links to cloud services to deliver malware.
+Cobalt Group has sent emails with URLs pointing to malicious documents.
+Dragonfly 2.0 used spearphishing with PDF attachments containing malicious links that redirected to credential harvesting websites.
+Elderwood has delivered zero-day exploits and malware to victims via targeted emails containing a link to malicious content hosted on an uncommon Web server.
+Emotet has been delivered by phishing emails containing links. 
+FIN4 has used spearphishing emails (often sent from compromised accounts) containing malicious links.
+FIN8 has distributed targeted emails containing links to malicious documents with embedded macros.
+Hancitor has been delivered via phishing emails which contained malicious links.
+Kimsuky has used an email containing a link to a document that contained malicious macros.
+Leviathan has sent spearphishing emails with links, often using a fraudulent lookalike domain and stolen branding.
+Machete has sent phishing emails that contain a link to an external server with ZIP and RAR archives.
+Magic Hound sent shortened URL links over email to victims. The URLs linked to Word documents with malicious macros that execute PowerShells scripts to download Pupy.
+Mofang delivered spearphishing emails with malicious links included.
+Molerats has sent phishing emails with malicious links included.
+Night Dragon sent spearphishing emails containing links to compromised websites where malware was downloaded.
+OilRig has sent spearphising emails with malicious links to potential victims.
+Patchwork has used spearphishing with links to deliver files with exploits to initial victims. The group has also used embedded image tags (known as web bugs) with unique, per-recipient tracking links in their emails for the purpose of identifying which recipients opened messages.
+Pony has been delivered via spearphishing emails which contained malicious links. 
+Stolen Pencil sent spearphishing emails containing links to domains controlled by the threat actor.
+TA505 has sent spearphishing emails containing malicious links.
+TrickBot has been delivered via malicious links in phishing e-mails.
+Turla attempted to trick targets into clicking on a link featuring a seemingly legitimate domain from Adobe.com to download their malware and gain initial access.
+Valak has been delivered via malicious links in e-mail.
+Windshift has sent spearphishing emails with links to harvest credentials and deliver malware.
+Wizard Spider has sent phishing emails containing a link to an actor-controlled Google Drive document or other free online file hosting services.
+Dark Caracal spearphished victims via Facebook and Whatsapp.
+FIN6 has used fake job advertisements sent via LinkedIn to spearphish targets.
+Lazarus Group has used fake job advertisements sent via LinkedIn to spearphish victims. 
+Magic Hound used various social media channels to spearphish victims.
+OilRig has used LinkedIn to send spearphishing links.
+Windshift has used fake personas on social media to engage and target victims. 
+APT19 used PowerShell commands to execute payloads.
+APT28 downloads and executes PowerShell scripts.
+APT29 has used encoded PowerShell scripts uploaded to CozyCar installations to download and install SeaDuke. APT29 also used PowerShell scripts to evade defenses.
+APT3 has used PowerShell on victim systems to download and run payloads after exploitation.
+APT32 has used PowerShell-based tools, PowerShell one-liners, and shellcode loaders for execution.
+APT33 has utilized PowerShell to download files from the C2 server and run various scripts. 
+APT39 has used PowerShell to execute malicious code.
+APT41 leveraged PowerShell to deploy malware families in victims' environments.
+AutoIt backdoor downloads a PowerShell script that decodes to a typical shellcode loader.
+BloodHound can use PowerShell to pull Active Directory information from the target environment.
+Blue Mockingbird has used PowerShell reverse TCP shells to issue interactive commands over a network connection.
+BONDUPDATER is written in PowerShell.
+BRONZE BUTLER has used PowerShell for execution.
+Chimera has used PowerShell scripts to execute malicious payloads. 
+Cobalt Group has used powershell.exe to download and execute scripts.
+Cobalt Strike can execute a payload on a remote host with PowerShell. This technique does not write any data to disk. Cobalt Strike can also use PowerSploit and other scripting frameworks to perform execution.
+ComRAT has used PowerShell to load itself every time a user logs in to the system. ComRAT can execute PowerShell scripts loaded into memory or from the file system.
+CopyKittens has used PowerShell Empire.
+CrackMapExec can execute PowerShell commands via WMI.
+DarkHydrus leveraged PowerShell to download and execute additional scripts for execution.
+DarkVishnya used PowerShell to create shellcode loaders.
+Deep Panda has used PowerShell scripts to download and execute programs in memory, without writing to disk.
+Denis has a version written in PowerShell. 
+DownPaper uses PowerShell for execution.
+Dragonfly 2.0 used PowerShell scripts for execution.
+Emotet has used Powershell to retrieve the malicious payload and download additional resources like Mimikatz. 
+Empire leverages PowerShell for the majority of its client-side agent tasks. Empire also contains the ability to conduct PowerShell remoting with the Invoke-PSRemoting module.
+FatDuke has the ability to execute PowerShell scripts.
+FIN10 uses PowerShell for execution as well as PowerShell Empire to establish persistence.
+FIN6 has used PowerShell to gain access to merchant's networks, and a Metasploit PowerShell module to download and execute shellcode and to set up a local listener.
+FIN7 used a PowerShell script to launch shellcode that retrieved an additional payload.
+FIN8's malicious spearphishing payloads are executed as PowerShell. FIN8 has also used PowerShell during Lateral Movement and Credential Access.
+Frankenstein has used PowerShell to run a series of base64-encoded commands, that acted as a stager and enumerated hosts. 
+Gallmaker used PowerShell to download additional payloads and for execution.
+Gorgon Group malware can use PowerShell commands to download and execute a payload and open a decoy document on the victim's machine.
+GRIFFON has used PowerShell to execute the Meterpreter downloader TinyMet.
+HALFBAKED can execute PowerShell scripts.
+HAMMERTOSS is known to use PowerShell.
+Hancitor has used PowerShell to execute commands.
+One version of Helminth uses a PowerShell script.
+Inception has used PowerShell to execute malicious commands and payloads.
+JCry has used PowerShell to execute payloads.
+KeyBoy uses PowerShell commands to download and execute payloads.
+Kimsuky has executed a variety of PowerShell scripts.
+KONNI used PowerShell to download and execute a specific 64-bit version of the malware.
+Lazarus Group has used Powershell to download malicious payloads.
+Leviathan has used PowerShell for execution.
+Magic Hound has used PowerShell for execution and privilege escalation.
+menuPass uses PowerSploit to inject shellcode into PowerShell.
+Molerats used PowerShell implants on target machines.
+Mosquito can launch PowerShell Scripts.
+MuddyWater has used PowerShell for execution.
+Netwalker has been written in PowerShell and executed directly in memory, avoiding detection.
+njRAT has executed PowerShell commands via auto-run registry key persistence.
+OilRig has used PowerShell scripts for execution, including use of a macro to run a PowerShell command to decode file contents.
+OSX_OCEANLOTUS.D uses PowerShell scripts.
+Patchwork used PowerSploit to download payloads, run a reverse shell, and execute malware on the victim's machine.
+Pillowmint has used a PowerShell script to install a shim database. 
+The Poseidon Group's Information Gathering Tool (IGT) includes PowerShell components.
+POSHSPY uses PowerShell to execute various commands, one to execute its payload.
+PowerShower is a backdoor written in PowerShell.
+POWERSOURCE is a PowerShell backdoor.
+PowerSploit modules are written in and executed via PowerShell.
+PowerStallion uses PowerShell loops to iteratively check for available commands in its OneDrive C2 server.
+POWERSTATS uses PowerShell for obfuscation and execution.
+POWERTON is written in PowerShell.
+POWRUNER is written in PowerShell.
+PUNCHBUGGY has used PowerShell scripts.
+Pupy has a module for loading and executing PowerShell scripts.
+QUADAGENT uses PowerShell scripts for execution.
+There is a variant of RATANKBA that uses a PowerShell script instead of the traditional PE form.
+RegDuke can extract and execute PowerShell scripts from C2 communications.
+Revenge RAT uses the PowerShell command Reflection.Assembly to load itself into memory to aid in execution.
+REvil has used PowerShell to delete volume shadow copies and download files.
+RogueRobin uses a command prompt to run a PowerShell script from Excel. To assist in establishing persistence, RogueRobin creates %APPDATA%\OneDrive.bat and saves the following string to it:powershell.exe -WindowStyle Hidden -exec bypass -File "%APPDATA%\OneDrive.ps1".
+SeaDuke uses a module to execute Mimikatz with PowerShell to perform Pass the Ticket.
+ServHelper has the ability to execute a PowerShell script to get information from the infected host.
+SHARPSTATS has the ability to employ a custom PowerShell script.
+Silence has used PowerShell to download and execute payloads.
+Socksbot can write and execute PowerShell scripts.
+Soft Cell used PowerShell for execution to assist in lateral movement as well as for dumping credentials stored on compromised machines.
+SQLRat has used PowerShell to create a Meterpreter session.
+Stealth Falcon malware uses PowerShell commands to perform various functions, including gathering system information via WMI and executing commands from its C2 server.
+StrongPity can use PowerShell to add files to the Windows Defender exclusions list.
+TA459 has used PowerShell for execution of a payload.
+TA505 has used PowerShell to download and execute malware and reconnaissance scripts.
+TEMP.Veles has used a publicly-available PowerShell-based tool, WMImplant. The group has also used PowerShell to perform Timestomping.
+Threat Group-3390 has used PowerShell for execution.
+Thrip leveraged PowerShell to run commands to download payloads, traverse the compromised networks, and carry out reconnaissance.
+Turla has used PowerShell to execute commands/scripts, in some cases via a custom executable or code from Empire's PSInject. Turla has also used PowerShell scripts to load and execute malware in memory.
+UNC2452 used PowerShell to create new tasks on remote machines, identify configuration settings, exfiltrate data, and to execute other commands.
+Ursnif droppers have used PowerShell in download cradles to download and execute the malware's full executable payload.
+Valak has used PowerShell to download additional modules.
+WellMess can execute PowerShell scripts received from C2.
+WIRTE has used PowerShell for script execution.
+Wizard Spider has used macros to execute PowerShell scripts to download malware on victim's machines. It has also used PowerShell to execute commands and move laterally through a victim network.
+Xbash can use scripts to invoke PowerShell to download a malicious PE executable or PE DLL for execution.
+Zeus Panda uses PowerShell to download and execute the payload.
+4H RAT has the capability to create a remote shell.
+ABK has the ability to use cmd to run a Portable Executable (PE) on the compromised host.
+adbupd can run a copy of cmd.exe.
+Following exploitation with LOWBALL malware, admin@338 actors created a file containing a list of commands to be executed on the compromised computer.
+ADVSTORESHELL can create a remote shell and run a given command.
+Anchor has used cmd.exe to run its self deletion routine.
+APT1 has used the Windows command shell to execute commands, and batch scripting to automate execution.
+APT18 uses cmd.exe to execute commands on the victim's machine.
+An APT28 loader Trojan uses a cmd.exe and batch script to run its payload. The group has also used macros to execute payloads.
+An APT3 downloader uses the Windows command "cmd.exe" /C whoami. The group also uses a tool to execute commands on remote computers.
+APT32 has used cmd.exe for execution. 
+APT37 has used the command-line interface.
+APT38 has used a command-line tunneler, NACHOCHEESE, to give them shell access to a victim's machine.
+APT41 used cmd.exe /c to execute commands on remote machines.APT41 used a batch file to install persistence for the Cobalt Strike BEACON loader.
+Astaroth spawns a CMD process to execute commands. 
+AuditCred can open a reverse shell on the system to execute commands.
+BabyShark has used cmd.exe to execute commands. 
+BackConfig can download and run batch files to execute commands on a compromised host.
+Adversaries can direct BACKSPACE to execute from the command line on infected hosts, or have BACKSPACE create a reverse shell.
+BADNEWS is capable of executing commands via cmd.exe.
+Bandook is capable of spawning a Windows command shell.
+Bankshot uses the command-line interface to execute arbitrary commands.
+BBK has the ability to use cmd to run a Portable Executable (PE) on the compromised host.
+BISCUIT has a command to launch a command shell on the system.
+Bisonal can launch cmd.exe to execute commands on the system.
+BLACKCOFFEE has the capability to create a reverse shell.
+Blue Mockingbird has used batch script files to automate execution and deployment of payloads.
+BONDUPDATER can read batch commands in a file sent from its C2 server and execute them with cmd.exe.
+BRONZE BUTLER has used batch scripts and the command-line interface for execution.
+CALENDAR has a command to run cmd.exe to execute commands.
+Carbanak has a command to create a reverse shell.
+Cardinal RAT can execute commands.
+CARROTBAT has the ability to execute command line arguments on a compromised host.
+China Chopper's server component is capable of opening a command terminal.
+cmd is used to execute programs and other actions at the command-line interface.
+Cobalt Group has used a JavaScript backdoor that is capable of launching cmd.exe to execute shell commands. The group has used an exploit toolkit known as Threadkit that launches .bat files.
+Cobalt Strike uses a command-line interface to interact with systems.
+Cobian RAT can launch a remote command shell interface for executing commands.
+CoinTicker executes a bash script to establish a reverse shell.
+Comnie executes BAT scripts.
+ComRAT has used cmd.exe to execute commands.
+A module in CozyCar allows arbitrary commands to be executed by invoking C:\Windows\System32\cmd.exe.
+Dark Caracal has used macros in Word documents that would download a second stage if executed.
+DarkComet can launch a remote shell to execute commands on the victim's machine.
+Darkhotel has dropped an mspaint.lnk shortcut to disk which launches a shell script that downloads and executes a file.
+Daserf can execute shell commands.
+DealersChoice makes modifications to open-source scripts from GitHub and executes them on the victim's machine.
+Denis can launch a remote shell to execute arbitrary commands on the victim's machine.
+Dipsind can spawn remote shells.
+DownPaper uses the command line.
+Dragonfly 2.0 used various types of scripting to perform operations, including batch scripts.
+Emissary has the capability to create a remote shell and execute specified commands.
+Emotet has used cmd.exe to run a PowerShell script. 
+Empire has modules for executing scripts.
+EvilBunny has an integrated scripting engine to download and execute Lua scripts.
+Exaramel for Windows has a command to launch a remote shell and executes commands on the victim's machine.
+Felismus uses command line for execution.
+FELIXROOT executes batch scripts on the victim's machine, and can launch a reverse shell for command execution.
+FIN10 has executed malicious .bat files containing PowerShell commands.
+FIN6 has used kill.bat script to disable security tools.
+FIN7 used the command prompt to launch commands on the victim's machine. 
+FIN8 has used a Batch file to automate frequently executed post compromise cleanup activities. FIN8 executes commands remotely via cmd.exe.
+Frankenstein has run a command script to set up persistence as a scheduled task named "WinUpdate", as well as other encoded commands from the command-line.
+Gamaredon Group has used various batch scripts to establish C2 and download additional files. Gamaredon Group's backdoor malware has also been written to a batch file.
+Gold Dragon uses cmd.exe to execute commands for discovery.
+GoldenSpy can execute remote commands via the command-line interface. 
+Goopy has the ability to use cmd.exe to execute commands passed from an Outlook C2 channel. 
+Gorgon Group malware can use cmd.exe to download and execute payloads and to execute commands on the system.
+GravityRAT executes commands remotely on the infected host.
+GreyEnergy uses cmd.exe to execute itself in-memory.
+H1N1 kills and disables services by using cmd.exe.
+HARDRAIN uses cmd.exe to execute netshcommands.
+HAWKBALL has created a cmd.exe reverse shell, executed commands, and uploaded output via the command line.
+hcdLoader provides command-line access to the compromised system.
+Helminth can provide a remote shell. One version of Helminth uses batch scripting.
+Hi-Zor has the ability to create a reverse shell.
+HiddenWasp uses a script to automate tasks on the victim's machine and to assist in execution.
+Hikit has the ability to create a remote shell and run given commands. 
+HOMEFRY uses a command-line interface.
+Several commands are supported by the Honeybee's implant via the command-line interface and there's also a utility to execute any custom command on an infected endpoint. Honeybee used batch scripting.
+HOPLIGHT can launch cmd.exe to execute commands on the system. 
+HotCroissant can remotely open applications on the infected host with the ShellExecuteA command.
+HTTPBrowser is capable of spawning a reverse shell on a victim.
+httpclient opens cmd.exe on the victim.
+InnaputRAT launches a shell to execute commands on the victim's machine.
+InvisiMole can launch a remote shell to execute commands.
+Ixeshe is capable of executing commands via cmd.
+JCry has used cmd.exe to launch PowerShell. 
+JHUHUGIT uses a .bat file to execute a .dll.
+JPIN can use the command-line utility cacls.exe to change file permissions.
+jRAT has command line access.
+Kasidet can execute commands using cmd.exe.
+Kazuar uses cmd.exe to execute commands on the victim's machine.
+Ke3chang has used batch scripts in its malware to install persistence mechanisms.
+KeyBoy can launch interactive shells for communicating with the victim machine.
+KEYMARBLE can execute shell commands using cmd.exe.
+Koadic can open an interactive command-shell to perform command line functions on victim machines. Koadic performs most of its operations using Windows Script Host (Jscript) and runs arbitrary shellcode .
+KOMPROGO is capable of creating a reverse shell.
+KONNI has used cmd.exe execute arbitrary commands on the infected host across different stages of the infection change.
+Lazarus Group malware uses cmd.exe to execute commands on victims. A Destover-like variant used by Lazarus Group uses a batch file mechanism to delete its binaries from the system.
+Leviathan uses a backdoor known as BADFLICK that is is capable of generating a reverse shell, and has used multiple types of scripting for execution, including JavaScript and JavaScript Scriptlets in XML..
+LightNeuron is capable of executing commands via cmd.exe.
+Linfo creates a backdoor through which remote attackers can start a remote shell.
+LoudMiner used a batch script to run the Linux virtual machine as a service.
+Magic Hound has used the command-line interface.
+The Maze encryption process has used batch scripts with various commands.
+MCMD can launch a console process (cmd.exe) with redirected standard input and output.
+MechaFlounder has the ability to run commands on a compromised host.
+menuPass executes commands using a command-line interface and reverse shell. The group has used a modified version of pentesting script wmiexec.vbs to execute commands. menuPass has used malicious macros embedded inside Office documents to execute files.
+Metamorfo has used cmd.exe /c to execute files. 
+Micropsia creates a command-line shell using cmd.exe.
+MirageFox has the capability to execute commands using cmd.exe.
+Mis-Type uses cmd.exe to run commands for enumerating the host.
+Misdat is capable of providing shell functionality to the attacker to execute commands.
+Mivast has the capability to open a remote shell and run basic commands.
+MoonWind can execute commands via an interactive command shell. MoonWind uses batch scripts for various purposes, including to restart and uninstall itself.
+More_eggs has used cmd.exe for execution.
+Mosquito executes cmd.exe and uses a pipe to read the results and send back the output to the C2 server.
+MuddyWater has used a custom tool for creating reverse shells. MuddyWater has used JavaScript files to execute its POWERSTATS payload.
+MURKYTOP uses the command-line interface.
+NanoCore can open a remote command-line interface and execute commands. NanoCore uses JavaScript files.
+NavRAT leverages cmd.exe to perform discovery techniques. NavRAT loads malicious shellcode and executes it in memory.
+NETEAGLE allows adversaries to execute shell commands on the infected host.
+Operators deploying Netwalker have used batch scripts to retrieve the Netwalker payload.
+njRAT can launch a command shell interface for executing commands.
+OceanSalt can create a reverse shell on the infected endpoint using cmd.exe. OceanSalt has been executed via malicious macros.
+OilRig has used macros to deliver malware such as QUADAGENT and OopsIE. OilRig has used batch scripts.
+Okrum's backdoor has used cmd.exe to execute arbitrary commands as well as batch scripts to update itself to a newer version.
+OopsIE uses the command prompt to execute commands on the victim's machine.
+Orz can execute shell commands. Orz can execute commands with JavaScript.
+Patchwork ran a reverse shell with Meterpreter. Patchwork used JavaScript code and .SCT files on victim machines.
+PHOREAL is capable of creating reverse shell.
+Pisloader uses cmd.exe to set the Registry Run key value. It also has a command to spawn a command shell.
+PLAINTEE uses cmd.exe to execute commands on the victim's machine.
+PLEAD has the ability to execute shell commands on the compromised host.
+PlugX allows actors to spawn a reverse shell on a victim.
+PoisonIvy creates a backdoor through which remote attackers can open a command-line interface.
+Pony has used batch scripts to delete itself after execution. 
+PowerDuke runs cmd.exe /c and sends the output to its C2.
+POWRUNER can execute commands from its C2 server.
+Proxysvc executes a binary on the system and logs the results into a temp file by using: cmd.exe /c " > %temp%\PM* .tmp 2>&1".
+Pteranodon can execute commands on the victim.
+QUADAGENT uses cmd.exe to execute scripts and commands on the victim's machine.
+QuasarRAT can launch a remote shell to execute commands on the victim's machine.
+Ragnar Locker has used cmd.exe and batch scripts to execute commands.
+Rancor has used cmd.exe to execute commmands.
+RATANKBA uses cmd.exe to execute commands.
+RDAT has executed commands using cmd.exe /c. 
+RedLeaves can receive and execute commands with cmd.exe. It can also provide a reverse shell.
+Remcos can launch a remote command line to execute commands on the victim's machine.
+Remexi silently executes received commands with cmd.exe.
+Revenge RAT uses cmd.exe to execute commands and run scripts on the victim's machine.
+REvil can use the Windows command line to delete volume shadow copies and disable recovery.
+RGDoor uses cmd.exe to execute commands on the victim's machine.
+Rising Sun executed commands using cmd.exe. 
+RobbinHood uses cmd.exe on the victim's computer.
+RogueRobin uses Windows Script Components.
+RTM uses the command line and rundll32.exe to execute.
+RunningRAT uses a batch file to kill a security program task and then attempts to remove itself.
+Ryuk has used cmd.exe to create a Registry entry to establish persistence.
+Sakula calls cmd.exe to run various DLL files via rundll32 and also to perform file cleanup. Sakula also has the capability to invoke a reverse shell.
+SamSam uses custom batch scripts to execute some of its components.
+SDBot has the ability to use the command shell to execute commands on a compromised host.
+SeaDuke is capable of executing commands.
+Seasalt uses cmd.exe to create a reverse shell on the infected endpoint.
+SEASHARPEE can execute commands on victims.
+ServHelper can execute shell commands against cmd.
+ShimRat can be issued a command shell function from the C2.
+Silence has used Windows command-line to run commands.
+SNUGRIDE is capable of executing commands and spawning a reverse shell.
+Soft Cell used the Windows command shell to execute commands.
+Sowbug has used command line during its intrusions.
+SQLRat has used SQL to execute JavaScript and VB scripts on the host system.
+StreamEx has the ability to remotely execute commands.
+Several tools used by Suckfly have been command-line driven.
+SYSCON has the ability to execute commands through cmd on a compromised host.
+TA505 has executed commands using cmd.exe.
+TDTESS provides a reverse shell on the victim.
+TEXTMATE executes cmd.exe to provide a reverse shell to adversaries.
+Threat Group-1314 actors spawned shells on remote systems on a victim network to execute commands.
+Threat Group-3390 has used command-line interfaces for execution.
+TinyZBot supports execution from the command-line.
+TrickBot has used macros in Excel documents to download and deploy the malware on the user's machine.
+Trojan.Karagany can perform reconnaissance commands on a victim machine via a cmd.exe process.
+Tropic Trooper has used Windows command scripts. 
+TSCookie has the ability to execute shell commands on the infected host.
+Turla RPC backdoors have used cmd.exe to execute commands.
+TURNEDUP is capable of creating a reverse shell.
+TYPEFRAME can uninstall malware components using a batch script. TYPEFRAME can execute commands using a shell.
+UBoatRAT can start a command shell.
+Umbreon provides access using both standard facilities like SSH and additional access using its backdoor Espeon, providing a reverse shell upon receipt of a special packet
+UNC2452 used cmd.exe to execute commands on remote machines.
+UPPERCUT uses cmd.exe to execute commands on the victim's machine.
+USBferry can execute various Windows commands. 
+Volgmer can execute commands on the victim's machine.
+WEBC2 can open an interactive command shell.
+WellMess can execute command line scripts received from C2.
+Wiarp creates a backdoor through which remote attackers can open a command line interface.
+Wizard Spider has used cmd.exe to execute commands on a victim's machine.
+XTunnel has been used to execute remote commands.
+Zebrocy uses cmd.exe to execute commands on the system.
+Zeus Panda can launch an interface where it can execute several commands on the victim's PC.
+ZLib has the ability to execute shell commands.
+zwShell can launch command-line shells.
+ZxShell can launch a reverse command shell.
+APT-C-36 has embedded a VBScript within a malicious Word document which is executed upon the document opening.
+APT32 has used macros, COM scriptlets, and VBS scripts. 
+APT33 has used VBScript to initiate the delivery of payloads.
+APT37 executes shellcode and a VBA script to decode Base64 strings.
+BackConfig has used VBS to install its downloader component and malicious documents with VBA macro code.
+Bisonal's dropper creates VBS scripts on the victim's machine.
+BRONZE BUTLER has used VBS and VBE scripts for execution.
+Cobalt Group has sent Word OLE compound documents with malicious obfuscated VBA macros that will run upon user execution.
+Cobalt Strike can use VBA to perform execution.
+Comnie executes VBS scripts.
+Emotet has sent Microsoft Word documents with embedded macros that will invoke scripts to download additional payloads. 
+Exaramel for Windows has a command to execute VBS scripts on the victim's machine.
+FIN4 has used VBA macros to display a dialog box and collect victim credentials.
+FIN7 used VBS scripts to help perform tasks on the victim's machine.
+Frankenstein has used Word documents that prompts the victim to enable macros and run a Visual Basic script.
+Gamaredon Group has embedded malicious macros in document templates, which executed VBScript. Gamaredon Group has also delivered Microsoft Outlook VBA projects with embedded macros.
+Goopy has the ability to use a Microsoft Outlook backdoor macro to communicate with its C2. 
+Gorgon Group has used macros in Spearphishing Attachments as well as executed VBScripts on victim machines.
+One version of Helminth consists of VBScript scripts.
+Honeybee embeds a Visual Basic script within a malicious Word document as part of initial access; the script is executed when the Word document is opened.
+IcedID has used obfuscated VBA string expressions.
+Inception has used VBScript to execute malicious commands and payloads.
+JCry has used VBS scripts. 
+jRAT has been distributed as HTA files with VBScript. 
+KeyBoy uses VBS scripts for installing files and performing execution.
+Koadic performs most of its operations using Windows Script Host (VBScript) and runs arbitrary shellcode .
+Lazarus Group has used VBScript to gather information about a victim machine. 
+Leviathan has used VBScript.
+Magic Hound malware has used VBS scripts for execution.
+Metamorfo has used VBS code on victims' systems.
+Molerats used various implants, including those built with VBScript, on target machines. 
+MuddyWater has used VBScript files to execute its POWERSTATS payload, as well as macros.
+NanHaiShu executes additional VBScript code on the victim's machine.
+NanoCore uses VBS files.
+OopsIE creates and uses a VBScript as part of its persistent execution.
+OSX_OCEANLOTUS.D uses Word macros for execution.
+Patchwork used Visual Basic Scripts (VBS) on victim machines.
+PoetRAT has used Word documents with VBScripts to execute malicious activities.
+PowerShower has the ability to save and execute VBScript.
+POWERSTATS can use VBScript (VBE) code for execution.
+QUADAGENT uses VBScripts.
+Ramsay has included embedded Visual Basic Scripts in malicious documents. 
+Rancor has used VBS scripts as well as embedded macros for execution.
+Remexi uses AutoIt and VBS scripts throughout its execution process.
+REvil has used obfuscated VBA macros for execution.
+Sandworm Team has created VBScripts to run an SSH server.
+Sharpshooter's first-stage downloader was a VBA macro.
+Silence has used VBS scripts.
+Smoke Loader adds a Visual Basic script in the Startup folder to deploy the payload.
+StoneDrill has several VBS scripts used throughout the malware's lifecycle. 
+Sunburst used VBScripts to initiate the execution of payloads.
+TA459 has a VBScript for execution.
+TA505 has used VBS for code execution.
+Turla has used VBS scripts throughout its operations. 
+TYPEFRAME has used a malicious Word document for delivery with VBA macros for execution.
+Ursnif droppers have used VBA macros to download and execute the malware's full executable payload.
+VBShower has the ability to execute VBScript files.
+WIRTE has used VBS scripts throughout its operation. 
+Xbash can execute malicious VBScript payloads on the victim's machine.
+APT32 has used JavaScript for drive-by downloads and C2 communications.
+Astaroth uses JavaScript to perform its core functionalities. 
+Bundlore can execute JavaScript by injecting it into the victim's browser.
+Cobalt Group has executed JavaScript scriptlets on the victim's machine.
+FIN6 has used malicious JavaScript to steal payment card data from e-commerce sites.
+FIN7 used JavaScript scripts to help perform tasks on the victim's machine.
+GRIFFON is written in and executed as JavaScript/JScript. 
+InvisiMole can use a JavaScript file as part of its execution chain.
+jRAT has been distributed as HTA files with JScript. 
+Leafminer infected victims using JavaScript code.
+Metamorfo includes payloads written in JavaScript. 
+Molerats used various implants, including those built with JS, on target machines. 
+NanHaiShu executes additional Jscript code on the victim's machine.
+POWERSTATS can use JavaScript code for execution.
+Silence has used JS scripts.
+TA505 has used JavaScript for code execution.
+Valak can execute JavaScript containing configuration data for establishing persistence.
+Xbash can execute malicious JavaScript payloads on the victim's machine.
+APT32 has lured targets to download a Cobalt Strike beacon by including a malicious link within spearphishing emails.
+APT33 has lured users to click links to malicious HTML applications delivered via spearphishing emails.
+APT39 has sent spearphishing emails in an attempt to lure users to click on a malicious link. 
+BackConfig has compromised victims via links to URLs hosting malicious content.
+BlackTech has used e-mails with malicious links to lure victims into installing malware. 
+Cobalt Group has sent emails containing malicious links that require users to execute a file or macro to infect the victim machine.
+Dragonfly 2.0 has used various forms of spearphishing in attempts to get users to open links.
+Elderwood has leveraged multiple types of spearphishing in order to attempt to get a user to open links.
+Emotet has relied upon users clicking on a malicious link delivered through spearphishing.
+FIN4 has lured victims to click malicious links delivered via spearphishing emails (often sent from compromised accounts).
+FIN8 has leveraged Spearphishing Links attempting to gain User Execution.
+Hancitor has relied upon users clicking on a malicious link delivered through phishing.
+Leviathan has sent spearphishing email links attempting to get a user to click.
+Machete has has relied on users opening malicious links delivered through spearphishing to execute malware.
+Mofang's spearphishing emails required a user to click the link to connect to a compromised website.
+Molerats has sent malicious links via email.
+Night Dragon enticed users to click on links in spearphishing emails to download malware.
+OilRig has delivered malicious links to achieve execution on the target system.
+Patchwork has used spearphishing with links to try to get users to click, download and open malicious files.
+PLEAD has been executed via malicious links in e-mails.
+Pony has attempted to lure targets into clicking links in spoofed emails from legitimate banks. 
+TA505 has used lures to get users to click links in emails and attachments. For example, TA505 makes their malware look like legitimate Microsoft Word documents, .pdf and/or .lnk files. 
+TSCookie has been executed via malicious links embedded in e-mails spoofing the Ministries of Education, Culture, Sports, Science and Technology of Japan.
+Turla has used spearphishing via a link to get users to download and run their malware.
+Windshift has used links embedded in e-mails to lure victims into executing malicious code.
+Wizard Spider has lured victims into clicking a malicious link delivered through spearphishing.
+admin@338 has attempted to get victims to launch malicious Microsoft Word attachments delivered via spearphishing emails.
+Agent Tesla has been executed through malicious e-mail attachments 
+APT-C-36 has prompted victims to accept macros in order to execute the subsequent payload.
+APT12 has attempted to get victims to open malicious Microsoft Word and PDF attachment sent via spearphishing.
+APT19 attempted to get users to launch malicious attachments delivered via spearphishing emails.
+APT28 attempted to get users to click on Microsoft Office attachments containing malicious macro scripts.
+APT29 has used various forms of spearphishing attempting to get a user to open links or attachments, including, but not limited to, malicious Microsoft Word documents, .pdf, and .lnk files.  
+APT30 has relied on users to execute malicious file attachments delivered via spearphishing emails.
+APT32 has attempted to lure users to execute a malicious dropper delivered via a spearphishing attachment.
+APT33 has used malicious e-mail attachments to lure victims into executing malware.
+APT37 has sent spearphishing attachments attempting to get a user to open them.
+APT39 has sent spearphishing emails in an attempt to lure users to click on a malicious attachment. 
+BlackTech has used e-mails with malicious documents to lure victims into installing malware. 
+BRONZE BUTLER has attempted to get users to launch malicious Microsoft Word attachments delivered via spearphishing emails.
+Bundlore has attempted to get users to execute a malicious .app file that looks like a Flash Player update.
+Cardinal RAT lures victims into executing malicious macros embedded within Microsoft Excel documents.
+CARROTBALL has been executed through users being lured into opening malicious e-mail attachments.
+Cobalt Group has sent emails containing malicious attachments that require users to execute a file or macro to infect the victim machine.
+Dark Caracal makes their malware look like Flash Player, Office, or PDF documents in order to entice a user to click on it.
+Darkhotel sent spearphishing emails with malicious attachments that required users to click on an image in the document to drop the malware to disk.
+DarkHydrus has sent malware that required users to hit the enable button in Microsoft Excel to allow an .iqy file to be downloaded.
+Dragonfly 2.0 has used various forms of spearphishing in attempts to get users to open attachments.
+Elderwood has leveraged multiple types of spearphishing in order to attempt to get a user to open attachments.
+Emotet has relied upon users clicking on a malicious attachment delivered through spearphishing.
+FIN4 has lured victims to launch malicious attachments delivered via spearphishing emails (often sent from compromised accounts).
+FIN6 has used malicious documents to lure victims into allowing execution of PowerShell scripts.
+FIN7 lured victims to double-click on images in the attachments they sent which would then execute the hidden LNK file.
+FIN8 has leveraged Spearphishing Attachments attempting to gain User Execution.
+Frankenstein has used trojanized Microsoft Word documents sent via email, which prompted the victim to enable macros.
+Gallmaker sent victims a lure document with a warning that asked victims to "enable content" for execution.
+Gamaredon Group has attempted to get users to click on Office attachments with malicious macros embedded.
+Gorgon Group attempted to get users to launch malicious Microsoft Office attachments delivered via spearphishing emails.
+Hancitor has used malicious Microsoft Word documents, sent via email, which prompted the victim to enable macros.
+IcedID has been executed through Word documents with malicious embedded macros.
+Inception lured victims into clicking malicious files for machine reconnaissance and to execute malware.
+InvisiMole can deliver trojanized versions of software and documents, relying on user execution.
+JCry has achieved execution by luring users to click on a file that appeared to be an Adobe Flash Player update installer. 
+Lazarus Group has attempted to get users to launch a malicious Microsoft Word attachment delivered via a spearphishing email.
+Leviathan has sent spearphishing attachments attempting to get a user to click.
+Lokibot has been executed through malicious documents contained in spearphishing e-mails.
+Machete has has relied on users opening malicious attachments delivered through spearphishing to execute malware.
+Magic Hound has lured victims into executing malicious files.
+menuPass has attempted to get victims to open malicious files such as Windows Shortcuts (.lnk) and/or Microsoft Office documents, sent via email as part of spearphishing campaigns.
+Metamorfo requires the user to double-click the executable to run the malicious HTA file. 
+Mofang's malicious spearphishing attachments required a user to open the file after receiving.
+Molerats has sent malicious files via email. 
+MuddyWater has attempted to get users to enable macros and launch malicious Microsoft Word documents delivered via spearphishing emails.
+Naikon has convinced victims to open malicious attachments to execute malware.
+OilRig has delivered macro-enabled documents that required targets to click the "enable content" button to execute the payload on the system.
+OSX/Shlayer relies on users mounting and executing a malicious DMG file.
+Patchwork embedded a malicious macro in a Word document and lured the victim to click on an icon to execute the malware.
+PLATINUM has attempted to get users to open malicious files by sending spearphishing emails with attachments to victims.
+PLEAD has been executed via malicious e-mail attachments.
+PoetRAT has used spearphishing attachments to infect victims.
+Pony has attempted to lure targets into downloading an attached executable (ZIP, RAR, or CAB archives) or document (PDF or other MS Office format).
+PROMETHIUM has attempted to get users to execute compromised installation files for legitimate software including compression applications, security software, browsers, file recovery applications, and other tools and utilities.
+Rancor attempted to get users to click on an embedded macro within a Microsoft Office Excel document to launch their malware.
+REvil has been executed via malicious MS Word e-mail attachments.
+Rifdoor has been executed from malicious Excel or Word documents containing macros.
+RTM has relied on users opening malicious email attachments, decompressing the attached archive, and double-clicking the executable within.
+RTM has attempted to lure victims into opening e-mail attachments to execute malicious code.
+Sandworm Team has delivered spearphishing attachments with malicious macros embedded within files.
+Sharpshooter has sent malicious DOC and PDF files to targets so that they can be opened by a user.
+Silence attempts to get users to launch malicious attachments delivered via spearphishing emails.
+SQLRat relies on users clicking on an embedded image to execute the scripts.
+StrongPity has been executed via compromised installation files for legitimate software including compression applications, security software, browsers, file recovery applications, and other tools and utilities.
+SYSCON has been executed by luring victims to open malicious e-mail attachments.
+TA459 has attempted to get victims to open malicious Microsoft Word attachment sent via spearphishing.
+TA505 has used lures to get users to enable content in malicious attachments and execute malicious files contained in archives. For example, TA505 makes their malware look like legitimate Microsoft Word documents, .pdf and/or .lnk files. 
+The White Company has used phishing lure documents that trick users into opening them and infecting their computers.
+TrickBot has attempted to get users to launch malicious documents to deliver its payload. 
+Tropic Trooper has lured victims into executing malware via malicious e-mail attachments.
+A Word document delivering TYPEFRAME prompts the user to enable macro execution.
+Valak has been executed via Microsoft Word documents containing malicious macros.
+Whitefly has used malicious .exe or .dll files disguised as documents or images.
+Windshift has used e-mail attachments to lure victims into executing malicious code.
+Wizard Spider has lured victims to execute malware with spearphishing attachments containing macros to download either Emotet, Bokbot, or TrickBot.
+Anchor can create a scheduled task for persistence.
+APT-C-36 has used a macro function to set scheduled tasks, disguised as those used by Google.
+APT29 used named and hijacked scheduled tasks to establish persistence.
+An APT3 downloader creates persistence by creating the following scheduled task: schtasks /create /tn "mysc" /tr C:\Users\Public\test.exe /sc ONLOGON /ru "System".
+APT32 has used scheduled tasks to persist on victim systems.
+APT33 has created a scheduled task to execute a .vbe file multiple times a day.
+APT39 has created scheduled tasks for persistence. 
+APT41 used a compromised account to create a scheduled task on a system.
+Attor's installer plugin can schedule a new task that loads the dispatcher on boot/logon.
+BackConfig has the ability to use scheduled tasks to repeatedly execute malicious payloads on a compromised host.
+BADNEWS creates a scheduled task to establish by executing a malicious payload every subsequent minute.
+Blue Mockingbird has used Windows Scheduled Tasks to establish persistence on local and remote hosts.
+BONDUPDATER persists using a scheduled task that executes every minute.
+BRONZE BUTLER has used schtasks to register a scheduled task to execute malware during lateral movement.
+Carbon creates several tasks for later execution to continue persistence on the victim's machine.
+Chimera has used scheduled tasks to invoke Cobalt Strike and maintain persistence.
+Cobalt Group has created Windows tasks to establish persistence.
+ComRAT has used a scheduled task to launch its PowerShell loader.
+CosmicDuke uses scheduled tasks typically named "Watchmon Service" for persistence.
+One persistence mechanism used by CozyCar is to register itself as a scheduled task.
+Dragonfly 2.0 used scheduled tasks to automatically log out of created accounts every 8 hours as well as to execute malicious files.
+Adversaries can instruct Duqu to spread laterally by copying itself to shares it has enumerated and for which it has obtained legitimate credentials (via keylogging or other means). The remote host is then infected by using the compromised credentials to schedule a task on remote machines that executes the malware.
+Dyre has the ability to achieve persistence by adding a new task in the task scheduler to run every minute.
+Emotet has maintained persistence through a scheduled task. 
+Empire has modules to interact with the Windows task scheduler.
+EvilBunny has executed commands via scheduled tasks.
+FIN10 has established persistence by using S4U tasks as well as the Scheduled Task option in PowerShell Empire.
+FIN6 has used scheduled tasks to establish persistence for various malware it uses, including downloaders known as HARDTACK and SHIPBREAD and FrameworkPOS.
+FIN7 malware has created scheduled tasks to establish persistence.
+FIN8 has used scheduled tasks to maintain RDP backdoors.
+Frankenstein has established persistence through a scheduled task using the command:  /Create /F /SC DAILY /ST 09:00 /TN WinUpdate /TR , named "WinUpdate". 
+Gamaredon Group has created a scheduled task to launch an executable every 10 minutes. 
+Gazer can establish persistence by creating a scheduled task.
+Goopy has the ability to maintain persistence by creating scheduled tasks set to run every hour. 
+GravityRAT creates a scheduled task to ensure it is re-executed everyday.
+GRIFFON has used sctasks for persistence. 
+Helminth has used a scheduled task for persistence.
+HotCroissant has attempted to install a scheduled task named "Java Maintenance64" on startup to establish persistence.
+IcedID has created a scheduled task that executes every hour to establish persistence.
+InvisiMole has used scheduled tasks named MSST and \Microsoft\Windows\Autochk\Scheduled to establish persistence.
+ISMInjector creates scheduled tasks to establish persistence.
+JHUHUGIT has registered itself as a scheduled task to run each time the current user logs in.
+The different components of Machete are executed by Windows Task Scheduler.
+Machete used scheduled tasks for persistence.
+Matroyshka can establish persistence by adding a Scheduled Task named "Microsoft Boost Kernel Optimization".
+Maze has created scheduled tasks using name variants such as "Windows Update Security", "Windows Update Security Patches", and "Google Chrome Security Update", to launch Maze at a specific time.
+MCMD can use scheduled tasks for persistence.
+menuPass has used a script (atexec.py) to execute a command on a target machine via Task Scheduler.
+MuddyWater has used scheduled tasks to establish persistence.
+NotPetya creates a task to reboot the system one hour after infection.
+OilRig has created scheduled tasks that run a VBScript to execute a payload on victim machines.
+Okrum's installer can attempt to achieve persistence by creating a scheduled task.
+OopsIE creates a scheduled task to run itself every three minutes.
+A Patchwork file stealer can run a TaskScheduler DLL to add persistence.
+PowerSploit's New-UserPersistenceOption Persistence argument can be used to establish via a Scheduled Task/Job.
+POWERSTATS has established persistence through a scheduled task using the command "C:\Windows\system32\schtasks.exe" /Create /F /SC DAILY /ST 12:00 /TN MicrosoftEdge /TR "c:\Windows\system32\wscript.exe C:\Windows\temp\Windows.vbe".
+POWRUNER persists through a scheduled task that executes it every minute.
+Pteranodon schedules tasks to invoke its components in order to establish persistence.
+QUADAGENT creates a scheduled task to maintain persistence on the victim's machine.
+QuasarRAT contains a .NET wrapper DLL for creating and managing scheduled tasks for maintaining persistence upon reboot.
+Ramsay can schedule tasks via the Windows COM API to maintain persistence. 
+Rancor launched a scheduled task to gain persistence using the schtasks /create /sc command.
+Remexi utilizes scheduled tasks as a persistence mechanism.
+RemoteCMD can execute commands remotely by creating a new schedule task on the remote system
+Revenge RAT schedules tasks to run malicious scripts at different intervals.
+RTM tries to add a scheduled task to establish persistence.
+schtasks is used to schedule tasks on a Windows system to run at a specific date and time.
+ServHelper contains modules that will use schtasks to carry out malicious operations.
+Shamoon copies an executable payload to the target system by using Windows Admin Shares and then scheduling an unnamed task to execute the malware.
+Silence has used scheduled tasks to stage its operation.
+Smoke Loader launches a scheduled task.
+Soft Cell established persistence for PoisonIvy by created a scheduled task.
+SoreFang can gain persistence through use of scheduled tasks.
+SQLRat has created scheduled tasks in %appdata%\Roaming\Microsoft\Templates\.
+Stealth Falcon malware creates a scheduled task entitled "IE Web Cache" to execute a malicious file hourly.
+TEMP.Veles has used scheduled task XML triggers.
+TrickBot creates a scheduled task on the system that provides persistence.
+UNC2452 used scheduler and schtasks to create new tasks on remote hosts as part of lateral movement. They also manipulated scheduled tasks by updating an existing legitimate task to execute their tools and then returned the scheduled task to its original configuration. UNC2452 also created a scheduled task to maintain Sunspot persistence when the host booted. 
+Valak has used scheduled tasks to execute additional payloads and to gain persistence on a compromised host.
+Wizard Spider has used scheduled tasks establish persistence for TrickBot and other malware.
+yty establishes persistence by creating a scheduled task with the command SchTasks /Create /SC DAILY /TN BigData /TR " + path_file + "/ST 09:30".
+zwShell has used SchTasks for execution.
+ADVSTORESHELL achieves persistence by adding itself to the HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run Registry key.
+Agent Tesla can add itself to the Registry as a startup program to establish persistence.
+APT18 establishes persistence via the HKCU\Software\Microsoft\Windows\CurrentVersion\Run key.
+An APT19 HTTP malware variant establishes persistence by setting the Registry key HKCU\Software\Microsoft\Windows\CurrentVersion\Run\Windows Debug Tools-%LOCALAPPDATA%\.
+APT29 added Registry Run keys to establish persistence.
+APT3 places scripts in the startup folder for persistence.
+APT32 established persistence using Registry Run keys, both to execute PowerShell and VBS scripts as well as to execute their backdoor directly.
+APT33 has deployed a tool known as DarkComet to the Startup folder of a victim, and used Registry run keys to gain persistence.
+APT37's has added persistence via the Registry key HKCU\Software\Microsoft\CurrentVersion\Run\.
+APT39 has maintained persistence using the startup folder. 
+APT41 created and modified startup files for persistence. APT41 added a registry key in HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost to establish persistence for Cobalt Strike.
+Aria-body has established persistence via the Startup folder or Run Registry key.
+Astaroth creates a startup item for persistence. 
+BabyShark has added a Registry key to ensure all future macros are enabled for Microsoft Word and Excel as well as for additional persistence.
+Backdoor.Oldrea adds Registry Run keys to achieve persistence.
+BACKSPACE achieves persistence by creating a shortcut to itself in the CSIDL_STARTUP directory.
+BADNEWS installs a registry Run key to establish persistence.
+BadPatch establishes a foothold by adding a link to the malware executable in the startup folder.
+BBSRAT has been loaded through DLL side-loading of a legitimate Citrix executable that is set to persist through the Registry Run key location HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ssonsvr.exe.
+Bisonal adds itself to the Registry key HKEY_CURRENT_USER\Software\Microsoft\CurrentVersion\Run\ for persistence.
+The BlackEnergy 3 variant drops its main DLL component and then creates a .lnk shortcut to that file in the startup folder.
+Briba creates run key Registry entries pointing to malicious DLLs dropped to disk.
+BRONZE BUTLER has used a batch script that adds a Registry Run key to establish malware persistence.
+build_downer has the ability to add itself to the Registry Run key for persistence.
+Carbanak stores a configuration files in the startup directory to automatically execute commands in order to persist across reboots.
+Carberp has maintained persistence by placing itself inside the current user's startup folder.
+Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable.
+ChChes establishes persistence by adding a Registry Run key.
+Cobalt Group has used Registry Run keys for persistence. The group has also set a Startup path to launch the PowerShell shell command and download Cobalt Strike.
+Cobian RAT creates an autostart Registry key to ensure persistence.
+Comnie achieves persistence by adding a shortcut of itself to the startup path in the Registry.
+CORESHELL has established persistence by creating autostart extensibility point (ASEP) Registry entries in the Run key and other Registry keys, as well as by creating shortcuts in the Internet Explorer Quick Start folder.
+One persistence mechanism used by CozyCar is to set itself to be executed at system startup by adding a Registry value under one of the following Registry keys: HKLM\Software\Microsoft\Windows\CurrentVersion\Run\ HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
+CrossRAT uses run keys for persistence on Windows
+Dark Caracal's version of Bandook adds a registry key to HKEY_USERS\Software\Microsoft\Windows\CurrentVersion\Run for persistence.
+DarkComet adds several Registry entries to enable automatic execution at every system startup.
+Darkhotel has been known to establish persistence by adding programs to the Run Registry key.
+DownPaper uses PowerShell to add a Registry Run key in order to establish persistence.
+Dragonfly 2.0 added the registry value ntdll to the Registry Run key to establish persistence.
+DustySky achieves persistence by creating a Registry entry in HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run.
+If establishing persistence by installation as a new service fails, one variant of Elise establishes persistence for the created .exe file by setting the following Registry key: HKCU\Software\Microsoft\Windows\CurrentVersion\Run\svchost : %APPDATA%\Microsoft\Network\svchost.exe. Other variants have set the following Registry keys for persistence: HKCU\Software\Microsoft\Windows\CurrentVersion\Run\imejp : [self] and HKCU\Software\Microsoft\Windows\CurrentVersion\Run\IAStorD.
+Variants of Emissary have added Run Registry keys to establish persistence.
+Emotet has been observed adding the downloaded payload to the HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run key to maintain persistence.
+Empire can modify the registry run keys HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run and HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run for persistence.
+EvilBunny has created Registry keys for persistence in [HKLM|HKCU]\'\CurrentVersion\Run. 
+EvilGrab adds a Registry Run key for ctfmon.exe to establish persistence.
+FatDuke has used HKLM\SOFTWARE\Microsoft\CurrentVersion\Run to establish persistence.
+FELIXROOT adds a shortcut file to the startup folder for persistence.
+FIN10 has established persistence by using the Registry option in PowerShell Empire to add a Run key.
+FIN6 has used Registry Run keys to establish persistence for its downloader tools known as HARDTACK and SHIPBREAD.
+FIN7 malware has created Registry Run and RunOnce keys to establish persistence, and has also added items to the Startup folder.
+Final1stspy creates a Registry Run key to establish persistence.
+FinFisher establishes persistence by creating the Registry key HKCU\Software\Microsoft\Windows\Run.
+FLASHFLOOD achieves persistence by making an entry in the Registry's Run key.
+Gamaredon Group tools have registered Run keys in the registry to give malicious VBS files persistence.
+Gazer can establish persistence by creating a .lnk file in the Start menu.
+gh0st RAT has added a Registry Run key to establish persistence.
+Gold Dragon establishes persistence in the Startup folder.
+Gorgon Group malware can create a .lnk file and add a Registry Run key to establish persistence.
+GRIFFON has used a persistence module that stores the implant inside the Registry, which executes at logon.
+Hancitor  has added Registry Run keys to establish persistence.
+Helminth establishes persistence by creating a shortcut in the Start Menu folder.
+Hi-Zor creates a Registry Run key to establish persistence.
+Honeybee uses a batch file that configures the ComSysApp service to autostart in order to establish persistence.
+HTTPBrowser has established persistence by setting the HKCU\Software\Microsoft\Windows\CurrentVersion\Run key value for wdm to the path of the executable. It has also used the Registry entry HKEY_USERS\Software\Microsoft\Windows\CurrentVersion\Run vpdn "%ALLUSERPROFILE%\%APPDATA%\vpdn\VPDN_LU.exe" to establish persistence.
+IcedID has established persistence by creating a Registry run key.
+Inception has maintained persistence by modifying Registry run key value  HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\.
+Some InnaputRAT variants establish persistence by modifying the Registry key HKU\\Software\Microsoft\Windows\CurrentVersion\Run:%appdata%\NeutralApp\NeutralApp.exe.
+InvisiMole can place a lnk file in the Startup Folder to achieve persistence.
+Ixeshe can achieve persistence by adding itself to the HKCU\Software\Microsoft\Windows\CurrentVersion\Run Registry key.
+JCry has created payloads in the Startup directory to maintain persistence. 
+JHUHUGIT has used a Registry Run key to establish persistence by executing JavaScript code within the rundll32.exe process.
+Kasidet creates a Registry Run key to establish persistence.
+Kazuar adds a sub-key under several Registry run keys.
+Several Ke3chang backdoors achieved persistence by adding a Run key.
+Kimsuky has placed scripts in the startup folder for persistence.
+A version of KONNI drops a Windows shortcut into the Startup folder to establish persistence.
+Lazarus Group malware attempts to maintain persistence by saving itself in the Start menu folder or by adding a Registry Run key.
+Leviathan has used JavaScript to create a shortcut file in the Startup folder that points to its main backdoor.
+LoJax has modified the Registry key 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\BootExecute' from 'autocheck autochk ' to 'autocheck autoche ' in order to execute its payload during Windows startup.
+Machete used the startup folder for persistence.
+Magic Hound malware has used Registry Run keys to establish persistence.
+Matroyshka can establish persistence by adding Registry Run keys.
+Maze has created a file named "startup_vrun.bat" in the Startup folder of a virtual machine to establish persistence.
+MCMD can use Registry Run Keys for persistence.
+Metamorfo has written its executable path to a Registry Run key and used .LNK files in the startup folder to achieve persistence.
+Mivast creates the following Registry entry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\Micromedia.
+Molerats saved malicious files within the AppData and Startup folders to maintain persistence.
+Mosquito establishes persistence under the Registry key HKCU\Software\Run auto_update.
+MuddyWater has added Registry Run key KCU\Software\Microsoft\Windows\CurrentVersion\Run\SystemTextEncoding to establish persistence.
+NanHaiShu modifies the %regrun% Registry to point itself to an autostart mechanism.
+NanoCore creates a RunOnce key in the Registry to execute its VBS scripts each time the user logs on to the machine.
+NavRAT creates a Registry key to ensure a file gets executed upon reboot in order to establish persistence.
+The "SCOUT" variant of NETEAGLE achieves persistence by adding itself to the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run Registry key.
+NETWIRE creates a Registry start-up entry to establish persistence.
+njRAT has added persistence via the Registry key HKCU\Software\Microsoft\CurrentVersion\Run\ and dropped a shortcut in %STARTUP%.
+NOKKI has established persistence by writing the payload to the Registry key HKCU\Software\Microsoft\Windows\CurrentVersion\Run.
+Okrum establishes persistence by creating a .lnk shortcut to itself in the Startup folder. 
+Patchwork has added the path of its second-stage malware to the startup folder to achieve persistence. One of its file stealers has also persisted by adding a Registry Run key.
+Pisloader establishes persistence via a Registry Run key.
+PLAINTEE gains persistence by adding the Registry key HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce.
+PlugX adds Run key entries in the Registry to establish persistence.
+PoetRAT has added a registry key in the  hive for persistence.
+PoisonIvy creates run key Registry entries pointing to a malicious executable dropped to disk.
+PowerDuke achieves persistence by using various Registry Run keys.
+PowerShower sets up persistence with a Registry run key.
+POWERSOURCE achieves persistence by setting a Registry Run key, with the path depending on whether the victim account has user or administrator access.
+PowerSploit's New-UserPersistenceOption Persistence argument can be used to establish via the HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run Registry key.
+POWERTON can install a Registry Run key for persistence.
+Prikormka adds itself to a Registry Run key with the name guidVGA or guidVSA.
+PROMETHIUM has used Registry run keys to establish persistence.
+Pteranodon copies itself to the Startup folder to establish persistence.
+PUNCHBUGGY has been observed using a Registry Run key.
+Pupy adds itself to the startup folder or adds itself to the Registry key SOFTWARE\Microsoft\Windows\CurrentVersion\Run for persistence.
+A dropper used by Putter Panda installs itself into the ASEP Registry key HKCU\Software\Microsoft\Windows\CurrentVersion\Run with a value named McUpdate.
+Reaver creates a shortcut file and saves it in a Startup folder to establish persistence.
+RedLeaves attempts to add a shortcut file in the Startup folder to achieve persistence. If this fails, it attempts to add Registry Run keys.
+Remcos can add itself to the Registry key HKCU\Software\Microsoft\Windows\CurrentVersion\Run for persistence.
+Remexi utilizes Run Registry keys in the HKLM hive as a persistence mechanism.
+Revenge RAT creates a Registry key at HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell to survive a system reboot.
+Rifdoor has created a new registry entry at HKEY_CURRENT_USERS\Software\Microsoft\Windows\CurrentVersion\Run\Graphics with a value of C:\ProgramData\Initech\Initech.exe /run.
+Rocke's miner has created UPX-packed files in the Windows Start Menu Folder. 
+RogueRobin created a shortcut in the Windows startup folder to launch a PowerShell script each time the user logs in to establish persistence.
+Rover persists by creating a Registry entry in HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\.
+RTM tries to add a Registry Run key under the name "Windows Update" to establish persistence.
+RTM has used Registry run keys to establish persistence for the RTM Trojan and other tools, such as a modified version of TeamViewer remote desktop software.
+RunningRAT adds itself to the Registry key Software\Microsoft\Windows\CurrentVersion\Run to establish persistence upon reboot.
+Ryuk has used the Windows command line to create a Registry entry under HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run to establish persistence.
+S-Type may create a .lnk file to itself that is saved in the Start menu folder. It may also create the Registry key HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ IMJPMIJ8.1{{3 characters of Unique Identifier}}.
+Most Sakula samples maintain persistence by setting the Registry Run key SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ in the HKLM or HKCU hive, with the Registry value and file name varying by sample.
+SDBot has the ability to add a value to the Registry Run key to establish persistence if it detects it is running with regular user privilege. 
+SeaDuke is capable of persisting via the Registry Run key or a .lnk file stored in the Startup directory.
+Seasalt creates a Registry entry to ensure infection after reboot under HKLM\Software\Microsoft\Windows\currentVersion\Run.
+ServHelper may attempt to establish persistence via the HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ run key.
+Sharpshooter's first-stage downloader installed Rising Sun to the startup folder %Startup%\mssync.exe. 
+ShimRat has installed a registry based start-up key HKCU\Software\microsoft\windows\CurrentVersion\Run to maintain persistence should other methods fail.
+SHIPSHAPE achieves persistence by creating a shortcut in the Startup folder.
+Silence has used HKCU\Software\Microsoft\Windows\CurrentVersion\Run, HKLM\Software\Microsoft\Windows\CurrentVersion\Run, and the Startup folder to establish persistence. 
+Smoke Loader adds a Registry Run key for persistence and adds a script in the Startup folder to deploy the payload.
+SNUGRIDE establishes persistence through a Registry Run key.
+SPACESHIP achieves persistence by creating a shortcut in the current user's Startup folder.
+To establish persistence, SslMM identifies the Start Menu Startup directory and drops a link to its own executable disguised as an "Office Start," "Yahoo Talk," "MSN Gaming Z0ne," or "MSN Talk" shortcut.
+StrongPity can use the HKCU\Software\Microsoft\Windows\CurrentVersion\Run Registry key for persistence.
+Sykipot has been known to establish persistence by adding programs to the Run Registry key.
+A Threat Group-3390 tool can add the binary's path to the Registry key Software\Microsoft\Windows\CurrentVersion\Run to add persistence.
+TINYTYPHON installs itself under Registry Run key to establish persistence.
+TinyZBot can create a shortcut in the Windows startup folder for persistence.
+Trojan.Karagany can create a link to itself in the Startup folder to automatically start itself upon system restart.
+Tropic Trooper has created shortcuts in the Startup folder to establish persistence.
+Truvasys adds a Registry Run key to establish persistence.
+A Turla Javascript backdoor added a local_update_check value under the Registry key HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run to establish persistence. Additionally, a Turla custom executable containing Metasploit shellcode is saved to the Startup folder to gain persistence.
+TURNEDUP is capable of writing to a Registry Run key to establish.
+Ursnif has used Registry Run keys to establish automatic execution at system startup.
+USBStealer registers itself under a Registry Run key with the name "USB Disk Security."
+Vasport copies itself to disk and creates an associated run key Registry entry to establish.
+VBShower used HKCU\Software\Microsoft\Windows\CurrentVersion\Run\[a-f0-9A-F]{{8}} to maintain persistence.
+Wizard Spider has has established persistence via the Registry key HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run and a shortcut within the startup folder.
+Xbash can create a Startup item for persistence if it determines it is on a Windows system.
+Zebrocy creates an entry in a Registry Run key for the malware to execute on startup.
+Zeus Panda adds persistence by creating Registry Run keys.
+An APT28 loader Trojan adds the Registry key HKCU\Environment\UserInitMprLogonScript to establish persistence.
+Attor's dispatcher can establish persistence via adding a Registry key with a logon script HKEY_CURRENT_USER\Environment "UserInitMprLogonScript" .
+Cobalt Group has added persistence by registering the file name for the next stage malware under HKCU\Environment\UserInitMprLogonScript.
+JHUHUGIT has registered a Windows shell script under the Registry key HKCU\Environment\UserInitMprLogonScript to establish persistence.
+Zebrocy performs persistence with a logon script via adding to the Registry key HKCU\Environment\UserInitMprLogonScript.
+ADVSTORESHELL achieves persistence by adding itself to the HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run Registry key.
+Agent Tesla can add itself to the Registry as a startup program to establish persistence.
+APT18 establishes persistence via the HKCU\Software\Microsoft\Windows\CurrentVersion\Run key.
+An APT19 HTTP malware variant establishes persistence by setting the Registry key HKCU\Software\Microsoft\Windows\CurrentVersion\Run\Windows Debug Tools-%LOCALAPPDATA%\.
+APT29 added Registry Run keys to establish persistence.
+APT3 places scripts in the startup folder for persistence.
+APT32 established persistence using Registry Run keys, both to execute PowerShell and VBS scripts as well as to execute their backdoor directly.
+APT33 has deployed a tool known as DarkComet to the Startup folder of a victim, and used Registry run keys to gain persistence.
+APT37's has added persistence via the Registry key HKCU\Software\Microsoft\CurrentVersion\Run\.
+APT39 has maintained persistence using the startup folder. 
+APT41 created and modified startup files for persistence. APT41 added a registry key in HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost to establish persistence for Cobalt Strike.
+Aria-body has established persistence via the Startup folder or Run Registry key.
+Astaroth creates a startup item for persistence. 
+BabyShark has added a Registry key to ensure all future macros are enabled for Microsoft Word and Excel as well as for additional persistence.
+Backdoor.Oldrea adds Registry Run keys to achieve persistence.
+BACKSPACE achieves persistence by creating a shortcut to itself in the CSIDL_STARTUP directory.
+BADNEWS installs a registry Run key to establish persistence.
+BadPatch establishes a foothold by adding a link to the malware executable in the startup folder.
+BBSRAT has been loaded through DLL side-loading of a legitimate Citrix executable that is set to persist through the Registry Run key location HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ssonsvr.exe.
+Bisonal adds itself to the Registry key HKEY_CURRENT_USER\Software\Microsoft\CurrentVersion\Run\ for persistence.
+The BlackEnergy 3 variant drops its main DLL component and then creates a .lnk shortcut to that file in the startup folder.
+Briba creates run key Registry entries pointing to malicious DLLs dropped to disk.
+BRONZE BUTLER has used a batch script that adds a Registry Run key to establish malware persistence.
+build_downer has the ability to add itself to the Registry Run key for persistence.
+Carbanak stores a configuration files in the startup directory to automatically execute commands in order to persist across reboots.
+Carberp has maintained persistence by placing itself inside the current user's startup folder.
+Cardinal RAT establishes Persistence by setting the  HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load Registry key to point to its executable.
+ChChes establishes persistence by adding a Registry Run key.
+Cobalt Group has used Registry Run keys for persistence. The group has also set a Startup path to launch the PowerShell shell command and download Cobalt Strike.
+Cobian RAT creates an autostart Registry key to ensure persistence.
+Comnie achieves persistence by adding a shortcut of itself to the startup path in the Registry.
+CORESHELL has established persistence by creating autostart extensibility point (ASEP) Registry entries in the Run key and other Registry keys, as well as by creating shortcuts in the Internet Explorer Quick Start folder.
+One persistence mechanism used by CozyCar is to set itself to be executed at system startup by adding a Registry value under one of the following Registry keys: HKLM\Software\Microsoft\Windows\CurrentVersion\Run\ HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
+CrossRAT uses run keys for persistence on Windows
+Dark Caracal's version of Bandook adds a registry key to HKEY_USERS\Software\Microsoft\Windows\CurrentVersion\Run for persistence.
+DarkComet adds several Registry entries to enable automatic execution at every system startup.
+Darkhotel has been known to establish persistence by adding programs to the Run Registry key.
+DownPaper uses PowerShell to add a Registry Run key in order to establish persistence.
+Dragonfly 2.0 added the registry value ntdll to the Registry Run key to establish persistence.
+DustySky achieves persistence by creating a Registry entry in HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run.
+If establishing persistence by installation as a new service fails, one variant of Elise establishes persistence for the created .exe file by setting the following Registry key: HKCU\Software\Microsoft\Windows\CurrentVersion\Run\svchost : %APPDATA%\Microsoft\Network\svchost.exe. Other variants have set the following Registry keys for persistence: HKCU\Software\Microsoft\Windows\CurrentVersion\Run\imejp : [self] and HKCU\Software\Microsoft\Windows\CurrentVersion\Run\IAStorD.
+Variants of Emissary have added Run Registry keys to establish persistence.
+Emotet has been observed adding the downloaded payload to the HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run key to maintain persistence.
+Empire can modify the registry run keys HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run and HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run for persistence.
+EvilBunny has created Registry keys for persistence in [HKLM|HKCU]\'\CurrentVersion\Run. 
+EvilGrab adds a Registry Run key for ctfmon.exe to establish persistence.
+FatDuke has used HKLM\SOFTWARE\Microsoft\CurrentVersion\Run to establish persistence.
+FELIXROOT adds a shortcut file to the startup folder for persistence.
+FIN10 has established persistence by using the Registry option in PowerShell Empire to add a Run key.
+FIN6 has used Registry Run keys to establish persistence for its downloader tools known as HARDTACK and SHIPBREAD.
+FIN7 malware has created Registry Run and RunOnce keys to establish persistence, and has also added items to the Startup folder.
+Final1stspy creates a Registry Run key to establish persistence.
+FinFisher establishes persistence by creating the Registry key HKCU\Software\Microsoft\Windows\Run.
+FLASHFLOOD achieves persistence by making an entry in the Registry's Run key.
+Gamaredon Group tools have registered Run keys in the registry to give malicious VBS files persistence.
+Gazer can establish persistence by creating a .lnk file in the Start menu.
+gh0st RAT has added a Registry Run key to establish persistence.
+Gold Dragon establishes persistence in the Startup folder.
+Gorgon Group malware can create a .lnk file and add a Registry Run key to establish persistence.
+GRIFFON has used a persistence module that stores the implant inside the Registry, which executes at logon.
+Hancitor  has added Registry Run keys to establish persistence.
+Helminth establishes persistence by creating a shortcut in the Start Menu folder.
+Hi-Zor creates a Registry Run key to establish persistence.
+Honeybee uses a batch file that configures the ComSysApp service to autostart in order to establish persistence.
+HTTPBrowser has established persistence by setting the HKCU\Software\Microsoft\Windows\CurrentVersion\Run key value for wdm to the path of the executable. It has also used the Registry entry HKEY_USERS\Software\Microsoft\Windows\CurrentVersion\Run vpdn "%ALLUSERPROFILE%\%APPDATA%\vpdn\VPDN_LU.exe" to establish persistence.
+IcedID has established persistence by creating a Registry run key.
+Inception has maintained persistence by modifying Registry run key value  HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\.
+Some InnaputRAT variants establish persistence by modifying the Registry key HKU\\Software\Microsoft\Windows\CurrentVersion\Run:%appdata%\NeutralApp\NeutralApp.exe.
+InvisiMole can place a lnk file in the Startup Folder to achieve persistence.
+Ixeshe can achieve persistence by adding itself to the HKCU\Software\Microsoft\Windows\CurrentVersion\Run Registry key.
+JCry has created payloads in the Startup directory to maintain persistence. 
+JHUHUGIT has used a Registry Run key to establish persistence by executing JavaScript code within the rundll32.exe process.
+Kasidet creates a Registry Run key to establish persistence.
+Kazuar adds a sub-key under several Registry run keys.
+Several Ke3chang backdoors achieved persistence by adding a Run key.
+Kimsuky has placed scripts in the startup folder for persistence.
+A version of KONNI drops a Windows shortcut into the Startup folder to establish persistence.
+Lazarus Group malware attempts to maintain persistence by saving itself in the Start menu folder or by adding a Registry Run key.
+Leviathan has used JavaScript to create a shortcut file in the Startup folder that points to its main backdoor.
+LoJax has modified the Registry key 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\BootExecute' from 'autocheck autochk ' to 'autocheck autoche ' in order to execute its payload during Windows startup.
+Machete used the startup folder for persistence.
+Magic Hound malware has used Registry Run keys to establish persistence.
+Matroyshka can establish persistence by adding Registry Run keys.
+Maze has created a file named "startup_vrun.bat" in the Startup folder of a virtual machine to establish persistence.
+MCMD can use Registry Run Keys for persistence.
+Metamorfo has written its executable path to a Registry Run key and used .LNK files in the startup folder to achieve persistence.
+Mivast creates the following Registry entry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\Micromedia.
+Molerats saved malicious files within the AppData and Startup folders to maintain persistence.
+Mosquito establishes persistence under the Registry key HKCU\Software\Run auto_update.
+MuddyWater has added Registry Run key KCU\Software\Microsoft\Windows\CurrentVersion\Run\SystemTextEncoding to establish persistence.
+NanHaiShu modifies the %regrun% Registry to point itself to an autostart mechanism.
+NanoCore creates a RunOnce key in the Registry to execute its VBS scripts each time the user logs on to the machine.
+NavRAT creates a Registry key to ensure a file gets executed upon reboot in order to establish persistence.
+The "SCOUT" variant of NETEAGLE achieves persistence by adding itself to the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run Registry key.
+NETWIRE creates a Registry start-up entry to establish persistence.
+njRAT has added persistence via the Registry key HKCU\Software\Microsoft\CurrentVersion\Run\ and dropped a shortcut in %STARTUP%.
+NOKKI has established persistence by writing the payload to the Registry key HKCU\Software\Microsoft\Windows\CurrentVersion\Run.
+Okrum establishes persistence by creating a .lnk shortcut to itself in the Startup folder. 
+Patchwork has added the path of its second-stage malware to the startup folder to achieve persistence. One of its file stealers has also persisted by adding a Registry Run key.
+Pisloader establishes persistence via a Registry Run key.
+PLAINTEE gains persistence by adding the Registry key HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce.
+PlugX adds Run key entries in the Registry to establish persistence.
+PoetRAT has added a registry key in the  hive for persistence.
+PoisonIvy creates run key Registry entries pointing to a malicious executable dropped to disk.
+PowerDuke achieves persistence by using various Registry Run keys.
+PowerShower sets up persistence with a Registry run key.
+POWERSOURCE achieves persistence by setting a Registry Run key, with the path depending on whether the victim account has user or administrator access.
+PowerSploit's New-UserPersistenceOption Persistence argument can be used to establish via the HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run Registry key.
+POWERTON can install a Registry Run key for persistence.
+Prikormka adds itself to a Registry Run key with the name guidVGA or guidVSA.
+PROMETHIUM has used Registry run keys to establish persistence.
+Pteranodon copies itself to the Startup folder to establish persistence.
+PUNCHBUGGY has been observed using a Registry Run key.
+Pupy adds itself to the startup folder or adds itself to the Registry key SOFTWARE\Microsoft\Windows\CurrentVersion\Run for persistence.
+A dropper used by Putter Panda installs itself into the ASEP Registry key HKCU\Software\Microsoft\Windows\CurrentVersion\Run with a value named McUpdate.
+Reaver creates a shortcut file and saves it in a Startup folder to establish persistence.
+RedLeaves attempts to add a shortcut file in the Startup folder to achieve persistence. If this fails, it attempts to add Registry Run keys.
+Remcos can add itself to the Registry key HKCU\Software\Microsoft\Windows\CurrentVersion\Run for persistence.
+Remexi utilizes Run Registry keys in the HKLM hive as a persistence mechanism.
+Revenge RAT creates a Registry key at HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell to survive a system reboot.
+Rifdoor has created a new registry entry at HKEY_CURRENT_USERS\Software\Microsoft\Windows\CurrentVersion\Run\Graphics with a value of C:\ProgramData\Initech\Initech.exe /run.
+Rocke's miner has created UPX-packed files in the Windows Start Menu Folder. 
+RogueRobin created a shortcut in the Windows startup folder to launch a PowerShell script each time the user logs in to establish persistence.
+Rover persists by creating a Registry entry in HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\.
+RTM tries to add a Registry Run key under the name "Windows Update" to establish persistence.
+RTM has used Registry run keys to establish persistence for the RTM Trojan and other tools, such as a modified version of TeamViewer remote desktop software.
+RunningRAT adds itself to the Registry key Software\Microsoft\Windows\CurrentVersion\Run to establish persistence upon reboot.
+Ryuk has used the Windows command line to create a Registry entry under HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run to establish persistence.
+S-Type may create a .lnk file to itself that is saved in the Start menu folder. It may also create the Registry key HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ IMJPMIJ8.1{{3 characters of Unique Identifier}}.
+Most Sakula samples maintain persistence by setting the Registry Run key SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ in the HKLM or HKCU hive, with the Registry value and file name varying by sample.
+SDBot has the ability to add a value to the Registry Run key to establish persistence if it detects it is running with regular user privilege. 
+SeaDuke is capable of persisting via the Registry Run key or a .lnk file stored in the Startup directory.
+Seasalt creates a Registry entry to ensure infection after reboot under HKLM\Software\Microsoft\Windows\currentVersion\Run.
+ServHelper may attempt to establish persistence via the HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ run key.
+Sharpshooter's first-stage downloader installed Rising Sun to the startup folder %Startup%\mssync.exe. 
+ShimRat has installed a registry based start-up key HKCU\Software\microsoft\windows\CurrentVersion\Run to maintain persistence should other methods fail.
+SHIPSHAPE achieves persistence by creating a shortcut in the Startup folder.
+Silence has used HKCU\Software\Microsoft\Windows\CurrentVersion\Run, HKLM\Software\Microsoft\Windows\CurrentVersion\Run, and the Startup folder to establish persistence. 
+Smoke Loader adds a Registry Run key for persistence and adds a script in the Startup folder to deploy the payload.
+SNUGRIDE establishes persistence through a Registry Run key.
+SPACESHIP achieves persistence by creating a shortcut in the current user's Startup folder.
+To establish persistence, SslMM identifies the Start Menu Startup directory and drops a link to its own executable disguised as an "Office Start," "Yahoo Talk," "MSN Gaming Z0ne," or "MSN Talk" shortcut.
+StrongPity can use the HKCU\Software\Microsoft\Windows\CurrentVersion\Run Registry key for persistence.
+Sykipot has been known to establish persistence by adding programs to the Run Registry key.
+A Threat Group-3390 tool can add the binary's path to the Registry key Software\Microsoft\Windows\CurrentVersion\Run to add persistence.
+TINYTYPHON installs itself under Registry Run key to establish persistence.
+TinyZBot can create a shortcut in the Windows startup folder for persistence.
+Trojan.Karagany can create a link to itself in the Startup folder to automatically start itself upon system restart.
+Tropic Trooper has created shortcuts in the Startup folder to establish persistence.
+Truvasys adds a Registry Run key to establish persistence.
+A Turla Javascript backdoor added a local_update_check value under the Registry key HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run to establish persistence. Additionally, a Turla custom executable containing Metasploit shellcode is saved to the Startup folder to gain persistence.
+TURNEDUP is capable of writing to a Registry Run key to establish.
+Ursnif has used Registry Run keys to establish automatic execution at system startup.
+USBStealer registers itself under a Registry Run key with the name "USB Disk Security."
+Vasport copies itself to disk and creates an associated run key Registry entry to establish.
+VBShower used HKCU\Software\Microsoft\Windows\CurrentVersion\Run\[a-f0-9A-F]{{8}} to maintain persistence.
+Wizard Spider has has established persistence via the Registry key HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run and a shortcut within the startup folder.
+Xbash can create a Startup item for persistence if it determines it is on a Windows system.
+Zebrocy creates an entry in a Registry Run key for the malware to execute on startup.
+Zeus Panda adds persistence by creating Registry Run keys.
+Flame can use Windows Authentication Packages for persistence.
+ADVSTORESHELL is capable of setting and deleting Registry values.
+APT19 uses a Port 22 malware variant to modify several Registry keys.
+APT32's backdoor has modified the Windows Registry to store the backdoor's configuration.  
+APT38 uses a tool called CLEANTOAD that has the capability to modify Registry keys.
+APT41 used a malware variant called GOODLUCK to modify the registry in order to steal credentials.
+Attor's dispatcher can modify the Run registry key.
+BACKSPACE is capable of deleting Registry keys, sub-keys, and values on a victim system.
+BADCALL modifies the firewall Registry key SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfileGloballyOpenPorts\List.
+Bankshot writes data into the Registry key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Pniumj.
+Blue Mockingbird has used Windows Registry modifications to specify a DLL payload. 
+Cardinal RAT sets HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load to point to its executable.
+Catchamas creates three Registry keys to establish persistence by adding a New Service.
+CHOPSTICK may store RC4 encrypted configuration information in the Windows Registry.
+ComRAT has encrypted and stored its orchestrator code in the Registry.
+CrackMapExec can create a registry key using wdigest.
+DarkComet adds a Registry value for its installation routine to the Registry Key HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System Enable LUA="0" and HKEY_CURRENT_USER\Software\DC3_FEXEC.
+Dragonfly 2.0 modified the Registry to perform multiple techniques through the use of Reg.
+Exaramel for Windows adds the configuration to the Registry in XML format.
+FELIXROOT deletes the Registry key HKCU\Software\Classes\Applications\rundll32.exe\shell\open.
+FIN8 has deleted Registry keys during post compromise cleanup activities.
+Gamaredon Group has removed security settings for VBA macro execution by changing registry values HKCU\Software\Microsoft\Office\<version>\<product>\Security\VBAWarnings and HKCU\Software\Microsoft\Office\<version>\<product>\Security\AccessVBOM. 
+gh0st RAT has altered the InstallTime subkey.
+Gorgon Group malware can deactivate security mechanisms in Microsoft Office by editing several keys and values under HKCU\Software\Microsoft\Office\.
+GreyEnergy modifies conditions in the Registry and adds keys.
+Honeybee uses a batch file that modifies Registry keys to launch a DLL into the svchost.exe process.
+HOPLIGHT has modified Managed Object Format (MOF) files within the Registry to run specific commands and create persistence on the system. 
+Hydraq creates a Registry subkey to register its created service, and can also uninstall itself later by deleting this value. Hydraq's backdoor also enables remote attackers to modify and delete subkeys.
+InvisiMole has a command to create, set, copy, or delete a specified Registry key or value.
+KEYMARBLE has a command to create Registry entries for storing data under HKEY_CURRENT_USER\SOFTWARE\Microsoft\WABE\DataPath.
+KONNI has modified registry keys of ComSysApp service and Svchost on the machine to gain persistence.
+Lazarus Group has modified registry keys using the reg windows utility for its custom backdoor implants.
+LoJax has modified the Registry key 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\BootExecute' from 'autocheck autochk ' to 'autocheck autoche '.
+Metamorfo has written process names to the Registry, disabled IE browser features, deleted Registry keys, and changed the ExtendedUIHoverTime key.
+Mosquito stores configuration values under the Registry key HKCU\Software\Microsoft[dllname] and modifies Registry keys under HKCR\CLSID...\InprocServer32with a path to the launcher.
+Naid creates Registry entries that store information about a created service and point to a malicious DLL dropped to disk.
+NanoCore has the capability to edit the Registry.
+Nerex creates a Registry subkey that registers a new service.
+Netwalker can add the following registry entry: HKEY_CURRENT_USER\SOFTWARE{{8 random characters}}.
+njRAT can create, delete, or modify a specified Registry key or value.
+A Patchwork payload deletes Resiliency Registry keys created by Microsoft Office applications in an apparent effort to trick users into thinking there were no issues during application runs.
+PHOREAL is capable of manipulating the Registry.
+Pillowmint has stored its malicious payload in the registry key HKLM\SOFTWARE\Microsoft\DRM.
+PipeMon has stored its encrypted payload in the Registry.
+PLAINTEE uses reg add to add a Registry Run key for persistence.
+PlugX has a module to create, delete, or modify Registry keys.
+PoetRAT has made registry modifications to alter its behavior upon execution.
+PoisonIvy creates a Registry subkey that registers a new system device.
+PolyglotDuke can write encrypted JSON configuration files to the Registry.
+PowerShower has added a registry key so future powershell.exe instances are spawned off-screen by default, and has removed all registry entries that are left behind during the dropper process.
+QUADAGENT modifies an HKCU Registry key to store a session identifier unique to the compromised system as well as a pre-shared key used for encrypting and decrypting C2 communications.
+QuasarRAT has a command to edit the Registry on the victim's machine.
+Reg may be used to interact with and modify the Windows Registry of a local or remote system at the command-line interface.
+RegDuke can store its encryption key in the Registry.
+Regin appears to have functionality to modify remote Registry information.
+Remcos has full control of the Registry, including the ability to modify it.
+REvil can save encryption parameters and system information to the Registry.
+Rover has functionality to remove Registry Run key persistence as a cleanup procedure.
+RTM can delete all Registry entries created during its execution.
+Once Shamoon has access to a network share, it enables the RemoteRegistry service on the target system. It will then connect to the system with RegConnectRegistryW and modify the Registry to disable UAC remote restrictions by setting SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy to 1.
+ShimRat has registered two registry keys for shim databases.
+Silence can create, delete, or modify a specified Registry key or value.
+SOUNDBITE is capable of modifying the Registry.
+StreamEx has the ability to modify the Registry.
+Sunburst had commands that allow an attacker to write or delete registry keys, and was observed stopping services by setting their HKLM\SYSTEM\CurrentControlSet\services\[service_name]\Start registry entries to value 4. It also deleted previously-created Image File Execution Options (IFEO) Debugger registry values and registry keys related to HTTP proxy to clean up traces of its activity.
+SynAck can manipulate Registry keys.
+TajMahal can set the KeepPrintedJobs attribute for configured printers in SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers to enable document stealing.
+Teardrop modified the Registry to create a Windows service for itself on a compromised host.
+A Threat Group-3390 tool can create a new Registry key under HKEY_CURRENT_USER\Software\Classes\.
+TrickBot can modify registry entries.
+Turla has used the Registry to store encrypted payloads.
+TYPEFRAME can install encrypted configuration data under the Registry key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ShellCompatibility\Applications\laxhost.dll and HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\PrintConfigs.
+Ursnif has used Registry modifications as part of its installation routine.
+Valak has the ability to modify the Registry key HKCU\Software\ApplicationContainer\Appsw64 to store information regarding the C2 server and downloads.
+Volgmer stores the encoded configuration file in the Registry key HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Security.
+Wizard Spider has modified the Registry key HKLM\System\CurrentControlSet\Control\SecurityProviders\WDigest by setting the UseLogonCredential registry value to 1 in order to force credentials to be stored in clear text in memory.
+Zeus Panda modifies several Registry keys under HKCU\Software\Microsoft\Internet Explorer\ PhishingFilter\ to disable phishing filters.
+zwShell can modify the Registry.
+APT32 has used mshta.exe for code execution.
+FIN7 has used mshta.exe to execute VBScript to execute malicious code on victim systems.
+Inception has used malicious HTA files to drop and execute malware.
+Kimsuky has used mshta to run malicious scripts on the system.
+Koadic can use MSHTA to serve additional payloads.
+Lazarus Group has used mshta.exe to run malicious scripts and download programs.
+Metamorfo has used mshta.exe to execute a HTA payload. 
+MuddyWater has used mshta.exe to execute its POWERSTATS payload and to pass a PowerShell one-liner for execution.
+NanHaiShu uses mshta.exe to load its program and files.
+POWERSTATS can use Mshta.exe to execute additional payloads on compromised hosts.
+Revenge RAT uses mshta.exe to run malicious scripts on the system.
+Xbash can use mshta for executing scripts.
+APT19 used Regsvr32 to bypass application control techniques.
+APT32 created a Scheduled Task/Job that used regsvr32.exe to execute a COM scriptlet that dynamically downloaded a backdoor and injected it into memory. The group has also used regsvr32 to run their backdoor. 
+Astaroth can be loaded through regsvr32.exe.
+Blue Mockingbird has executed custom-compiled XMRIG miner DLLs using regsvr32.exe. 
+Cobalt Group has used regsvr32.exe to execute scripts.
+Deep Panda has used regsvr32.exe to execute a server variant of Derusbi in victim networks.
+Derusbi variants have been seen that use Registry persistence to proxy execution through regsvr32.exe.
+Hi-Zor executes using regsvr32.exe called from the Registry Run Keys / Startup Folder persistence mechanism.
+Inception has ensured persistence at system boot by setting the value regsvr32 %path%\ctfmonrn.dll /s.
+Koadic can use Regsvr32 to execute additional payloads.
+Leviathan has used regsvr32 for execution.
+More_eggs has used regsvr32.exe to execute the malicious DLL.
+Some Orz versions have an embedded DLL known as MockDll that uses Process Hollowing and regsvr32 to execute another payload.
+Ragnar Locker has used regsvr32.exe to execute components of VirtualBox.
+RogueRobin uses regsvr32.exe to run a .sct file for execution.
+Valak has used regsvr32.exe to launch malicious DLLs.
+WIRTE has used Regsvr32.exe to trigger the execution of a malicious script.
+Xbash can use regsvr32 for executing scripts.
+ADVSTORESHELL has used rundll32.exe in a Registry value to establish persistence.
+APT19 configured its payload to inject into the rundll32.exe.
+APT28 executed CHOPSTICK by using rundll32 commands such as rundll32.exe "C:\Windows\twain_64.dll". APT28 also executed a .dll for a first stage dropper using rundll32.exe. An APT28 loader Trojan saved a batch script that uses rundll32 to execute a DLL payload.
+APT29 has used rundll32.exe for execution.
+APT3 has a tool that can run DLLs.
+APT32 malware has used rundll32.exe to execute an initial infection process.
+Attor's installer plugin can schedule rundll32.exe to load the dispatcher.
+Bisonal uses rundll32.exe to execute as part of the Registry Run key it adds: HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Run\"vert" = "rundll32.exe c:\windows\temp\pvcu.dll , Qszdez".
+Blue Mockingbird has executed custom-compiled XMRIG miner DLLs using rundll32.exe.
+Briba uses rundll32 within Registry Run Keys / Startup Folder entries to execute malicious DLLs.
+Carbanak installs VNC server software that executes through rundll32.
+Comnie uses Rundll32 to load a malicious DLL.
+CopyKittens uses rundll32 to load various tools on victims, including a lateral movement tool named Vminst, Cobalt Strike, and shellcode.
+CORESHELL is installed via execution of rundll32 with an export named "init" or "InitW."
+The CozyCar dropper copies the system file rundll32.exe to the install location for the malware, then uses the copy of rundll32.exe to load and execute the main CozyCar component.
+DDKONG uses Rundll32 to ensure only a single instance of itself is running at once.
+After copying itself to a DLL file, a variant of Elise calls the DLL file using rundll32.exe.
+Variants of Emissary have used rundll32.exe in Registry values added to establish persistence.
+FatDuke can execute via rundll32.
+FELIXROOT uses Rundll32 for executing the dropper program.
+Rundll32.exe is used as a way of executing Flame at the command-line.
+Gamaredon Group malware has used rundll32 to launch additional malicious components.
+A gh0st RAT variant has used rundll32 for execution.
+GreyEnergy uses PsExec locally in order to execute rundll32.exe at the highest privileges (NTAUTHORITY\SYSTEM).
+InvisiMole has used rundll32.exe for execution.
+JHUHUGIT is executed using rundll32.exe.
+Koadic can use Rundll32 to execute additional payloads.
+KONNI has used Rundll32 to execute its loader for privilege escalation purposes.
+Kwampirs uses rundll32.exe in a Registry value added to establish persistence.
+Matroyshka uses rundll32.exe in a Registry Run key value for execution as part of its persistence mechanism.
+Mosquito's launcher uses rundll32.exe in a Registry Key value to start the main backdoor capability.
+MuddyWater has used malware that leveraged rundll32.exe in a Registry Run key to execute a .dll.
+NOKKI has used rundll32 for execution.
+NotPetya uses rundll32.exe to install itself on remote systems when accessed via PsExec or wmic.
+PolyglotDuke can be executed using rundll32.exe.
+PowerDuke uses rundll32.exe to load.
+Prikormka uses rundll32.exe to load its DLL.
+Pteranodon executes functions using rundll32.exe.
+PUNCHBUGGY can load a DLL using Rundll32.
+Ragnar Locker has used rundll32.exe to execute components of VirtualBox.
+RTM runs its core DLL file using rundll32.exe.
+Sakula calls cmd.exe to run various DLL files via rundll32.
+Sandworm Team used a backdoor which could execute a supplied DLL using rundll32.exe. 
+ServHelper contains a module for downloading and executing DLLs that leverages rundll32.exe.
+StreamEx uses rundll32 to call an exported function.
+Sunburst used Rundll32 to execute payloads. 
+TA505 has leveraged rundll32.exe to execute malicious DLLs.
+UNC2452 used Rundll32 to execute payloads.
+USBferry can execute rundll32.exe in memory to avoid detection. 
+The Winnti for Windows installer loads a DLL using rundll32.
+ZxShell has used rundll32.exe to execute other DLLs and named pipes. 
+ABK has the ability to identify the installed anti-virus product on the compromised host.
+Astaroth checks for the presence of Avast antivirus in the C:\Program\Files\ folder. 
+Avenger has the ability to identify installed anti-virus products on a compromised host.
+BadPatch uses WMI to enumerate installed security products in the victim's environment.
+build_downer has the ability to detect if the infected host is running an anti-virus process.
+Carberp has queried the infected system's registry searching for specific registry keys associated with antivirus products.
+CHOPSTICK checks for antivirus and forensics software.
+Cobalt Group used a JavaScript backdoor that is capable of collecting a list of the security solutions installed on the victim's machine.
+Comnie attempts to detect several anti-virus products.
+CookieMiner has checked for the presence of "Little Snitch", macOS network monitoring and application firewall software, stopping and exiting if it is found.
+The main CozyCar dropper checks whether the victim has an anti-virus product installed. If the installed product is on a predetermined list, the dropper will exit.
+Crimson contains a command to collect information about anti-virus software on the victim.
+Darkhotel has searched for anti-malware strings and anti-virus processes running on the system.
+down_new has the ability to detect anti-virus products and processes on a compromised host.
+DustySky checks for the existence of anti-virus.
+Empire can enumerate antivirus software on the target.
+Epic searches for anti-malware services running on the victim's machine and terminates itself if it finds them.
+EvilBunny has been observed querying installed antivirus software.
+Felismus checks for processes associated with anti-virus vendors.
+FELIXROOT checks for installed security software like antivirus and firewall.
+FIN8 has used Registry keys to detect and avoid executing in potential sandboxes.
+FinFisher probes the system to check for antimalware processes.
+Flame identifies security software such as antivirus through the Security module.
+FlawedAmmyy will attempt to detect anti-virus products during the initial infection.
+Frankenstein has used WMI queries to detect if virtualization environments or analysis tools were running on the system.
+Gold Dragon checks for anti-malware products and processes.
+InvisiMole can check for the presence of network sniffers, AV, and BitDefender firewall.
+JPIN checks for the presence of certain security-related processes and deletes its installer/uninstaller component if it identifies any of them.
+jRAT can list security software, such as by using WMIC to identify anti-virus products installed on the victim's machine and to obtain firewall details.
+Kasidet has the ability to identify any anti-virus installed on the infected system.
+Metamorfo collects a list of installed antivirus software from the victim's system. 
+Micropsia searches for anti-virus software and firewall products installed on the victim's machine using WMI.
+More_eggs can obtain information on installed anti-malware programs.
+Mosquito's installer searches the Registry and system to see if specific antivirus tools are installed on the system.
+MuddyWater has used malware to check running processes against a hard-coded list of security tools often used by malware researchers.
+Naikon uses commands such as netsh advfirewall firewall to discover local firewall settings.
+netsh can be used to discover system firewall settings.
+Netwalker can detect and terminate active security software-related processes on infected systems. 
+Patchwork scanned the "Program Files" directories for a directory with the string "Total Security" (the installation path of the "360 Total Security" antivirus tool).
+PipeMon can check for the presence of ESET and Kaspersky security software.
+POWERSTATS has detected security tools.
+POWRUNER may collect information on the victim's anti-virus software.
+A module in Prikormka collects information from the victim about installed anti-virus software.
+PUNCHBUGGY can gather AVs registered in the system. 
+Remsec has a plugin to detect active drivers of some security products.
+Rocke used scripts which detected and uninstalled antivirus software.
+RogueRobin enumerates running processes to search for Wireshark and Windows Sysinternals suite.
+ROKRAT checks for debugging tools.
+RTM can obtain information about security software on the victim.
+Skidmap has the ability to check if /usr/sbin/setenforce exists. This file controls what mode SELinux is in. 
+StoneDrill can check for antivirus and antimalware programs. 
+StreamEx has the ability to scan for security tools such as firewalls and antivirus tools.
+StrongPity can identify if ESET or BitDefender antivirus are installed before dropping its payload.
+Sunburst checked for a variety of antivirus/endpoint detection agents prior to execution.
+T9000 performs checks for various antivirus and security products during installation.
+TajMahal has the ability to identify which anti-virus products, firewalls, and anti-spyware products are in use.
+Tasklist can be used to enumerate security software currently running on a system by process name of known products.
+The White Company has checked for specific antivirus products on the target's computer, including Kaspersky, Quick Heal, AVG, BitDefender, Avira, Sophos, Avast!, and ESET.
+Tropic Trooper can search for anti-virus software running on the system.
+Turla has obtained information on security software, including security logging information that may indicate whether their malware has been detected.
+Valak can determine if a compromised host has security products installed.
+VERMIN uses WMI to check for anti-virus software installed on the system.
+Wingbird checks for the presence of Bitdefender security software.
+Wizard Spider has used WMI to identify anti-virus products installed on a victim's machine.
+YAHOYAH checks for antimalware solution processes on the system.
+Zeus Panda checks to see if anti-virus, anti-spyware, or firewall products are installed in the victim's environment.
+3PARA RAT has a command to retrieve metadata for files on disk as well as a command to list the current working directory.
+4H RAT has the capability to obtain file and directory listings.
+admin@338 actors used the following commands after exploiting a machine with LOWBALL malware to obtain information about files and directories: dir c:\ >> %temp%\download dir "c:\Documents and Settings" >> %temp%\download dir "c:\Program Files\" >> %temp%\download dir d:\ >> %temp%\download
+ADVSTORESHELL can list files and directories.
+APT18 can list files information for specific directories.
+APT28 has used Forfiles to locate PDF, Excel, and Word documents during collection. The group also searched a compromised DCCC computer for specific terms.
+APT3 has a tool that looks for files and directories on the local file system.
+APT32's backdoor possesses the capability to list files and directories on a machine.  
+APT41 has executed file /bin/pwd on exploited victims, perhaps to return architecture related information.
+Aria-body has the ability to gather metadata from a file and to search for file and directory names.
+Attor has a plugin that enumerates files with specific extensions on all hard disk drives and stores file information in encrypted log files.
+AuditCred can search through folders and files on the system.
+AutoIt backdoor is capable of identifying documents on the victim with the following extensions: .doc; .pdf, .csv, .ppt, .docx, .pst, .xls, .xlsx, .pptx, and .jpeg.
+Avenger has the ability to browse files in directories such as Program Files and the Desktop. 
+Azorult can recursively search for files in folders and collects files from the desktop with certain extensions.
+BabyShark has used dir to search for "programfiles" and "appdata". 
+BackConfig has the ability to identify folders and files related to previous infections. 
+Backdoor.Oldrea collects information about available drives, default browser, desktop file list, My Documents, Internet history, program files, and root of available drives. It also searches for ICS-related software files.
+BACKSPACE allows adversaries to search for files.
+BADNEWS identifies files with certain extensions from USB devices, then copies them to a predefined directory.
+BadPatch searches for files with specific file extensions.
+Bankshot searches for files on the victim's machine.
+BBSRAT can list file and directory information.
+BLACKCOFFEE has the capability to enumerate files.
+BlackEnergy gathers a list of installed apps from the uninstall program Registry. It also gathers registered mail, browser, and instant messaging clients from the Registry. BlackEnergy has searched for given file types.
+Brave Prince gathers file and directory information from the victim's machine.
+BRONZE BUTLER has collected a list of files from the victim and uploaded it to its C2 server, and then created a new list of specific files to steal.
+Cannon can obtain victim drive information as well as a list of folders in C:\Program Files.
+Cardinal RAT checks its current working directory upon execution and also contains watchdog functionality that ensures its executable is located in the correct path (else it will rewrite the payload).
+ChChes collects the victim's %TEMP% directory path and version of Internet Explorer.
+China Chopper's server component can list directory contents.
+An older version of CHOPSTICK has a module that monitors all mounted volumes for files with the extensions .doc, .docx, .pgp, .gpg, .m2f, or .m2o.
+cmd can be used to find files and directories with native functionality such as dir commands.
+CookieMiner has looked for files in the user's home directory with "wallet" in their name using find.
+CORALDECK searches for specified files.
+CosmicDuke searches attached and mounted drives for file extensions and keywords that match a predefined list.
+CrackMapExec can discover specified filetypes and log files on a targeted system.
+Crimson contains commands to list files and directories, as well as search for files matching certain extensions from a defined list.
+CrossRAT can list all files on a system.
+Cryptoistic can scan a directory to identify files for deletion.
+Dacls can scan directories on a compromised host.
+Dark Caracal collected file listings of all default Windows directories.
+DDKONG lists files on the victim's machine.
+Denis has several commands to search directories for files.
+Derusbi is capable of obtaining directory, file, and drive listings.
+down_new has the ability to list the directories on a compromised host.
+Dragonfly 2.0 used a batch script to gather folder and file names from victim hosts.
+Dust Storm has used Android backdoors capable of enumerating specific files on the infected devices.
+DustySky scans the victim for files that contain certain keywords and document types including PDF, DOC, DOCX, XLS, and XLSX, from a list that is obtained from the C2 as a text file. It can also identify logical drives for the infected machine.
+A variant of Elise executes dir C:\progra~1 when initially run.
+ELMER is capable of performing directory listings.
+Empire includes various modules for finding files of interest on hosts and network shares.
+Epic recursively searches for all .doc files on the system and collects a directory listing of the Desktop, %TEMP%, and %WINDOWS%\Temp directories.
+FALLCHILL can search files on a victim.
+FatDuke can enumerate directories on target machines.
+FinFisher enumerates directories and scans for certain files.
+FLASHFLOOD searches for interesting files (either a default or customized set of file extensions) on the local system and removable media.
+Forfiles can be used to locate certain types of files/directories in a system.(ex: locate all files with a specific extension, name, and/or age)
+FruitFly looks for specific files and file types.
+Fysbis has the ability to search for files. 
+Gamaredon Group macros can scan for Microsoft Word and Excel files to inject with additional malicious macros. Gamaredon Group has also used its backdoors to automatically list interesting files (such as Office documents) found on a system. 
+GeminiDuke collects information from the victim, including installed drivers, programs previously executed by users, programs and services configured to automatically run at startup, files and folders present in any user's home folder, files and folders present in any user's My Documents, programs installed to the Program Files folder, and recently accessed files, folders, and programs.
+Gold Dragon lists the directories for Desktop, program files, and the user's recently accessed files.
+GoldenSpy has included a program "ExeProtector", which monitors for the existence of GoldenSpy on the infected system and redownloads if necessary. 
+GravityRAT collects the volumes mapped on the system, and also steals files with the following extensions: .docx, .doc, .pptx, .ppt, .xlsx, .xls, .rtf, and .pdf.
+Honeybee's service-based DLL implant traverses the FTP server's directories looking for files with keyword matches for computer names or certain keywords.
+HOPLIGHT has been observed enumerating system drives and partitions. 
+HotCroissant has the ability to retrieve a list of files in a given directory as well as drives and drive types.
+HTTPBrowser is capable of listing files, folders, and drives on a victim.
+Hydraq creates a backdoor through which remote attackers can check for the existence of files, including its own components, as well as retrieve a list of logical drives.
+Imminent Monitor has a dynamic debugging feature to check whether it is located in the %TEMP% directory, otherwise it copies itself there.
+Inception used a file listing plugin to collect information about file and directories both on local and remote drives.
+InnaputRAT enumerates directories and obtains file attributes on a system.
+InvisiMole can list information about files in a directory and recently opened or used documents. InvisiMole can also search for specific files by supplied file mask.
+Ixeshe can list file and directory information.
+JPIN can enumerate drives and their types. It can also change file permissions using cacls.exe.
+jRAT can browse file systems.
+Kasidet has the ability to search for a given filename on a victim.
+Kazuar finds a specified directory, lists the files and metadata about those files.
+Ke3chang uses command-line interaction to search files and directories.
+KeyBoy has a command to launch a file browser or explorer on the system.
+KEYMARBLE has a command to search for files on the victim's machine.
+Kimsuky has the ability to enumerate all the drives on an infected system.
+Kivars has the ability to list drives on the infected host.
+A version of KONNI searches for filenames created with a previous version of the malware, suggesting different versions targeted the same victims and the versions may work together.
+Kwampirs collects a list of files and directories in C:\ with the command dir /s /a c:\ >> "C:\windows\TEMP[RANDOM].tmp".
+Several Lazarus Group malware samples use a common function to identify target files by their extension. Lazarus Group malware families can also enumerate files and directories, including a Destover-like variant that lists files and gathers information for all drives.
+Leafminer used a tool called MailSniper to search for files on the desktop and another utility called Sobolsoft to extract attachments from EML files.
+Linfo creates a backdoor through which remote attackers can list contents of drives and search for files.
+Machete produces file listings in order to search for files to be exfiltrated. 
+Magic Hound malware can list a victim's logical drives and the type, as well the total/free space of the fixed devices. Other malware can list a directory's contents.
+MESSAGETAP checks for the existence of two configuration files (keyword_parm.txt and parm.txt) and attempts to read the files every 30 seconds.
+Metamorfo has searched the Program Files directories for specific folders and has searched for strings related to its mutexes. 
+Micropsia can perform a recursive directory listing for all volume drives available on the victim's machine and can also fetch specific files by their paths.
+MiniDuke can enumerate local drives.
+Misdat is capable of running commands to obtain a list of files and directories, as well as enumerating logical drives.
+MobileOrder has a command to upload to its C2 server information about files on the victim mobile device, including SD card size, installed app list, SMS content, contacts, and calling history.
+MoonWind has a command to return a directory listing for a specified directory.
+MuddyWater has used malware that checked if the ProgramData folder had folders or files with the keywords "Kasper," "Panda," or "ESET."
+NDiskMonitor can obtain a list of all files and directories as well as logical drives.
+NETEAGLE allows adversaries to enumerate and modify the infected host's file system. It supports searching for directories, creating directories, listing directory contents, reading and writing to files, retrieving file attributes, and retrieving volume information.
+njRAT can browse file systems using a file manager module.
+OceanSalt can extract drive information from the endpoint and search files on the system.
+Octopus collects information on the Windows directory and searches for compressed RAR files on the host.
+Okrum has used DriveLetterView to enumerate drive information.
+Orz can gather victim drive information.
+OwaAuth has a command to list its directory and logical drives.
+Pasam creates a backdoor through which remote attackers can retrieve lists of files.
+A Patchwork payload has searched all fixed drives on the victim for files matching a specified list of extensions.
+PinchDuke searches for files created within a certain timeframe and whose file extension matches a predefined list.
+Pisloader has commands to list drives on the victim machine and to list file information for a given directory.
+PLEAD has the ability to list drives and files on the compromised host.
+PlugX has a module to enumerate drives and find files recursively.
+PoetRAT has the ability to list files upon receiving the ls command from C2.
+POORAIM can conduct file browsing.
+PoshC2 can enumerate files on the local file system and includes a module for enumerating recently accessed files.
+PowerDuke has commands to get the current directory name as well as the size of a file. It also has commands to obtain information about logical drives, drive type, and free space.
+POWRUNER may enumerate user directories on a victim.
+A module in Prikormka collects information about the paths, size, and creation time of files with specific file extensions, but not the actual content of the file.
+Proxysvc lists files in directories.
+Psylo has commands to enumerate all storage devices and to find all files that start with a particular string.
+Pteranodon identifies files matching certain file extension and copies them to subdirectories it created.
+Pupy can walk through directories and recursively search for strings in files.
+Ramsay can scan for Microsoft Word documents within the target's filesystem. 
+RARSTONE obtains installer properties from Uninstall Registry Key entries to obtain information about installed applications and how to uninstall certain applications.
+RedLeaves can enumerate and search for files and directories.
+Remcos can search for files on the infected machine.
+Remexi searches for files on the system. 
+Remsec is capable of listing contents of folders on the victim. Remsec also searches for custom network encryption software on victims.
+REvil has the ability to identify specific files and directories that are not to be encrypted.
+Rising Sun can enumerate information about files from the infected system, including file size, attributes, creation time, last access time, and write time. Rising Sun can enumerate the compilation timestamp of Windows executable files. 
+ROKRAT has the ability to gather a list of files and directories on the infected system.
+Rover automatically searches for files on local drives based on a predefined list of file extensions.
+RTM can check for specific files and directories associated with virtualization and malware analysis.
+Ryuk has called GetLogicalDrives to emumerate all mounted drives, and GetDriveTypeW to determine the drive type.
+SDBot has the ability to get directory listings or drive information on a compromised host.
+Seasalt has the capability to identify the drive type on a victim.
+ShimRat can list directories.
+SHOTPUT has a command to obtain a directory listing.
+Skidmap has checked for the existence of specific files including /usr/sbin/setenforce and  /etc/selinux/config. It also has the ability to monitor the cryptocurrency miner file and process.  
+Smoke Loader recursively searches through directories for files.
+SoreFang has the ability to list directories.
+SOUNDBITE is capable of enumerating and manipulating files and directories.
+Sowbug identified and extracted all Word documents on a server by using a command containing * .doc and *.docx. The actors also searched for documents based on a specific date range and attempted to identify all installed software on a victim.
+SPACESHIP identifies files and directories for collection by searching for specific file extensions or file modification time.
+StreamEx has the ability to enumerate drive types.
+StrongPity can parse the hard drive on a compromised host to identify specific file extensions.
+Sunburst had commands to enumerate files and directories.
+Sunspot enumerated the Orion software Visual Studio solution directory path.
+SynAck checks its directory location in an attempt to avoid launching in a sandbox.
+TajMahal has the ability to index files from drives, user profiles, and removable drives.
+TINYTYPHON searches through the drive containing the OS, then all drive letters C through to Z, for documents matching certain extensions.
+TrickBot searches the system for all of the following file extensions: .avi, .mov, .mkv, .mpeg, .mpeg4, .mp4, .mp3, .wav, .ogg, .jpeg, .jpg, .png, .bmp, .gif, .tiff, .ico, .xlsx, and .zip. It can also obtain browsing history, cookies, and plug-in information.
+Trojan.Karagany can enumerate files and directories on a compromised host.
+Tropic Trooper has monitored files' modified time. 
+TSCookie has the ability to discover drive information on the infected host.
+Turla surveys a system upon check-in to discover files in specific locations on the hard disk %TEMP% directory, the current user's desktop, the Program Files directory, and Recent. Turla RPC backdoors have also searched for files matching the lPH*.dll pattern.
+TYPEFRAME can search directories for files on the victim's machine.
+UNC2452 obtained information about the configured Exchange virtual directory using Get-WebServicesVirtualDirectory.
+UPPERCUT has the capability to gather the victim's current directory.
+USBferry can detect the victim's file or folder list. 
+USBStealer searches victim drives for files matching certain extensions (".skr",".pkr" or ".key") or names.
+Volgmer can list directories on a victim.
+WannaCry searches for variety of user files by file extension before encrypting them using RSA and AES, including Office, PDF, image, audio, video, source code, archive/compression format, and key and certificate files.
+WindTail has the ability to enumerate the users home directory and the path to its own application bundle.
+WINERACK can enumerate files and directories.
+WinMM sets a WH_CBT Windows hook to search for and capture files on the victim.
+XAgentOSX contains the readFiles function to return a detailed listing (sometimes recursive) of a specified directory. XAgentOSX contains the showBackupIosFolder function to check for IOS device backups by running ls -la ~/Library/Application\ Support/MobileSync/Backup/.
+yty gathers information on victim's drives and has a plugin for document listing.
+Zebrocy searches for files that are 60mb and less and contain the following extensions: .doc, .docx, .xls, .xlsx, .ppt, .pptx, .exe, .zip, and .rar. Zebrocy also runs the echo %APPDATA% command to list the contents of the directory. Zebrocy can obtain the current execution path as well as perform drive enumeration.
+Zeus Panda searches for specific directories on the victim's machine.
+ZLib has the ability to enumerate files and drives.
+zwShell can browse the file system.
+ZxShell has a command to open a file manager and explorer on the system. 
+4H RAT has the capability to obtain a listing of running processes (including loaded modules).
+ADVSTORESHELL can list running processes.
+Agent Tesla can list the current running processes on the system.
+APT1 gathered a list of running processes on the system using tasklist /v.
+An APT28 loader Trojan will enumerate the victim's processes searching for explorer.exe if its current process does not have necessary permissions.
+APT3 has a tool that can list out currently running processes.
+APT37's Freenki malware lists running processes using the Microsoft Windows API.
+APT38 leveraged Sysmon to understand the processes, services in the organization.
+Aria-body has the ability to enumerate loaded modules for a process..
+Astaroth searches for different processes on the system. 
+Avenger has the ability to use Tasklist to identify running processes.
+Azorult can collect a list of running processes by calling CreateToolhelp32Snapshot.
+BabyShark has executed the tasklist command. 
+Backdoor.Oldrea collects information about running processes.
+BACKSPACE may collect information about running processes.
+Bankshot identifies processes and collects the process ids.
+BBSRAT can list running processes.
+BISCUIT has a command to enumerate running processes and identify their owners.
+Bisonal can obtain a list of running processes on the victim's machine.
+BLACKCOFFEE has the capability to discover processes.
+BlackEnergy has gathered a process list by using Tasklist.exe.
+Bonadan can use the ps command to discover other cryptocurrency miners active on the system.
+Brave Prince lists the running processes.
+Bundlore has used the ps command to list processes.
+Cannon can obtain a list of processes running on the system.
+Carbanak lists running processes.
+Carberp has collected a list of running processes.
+Carbon can list the processes on the victim's machine.
+Cardinal RAT contains watchdog functionality that ensures its process is always running, else spawns a new instance.
+ChChes collects its process identifier (PID) on the victim.
+Cobalt Strike's "beacon" payload can collect information on process details.
+Comnie uses the tasklist to view running processes on the victim's machine.
+Crimson contains a command to list processes.
+Dacls can collect data on running and parent processes.
+DarkComet can list active processes running on the victim's machine.
+Darkhotel has searched for anti-malware strings and anti-virus processes running on the system.
+Deep Panda uses the Microsoft Tasklist utility to list processes running on systems.
+Derusbi collects current and parent process IDs.
+down_new has the ability to list running processes on a compromised host.
+The discovery modules used with Duqu can collect information on process details.
+DustySky collects information about running processes from victims.
+Elise enumerates processes via the tasklist command.
+ELMER is capable of performing process listings.
+Emotet has been observed enumerating local processes.
+Empire can find information about processes running on local and remote systems.
+Epic uses the tasklist /v command to obtain a list of processes.
+EvilBunny has used EnumProcesses() to identify how many process are running in the environment.
+FatDuke can list running processes on the localhost.
+FELIXROOT collects a list of running processes.
+Final1stspy obtains a list of running processes.
+FinFisher checks its parent process for indications that it is running in a sandbox setup.
+FrameworkPOS can enumerate and exclude selected processes on a compromised host to speed execution of memory scraping.
+Frankenstein has enumerated hosts, looking to obtain a list of all currently running processes.
+FruitFly has the ability to list processes on the system.
+Fysbis can collect information about running processes. 
+GeminiDuke collects information on running processes and environment variables from the victim.
+Get2 has the ability to identify running processes on an infected host.
+gh0st RAT has the capability to list processes.
+Gold Dragon checks the running processes on the victim's machine.
+Goopy has checked for the Google Updater process to ensure Goopy was loaded properly.
+GravityRAT lists the running processes on the system.
+HALFBAKED can obtain information about running processes on the victim.
+Helminth has used Tasklist to get information on processes.
+Honeybee gathers a list of processes using the tasklist command and then is sent back to the control server.
+HotCroissant has the ability to list running processes on the infected host.
+Hydraq creates a backdoor through which remote attackers can monitor processes.
+iKitten lists the current processes running.
+Imminent Monitor has a "Process Watcher" feature to monitor processes in case the client ever crashes or gets closed.
+Inception has used a reconnaissance module to identify active processes and other associated loaded modules.
+InvisiMole can obtain a list of running processes.
+Ixeshe can list running processes.
+JHUHUGIT obtains a list of running processes on the victim.
+JPIN can list running processes.
+jRAT can query and kill system processes.
+Kasidet has the ability to search for a given process name in processes currently running in the system.
+Kazuar obtains a list of running processes through WMI querying and the ps command.
+Ke3chang performs process discovery using tasklist commands.
+KEYMARBLE can obtain a list of running processes on the system.
+The OsInfo function in Komplex collects a running process list.
+KONNI has used tasklist.exe to get a snapshot of the current processes' state of the target machine.
+Kwampirs collects a list of running services with the command tasklist /v.
+Several Lazarus Group malware families gather a list of running processes on a victim system and send it to their C2 server. A Destover-like variant used by Lazarus Group also gathers process times.
+Linfo creates a backdoor through which remote attackers can retrieve a list of running processes.
+LoudMiner used the ps command to monitor the running processes on the system. 
+Machete has a component to check for running processes to look for web browsers. 
+Magic Hound malware can list running processes.
+Maze has gathered all of the running system processes. 
+Metamorfo has performed process name checks and has monitored applications. 
+MobileOrder has a command to upload information about all running processes to its C2 server.
+Molerats actors obtained a list of active processes on the victim and sent them to C2 servers.
+MoonWind has a command to return a list of running processes.
+Mosquito runs tasklist to obtain running processes.
+MuddyWater has used malware to obtain a list of running processes on the system.
+NavRAT uses tasklist /v to check running processes.
+NETEAGLE can send process listings over the C2 channel.
+njRAT can search a list of running processes for Tr.exe.
+OceanSalt can collect the name and ID for every process running on the system.
+OilRig has run tasklist on a victim's machine.
+Orz can gather a process list from the victim.
+Pasam creates a backdoor through which remote attackers can retrieve lists of running processes.
+Pillowmint can iterate through running processes every six seconds collecting a list of processes to capture from later. 
+PipeMon can iterate over the running processes to find a suitable injection target.
+PLAINTEE performs the tasklist command to list running processes.
+PLEAD has the ability to list processes on the compromised host.
+PlugX has a module to list the processes running on a machine.
+PoetRAT has the ability to list all running processes.
+POORAIM can enumerate processes.
+After compromising a victim, Poseidon Group lists all running processes.
+PowerDuke has a command to list the victim's processes.
+PowerShower has the ability to deploy a reconnaissance module to retrieve a list of the active processes.
+PowerSploit's Get-ProcessTokenPrivilege Privesc-PowerUp module can enumerate privileges for a given process.
+PowerStallion has been used to monitor process lists.
+POWERSTATS has used get_tasklist to discover processes on the compromised host.
+POWRUNER may collect process information by running tasklist on a victim.
+Proxysvc lists processes running on the system.
+Pupy can list the running processes and get the process ID and parent process's ID.
+RATANKBA lists the system's processes.
+Remsec can obtain a process list from the victim.
+Rising Sun can enumerate all running processes and process information on an infected machine. 
+Rocke can detect a running process's PID on the infected machine. 
+RogueRobin checks the running processes for evidence it may be running in a sandbox environment. It specifically enumerates processes for Wireshark and Sysinternals.
+ROKRAT lists the current running processes on the system.
+RTM can obtain information about process integrity levels.
+Ryuk has called CreateToolhelp32Snapshot to enumerate all running processes.
+Seasalt has a command to perform a process listing.
+ShimRatReporter listed all running processes on the machine.
+SHOTPUT has a command to obtain a process listing.
+Skidmap has monitored critical processes to ensure resiliency. 
+Socksbot can list all running processes.
+SoreFang can enumerate processes on a victim machine through use of Tasklist.
+Stealth Falcon malware gathers a list of running processes.
+StreamEx has the ability to enumerate processes.
+StrongPity can determine if a user is logged in by checking to see if explorer.exe is running.
+Sunburst collected a list of process names that were hashed using a FNV-1a + XOR algorithm to check against similarly-hashed hardcoded blocklists.
+Sunspot monitored running processes for instances of MsBuild.exe by hashing the name of each running process and comparing it to the corresponding value 0x53D525. It also extracted command-line arguments and individual arguments from the running MsBuild.exe process to identify the directory path of the Orion software Visual Studio solution.
+Sykipot may gather a list of running processes by running tasklist /v.
+SynAck enumerates all running processes.
+SYSCON has the ability to use Tasklist to list running processes.
+TajMahal has the ability to identify running processes and associated plugins on an infected host.
+Tasklist can be used to discover processes running on a system.
+Trojan.Karagany can use Tasklist to collect a list of running tasks.
+Tropic Trooper is capable of enumerating the running processes on the system using pslist.
+TSCookie has the ability to list processes on the infected host.
+Turla surveys a system upon check-in to discover running processes using the tasklist /v command. Turla RPC backdoors have also enumerated processes associated with specific open ports or named pipes.
+UBoatRAT can list running processes on the system.
+UNC2452 used multiple command-line utilities to enumerate running processes.
+Ursnif has gathered information about running processes.
+USBferry can use tasklist to gather information about the process running on the infected system. 
+Valak has the ability to enumerate running processes on a compromised host.
+VERMIN can get a list of the processes and running tasks on the system.
+Volgmer can gather a list of processes.
+WINERACK can enumerate processes.
+WinMM sets a WH_CBT Windows hook to collect information on process creation.
+Winnti Group looked for a specific process running on infected servers.
+XAgentOSX contains the getProcessList function to run ps aux to get running processes.
+yty gets an output of running processes using the tasklist command.
+Zebrocy uses the tasklist and wmic process get Capture, ExecutablePath commands to gather the processes running on the system.
+Zeus Panda checks for running processes on the victim's machine.
+ZxShell has a command, ps, to obtain a listing of processes on the system. 
+ADVSTORESHELL can enumerate registry keys.
+APT32's backdoor can query the Windows Registry to gather system information. 
+Attor has opened the registry and performed query searches.
+Azorult can check for installed software on the system under the Registry key Software\Microsoft\Windows\CurrentVersion\Uninstall.
+BabyShark has executed the reg query command for HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default. 
+BACKSPACE is capable of enumerating and making modifications to an infected system's Registry.
+Bankshot searches for certain Registry keys to be configured before executing the payload.
+Brave Prince gathers information about the Registry.
+Carbanak checks the Registry key HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings for proxy configurations information.
+Carberp has searched the Image File Execution Options registry key for "Debugger" within every subkey.
+Carbon enumerates values in the Registry.
+Cardinal RAT contains watchdog functionality that periodically ensures HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load is set to point to its executable.
+CHOPSTICK provides access to the Windows Registry, which can be used to gather information.
+ComRAT can check the default browser by querying HKCR\http\shell\open\command.
+Denis queries the Registry for keys and values.
+Derusbi is capable of enumerating Registry keys and values.
+DownPaper searches and reads the value of the Windows Update Registry Run key.
+Dragonfly 2.0 queried the Registry to identify victim information.
+Epic uses the rem reg query command to obtain values from Registry keys.
+FatDuke can get user agent strings for the default browser from HKCU\Software\Classes\http\shell\open\command.
+FELIXROOT queries the Registry for specific keys for potential privilege escalation and proxy information. FELIXROOT has also used WMI to query the Windows Registry.
+FinFisher queries Registry values as part of its anti-sandbox checks.
+gh0st RAT has checked for the existence of a Service key to determine if it has already been installed on the system.
+Gold Dragon enumerates registry keys with the command regkeyenum and obtains information for the Registry key HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run.
+A variant of HOPLIGHT hooks lsass.exe, and lsass.exe then checks the Registry for the data value 'rdpproto' under the key SYSTEM\CurrentControlSet\Control\Lsa Name.
+Hydraq creates a backdoor through which remote attackers can retrieve system information, such as CPU speed, from Registry keys.
+InvisiMole can enumerate Registry values, keys, and data.
+JPIN can enumerate Registry keys.
+Lazarus Group malware IndiaIndia checks Registry keys within HKCU and HKLM to determine if certain applications are present, including SecureCRT, Terminal Services, RealVNC, TightVNC, UltraVNC, Radmin, mRemote, TeamViewer, FileZilla, pcAnyware, and Remote Desktop. Another Lazarus Group malware sample checks for the presence of the following Registry key:HKEY_CURRENT_USER\Software\Bitcoin\Bitcoin-Qt.
+njRAT can read specific registry values.
+OilRig has used reg query "HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default" on a victim to query the Registry.
+OSInfo queries the registry to look for information about Terminal Services.
+Pillowmint has used shellcode which reads code stored in the registry keys \REGISTRY\SOFTWARE\Microsoft\DRM using the native Windows API as well as read HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces as part of its C2. 
+PlugX can enumerate and query for information contained within the Windows Registry.
+POWERSOURCE queries Registry keys in preparation for setting Run keys to achieve persistence.
+PowerSploit contains a collection of Privesc-PowerUp modules that can query Registry keys for potential opportunities.
+POWRUNER may query the Registry by running reg query on a victim.
+Proxysvc gathers product names from the Registry key: HKLM\Software\Microsoft\Windows NT\CurrentVersion ProductName and the processor description from the Registry key HKLM\HARDWARE\DESCRIPTION\System\CentralProcessor\0 ProcessorNameString.
+QUADAGENT checks if a value exists within a Registry key in the HKCU hive whose name is the same as the scheduled task it has created.
+RATANKBA uses the command reg query "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\InternetSettings".
+Reaver queries the Registry to determine the correct Startup path to use for persistence.
+Reg may be used to gather details from the Windows Registry of a local or remote system at the command-line interface.
+REvil can query the Registry to get random file extensions to append to encrypted files.
+ROKRAT accesses the HKLM\System\CurrentControlSet\Services\mssmbios\Data\SMBiosData Registry key to obtain the System manufacturer value to identify the machine type.
+Shamoon queries several Registry keys to identify hard disk partitions to overwrite.
+Stealth Falcon malware attempts to determine the installed version of .NET by querying the Registry.
+StoneDrill has looked in the registry to find the default browser path.
+Sunburst collected the registry value HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MachineGuid from compromised hosts.
+SynAck enumerates Registry keys associated with event logs.
+Teardrop checked that HKU\SOFTWARE\Microsoft\CTF existed before decoding its embedded payload. 
+A Threat Group-3390 tool can read and decrypt stored Registry values.
+Turla surveys a system upon check-in to discover information in the Windows Registry with the reg query command. Turla has also retrieved PowerShell payloads hidden in Registry keys as well as checking keys associated with null session named pipes .
+Ursnif has used Reg to query the Registry for installed programs.
+Valak can use the Registry for code updates and to collect credentials.
+Volgmer checks the system for certain Registry keys.
+WINDSHIELD can gather Registry values.
+Zebrocy executes the reg query command to obtain information in the Registry.
+Zeus Panda checks for the existence of a Registry key and if it contains certain values.
+ZxShell can query the netsvc group value data located in the svchost group Registry key. 
+Attor can detect whether it is executed in some virtualized or emulated environment by searching for specific artifacts, such as communication with I/O ports and using VM-specific instructions.
+BadPatch attempts to detect if it is being run in a Virtual Machine (VM) using a WMI query for disk drive name, BIOS, and motherboard information. 
+Denis ran multiple system checks, looking for processor and register characteristics, to evade emulation and analysis.
+Dyre can detect sandbox analysis environments by inspecting the process list and Registry.
+EvilBunny for a number of specific processes and the length of its own name to identify if the malware is in a sandbox environment. 
+FinFisher obtains the hardware device list and checks if the MD5 of the vendor ID is equal to a predefined list in order to check for sandbox/virtualized environments.
+Frankenstein has used WMI queries to check if various security applications were running, including VMWare and Virtualbox.
+GravityRAT uses WMI to check the BIOS and manufacturer information for strings like "VMWare", "Virtual", and "XEN" and another WMI request to get the current temperature of the hardware to determine if it's a virtual machine environment. 
+InvisiMole can check for artifacts of VirtualBox, Virtual PC and VMware environment, and terminate itself if they are detected.
+Okrum's loader can check the amount of physical memory and terminates itself if the host has less than 1.5 Gigabytes of physical memory in total.
+OopsIE performs several anti-VM and sandbox checks on the victim's machine. One technique the group has used was to perform a WMI query SELECT * FROM MSAcpi_ThermalZoneTemperature to check the temperature to see if it's running in a virtual environment.
+OSX_OCEANLOTUS.D has a variant that checks a number of system parameters to see if it is being run on real hardware or in a virtual machine environment.
+PlugX checks if VMware tools is running in the background by searching for any process named "vmtoolsd". 
+PoetRAT checked the size of the hard drive to determine if it was being run in a sandbox environment. In the event of sandbox detection, it would delete itself by overwriting the malware scripts with the contents of "License.txt" and exiting.
+Pupy has a module that checks a number of indicators on the system to determine if its running on a virtual machine.
+Remcos searches for Sandboxie and VMware on the system.
+RogueRobin uses WMI to check BIOS version for VBOX, bochs, qemu, virtualbox, and vm to check for evidence that the script might be executing within an analysis environment. 
+ROKRAT checks for sandboxing libraries.
+Smoke Loader scans processes to perform anti-VM checks. 
+Sunburst checked the domain name of the compromised host to verify it was running in a real environment.
+SynAck checks its directory location in an attempt to avoid launching in a sandbox.
+Trojan.Karagany can detect commonly used and generic virtualization platforms based primarily on drivers and file paths.
+UBoatRAT checks for virtualization software such as VMWare, VirtualBox, or QEmu on the compromised machine.
+yty has some basic anti-sandbox detection that tries to detect Virtual PC, Sandboxie, and VMware. 
+APT1 has used RAR to compress files before moving them outside of the victim network.
+APT3 has used tools to compress data before exfilling it.
+APT33 has used WinRAR to compress data prior to exfil. 
+APT39 has used WinRAR and 7-Zip to compress an archive stolen data. 
+APT41 created a RAR archive of targeted files for exfiltration.
+BRONZE BUTLER has compressed data into password-protected RAR archives prior to exfiltration.
+Calisto uses the zip -r command to compress the data collected on the local system.
+Chimera has used modified RAR software to archive data with a password.
+CopyKittens uses ZPP, a .NET console program, to compress files with ZIP.
+CORALDECK has created password-protected RAR, WinImage, and zip archives to be exfiltrated.
+Daserf hides collected data in password-protected .rar archives.
+DustySky can compress files via RAR while staging data to be exfiltrated.
+FIN8 has used RAR to compress collected data before Exfiltration.
+Gallmaker has used WinZip, likely to archive data prior to exfiltration.
+iKitten will zip up the /Library/Keychains directory before exfiltrating it.
+InvisiMole uses WinRAR to compress data that is intended to be exfiltrated.
+Ke3chang is known to use RAR with passwords to encrypt data prior to exfiltration.
+Magic Hound has used RAR to stage and compress local folders.
+menuPass has compressed files before exfiltration using TAR and RAR.
+Micropsia creates a RAR archive based on collected files on the victim's machine.
+MuddyWater has used the native Windows cabinet creation tool, makecab.exe, likely to compress stolen data to be uploaded.
+Okrum was seen using a RAR archiver tool to compress/decompress data.
+OopsIE compresses collected files with GZipStream before sending them to its C2 server.
+PoetRAT has the ability to compress files with zip.
+PoshC2 contains a module for compressing data using ZIP.
+PowerShower has used 7Zip to compress .txt, .pdf, .xls or .doc files prior to exfiltration.
+PUNCHBUGGY has Gzipped information and saved it to a random temp file before exfil. 
+Pupy can compress data with Zip before sending it over C2.
+Ramsay can compress and archive collected files using WinRAR.
+Soft Cell used WinRAR to compress and encrypt stolen data prior to exfiltration.
+Sowbug extracted documents and bundled them into a RAR archive.
+Turla has encrypted files stolen from connected USB drives into a RAR file before exfiltration.
+UNC2452 used 7-Zip to compress stolen emails into password-protected archives prior to exfiltration.
+WindTail has the ability to use the macOS built-in zip utility to archive files.
+APT37 has used an audio capturing utility known as SOUNDWAVE that captures microphone input.
+Attor's has a plugin that is capable of recording audio using available input sound devices.
+Bandook has modules that are capable of capturing audio.
+Cadelspy has the ability to record audio from the compromised host.
+Cobian RAT has a feature to perform voice recording on the victim's machine.
+DarkComet can listen in to victims' conversations through the system's microphone.
+Derusbi is capable of performing audio captures.
+DOGCALL can capture microphone data from the victim's machine.
+EvilGrab has the capability to capture audio from a victim machine.
+Flame can record audio using any existing hardware recording devices.
+Imminent Monitor has a remote microphone monitoring capability.
+InvisiMole can record sound using input audio devices.
+Janicab captured audio and sent it out to a C2 server.
+jRAT can capture microphone recordings.
+Machete captures audio from the computer's microphone. 
+MacSpy can record the sounds from microphones on a computer.
+Micropsia can perform microphone recording.
+NanoCore can capture audio feeds from the system.
+PowerSploit's Get-MicrophoneAudio Exfiltration module can record system microphone audio.
+Pupy can record sound with the microphone.
+Remcos can capture data from the system's microphone.
+Revenge RAT has a plugin for microphone interception.
+ROKRAT has a audio capture and eavesdropping module.
+T9000 uses the Skype API to record audio and video calls. It writes encrypted data to %APPDATA%\Intel\Skype.
+TajMahal has the ability to capture VoiceIP application audio on an infected host.
+VERMIN can perform audio capture.
+APT1 used a batch script to perform a series of discovery techniques and saves it to a text file.
+APT28 used a publicly available tool to gather and compress multiple documents on the DCCC and DNC networks.
+Attor has automatically collected data about the compromised system.
+BADNEWS monitors USB devices and copies files with certain extensions toa predefined directory.
+Bankshot recursively generates a list of files within a directory and sends them back to the control server.
+Comnie executes a batch script to store discovery information in %TEMP%\info.dat and then uploads the temporarily file to the remote C2 server.
+FIN5 scans processes on all victim systems in the environment and uses automated scripts to pull back the results.
+FIN6 has used a script to iterate through a list of compromised PoS systems, copy and remove data to a log file, and to bind to events from the submit payment button.
+Frankenstein has enumerated hosts via Empire, gathering the username, domain name, machine name, and other system information.
+Gamaredon Group has deployed scripts on compromised systems that automatically scan for interesting documents.
+A Helminth VBScript receives a batch script to execute a set of commands in a command prompt.
+InvisiMole can sort and collect specific documents as well as generate a list of all files on a newly inserted drive and store them in an encrypted file.
+LightNeuron can be configured to automatically collect files under a specified directory.
+MESSAGETAP checks two files, keyword_parm.txt and parm.txt, for instructions on how to target and save data parsed and extracted from SMS message data from the network traffic. If an SMS message contained either a phone number, IMSI number, or keyword that matched the predefined list, it is saved to a CSV file for later theft by the threat actor.
+Metamorfo has automatically collected mouse clicks, continuous screenshots on the machine, and set timers to collect the contents of the clipboard and website browsing. 
+Micropsia executes an RAR tool to recursively archive files based on a predefined list of file extensions (.xls, .xlsx, .csv, .odt, .doc, .docx, .ppt, .pptx, .pdf, .mdb, .accdb, .accde, *.txt).
+OilRig has used automated collection.
+Patchwork developed a file stealer to search C:\ and collect files with certain extensions. Patchwork also executed a script to enumerate all drives, store them as a list, and upload generated files to the C2 server.
+PoetRAT used file system monitoring to track modification and enable automatic exfiltration.
+PoshC2 contains a module for recursively parsing through files and directories to gather valid credit card numbers.
+Proxysvc automatically collects data about the victim and sends it to the control server.
+Ramsay can conduct an initial scan for Microsoft Word documents on the local system, removable media, and connected network drives, before tagging and collecting them. It can continue tagging documents to collect with follow up scans. 
+Rover automatically collects files from the local system and removable drives based on a predefined list of file extensions on a regular timeframe.
+RTM monitors browsing activity and automatically captures screenshots if a victim browses to a URL matching one of a list of strings.
+ShimRatReporter gathered information automatically, without instruction from a C2, related to the user and host machine that is compiled into a report and sent to the operators.
+StrongPity has a file searcher component that can automatically collect and archive files based on a predefined list of file extensions.
+T9000 searches removable storage devices for files with a pre-defined list of file extensions (e.g. * .doc, .ppt, .xls, .docx, .pptx, *.xlsx). Any matching files are encrypted and written to a local user directory.
+TajMahal has the ability to index and compress files into a send queue for exfiltration.
+Threat Group-3390 ran a command to compile an archive of file types of interest from the victim user's directories.
+Tropic Trooper has collected information automatically using the adversary's USBferry attack. 
+For all non-removable drives on a victim, USBStealer executes automated collection of certain files for later exfiltration.
+Valak can download a module to search for and build a report of harvested credential data.
+VERMIN saves each collected file with the automatically generated format {{0:dd-MM-yyyy}}.txt .
+WindTail can identify and add files that possess specific file extensions to an array for archiving.
+Zebrocy scans the system and automatically collects files with the following extensions: .doc, .docx, ,.xls, .xlsx, .pdf, .pptx, .rar, .zip, .jpg, .jpeg, .bmp, .tiff, .kum, .tlg, .sbx, .cr, .hse, .hsf, and .lhz.
+ADVSTORESHELL exfiltrates data over the same channel used for C2.
+APT3 has a tool that exfiltrates data over the C2 channel.
+APT32's backdoor has exfiltrated data using the already opened channel with its C&C server.
+Astaroth exfiltrates collected information from its r1.log file to the external C2 server. 
+Attor has exfiltrated data over the C2 channel.
+Adversaries can direct BACKSPACE to upload files to the C2 Server.
+Bankshot exfiltrates data over its C2 channel.
+CallMe exfiltrates data to its C2 server over the same protocol as C2 communications.
+Cannon exfiltrates collected data over email via SMTP/S and POP3/S C2 channels.
+Carberp has exfiltrated data via HTTP to already established C2 servers.
+Drovorub can exfiltrate files over C2 infrastructure.
+DustySky has exfiltrated data to the C2 server.
+Dyre has the ability to send information staged on a compromised host externally to C2.
+Emotet has been seen exfiltrating system information stored within cookies sent within an HTTP GET request back to its C2 servers. 
+Empire can send data gathered from a target through the command and control channel.
+Frankenstein has collected information via Empire, which is automatically sent the data back to the adversary's C2.
+A Gamaredon Group file stealer can transfer collected files to a hardcoded C2 server.
+GoldenSpy has exfiltrated host environment information to an external C2 domain via port 9006. 
+Goopy has the ability to exfiltrate data over the Microsoft Outlook C2 channel.
+HAWKBALL has sent system information and files over the C2 channel.
+HOPLIGHT has used its C2 channel to exfiltrate data. 
+HotCroissant has the ability to download files from the infected host to the command and control (C2) server.
+Imminent Monitor has uploaded a file containing debugger logs, network information and system information to the C2.
+Ke3chang transferred compressed and encrypted RAR files containing exfiltration through the established backdoor command and control channel during operations.
+Kessel has exfiltrated information gathered from the infected system to the C2 server.
+Kimsuky has exfiltrated data over its email C2 channel.
+Lazarus Group malware IndiaIndia saves information gathered about the victim to a file that is uploaded to one of its 10 C2 servers. Another Lazarus Group malware sample also performs exfiltration over the C2 channel.
+LightNeuron exfiltrates data over its email C2 channel.
+Lokibot has the ability to initiate contact with command and control (C2) to exfiltrate stolen data.
+Machete's collected data is exfiltrated over the same channel used for C2.
+MechaFlounder has the ability to send the compromised user's account name and hostname within a URL to C2.
+MobileOrder exfiltrates data to its C2 server over the same protocol as C2 communications.
+MuddyWater has used C2 infrastructure to receive exfiltrated data.
+NETEAGLE is capable of reading files over the C2 channel.
+njRAT has used HTTP to receive stolen information from the infected machine. 
+Data exfiltration is done by Okrum using the already opened channel with the C2 server.
+OopsIE can upload files from the victim's machine to its C2 server.
+PowerShower has used a PowerShell document stealer module to pack and exfiltrate .txt, .pdf, .xls or .doc files smaller than 5MB that were modified during the past two days.
+Proxysvc performs data exfiltration over the control server channel using a custom protocol.
+Psylo exfiltrates data to its C2 server over the same protocol as C2 communications.
+Pteranodon exfiltrates screenshot files to its C2 server.
+Pupy can send screenshots files, keylogger data, files, and recorded audio back to the C2 server.
+RDAT can exfiltrate data gathered from the infected system via the established Exchange Web Services API C2 channel.
+Remexi performs exfiltration over BITSAdmin, which is also used for the C2 channel.
+REvil can exfiltrate host and malware information to C2 servers.
+Rising Sun can send data gathered from the infected machine via HTTP POST request to the C2. 
+ROKRAT sends collected files back over same C2 channel.
+Sandworm Team has sent system information to its C2 server using HTTP. 
+ShimRatReporter sent generated reports to the C2 via HTTP POST requests.
+Soft Cell used Web shells and HTRAN for C2 as well as to exfiltrate data.
+After data is collected by Stealth Falcon malware, it is exfiltrated over the existing C2 channel.
+StrongPity can exfiltrate collected documents through C2 channels.
+TajMahal has the ability to send collected files over its C2.
+TrickBot can send information about the compromised host to a hardcoded C2 server.
+Ursnif has used HTTP POSTs to exfil gathered information.
+Valak has the ability to exfiltrate data over the C2 channel.
+Wizard Spider has exfiltrated domain credentials and network enumeration information over command and control (C2) channels.
+Zebrocy has exfiltrated data to the designated C2 server using HTTP POST requests.

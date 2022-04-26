@@ -1,0 +1,113 @@
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.25.0 -- An enhanced Interactive Python. Type '?' for help.
+PyDev console: using IPython 7.25.0
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
+runfile('C:/Users/xiaowan/Documents/GitHub/AttacKG/Attack_Graph/attackGraph.py', wdir='C:/Users/xiaowan/Documents/GitHub/AttacKG')
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-13 16:34:05.651625: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-13 16:34:05.653947: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Wed Apr 13 16:34:14 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-13 16:34:17.288944: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-13 16:34:17.701165: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce 920MX computeCapability: 5.0
+coreClock: 0.993GHz coreCount: 2 deviceMemorySize: 2.00GiB deviceMemoryBandwidth: 14.92GiB/s
+2022-04-13 16:34:17.702571: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-13 16:34:17.703643: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-13 16:34:17.704978: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-13 16:34:17.705812: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-13 16:34:17.706982: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-13 16:34:17.707769: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-13 16:34:17.708498: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-13 16:34:17.709245: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-13 16:34:17.709724: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-13 16:34:17.711300: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-13 16:34:17.712619: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-13 16:34:17.713102: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(72, 89), match='baomoivietnam.com'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(877, 899), match='summerevent.webhop.net'>
+DEBUG:root:Find IoC matching: DocFile - <re.Match object; span=(13, 36), match='Adobe_Flash_install.rar'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(118, 141), match='Flash_Adobe_Install.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(146, 158), match='goopdate.dll'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(254, 266), match='goopdate.dll'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(415, 438), match='Flash_Adobe_Install.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(563, 575), match='goopdate.dll'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(607, 619), match='Goopdate.dll'>
+DEBUG:root:Replaced with: Adobe_Flash_install.rar - document
+DEBUG:root:Replaced with: baomoivietnam.com - network
+DEBUG:root:Replaced with: Flash_Adobe_Install.exe - executable
+DEBUG:root:Replaced with: goopdate.dll - executable
+DEBUG:root:Replaced with: goopdate.dll - executable
+DEBUG:root:Replaced with: Flash_Adobe_Install.exe - executable
+DEBUG:root:Replaced with: goopdate.dll - executable
+DEBUG:root:Replaced with: Goopdate.dll - executable
+DEBUG:root:Replaced with: summerevent.webhop.net - network
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-13 16:34:23.173474: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ files-file
+DEBUG:root:files-file
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:files#file#13
+DEBUG:root:archive#network#3
+DEBUG:root:Recover IoC regex: Adobe_Flash_install.rar
+DEBUG:root:document#file#2
+DEBUG:root:Recover IoC regex: baomoivietnam.com
+DEBUG:root:network#network#9
+DEBUG:root:Related sentence: 
+        The document archive that was returned from the network website contained the files executable and executable.
+DEBUG:root:files#file#30
+DEBUG:root:files#file#13
+DEBUG:root:Related sentence: The table below provides some basic information on all three of these files.
+DEBUG:root:file#file#34
+DEBUG:root:Recover IoC regex: goopdate.dll
+DEBUG:root:executable#executable#35
+DEBUG:root:file#file#39
+DEBUG:root:explorer#file#48
+DEBUG:root:systems#system#50
+DEBUG:root:default#network#52
+DEBUG:root:Related sentence: 
+        The file executable has the hidden file attribute set and will not show in Windows Explorer on systems using default settings.
+DEBUG:root:file#file#64
+DEBUG:root:update#network#77
+DEBUG:root:player#executable#80
+DEBUG:root:Related sentence: This results in the user seeing only the executable file to execute in order to install what they believe to be an update to Flash Player.
+DEBUG:root:loader#network#101
+DEBUG:root:stager#executable#111
+DEBUG:root:strike#file#110
+DEBUG:root:memory#network#113
+DEBUG:root:Related sentence: executable is a highly obfuscated loader whose ultimate purpose is to load a Cobalt Strike stager into memory and then execute it.
+DEBUG:root:stager#executable#122
+DEBUG:root:strike#executable#121
+DEBUG:root:shellcode#file#131
+DEBUG:root:server#network#135
+DEBUG:root:Recover IoC regex: summerevent.webhop.net
+DEBUG:root:network#network#145
+DEBUG:root:Related sentence: The Cobalt Strike stager will simply try to download and execute a shellcode from a remote server, in this case using the following URL: network/QuUA
+    
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:archive#network#3
+DEBUG:root:document#file#2
+DEBUG:root:network#network#9
+DEBUG:root:file#file#34
+DEBUG:root:executable#executable#35
+DEBUG:root:systems#system#50
+DEBUG:root:loader#network#101
+DEBUG:root:stager#executable#111
+DEBUG:root:strike#file#110
+DEBUG:root:shellcode#file#131
+DEBUG:root:network#network#145
+DEBUG:graphviz.files:write 1541 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

@@ -1,0 +1,20 @@
+{
+    "URL": "url",
+    "Host": "host",
+    "IP": "host",
+    "E-mail": "email",
+
+    "DocumentFile": "document",
+    "ExecutableFile": "executable",
+
+    "MD5": "file",
+    "SHA1": "file",
+    "SHA256": "file",
+
+    "FilePath": "path",
+
+    "Registry": "registry",
+
+    "Vulnerability": "vulnerability",
+    "Arguments": " "
+}

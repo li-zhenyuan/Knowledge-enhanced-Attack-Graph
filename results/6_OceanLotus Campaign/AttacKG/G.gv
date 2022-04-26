@@ -1,0 +1,27 @@
+graph G {
+	"archive#network#3" [label="archive#network#3##archive##" shape=diamond]
+	"document#file#2" [label="document#file#2##document##Adobe_Flash_install.rar" shape=rectangle]
+	"network#network#9" [label="network#network#9##network##baomoivietnam.com" shape=diamond]
+	"file#file#34" [label="file#file#34##file##" shape=rectangle]
+	"executable#executable#35" [label="executable#executable#35##executable##goopdate.dll" shape=oval]
+	"systems#system#50" [label="systems#system#50##systems##" shape=trapezium]
+	"loader#network#101" [label="loader#network#101##loader##" shape=diamond]
+	"stager#executable#111" [label="stager#executable#111##stager##" shape=oval]
+	"strike#file#110" [label="strike#file#110##Cobalt Strike##" shape=rectangle]
+	"shellcode#file#131" [label="shellcode#file#131##shellcode##" shape=rectangle]
+	"network#network#145" [label="network#network#145##network##summerevent.webhop.net" shape=diamond]
+	"archive#network#3" -- "document#file#2"
+	"document#file#2" -- "network#network#9"
+	"file#file#34" -- "executable#executable#35"
+	"file#file#34" -- "systems#system#50"
+	"file#file#34" -- "archive#network#3"
+	"file#file#34" -- "loader#network#101"
+	"executable#executable#35" -- "file#file#34"
+	"systems#system#50" -- "loader#network#101"
+	"loader#network#101" -- "stager#executable#111"
+	"loader#network#101" -- "network#network#145"
+	"stager#executable#111" -- "strike#file#110"
+	"stager#executable#111" -- "shellcode#file#131"
+	"strike#file#110" -- "loader#network#101"
+	"shellcode#file#131" -- "loader#network#101"
+}
