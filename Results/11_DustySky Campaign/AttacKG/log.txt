@@ -1,0 +1,154 @@
+Python 3.8.8 (tags/v3.8.8:024d805, Feb 19 2021, 13:18:16) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-26 21:07:26.585990: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:07:26.586215: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Tue Apr 26 21:07:30 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-26 21:07:31.709798: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-26 21:07:31.727000: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce GTX 1650 computeCapability: 7.5
+coreClock: 1.515GHz coreCount: 14 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 178.84GiB/s
+2022-04-26 21:07:31.727532: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:07:31.727914: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-26 21:07:31.728267: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-26 21:07:31.728596: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-26 21:07:31.728944: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-26 21:07:31.729277: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-26 21:07:31.729594: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-26 21:07:31.729934: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-26 21:07:31.730030: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-26 21:07:31.730456: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-26 21:07:31.731674: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-26 21:07:31.731770: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(1338, 1346), match='copy.com'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(2130, 2146), match='ns.suppoit[.]xyz'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(2151, 2169), match='supo.mefound[.]com'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(1439, 1451), match='45.32.13.169'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(2209, 2221), match='45.32.13.169'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1962, 1972), match='Plugin.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2023, 2033), match='Plugin.exe'>
+DEBUG:root:Find IoC matching: FileHash - <re.Match object; span=(1831, 1863), match='2f452e90c2f9b914543847ba2b431b9a'>
+DEBUG:root:Find IoC matching: FileHash - <re.Match object; span=(1974, 2006), match='1d9612a869ad929bd4dd16131ddb133a'>
+DEBUG:root:Replaced with: copy.com - network
+DEBUG:root:Replaced with: 45.32.13.169 - network
+DEBUG:root:Replaced with: 2f452e90c2f9b914543847ba2b431b9a - file
+DEBUG:root:Replaced with: Plugin.exe - executable
+DEBUG:root:Replaced with: 1d9612a869ad929bd4dd16131ddb133a - file
+DEBUG:root:Replaced with: Plugin.exe - executable
+DEBUG:root:Replaced with: ns.suppoit[.]xyz - network
+DEBUG:root:Replaced with: supo.mefound[.]com - network
+DEBUG:root:Replaced with: 45.32.13.169 - network
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-26 21:07:33.926715: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ file-file
+DEBUG:root:file-file
+DEBUG:root:file-file
+DEBUG:root:---coref_origiin:---
+ attackers-actor
+DEBUG:root:attackers-actor
+DEBUG:root:---coref_origiin:---
+ DustySky-actor
+DEBUG:root:its-
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:attackers#executable#1
+DEBUG:root:email#network#7
+DEBUG:root:file#file#15
+DEBUG:root:archive#file#14
+DEBUG:root:zip#file#19
+DEBUG:root:Related sentence: The attackers would usually send a malicious email message that either links to an archive file (RAR or ZIP compressed) or has one attached to it.
+DEBUG:root:email#network#32
+DEBUG:root:september#network#42
+DEBUG:root:Related sentence: Below are malicious email messages that have been sent to multiple targets on September and December 2015.
+DEBUG:root:archive#file#52
+DEBUG:root:file#file#57
+DEBUG:root:file#file#15
+DEBUG:root:dustysky#executable#73
+DEBUG:root:document#file#61
+DEBUG:root:Related sentence: If the victim extracts the archive and clicks the .exe file, the lure document or video are presented while the computer is being infected with DustySky.
+DEBUG:root:files#file#83
+DEBUG:root:word#file#82
+DEBUG:root:macro#executable#88
+DEBUG:root:Related sentence: In recent samples the group used Microsoft Word files embed with a malicious macro, which would infect the victim if enabled.
+DEBUG:root:file#file#115
+DEBUG:root:file#file#15
+DEBUG:root:engineering#network#107
+DEBUG:root:Related sentence: Note, that these infection methods rely on social engineering - convincing the victim to open the file (and enabling content if it is disabled) - and not on software vulnerabilities.
+DEBUG:root:email#network#138
+DEBUG:root:document#file#151
+DEBUG:root:diplomacy#network#160
+DEBUG:root:politics#executable#165
+DEBUG:root:Related sentence: The subject line of the malicious email message, as well as the name and content of the lure document, are usually related to recent events in diplomacy, defense, and politics.
+DEBUG:root:samples#file#185
+DEBUG:root:Related sentence: In recent samples, fake invoices and a copy of the public Google privacy policy were used.
+DEBUG:root:document#file#206
+DEBUG:root:attackers#executable#228
+DEBUG:root:Related sentence: The content of the lure document is always copied from a public news item or other web content, and is never an original composition of the attackers.
+DEBUG:root:malware#executable#238
+DEBUG:root:message#file#235
+DEBUG:root:server#network#263
+DEBUG:root:Recover IoC regex: copy.com
+DEBUG:root:network#network#251
+DEBUG:root:file#file#255
+DEBUG:root:attackers#executable#267
+DEBUG:root:attackers#executable#228
+DEBUG:root:Related sentence: When linked from the malicious message, the malware would be hosted either on a cloud service (many times in network, a legitimate file hosting service), or on a server controlled by the attackers.
+DEBUG:root:Recover IoC regex: 45.32.13.169
+DEBUG:root:network#network#271
+DEBUG:root:domains#file#275
+DEBUG:root:software#executable#293
+DEBUG:root:software#executable#301
+DEBUG:root:Related sentence: IP address network and all the domains that are pointing to it8 host a webpage which is a copy of a legitimate and unrelated software website - iMazing, an iOS management software.
+DEBUG:root:software#file#319
+DEBUG:root:Related sentence: The fake website, similarly to the legitimate one, offers visitors to download the iMazing software.
+DEBUG:root:malware#executable#333
+DEBUG:root:dustysky#executable#332
+DEBUG:root:Related sentence: However, the version on the fake website is bundled with DustySky malware.
+DEBUG:root:version#file#340
+DEBUG:root:Recover IoC regex: 2f452e90c2f9b914543847ba2b431b9a
+DEBUG:root:file#file#342
+DEBUG:root:imazing#executable#346
+DEBUG:root:dustysky#executable#354
+DEBUG:root:file#file#359
+DEBUG:root:Recover IoC regex: 1d9612a869ad929bd4dd16131ddb133a
+DEBUG:root:file#file#363
+DEBUG:root:Related sentence: Upon execution of the malicious version (file) the legitimate iMazing is installed, while in the background DustySky is dropped as a file named executable (file), and executed.
+DEBUG:root:Recover IoC regex: ns.suppoit[.]xyz
+DEBUG:root:network#network#383
+DEBUG:root:Recover IoC regex: 45.32.13.169
+DEBUG:root:network#network#393
+DEBUG:root:command#executable#375
+DEBUG:root:Recover IoC regex: supo.mefound[.]com
+DEBUG:root:network#network#385
+DEBUG:root:dustysky#executable#354
+DEBUG:root:Related sentence: executable immediately starts communicating with its command and control sever using the hardcoded address network and network, both also pointing to above mentioned network.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:attackers#executable#1
+DEBUG:root:files#file#83
+DEBUG:root:macro#executable#88
+DEBUG:root:engineering#network#107
+DEBUG:root:email#network#138
+DEBUG:root:diplomacy#network#160
+DEBUG:root:politics#executable#165
+DEBUG:root:message#file#235
+DEBUG:root:server#network#263
+DEBUG:root:software#file#319
+DEBUG:root:version#file#340
+DEBUG:root:imazing#executable#346
+DEBUG:root:dustysky#executable#354
+DEBUG:root:network#network#383
+DEBUG:root:network#network#393
+DEBUG:root:command#executable#375
+DEBUG:root:network#network#385
+DEBUG:graphviz.files:write 2412 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

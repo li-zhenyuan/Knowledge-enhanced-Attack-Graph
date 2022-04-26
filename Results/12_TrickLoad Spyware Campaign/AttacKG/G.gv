@@ -1,0 +1,30 @@
+graph G {
+	"spyware#file#181" [label="spyware#file#181##spyware Global\TrickBotIt##" shape=rectangle]
+	"system#system#5" [label="system#system#5##system##" shape=trapezium]
+	"data%\{malware#executable#55" [label="data%\{malware#executable#55##Data%\{malware##" shape=oval]
+	"windows#network#75" [label="windows#network#75##Windows##" shape=diamond]
+	"task#system#76" [label="task#system#76##Task##" shape=trapezium]
+	"%#executable#155" [label="%#executable#155##%##" shape=oval]
+	"data%\modules\injectdll32_configs\dinj#executable#170" [label="data%\modules\injectdll32_configs\dinj#executable#170##Data%\Modules\injectDll32_configs\dinj##" shape=oval]
+	"application#file#160" [label="application#file#160##%Application##" shape=rectangle]
+	"network#network#197" [label="network#network#197##network##rnalip.com" shape=diamond]
+	"spyware#file#181" -- "system#system#5"
+	"spyware#file#181" -- "windows#network#75"
+	"spyware#file#181" -- "%#executable#155"
+	"spyware#file#181" -- "application#file#160"
+	"spyware#file#181" -- "data%\{malware#executable#55"
+	"spyware#file#181" -- "data%\modules\injectdll32_configs\dinj#executable#170"
+	"system#system#5" -- "spyware#file#181"
+	"system#system#5" -- "application#file#160"
+	"data%\{malware#executable#55" -- "spyware#file#181"
+	"data%\{malware#executable#55" -- "application#file#160"
+	"windows#network#75" -- "task#system#76"
+	"task#system#76" -- "spyware#file#181"
+	"%#executable#155" -- "data%\modules\injectdll32_configs\dinj#executable#170"
+	"data%\modules\injectdll32_configs\dinj#executable#170" -- "spyware#file#181"
+	"data%\modules\injectdll32_configs\dinj#executable#170" -- "application#file#160"
+	"application#file#160" -- "data%\{malware#executable#55"
+	"application#file#160" -- "system#system#5"
+	"application#file#160" -- "data%\modules\injectdll32_configs\dinj#executable#170"
+	"network#network#197" -- "system#system#5"
+}

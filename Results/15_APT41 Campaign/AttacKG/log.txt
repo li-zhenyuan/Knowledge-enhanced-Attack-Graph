@@ -1,0 +1,172 @@
+Python 3.8.8 (tags/v3.8.8:024d805, Feb 19 2021, 13:18:16) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-26 21:12:10.926355: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:12:10.926470: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Tue Apr 26 21:12:15 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-26 21:12:16.324239: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-26 21:12:16.340033: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce GTX 1650 computeCapability: 7.5
+coreClock: 1.515GHz coreCount: 14 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 178.84GiB/s
+2022-04-26 21:12:16.340572: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:12:16.340931: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-26 21:12:16.341252: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-26 21:12:16.341572: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-26 21:12:16.341898: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-26 21:12:16.342213: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-26 21:12:16.342521: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-26 21:12:16.342843: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-26 21:12:16.342937: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-26 21:12:16.343393: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-26 21:12:16.344567: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-26 21:12:16.344672: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(1290, 1310), match='exchange.dumb1[.]com'>
+DEBUG:root:Find IoC matching: DocFile - <re.Match object; span=(657, 667), match='logger.zip'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(529, 540), match='install.bat'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(545, 561), match='storesyncsvc.dll'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(775, 786), match='install.bat'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(791, 807), match='storesyncsvc.dll'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(896, 907), match='install.bat'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1033, 1044), match='install.bat'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1145, 1161), match='storesyncsvc.dll'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1203, 1219), match='Storesyncsvc.dll'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1470, 1487), match='storescyncsvc.dll'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1691, 1696), match='2.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1747, 1752), match='2.exe'>
+DEBUG:root:Find IoC matching: FileHash - <re.Match object; span=(914, 946), match='7966c2c546b71e800397a67f942858d0'>
+DEBUG:root:Find IoC matching: FileHash - <re.Match object; span=(1168, 1200), match='5909983db4d9023e4098e56361c96a6f'>
+DEBUG:root:Find IoC matching: FileHash - <re.Match object; span=(1703, 1735), match='3e856162c36b532925c8226b4ed3481c'>
+DEBUG:root:Find IoC matching: Vulnerability - <re.Match object; span=(217, 231), match='CVE-2020-10189'>
+DEBUG:root:Find IoC matching: Vulnerability - <re.Match object; span=(605, 619), match='CVE-2020-10189'>
+DEBUG:root:Replaced with: CVE-2020-10189 - exploit
+DEBUG:root:Replaced with: install.bat - executable
+DEBUG:root:Replaced with: storesyncsvc.dll - executable
+DEBUG:root:Replaced with: CVE-2020-10189 - exploit
+DEBUG:root:Replaced with: logger.zip - document
+DEBUG:root:Replaced with: install.bat - executable
+DEBUG:root:Replaced with: storesyncsvc.dll - executable
+DEBUG:root:Replaced with: install.bat - executable
+DEBUG:root:Replaced with: 7966c2c546b71e800397a67f942858d0 - file
+DEBUG:root:Replaced with: install.bat - executable
+DEBUG:root:Replaced with: storesyncsvc.dll - executable
+DEBUG:root:Replaced with: 5909983db4d9023e4098e56361c96a6f - file
+DEBUG:root:Replaced with: Storesyncsvc.dll - executable
+DEBUG:root:Replaced with: exchange.dumb1[.]com - network
+DEBUG:root:Replaced with: storescyncsvc.dll - executable
+DEBUG:root:Replaced with: 2.exe - executable
+DEBUG:root:Replaced with: 3e856162c36b532925c8226b4ed3481c - file
+DEBUG:root:Replaced with: 2.exe - executable
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-26 21:12:18.541836: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ March-network
+DEBUG:root:March-network
+DEBUG:root:---coref_origiin:---
+ FireEye-file
+DEBUG:root:FireEye-actor
+DEBUG:root:FireEye-actor
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:seeley#executable#8
+DEBUG:root:march#network#1
+DEBUG:root:day#network#25
+DEBUG:root:Recover IoC regex: CVE-2020-10189
+DEBUG:root:exploit#vulnerability#40
+DEBUG:root:Related sentence: On March 5, 2020, researcher Steven Seeley, published an advisory and released proof-of-concept code for a zero-day remote code execution vulnerability in Zoho ManageEngine Desktop Central versions prior to 10.0.474 (exploit).
+DEBUG:root:fireeye#file#48
+DEBUG:root:apt41#executable#50
+DEBUG:root:march#network#45
+DEBUG:root:march#network#1
+DEBUG:root:fireeye#executable#66
+DEBUG:root:Related sentence: Beginning on March 8, FireEye observed APT41 use 91.208.184[.]78 to attempt to exploit the Zoho ManageEngine vulnerability at more than a dozen FireEye customers, which resulted in the compromise of at least five separate customers.
+DEBUG:root:fireeye#executable#81
+DEBUG:root:fireeye#file#48
+DEBUG:root:payloads#executable#89
+DEBUG:root:Related sentence: FireEye observed two separate variations of how the payloads (executable and executable) were deployed.
+DEBUG:root:exploit#vulnerability#104
+DEBUG:root:Recover IoC regex: CVE-2020-10189
+DEBUG:root:exploit#vulnerability#103
+DEBUG:root:program#file#118
+DEBUG:root:Recover IoC regex: logger.zip
+DEBUG:root:document#file#111
+DEBUG:root:commands#executable#125
+DEBUG:root:powershell#executable#128
+DEBUG:root:Related sentence: In the first variation the exploit exploit was used to directly upload “document”, a simple Java based program, which contained a set of commands to use PowerShell to download and execute executable and executable.
+DEBUG:root:file#file#171
+DEBUG:root:fireeye#executable#137
+DEBUG:root:fireeye#file#48
+DEBUG:root:batch#executable#170
+DEBUG:root:apt41#executable#139
+DEBUG:root:Recover IoC regex: 7966c2c546b71e800397a67f942858d0
+DEBUG:root:file#file#155
+DEBUG:root:microsoft#file#142
+DEBUG:root:66.42.98[.]220#file#161
+DEBUG:root:command#executable#145
+DEBUG:root:Recover IoC regex: 5909983db4d9023e4098e56361c96a6f
+DEBUG:root:file#file#192
+DEBUG:root:apt41#executable#159
+DEBUG:root:Related sentence: FireEye observed APT41 leverage the Microsoft BITS Admin command-line tool to download executable (MD5: file) from known APT41 infrastructure 66.42.98[.]220 on port 12345.In both variations, the executable batch file was used to install persistence for a trial-version of Cobalt Strike BEACON loader named executable (MD5: file).
+DEBUG:root:command#executable#223
+DEBUG:root:profile#file#229
+DEBUG:root:c2#network#227
+DEBUG:root:Recover IoC regex: exchange.dumb1[.]com
+DEBUG:root:network#network#210
+DEBUG:root:dns#network#214
+DEBUG:root:Related sentence: executable was a Cobalt Strike BEACON implant (trial-version) which connected to network (with a DNS resolution of 74.82.201[.]8) using a jquery malleable command and control (C2) profile.
+DEBUG:root:apt41#executable#239
+DEBUG:root:backdoor#file#244
+DEBUG:root:backdoor#executable#249
+DEBUG:root:exploitation#vulnerability#237
+DEBUG:root:c2#network#253
+DEBUG:root:certutil#file#258
+DEBUG:root:ttp#file#262
+DEBUG:root:apt41#executable#267
+DEBUG:root:Recover IoC regex: 3e856162c36b532925c8226b4ed3481c
+DEBUG:root:file#file#283
+DEBUG:root:Related sentence: Within a few hours of initial exploitation, APT41 used the executable BEACON backdoor to download a secondary backdoor with a different C2 address that uses Microsoft CertUtil, a common TTP that we’ve observed APT41 use in past intrusions, which they then used to download executable (MD5: file).
+DEBUG:root:file#file#287
+DEBUG:root:downloader#file#293
+DEBUG:root:Recover IoC regex: 2.exe
+DEBUG:root:executable#executable#288
+DEBUG:root:shellcode#file#300
+DEBUG:root:cobalt#file#297
+DEBUG:root:Related sentence: The file executable was a VMProtected Meterpreter downloader used to download Cobalt Strike BEACON shellcode.
+DEBUG:root:shellcode#file#305
+DEBUG:root:91.208.184[.]78#file#313
+DEBUG:root:c2#network#310
+DEBUG:root:Related sentence: The downloaded BEACON shellcode connected to the same C2 server: 91.208.184[.]78.
+DEBUG:root:actor#executable#323
+DEBUG:root:systems#system#334
+DEBUG:root:Related sentence: We believe this is an example of the actor attempting to diversify post-exploitation access to the compromised systems.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:seeley#executable#8
+DEBUG:root:exploit#vulnerability#40
+DEBUG:root:fireeye#file#48
+DEBUG:root:apt41#executable#50
+DEBUG:root:march#network#45
+DEBUG:root:payloads#executable#89
+DEBUG:root:program#file#118
+DEBUG:root:fireeye#executable#137
+DEBUG:root:batch#executable#170
+DEBUG:root:file#file#155
+DEBUG:root:file#file#192
+DEBUG:root:c2#network#227
+DEBUG:root:backdoor#executable#249
+DEBUG:root:exploitation#vulnerability#237
+DEBUG:root:certutil#file#258
+DEBUG:root:file#file#283
+DEBUG:root:executable#executable#288
+DEBUG:root:shellcode#file#300
+DEBUG:root:actor#executable#323
+DEBUG:root:systems#system#334
+DEBUG:graphviz.files:write 3333 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

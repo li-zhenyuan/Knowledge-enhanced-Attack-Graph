@@ -1,0 +1,54 @@
+graph G {
+	"seeley#executable#8" [label="seeley#executable#8##Steven Seeley##" shape=oval]
+	"exploit#vulnerability#40" [label="exploit#vulnerability#40##exploit##CVE-2020-10189" shape=trapezium]
+	"fireeye#file#48" [label="fireeye#file#48##FireEye##" shape=rectangle]
+	"apt41#executable#50" [label="apt41#executable#50##APT41##" shape=oval]
+	"march#network#45" [label="march#network#45##March zero-day remote##" shape=diamond]
+	"payloads#executable#89" [label="payloads#executable#89##payloads PowerShell##" shape=oval]
+	"program#file#118" [label="program#file#118##program document##logger.zip" shape=rectangle]
+	"fireeye#executable#137" [label="fireeye#executable#137##FireEye##" shape=oval]
+	"batch#executable#170" [label="batch#executable#170##batch##" shape=oval]
+	"file#file#155" [label="file#file#155##file##7966c2c546b71e800397a67f942858d0" shape=rectangle]
+	"file#file#192" [label="file#file#192##file##5909983db4d9023e4098e56361c96a6f" shape=rectangle]
+	"c2#network#227" [label="c2#network#227##C2 network DNS##exchange.dumb1[.]com" shape=diamond]
+	"backdoor#executable#249" [label="backdoor#executable#249##secondary backdoor##" shape=oval]
+	"exploitation#vulnerability#237" [label="exploitation#vulnerability#237##exploitation##" shape=trapezium]
+	"certutil#file#258" [label="certutil#file#258##Microsoft CertUtil 66.42.98[.]220##" shape=rectangle]
+	"file#file#283" [label="file#file#283##file##3e856162c36b532925c8226b4ed3481c" shape=rectangle]
+	"executable#executable#288" [label="executable#executable#288##executable##2.exe" shape=oval]
+	"shellcode#file#300" [label="shellcode#file#300##BEACON shellcode 91.208.184[.]78##" shape=rectangle]
+	"actor#executable#323" [label="actor#executable#323##actor##" shape=oval]
+	"systems#system#334" [label="systems#system#334##systems##" shape=trapezium]
+	"seeley#executable#8" -- "march#network#45"
+	"exploit#vulnerability#40" -- "program#file#118"
+	"fireeye#file#48" -- "apt41#executable#50"
+	"fireeye#file#48" -- "payloads#executable#89"
+	"fireeye#file#48" -- "batch#executable#170"
+	"apt41#executable#50" -- "march#network#45"
+	"apt41#executable#50" -- "file#file#155"
+	"apt41#executable#50" -- "file#file#283"
+	"apt41#executable#50" -- "shellcode#file#300"
+	"march#network#45" -- "fireeye#executable#137"
+	"march#network#45" -- "exploit#vulnerability#40"
+	"payloads#executable#89" -- "file#file#192"
+	"payloads#executable#89" -- "certutil#file#258"
+	"program#file#118" -- "payloads#executable#89"
+	"fireeye#executable#137" -- "fireeye#file#48"
+	"batch#executable#170" -- "apt41#executable#50"
+	"file#file#155" -- "certutil#file#258"
+	"file#file#192" -- "apt41#executable#50"
+	"c2#network#227" -- "certutil#file#258"
+	"backdoor#executable#249" -- "exploitation#vulnerability#237"
+	"exploitation#vulnerability#237" -- "exploit#vulnerability#40"
+	"exploitation#vulnerability#237" -- "c2#network#227"
+	"certutil#file#258" -- "c2#network#227"
+	"certutil#file#258" -- "fireeye#executable#137"
+	"certutil#file#258" -- "shellcode#file#300"
+	"certutil#file#258" -- "apt41#executable#50"
+	"certutil#file#258" -- "payloads#executable#89"
+	"executable#executable#288" -- "shellcode#file#300"
+	"shellcode#file#300" -- "backdoor#executable#249"
+	"shellcode#file#300" -- "executable#executable#288"
+	"shellcode#file#300" -- "c2#network#227"
+	"actor#executable#323" -- "systems#system#334"
+}

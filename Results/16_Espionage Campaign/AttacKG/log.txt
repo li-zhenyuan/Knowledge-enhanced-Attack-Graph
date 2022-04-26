@@ -1,0 +1,146 @@
+Python 3.8.8 (tags/v3.8.8:024d805, Feb 19 2021, 13:18:16) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-26 21:13:20.732434: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:13:20.732541: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Tue Apr 26 21:13:24 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-26 21:13:25.872306: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-26 21:13:25.887515: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce GTX 1650 computeCapability: 7.5
+coreClock: 1.515GHz coreCount: 14 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 178.84GiB/s
+2022-04-26 21:13:25.888008: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:13:25.888339: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-26 21:13:25.888655: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-26 21:13:25.888960: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-26 21:13:25.889278: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-26 21:13:25.889586: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-26 21:13:25.889893: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-26 21:13:25.890214: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-26 21:13:25.890301: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-26 21:13:25.890710: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-26 21:13:25.892333: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-26 21:13:25.892992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(1718, 1750), match='hxxp://unifscon[.]com/R9_Sys.exe'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(665, 680), match='gelirler.gov.tr'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(1725, 1739), match='unifscon[.]com'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(1821, 1838), match='civita2.no-ip.biz'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(691, 706), match='212.133.164.130'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1376, 1384), match='rqco.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1740, 1750), match='R9_Sys.exe'>
+DEBUG:root:Replaced with: gelirler.gov.tr - network
+DEBUG:root:Replaced with: 212.133.164.130 - network
+DEBUG:root:Replaced with: rqco.exe - executable
+DEBUG:root:Replaced with: hxxp://unifscon[.]com/R9_Sys.exe - network
+DEBUG:root:Replaced with: civita2.no-ip.biz - network
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-26 21:13:28.083614: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ pages-network
+DEBUG:root:Their-
+DEBUG:root:---coref_origiin:---
+ document-file
+DEBUG:root:document-file
+DEBUG:root:---coref_origiin:---
+ loader-network
+DEBUG:root:loader-
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:tactics#file#3
+DEBUG:root:emails#network#15
+DEBUG:root:file#file#27
+DEBUG:root:engineer#network#18
+DEBUG:root:macros#executable#31
+DEBUG:root:Related sentence: The group used tactics that have become extremely useful for cyber spies—spear phishing emails that social engineer the victim to download an attached or embedded file and then enable macros.
+DEBUG:root:macros#executable#34
+DEBUG:root:files#file#37
+DEBUG:root:screenshots#file#54
+DEBUG:root:programs#executable#70
+DEBUG:root:remote#network#41
+DEBUG:root:microphone#file#64
+DEBUG:root:files#file#73
+DEBUG:root:keystrokes#file#51
+DEBUG:root:Related sentence: These macros contain executable files that download a Remote Access Trojan (RAT), which can log keystrokes, take screenshots, record audio and video from a webcam or microphone, and install and uninstall programs and manage files.
+DEBUG:root:pages#network#99
+DEBUG:root:email#network#107
+DEBUG:root:course#network#80
+DEBUG:root:ip#executable#116
+DEBUG:root:gelirler#network#110
+DEBUG:root:mx#file#120
+DEBUG:root:Recover IoC regex: gelirler.gov.tr
+DEBUG:root:network#network#123
+DEBUG:root:Recover IoC regex: 212.133.164.130
+DEBUG:root:network#network#127
+DEBUG:root:Related sentence: While it could, of course, be a fake website, it’s more likely a compromised host as it also contained phishing pages for the dating website Match.com: Normal email for the Gelirler domain would come from the IP specified in the MX record of network, which is network.
+DEBUG:root:records#file#131
+DEBUG:root:pages#network#99
+DEBUG:root:Related sentence: Their SPF records, which enforce this process, have been set to "v=spf1 mx -all.”
+DEBUG:root:attachment#file#151
+DEBUG:root:document#file#155
+DEBUG:root:genelge#network#164
+DEBUG:root:Related sentence: The attachment is an XLS document with the title “2017-94197 SAYILI GENELGE
+DEBUG:root:flow#file#176
+DEBUG:root:document#file#171
+DEBUG:root:document#file#155
+DEBUG:root:macros#executable#178
+DEBUG:root:Related sentence: Opening the document shows a prevalent attack flow: Macros.
+DEBUG:root:file#file#188
+DEBUG:root:Related sentence: The macro contains a slightly obfuscated malicious executable file inside.
+DEBUG:root:macro#executable#198
+DEBUG:root:script#executable#211
+DEBUG:root:integer#executable#205
+DEBUG:root:Related sentence: The executable data is stored inside the macro in the form of arrays with integer values spread throughout the macro script.
+DEBUG:root:folder#file#228
+DEBUG:root:Related sentence: The data from the arrays is combined and written to disk in the Application Data folder.
+DEBUG:root:filename#file#231
+DEBUG:root:macro#executable#239
+DEBUG:root:Related sentence: The filename chosen seems to be random for every macro—most likely generated automatically.
+DEBUG:root:file#file#263
+DEBUG:root:loader#network#271
+DEBUG:root:Related sentence: This file is a small (3kb) loader, which downloads the second stage of the attack.
+DEBUG:root:loader#network#271
+DEBUG:root:runtime#network#290
+DEBUG:root:urlmon#network#298
+DEBUG:root:kernel32#file#309
+DEBUG:root:Related sentence: The loader has no imports, but at runtime, resolves the UrlDownloadToFile function from the URLMON library to download stage two, and then ShellExecute from kernel32 to run the downloaded stage two.
+DEBUG:root:payload#executable#321
+DEBUG:root:Recover IoC regex: hxxp://unifscon[.]com/R9_Sys.exe
+DEBUG:root:network#network#324
+DEBUG:root:Related sentence: The stage-two payload downloads from network.
+DEBUG:root:c2#network#327
+DEBUG:root:Recover IoC regex: civita2.no-ip.biz
+DEBUG:root:network#network#338
+DEBUG:root:contractor#executable#336
+DEBUG:root:Related sentence: The C2 server configured for the attack on the defense contractor is network.
+DEBUG:root:change#network#359
+DEBUG:root:c2#network#377
+DEBUG:root:emails#network#351
+DEBUG:root:Related sentence: Then, a little while after sending out the spear phishing emails, we can see the IP resolution change with, most likely, IP addresses of compromised machines used for SOCKS5 proxying to hide the C2.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:tactics#file#3
+DEBUG:root:screenshots#file#54
+DEBUG:root:pages#network#99
+DEBUG:root:email#network#107
+DEBUG:root:ip#executable#116
+DEBUG:root:mx#file#120
+DEBUG:root:network#network#123
+DEBUG:root:network#network#127
+DEBUG:root:records#file#131
+DEBUG:root:genelge#network#164
+DEBUG:root:macro#executable#198
+DEBUG:root:loader#network#271
+DEBUG:root:kernel32#file#309
+DEBUG:root:payload#executable#321
+DEBUG:root:network#network#324
+DEBUG:root:contractor#executable#336
+DEBUG:root:change#network#359
+DEBUG:graphviz.files:write 2359 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

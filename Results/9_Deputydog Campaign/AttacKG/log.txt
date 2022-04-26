@@ -1,0 +1,212 @@
+Python 3.8.8 (tags/v3.8.8:024d805, Feb 19 2021, 13:18:16) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-26 20:59:53.548854: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 20:59:53.548964: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Tue Apr 26 21:00:01 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-26 21:00:03.776337: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-26 21:00:03.927996: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce GTX 1650 computeCapability: 7.5
+coreClock: 1.515GHz coreCount: 14 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 178.84GiB/s
+2022-04-26 21:00:03.928498: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:00:03.928834: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-26 21:00:03.929150: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-26 21:00:03.929456: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-26 21:00:03.929760: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-26 21:00:03.930082: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-26 21:00:03.930388: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-26 21:00:03.930698: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-26 21:00:03.930783: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-26 21:00:03.932278: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-26 21:00:03.933131: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-26 21:00:03.933285: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(141, 150), match='vfw[.]org'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(2328, 2348), match='newss[.]effers[.]com'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(2410, 2428), match='info[.]flnet[.]org'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(2384, 2397), match='118.99.60.142'>
+DEBUG:root:Find IoC matching: DocFile - <re.Match object; span=(660, 668), match='img.html'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1824, 1834), match='stream.exe'>
+DEBUG:root:Find IoC matching: FileHash - <re.Match object; span=(2079, 2111), match='8455bbb9a210ce603a1b646b0d951bce'>
+DEBUG:root:Find IoC matching: Vulnerability - <re.Match object; span=(60, 73), match='CVE-2014-0322'>
+DEBUG:root:Replaced with: CVE-2014-0322 - exploit
+DEBUG:root:Replaced with: vfw[.]org - network
+DEBUG:root:Replaced with: img.html - document
+DEBUG:root:Replaced with: stream.exe - executable
+DEBUG:root:Replaced with: 8455bbb9a210ce603a1b646b0d951bce - file
+DEBUG:root:Replaced with: newss[.]effers[.]com - network
+DEBUG:root:Replaced with: 118.99.60.142 - network
+DEBUG:root:Replaced with: info[.]flnet[.]org - network
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ exploit-vulnerability
+DEBUG:root:exploit-vulnerability
+DEBUG:root:exploit-vulnerability
+DEBUG:root:exploit-vulnerability
+DEBUG:root:---coref_origiin:---
+ DLL-file
+DEBUG:root:DLL-file
+DEBUG:root:DLL-file
+DEBUG:root:---coref_origiin:---
+ attacker-actor
+DEBUG:root:attacker-actor
+DEBUG:root:---coref_origiin:---
+ file-file
+DEBUG:root:file-file
+DEBUG:root:file-file
+DEBUG:root:---coref_origiin:---
+ payload-executable
+DEBUG:root:payload-executable
+DEBUG:root:payload-executable
+DEBUG:root:---coref_origiin:---
+ shellcode-executable
+DEBUG:root:shellcode-executable
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:fireeye#executable#5
+DEBUG:root:Recover IoC regex: CVE-2014-0322
+DEBUG:root:exploit#vulnerability#13
+DEBUG:root:day#network#10
+DEBUG:root:exploit#vulnerability#11
+DEBUG:root:february#network#2
+DEBUG:root:Recover IoC regex: vfw[.]org
+DEBUG:root:network#network#29
+DEBUG:root:foreign#network#24
+DEBUG:root:Related sentence: 
+    On February 11, FireEye identified a zero-day exploit (exploit)  being served up from the U.S. Veterans of Foreign Wars’ website (network).
+DEBUG:root:attackers#executable#39
+DEBUG:root:vfw#file#35
+DEBUG:root:attacker#executable#55
+DEBUG:root:Related sentence: After compromising the VFW website, the attackers added an iframe into the beginning of the website’s HTML code that loads the attacker’s page in the background.
+DEBUG:root:attacker#executable#63
+DEBUG:root:javascript#executable#67
+DEBUG:root:flash#executable#71
+DEBUG:root:exploit#vulnerability#80
+DEBUG:root:exploit#vulnerability#13
+DEBUG:root:Related sentence: The attacker’s HTML/JavaScript page runs a Flash object, which orchestrates the remainder of the exploit.
+DEBUG:root:exploit#vulnerability#83
+DEBUG:root:exploit#vulnerability#13
+DEBUG:root:javascript#executable#99
+DEBUG:root:Related sentence: The exploit includes calling back to the IE 10 vulnerability trigger, which is embedded in the JavaScript.
+DEBUG:root:vfw#file#107
+DEBUG:root:exploit#vulnerability#117
+DEBUG:root:exploit#vulnerability#13
+DEBUG:root:Recover IoC regex: img.html
+DEBUG:root:document#file#125
+DEBUG:root:www.[redacted].com#network#119
+DEBUG:root:Related sentence: Specifically, visitors to the VFW website were silently redirected through an iframe to the exploit at www.[REDACTED].com/Data/img/document.
+DEBUG:root:attacker#executable#128
+DEBUG:root:microsoft#file#131
+DEBUG:root:Related sentence: The attacker uses the Microsoft.
+DEBUG:root:control#network#135
+DEBUG:root:xml#network#142
+DEBUG:root:path#file#147
+DEBUG:root:file#file#146
+DEBUG:root:dll#file#151
+DEBUG:root:Related sentence: XMLDOM ActiveX control to load a one-line XML string containing a file path to the EMET DLL.
+DEBUG:root:exploit#vulnerability#155
+DEBUG:root:order#file#165
+DEBUG:root:dll#file#175
+DEBUG:root:dll#file#151
+DEBUG:root:Related sentence: Then the exploit code parses the error resulting from the XML load order to determine whether the load failed because the EMET DLL is not present.
+DEBUG:root:exploit#vulnerability#182
+DEBUG:root:dll#file#192
+DEBUG:root:dll#file#151
+DEBUG:root:Related sentence: The exploit proceeds only if this check determines that the EMET DLL is not present.
+DEBUG:root:attacker#executable#199
+DEBUG:root:vector#file#210
+DEBUG:root:Related sentence: Once the attacker’s code has full memory access through the corrupted Flash Vector object, the code searches through loaded libraries gadgets by machine code.
+DEBUG:root:attacker#executable#225
+DEBUG:root:attacker#executable#199
+DEBUG:root:Related sentence: The attacker then overwrites the vftable pointer of a flash.
+DEBUG:root:media#file#235
+DEBUG:root:Related sentence: Media.
+DEBUG:root:sound#file#237
+DEBUG:root:Related sentence: Sound() object in memory to point to the pivot and begin ROP.
+DEBUG:root:vector#file#262
+DEBUG:root:exploitation#vulnerability#254
+DEBUG:root:Related sentence: After successful exploitation, the code repairs the corrupted Flash Vector and flash.
+DEBUG:root:media#file#266
+DEBUG:root:Related sentence: Media.
+DEBUG:root:file#file#281
+DEBUG:root:flash#executable#277
+DEBUG:root:payload#executable#286
+DEBUG:root:malware#executable#285
+DEBUG:root:Related sentence: Subsequently, the malicious Flash code downloads a file containing the dropped malware payload.
+DEBUG:root:payload#executable#309
+DEBUG:root:payload#executable#286
+DEBUG:root:image#executable#296
+DEBUG:root:file#file#302
+DEBUG:root:file#file#281
+DEBUG:root:key#file#315
+DEBUG:root:file#file#292
+DEBUG:root:file#file#281
+DEBUG:root:Related sentence: The beginning of the file is a JPG image; the end of the file (offset 36321) is the payload, encoded with an XOR key of 0x95.
+DEBUG:root:attacker#executable#320
+DEBUG:root:payload#executable#323
+DEBUG:root:payload#executable#286
+DEBUG:root:shellcode#executable#326
+DEBUG:root:Related sentence: The attacker appends the payload to the shellcode before pivoting to code control.
+DEBUG:root:malware#executable#342
+DEBUG:root:files#file#344
+DEBUG:root:sqlrenew.txt#executable#346
+DEBUG:root:shellcode#executable#337
+DEBUG:root:shellcode#executable#326
+DEBUG:root:Related sentence: Then, when the shellcode is executed, the malware creates files “sqlrenew.txt” and “executable”.
+DEBUG:root:file#file#358
+DEBUG:root:files#file#366
+DEBUG:root:Related sentence: The tail of the image file is decoded, and written to these files.
+DEBUG:root:call#file#379
+DEBUG:root:Related sentence: “sqlrenew.txt” is then executed with the LoadLibraryA Windows API call.
+DEBUG:root:exploit#vulnerability#386
+DEBUG:root:payload#executable#393
+DEBUG:root:xor#file#389
+DEBUG:root:backdoor#executable#398
+DEBUG:root:Recover IoC regex: 8455bbb9a210ce603a1b646b0d951bce
+DEBUG:root:file#file#402
+DEBUG:root:Related sentence: As documented above, this exploit dropped an XOR (0x95) payload that executed a ZxShell backdoor (MD5: file).
+DEBUG:root:backdoor#executable#407
+DEBUG:root:actors#executable#420
+DEBUG:root:Related sentence: The ZxShell backdoor is a widely used and publicly available tool used by multiple threat actors linked to cyber espionage operations.
+DEBUG:root:command#executable#434
+DEBUG:root:Recover IoC regex: newss[.]effers[.]com
+DEBUG:root:network#network#440
+DEBUG:root:Related sentence: This particular variant called back to a command and control server located at network.
+DEBUG:root:Recover IoC regex: 118.99.60.142
+DEBUG:root:network#network#447
+DEBUG:root:Related sentence: This domain currently resolves to network.
+DEBUG:root:Recover IoC regex: info[.]flnet[.]org
+DEBUG:root:network#network#451
+DEBUG:root:Related sentence: The domain network also resolved to this IP address on 2014-02-12.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:fireeye#executable#5
+DEBUG:root:day#network#10
+DEBUG:root:vfw#file#35
+DEBUG:root:exploit#vulnerability#80
+DEBUG:root:document#file#125
+DEBUG:root:www.[redacted].com#network#119
+DEBUG:root:microsoft#file#131
+DEBUG:root:control#network#135
+DEBUG:root:path#file#147
+DEBUG:root:order#file#165
+DEBUG:root:dll#file#192
+DEBUG:root:attacker#executable#225
+DEBUG:root:sound#file#237
+DEBUG:root:vector#file#262
+DEBUG:root:files#file#344
+DEBUG:root:call#file#379
+DEBUG:root:xor#file#389
+DEBUG:root:file#file#402
+DEBUG:root:network#network#440
+DEBUG:root:network#network#447
+DEBUG:root:network#network#451
+DEBUG:graphviz.files:write 2971 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

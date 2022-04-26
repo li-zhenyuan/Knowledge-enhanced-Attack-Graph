@@ -1,0 +1,96 @@
+Python 3.8.8 (tags/v3.8.8:024d805, Feb 19 2021, 13:18:16) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-26 21:09:39.613012: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:09:39.613128: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Tue Apr 26 21:09:43 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-26 21:09:44.866023: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-26 21:09:44.882376: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce GTX 1650 computeCapability: 7.5
+coreClock: 1.515GHz coreCount: 14 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 178.84GiB/s
+2022-04-26 21:09:44.883184: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:09:44.883753: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-26 21:09:44.884354: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-26 21:09:44.884956: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-26 21:09:44.885570: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-26 21:09:44.886182: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-26 21:09:44.886786: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-26 21:09:44.887404: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-26 21:09:44.887572: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-26 21:09:44.888135: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-26 21:09:44.889107: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-26 21:09:44.889208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-26 21:09:47.124151: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ attachment-file
+DEBUG:root:it-
+DEBUG:root:---coref_origiin:---
+ document-file
+DEBUG:root:document-file
+DEBUG:root:---coref_origiin:---
+ payload-executable
+DEBUG:root:payload-executable
+DEBUG:root:it-
+DEBUG:root:its-
+DEBUG:root:its-
+DEBUG:root:---coref_origiin:---
+ order-file
+DEBUG:root:itself-
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:attachment#file#13
+DEBUG:root:attachment#file#13
+DEBUG:root:email#network#12
+DEBUG:root:document#file#17
+DEBUG:root:Related sentence: As we might expect, if the user decides to download the email attachment and open the document, it asks them to enable the macros.
+DEBUG:root:document#file#56
+DEBUG:root:document#file#17
+DEBUG:root:office#file#60
+DEBUG:root:file#file#76
+DEBUG:root:Related sentence: Figure 2 shows that in this case it is implied this is necessary because the document was created using Office 365, but really it is so it can execute a function embedded in the file.
+DEBUG:root:command#executable#99
+DEBUG:root:script#executable#105
+DEBUG:root:powershell#executable#104
+DEBUG:root:payload#executable#117
+DEBUG:root:emotet#executable#128
+DEBUG:root:Related sentence: Effectively, this text box contains a “cmd” command, which launches a PowerShell script that tries to connect to five sites and then download the payload, which in this case is an obfuscated variant of Emotet.
+DEBUG:root:payload#executable#117
+DEBUG:root:payload#executable#151
+DEBUG:root:payload#executable#117
+DEBUG:root:success#network#164
+DEBUG:root:payload#executable#117
+DEBUG:root:payload#executable#117
+DEBUG:root:c&c#network#167
+DEBUG:root:Related sentence: As we have discussed in previous posts (for example, in this post from November 9), once the payload is executed, it establishes persistence on the computer and reports its success to its C&C server.
+DEBUG:root:infection#executable#174
+DEBUG:root:modules#executable#183
+DEBUG:root:payloads#executable#186
+DEBUG:root:Related sentence: Having completed this initial infection, further downloads can occur, installing attack modules and secondary payloads which carry out other kinds of actions on the compromised computer.
+DEBUG:root:modules#executable#202
+DEBUG:root:order#file#218
+DEBUG:root:activities#file#208
+DEBUG:root:order#file#218
+DEBUG:root:network#network#227
+DEBUG:root:credentials#file#221
+DEBUG:root:Related sentence: The various additional modules extend the range of malicious activities that can compromise the user’s device, in order to steal credentials, propagate itself on the network, harvest sensitive information, carry out port forwarding, and many other possibilities.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:email#network#12
+DEBUG:root:office#file#60
+DEBUG:root:payload#executable#117
+DEBUG:root:success#network#164
+DEBUG:root:c&c#network#167
+DEBUG:root:infection#executable#174
+DEBUG:root:network#network#227
+DEBUG:root:credentials#file#221
+DEBUG:graphviz.files:write 1164 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

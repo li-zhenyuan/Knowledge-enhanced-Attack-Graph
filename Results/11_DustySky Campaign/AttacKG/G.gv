@@ -1,0 +1,39 @@
+graph G {
+	"attackers#executable#1" [label="attackers#executable#1##attackers##" shape=oval]
+	"files#file#83" [label="files#file#83##files ZIP##" shape=rectangle]
+	"macro#executable#88" [label="macro#executable#88##macro##" shape=oval]
+	"engineering#network#107" [label="engineering#network#107##social engineering -##" shape=diamond]
+	"email#network#138" [label="email#network#138##email##" shape=diamond]
+	"diplomacy#network#160" [label="diplomacy#network#160##diplomacy##" shape=diamond]
+	"politics#executable#165" [label="politics#executable#165##politics##" shape=oval]
+	"message#file#235" [label="message#file#235##message##" shape=rectangle]
+	"server#network#263" [label="server#network#263##server network##copy.com" shape=diamond]
+	"software#file#319" [label="software#file#319##iMazing software##" shape=rectangle]
+	"version#file#340" [label="version#file#340##version ( file##2f452e90c2f9b914543847ba2b431b9a" shape=rectangle]
+	"imazing#executable#346" [label="imazing#executable#346##iMazing##" shape=oval]
+	"dustysky#executable#354" [label="dustysky#executable#354##DustySky##" shape=oval]
+	"network#network#383" [label="network#network#383##network##ns.suppoit[.]xyz" shape=diamond]
+	"network#network#393" [label="network#network#393##network##45.32.13.169" shape=diamond]
+	"command#executable#375" [label="command#executable#375##command##" shape=oval]
+	"network#network#385" [label="network#network#385##network##supo.mefound[.]com" shape=diamond]
+	"attackers#executable#1" -- "message#file#235"
+	"attackers#executable#1" -- "email#network#138"
+	"attackers#executable#1" -- "dustysky#executable#354"
+	"files#file#83" -- "engineering#network#107"
+	"files#file#83" -- "attackers#executable#1"
+	"files#file#83" -- "macro#executable#88"
+	"files#file#83" -- "diplomacy#network#160"
+	"files#file#83" -- "dustysky#executable#354"
+	"email#network#138" -- "files#file#83"
+	"diplomacy#network#160" -- "politics#executable#165"
+	"message#file#235" -- "server#network#263"
+	"server#network#263" -- "files#file#83"
+	"version#file#340" -- "imazing#executable#346"
+	"imazing#executable#346" -- "dustysky#executable#354"
+	"dustysky#executable#354" -- "files#file#83"
+	"network#network#383" -- "network#network#393"
+	"network#network#393" -- "command#executable#375"
+	"network#network#393" -- "files#file#83"
+	"command#executable#375" -- "network#network#385"
+	"network#network#385" -- "dustysky#executable#354"
+}

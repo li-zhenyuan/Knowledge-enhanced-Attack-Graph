@@ -1,0 +1,28 @@
+graph G {
+	"task#system#2" [label="task#system#2##task##" shape=trapezium]
+	"command#executable#30" [label="command#executable#30##command##" shape=oval]
+	"%#file#44" [label="%#file#44##Install %##" shape=rectangle]
+	"%#file#92" [label="%#file#92##%##" shape=rectangle]
+	"registry#registry#96" [label="registry#registry#96##registry##" shape=parallelogram]
+	"shdocvw.tlp#executable#104" [label="shdocvw.tlp#executable#104##shdocvw.tlp COMpfun##" shape=oval]
+	"system#system#142" [label="system#system#142##system##" shape=trapezium]
+	"btz#executable#182" [label="btz#executable#182##BTZ##" shape=oval]
+	"communication#file#241" [label="communication#file#241##communication##" shape=rectangle]
+	"tool#network#235" [label="tool#network#235##Remote Administration Tool (##" shape=diamond]
+	"server#executable#247" [label="server#executable#247##server##" shape=oval]
+	"order#file#259" [label="order#file#259##order##" shape=rectangle]
+	"products#network#274" [label="products#network#274##security products##" shape=diamond]
+	"task#system#2" -- "order#file#259"
+	"command#executable#30" -- "%#file#44"
+	"command#executable#30" -- "order#file#259"
+	"command#executable#30" -- "registry#registry#96"
+	"%#file#44" -- "order#file#259"
+	"registry#registry#96" -- "shdocvw.tlp#executable#104"
+	"registry#registry#96" -- "%#file#92"
+	"system#system#142" -- "products#network#274"
+	"communication#file#241" -- "tool#network#235"
+	"tool#network#235" -- "server#executable#247"
+	"server#executable#247" -- "order#file#259"
+	"order#file#259" -- "command#executable#30"
+	"order#file#259" -- "system#system#142"
+}

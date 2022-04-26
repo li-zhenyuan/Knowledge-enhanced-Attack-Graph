@@ -1,0 +1,391 @@
+
+Python 3.8.8 (tags/v3.8.8:024d805, Feb 19 2021, 13:18:16) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-26 21:06:07.922094: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:06:07.922210: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Tue Apr 26 21:06:12 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-26 21:06:13.225991: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-26 21:06:13.244775: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce GTX 1650 computeCapability: 7.5
+coreClock: 1.515GHz coreCount: 14 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 178.84GiB/s
+2022-04-26 21:06:13.245282: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:06:13.245612: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-26 21:06:13.245940: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-26 21:06:13.246260: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-26 21:06:13.246575: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-26 21:06:13.246892: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-26 21:06:13.247249: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-26 21:06:13.247560: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-26 21:06:13.247647: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-26 21:06:13.248302: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-26 21:06:13.251405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-26 21:06:13.251541: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(5890, 5922), match='http://bot.whatismyipaddress.com'>
+DEBUG:root:Find IoC matching: NetLoc - <re.Match object; span=(5897, 5922), match='bot.whatismyipaddress.com'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(702, 743), match='2083992883992AIR8389494VERVED37783PDF.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(849, 859), match='RegAsm.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1062, 1072), match='RegAsm.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1280, 1290), match='RegAsm.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2098, 2108), match='RegAsm.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2152, 2159), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2204, 2214), match='RegAsm.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2349, 2356), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2500, 2507), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2654, 2661), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(2899, 2906), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(3219, 3226), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(3330, 3337), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(3470, 3477), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(3625, 3632), match='vbs.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(4472, 4479), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(5059, 5066), match='vbc.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(5324, 5331), match='vbc.exe'>
+DEBUG:root:Find IoC matching: Arguments - <re.Match object; span=(3339, 3347), match=' /stext '>
+DEBUG:root:Replaced with: 2083992883992AIR8389494VERVED37783PDF.exe - executable
+DEBUG:root:Replaced with: RegAsm.exe - executable
+DEBUG:root:Replaced with: RegAsm.exe - executable
+DEBUG:root:Replaced with: RegAsm.exe - executable
+DEBUG:root:Replaced with: RegAsm.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: RegAsm.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with:  /stext  -  
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: vbs.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: vbc.exe - executable
+DEBUG:root:Replaced with: http://bot.whatismyipaddress.com - network
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-26 21:06:16.252181: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ URL-file
+DEBUG:root:its-
+DEBUG:root:It-
+DEBUG:root:---coref_origiin:---
+ HawkEye-actor
+DEBUG:root:HawkEye-
+DEBUG:root:it-
+DEBUG:root:HawkEye-file
+DEBUG:root:its-
+DEBUG:root:HawkEye-file
+DEBUG:root:---coref_origiin:---
+ HawkEye-file
+DEBUG:root:its-
+DEBUG:root:It-
+DEBUG:root:its-
+DEBUG:root:It-
+DEBUG:root:its-
+DEBUG:root:It-
+DEBUG:root:---coref_origiin:---
+ malware-executable
+DEBUG:root:itself-
+DEBUG:root:---coref_origiin:---
+ files-file
+DEBUG:root:They-
+DEBUG:root:---coref_origiin:---
+ credentials-file
+DEBUG:root:them-
+DEBUG:root:---coref_origiin:---
+ malware-executable
+DEBUG:root:its-
+DEBUG:root:---coref_origiin:---
+ credentials-file
+DEBUG:root:credentials-file
+DEBUG:root:---coref_origiin:---
+ file-file
+DEBUG:root:its-
+DEBUG:root:it-
+DEBUG:root:---coref_origiin:---
+ IP-file
+DEBUG:root:it-
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:email#network#3
+DEBUG:root:link#network#23
+DEBUG:root:Related sentence: Here is the email content, masquerading as an airline ticket confirmation, which asks the targeted 
+    victim to click on a link.
+DEBUG:root:file#file#35
+DEBUG:root:hawkeye#file#50
+DEBUG:root:system#system#58
+DEBUG:root:Related sentence: It was designed so that a victim downloads a 7z file from the link shown in figure 1 
+    that contains this new variant of HawkEye and runs it on the victim’s system.
+DEBUG:root:url#file#67
+DEBUG:root:Related sentence: Unfortunately, on initial analysis 
+    the URL was not available and I received a “404 Not Found” message in the browser.
+DEBUG:root:url#file#67
+DEBUG:root:url#file#67
+DEBUG:root:service#file#99
+DEBUG:root:network#network#104
+DEBUG:root:sample#file#117
+DEBUG:root:malware#executable#116
+DEBUG:root:Related sentence: It 
+    turned out to be an FTP service, containing several related network folders about this campaign, 
+    with most containing the same malware sample (Figure 2).
+DEBUG:root:file#file#127
+DEBUG:root:file#file#136
+DEBUG:root:exe#file#135
+DEBUG:root:hawkeye#actor#151
+DEBUG:root:Related sentence: After the downloaded 7z file was decompressed, 
+    we retrieved the EXE file “TICKET%executable”, which is the new variant of 
+    HawkEye.
+DEBUG:root:hawkeye#actor#151
+DEBUG:root:process#network#159
+DEBUG:root:hawkeye#executable#151
+DEBUG:root:Related sentence: Once HawkEye started, it spawned a suspended child process, “executable”, from the Microsoft .Net
+DEBUG:root:registration#executable#180
+DEBUG:root:Related sentence: 
+    framework installation directory – which is a tool for Assembly Registration.
+DEBUG:root:hawkeye#file#184
+DEBUG:root:hawkeye#executable#151
+DEBUG:root:file#file#189
+DEBUG:root:file#file#198
+DEBUG:root:hawkeye#executable#151
+DEBUG:root:Related sentence: Meanwhile, HawkEye extracted a PE 
+    file into its memory and then moved the PE file into “executable”.
+DEBUG:root:file#file#208
+DEBUG:root:hawkeye#file#215
+DEBUG:root:hawkeye#executable#151
+DEBUG:root:Related sentence: The dynamically extracted PE file is the main 
+    program of HawkEye.
+DEBUG:root:hawkeye_regasm#file#221
+DEBUG:root:files#file#227
+DEBUG:root:Related sentence: It’s called “HawkEye_RegAsm,” to differentiate these files in the analysis.
+DEBUG:root:program#executable#251
+DEBUG:root:Related sentence: HawkEye_RegAsm is a .Net written program, 
+    which is packed by ConfuserEx v1.0.0 to protect itself.
+DEBUG:root:tasks#system#273
+DEBUG:root:information#network#284
+DEBUG:root:email#network#288
+DEBUG:root:yandex#executable#287
+DEBUG:root:Related sentence: HawkEye_RegAsm starts a thread to perform the above 
+    tasks, and then every 10 minutes it sends its collected information to its Yandex email address.
+DEBUG:root:clipboard#file#296
+DEBUG:root:apis#file#304
+DEBUG:root:setwindowshookex#file#308
+DEBUG:root:setclipboardviewer#file#310
+DEBUG:root:Related sentence: HawkEye_RegAsm 
+    sets up a clipboard and keyboard logger using Windows-native APIs (such as SetWindowsHookEx, SetClipboardViewer, 
+    etc.)
+DEBUG:root:system#system#340
+DEBUG:root:Related sentence: Its local functions can record victim’s behaviors when the victim types on the keyboard as well as when 
+    copying data into the system clipboard.
+DEBUG:root:task#system#379
+DEBUG:root:Related sentence: 
+    HawkEye_RegAsm performs a similar task as to the executable.
+DEBUG:root:hawkeye#file#406
+DEBUG:root:files#file#411
+DEBUG:root:hawkeye#file#406
+DEBUG:root:Related sentence: HawkEye dynamically extracts two PE files into its memory, 
+    which are then copied into the two newly created child processes of “executable”.
+DEBUG:root:hawkeye#file#406
+DEBUG:root:hawkeye#file#406
+DEBUG:root:hawkeye#file#406
+DEBUG:root:point#executable#452
+DEBUG:root:hawkeye#file#406
+DEBUG:root:file#file#457
+DEBUG:root:Related sentence: It also modifies its ThreadContext 
+    data (It calls the API, SetThreadContext) and makes its entry point to the transfered PE file.
+DEBUG:root:hawkeye#file#406
+DEBUG:root:malware#executable#476
+DEBUG:root:malware#executable#476
+DEBUG:root:Related sentence: It’s a trick that malware often performs to camouflage itself behind of a 
+    normal process.
+DEBUG:root:credentials#file#496
+DEBUG:root:system#system#501
+DEBUG:root:Related sentence: The two “executable” processes collect credentials from the victim’s system.
+DEBUG:root:credentials#file#510
+DEBUG:root:browsers#file#512
+DEBUG:root:Related sentence: One is used to collect 
+    the credentials of browsers.
+DEBUG:root:credentials#file#526
+DEBUG:root:email#network#519
+DEBUG:root:profiles#file#529
+DEBUG:root:im#file#522
+DEBUG:root:Related sentence: The other one focuses on email clients and IM clients to steal credentials and 
+    profiles.
+DEBUG:root:files#file#533
+DEBUG:root:Related sentence: Both PE files injected into “executable” have the same code framework.
+DEBUG:root:files#file#533
+DEBUG:root:credentials#file#553
+DEBUG:root:credentials#file#553
+DEBUG:root:file#file#579
+DEBUG:root:command#executable#582
+DEBUG:root:Related sentence: They first call a function to 
+    collect credentials and save them in memory, and second, it reads the collected data, formats it, and saves it to 
+    a tmp file from its command line parameter.
+DEBUG:root:hawkeye#executable#589
+DEBUG:root:api#file#593
+DEBUG:root:Related sentence: Figure 5 shows HawkEye calling the CreateProcess API to start one of 
+    the two “executable” processes, with the parameter shown below in the “Locals” sub-tab.
+DEBUG:root:path#file#625
+DEBUG:root:Related sentence: You can see the full path of 
+    "executable".
+DEBUG:root:mpbe3d.tmp#executable#634
+DEBUG:root:Related sentence: \AppData\Local\Temp	mpBE3D.tmp is the parameter passed to it.
+DEBUG:root:file#file#645
+DEBUG:root:credentials#file#664
+DEBUG:root:Related sentence: The tmp 
+    file name is random and different from the two “executable” processes, which temporarily saves collected 
+    credentials.
+DEBUG:root:files#file#669
+DEBUG:root:program#executable#678
+DEBUG:root:Related sentence: The two PE files are not packer protected and not .Net written program.
+DEBUG:root:credentials#file#687
+DEBUG:root:credential#file#695
+DEBUG:root:system#system#694
+DEBUG:root:Related sentence: The first “executable” collects 
+    credentials from victim’s browsers and the system credential manager for IE.
+DEBUG:root:analysis#file#702
+DEBUG:root:explorer#file#717
+DEBUG:root:hawkeye#executable#708
+DEBUG:root:safari#executable#723
+DEBUG:root:opera#executable#725
+DEBUG:root:sunbird#executable#729
+DEBUG:root:firefox#executable#732
+DEBUG:root:thunderbird#file#736
+DEBUG:root:seamonkey#executable#739
+DEBUG:root:yandexbrowser#executable#741
+DEBUG:root:Related sentence: In my analysis, this variant of 
+    HawkEye focuses on the following browsers: Microsoft Internet Explorer, Google Chrome, Apple Safari, Opera, 
+    Mozilla Sunbird, Mozilla Firefox, Mozilla Portable Thunderbird, Mozilla SeaMonkey, YandexBrowser, 
+    Vivaldi browser, and more.
+DEBUG:root:malware#executable#767
+DEBUG:root:code#file#759
+DEBUG:root:hawkeye#file#765
+DEBUG:root:credentials#file#771
+DEBUG:root:Related sentence: Figure 6 shows some strings defined in the ASM code of the browsers that the HawkEye 
+    malware wants to collect credentials from.
+DEBUG:root:credentials#file#776
+DEBUG:root:file#file#783
+DEBUG:root:malware#executable#767
+DEBUG:root:command#executable#787
+DEBUG:root:Related sentence: The collected credentials are then saved into the tmp file from its 
+    command line parameter.
+DEBUG:root:file#file#796
+DEBUG:root:credentials#file#801
+DEBUG:root:credentials#file#776
+DEBUG:root:Related sentence: HawkEye_RegAsm keeps checking this tmp file, and once the credentials are collected, 
+    it is done.
+DEBUG:root:file#file#819
+DEBUG:root:file#file#819
+DEBUG:root:file#file#819
+DEBUG:root:Related sentence: HawkEye_RegAsm then reads the entire data of this tmp file into its memory and the deletes it 
+    immediately.
+DEBUG:root:file#file#833
+DEBUG:root:Recover IoC regex: vbc.exe
+DEBUG:root:executable”collects#executable#836
+DEBUG:root:profile#file#837
+DEBUG:root:email#network#843
+DEBUG:root:im#file#845
+DEBUG:root:Related sentence: The second PE file in “executable”collects profile and credential information of the email and IM 
+    software client installed on a victim’s machine.
+DEBUG:root:clients#file#857
+DEBUG:root:thunderbird#executable#867
+DEBUG:root:mail#executable#885
+DEBUG:root:outlook#file#871
+DEBUG:root:incredimail#file#873
+DEBUG:root:groupmail#executable#875
+DEBUG:root:msnmessenger#executable#877
+DEBUG:root:Related sentence: The clients it targets are: Qualcomm Eudora, 
+    Mozilla Thunderbird, MS Office Outlook, IncrediMail, Groupmail, MSNMessenger, Yahoo!Pager/Yahoo!Messenger and 
+    Windows Mail.
+DEBUG:root:hawkeye#file#893
+DEBUG:root:chrome#executable#897
+DEBUG:root:Related sentence: Below is an example list that HawkEye stole from the Chrome browser on my test machine.
+DEBUG:root:browser#executable#915
+DEBUG:root:user#executable#918
+DEBUG:root:password#file#921
+DEBUG:root:path#file#929
+DEBUG:root:file#file#932
+DEBUG:root:Related sentence: As you can 
+    see, it includes login URL, Browser name, User name, Password, Created time, and the full path of the file where 
+    the collected information came from.
+DEBUG:root:file#file#944
+DEBUG:root:information#file#964
+DEBUG:root:address#file#971
+DEBUG:root:port#executable#975
+DEBUG:root:port#file#988
+DEBUG:root:Related sentence: The second PE file in “executable” not only collects the client’s login 
+    username and password, but also profile information, such as the recipent Server address, recipient Server Port, 
+    protocol Type (POP3), SMTP Server, SMTP Port, etc.
+DEBUG:root:ollydbg#executable#998
+DEBUG:root:file#file#1016
+DEBUG:root:server#executable#1011
+DEBUG:root:Related sentence: Figure 7 shows a screenshot of Ollydbg when “executable” was 
+    about to write the collected recipient Server addresses into its tmp file.
+DEBUG:root:file#file#1028
+DEBUG:root:Related sentence: The same tmp 
+    file is finally read by HawkEye_RegAsm and then deleted.
+DEBUG:root:tasks#system#1056
+DEBUG:root:credentials#file#1064
+DEBUG:root:hawkeye#file#1058
+DEBUG:root:Related sentence: Now let’s go back to the main process of 
+    HawkEye_RegAsm, which controls all tasks of HawkEye and sends the victim’s credentials.
+DEBUG:root:credentials#file#1083
+DEBUG:root:Related sentence: In its main program, 
+    it calls Thread.Sleep(600000), and pauses while collecting credentials every 10 minutes.
+DEBUG:root:request#file#1110
+DEBUG:root:Recover IoC regex: http://bot.whatismyipaddress.com
+DEBUG:root:network#network#1113
+DEBUG:root:ip#executable#1122
+DEBUG:root:Related sentence: It first sends an HTTP request, 
+    network, to ask for my machine’s public IP.
+DEBUG:root:ip#executable#1151
+DEBUG:root:email#network#1161
+DEBUG:root:Related sentence: If it did not reply with a public IP, it stops sending collected data to 
+    the email box.
+DEBUG:root:addition#file#1165
+DEBUG:root:ip#file#1168
+DEBUG:root:email#network#1172
+DEBUG:root:Related sentence: In addition, the IP appears in the email subject so it can identify victims.
+DEBUG:root:email#network#1183
+DEBUG:root:yandex.mail#file#1187
+DEBUG:root:attacker#executable#1181
+DEBUG:root:email#network#1190
+DEBUG:root:Related sentence: The attacker’s email 
+    is in Yandex.mail, whose email account and password are used when sending collected data through the Yandex SMTP 
+    server.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:system#system#58
+DEBUG:root:url#file#67
+DEBUG:root:network#network#104
+DEBUG:root:malware#executable#116
+DEBUG:root:process#network#159
+DEBUG:root:registration#executable#180
+DEBUG:root:tasks#system#273
+DEBUG:root:email#network#288
+DEBUG:root:apis#file#304
+DEBUG:root:setclipboardviewer#file#310
+DEBUG:root:point#executable#452
+DEBUG:root:api#file#593
+DEBUG:root:mpbe3d.tmp#executable#634
+DEBUG:root:safari#executable#723
+DEBUG:root:command#executable#787
+DEBUG:root:executable”collects#executable#836
+DEBUG:root:im#file#845
+DEBUG:root:password#file#921
+DEBUG:root:ollydbg#executable#998
+DEBUG:root:file#file#1016
+DEBUG:root:network#network#1113
+DEBUG:root:ip#executable#1151
+DEBUG:root:addition#file#1165
+DEBUG:root:yandex.mail#file#1187
+DEBUG:root:attacker#executable#1181
+DEBUG:graphviz.files:write 3898 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

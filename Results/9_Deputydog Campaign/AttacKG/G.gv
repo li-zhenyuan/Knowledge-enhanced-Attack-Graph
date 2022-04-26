@@ -1,0 +1,50 @@
+graph G {
+	"fireeye#executable#5" [label="fireeye#executable#5##FireEye##" shape=oval]
+	"day#network#10" [label="day#network#10##zero-day network Foreign##vfw[.]org" shape=diamond]
+	"vfw#file#35" [label="vfw#file#35##VFW##" shape=rectangle]
+	"exploit#vulnerability#80" [label="exploit#vulnerability#80##exploit##" shape=trapezium]
+	"document#file#125" [label="document#file#125##document##img.html" shape=rectangle]
+	"www.[redacted].com#network#119" [label="www.[redacted].com#network#119##www.[REDACTED].com/Data/img/##" shape=diamond]
+	"microsoft#file#131" [label="microsoft#file#131##Microsoft.##" shape=rectangle]
+	"control#network#135" [label="control#network#135##control XML##" shape=diamond]
+	"path#file#147" [label="path#file#147##path##" shape=rectangle]
+	"order#file#165" [label="order#file#165##order##" shape=rectangle]
+	"dll#file#192" [label="dll#file#192##EMET DLL##" shape=rectangle]
+	"attacker#executable#225" [label="attacker#executable#225##attacker##" shape=oval]
+	"sound#file#237" [label="sound#file#237##Sound##" shape=rectangle]
+	"vector#file#262" [label="vector#file#262##Flash Vector##" shape=rectangle]
+	"files#file#344" [label="files#file#344##files##" shape=rectangle]
+	"call#file#379" [label="call#file#379##Windows API call##" shape=rectangle]
+	"xor#file#389" [label="xor#file#389##XOR##" shape=rectangle]
+	"file#file#402" [label="file#file#402##file##8455bbb9a210ce603a1b646b0d951bce" shape=rectangle]
+	"network#network#440" [label="network#network#440##network##newss[.]effers[.]com" shape=diamond]
+	"network#network#447" [label="network#network#447##network##118.99.60.142" shape=diamond]
+	"network#network#451" [label="network#network#451##network##info[.]flnet[.]org" shape=diamond]
+	"fireeye#executable#5" -- "exploit#vulnerability#80"
+	"day#network#10" -- "exploit#vulnerability#80"
+	"vfw#file#35" -- "attacker#executable#225"
+	"vfw#file#35" -- "exploit#vulnerability#80"
+	"exploit#vulnerability#80" -- "dll#file#192"
+	"exploit#vulnerability#80" -- "day#network#10"
+	"exploit#vulnerability#80" -- "document#file#125"
+	"exploit#vulnerability#80" -- "order#file#165"
+	"exploit#vulnerability#80" -- "attacker#executable#225"
+	"document#file#125" -- "www.[redacted].com#network#119"
+	"control#network#135" -- "path#file#147"
+	"path#file#147" -- "files#file#344"
+	"order#file#165" -- "dll#file#192"
+	"attacker#executable#225" -- "network#network#440"
+	"attacker#executable#225" -- "vfw#file#35"
+	"attacker#executable#225" -- "xor#file#389"
+	"attacker#executable#225" -- "exploit#vulnerability#80"
+	"attacker#executable#225" -- "files#file#344"
+	"attacker#executable#225" -- "file#file#402"
+	"attacker#executable#225" -- "microsoft#file#131"
+	"attacker#executable#225" -- "vector#file#262"
+	"vector#file#262" -- "exploit#vulnerability#80"
+	"files#file#344" -- "attacker#executable#225"
+	"files#file#344" -- "dll#file#192"
+	"files#file#344" -- "xor#file#389"
+	"xor#file#389" -- "attacker#executable#225"
+	"xor#file#389" -- "files#file#344"
+}

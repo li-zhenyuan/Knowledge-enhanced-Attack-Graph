@@ -1,0 +1,66 @@
+graph G {
+	"system#system#58" [label="system#system#58##system##" shape=trapezium]
+	"url#file#67" [label="url#file#67##URL FTP service##" shape=rectangle]
+	"network#network#104" [label="network#network#104##network##" shape=diamond]
+	"malware#executable#116" [label="malware#executable#116##malware##" shape=oval]
+	"process#network#159" [label="process#network#159##process##" shape=diamond]
+	"registration#executable#180" [label="registration#executable#180##Assembly Registration##" shape=oval]
+	"tasks#system#273" [label="tasks#system#273##tasks##" shape=trapezium]
+	"email#network#288" [label="email#network#288##email link##" shape=diamond]
+	"apis#file#304" [label="apis#file#304##APIs##" shape=rectangle]
+	"setclipboardviewer#file#310" [label="setclipboardviewer#file#310##SetClipboardViewer##" shape=rectangle]
+	"point#executable#452" [label="point#executable#452##point##" shape=oval]
+	"api#file#593" [label="api#file#593##CreateProcess API##" shape=rectangle]
+	"mpbe3d.tmp#executable#634" [label="mpbe3d.tmp#executable#634##mpBE3D.tmp##" shape=oval]
+	"safari#executable#723" [label="safari#executable#723##Apple Safari##" shape=oval]
+	"command#executable#787" [label="command#executable#787##command##" shape=oval]
+	"executable”collects#executable#836" [label="executable”collects#executable#836##executable”collects##vbc.exe" shape=oval]
+	"im#file#845" [label="im#file#845##IM##" shape=rectangle]
+	"password#file#921" [label="password#file#921##Password Server address##" shape=rectangle]
+	"ollydbg#executable#998" [label="ollydbg#executable#998##Ollydbg##" shape=oval]
+	"file#file#1016" [label="file#file#1016##file IM##" shape=rectangle]
+	"network#network#1113" [label="network#network#1113##network##http://bot.whatismyipaddress.com" shape=diamond]
+	"ip#executable#1151" [label="ip#executable#1151##IP##" shape=oval]
+	"addition#file#1165" [label="addition#file#1165##addition IP##" shape=rectangle]
+	"yandex.mail#file#1187" [label="yandex.mail#file#1187##Yandex.mail##" shape=rectangle]
+	"attacker#executable#1181" [label="attacker#executable#1181##attacker##" shape=oval]
+	"url#file#67" -- "network#network#104"
+	"network#network#104" -- "file#file#1016"
+	"malware#executable#116" -- "process#network#159"
+	"malware#executable#116" -- "file#file#1016"
+	"malware#executable#116" -- "malware#executable#116"
+	"malware#executable#116" -- "command#executable#787"
+	"malware#executable#116" -- "safari#executable#723"
+	"malware#executable#116" -- "api#file#593"
+	"process#network#159" -- "malware#executable#116"
+	"tasks#system#273" -- "email#network#288"
+	"tasks#system#273" -- "file#file#1016"
+	"email#network#288" -- "yandex.mail#file#1187"
+	"email#network#288" -- "im#file#845"
+	"email#network#288" -- "file#file#1016"
+	"email#network#288" -- "safari#executable#723"
+	"apis#file#304" -- "setclipboardviewer#file#310"
+	"setclipboardviewer#file#310" -- "apis#file#304"
+	"point#executable#452" -- "file#file#1016"
+	"safari#executable#723" -- "file#file#1016"
+	"safari#executable#723" -- "password#file#921"
+	"executable”collects#executable#836" -- "file#file#1016"
+	"password#file#921" -- "file#file#1016"
+	"password#file#921" -- "safari#executable#723"
+	"ollydbg#executable#998" -- "file#file#1016"
+	"file#file#1016" -- "file#file#1016"
+	"file#file#1016" -- "malware#executable#116"
+	"file#file#1016" -- "system#system#58"
+	"file#file#1016" -- "point#executable#452"
+	"file#file#1016" -- "email#network#288"
+	"file#file#1016" -- "network#network#1113"
+	"file#file#1016" -- "executable”collects#executable#836"
+	"file#file#1016" -- "safari#executable#723"
+	"file#file#1016" -- "command#executable#787"
+	"file#file#1016" -- "password#file#921"
+	"network#network#1113" -- "ip#executable#1151"
+	"ip#executable#1151" -- "email#network#288"
+	"addition#file#1165" -- "email#network#288"
+	"yandex.mail#file#1187" -- "attacker#executable#1181"
+	"attacker#executable#1181" -- "email#network#288"
+}

@@ -1,0 +1,114 @@
+Python 3.8.8 (tags/v3.8.8:024d805, Feb 19 2021, 13:18:16) [MSC v.1928 64 bit (AMD64)] on win32
+2022-04-26 21:10:44.898155: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:10:44.898274: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:root:======techniqueIdentifier.py: Tue Apr 26 21:10:49 2022======
+INFO:root:---Load Model: ./new_cti.model!---
+INFO:root:---Add Pipe 'ner'!---
+INFO:root:---Created Optimizer!---
+DEBUG:h5py._conv:Creating converter from 3 to 5
+2022-04-26 21:10:50.251529: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2022-04-26 21:10:50.266277: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce GTX 1650 computeCapability: 7.5
+coreClock: 1.515GHz coreCount: 14 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 178.84GiB/s
+2022-04-26 21:10:50.266784: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2022-04-26 21:10:50.267114: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2022-04-26 21:10:50.267498: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2022-04-26 21:10:50.267828: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2022-04-26 21:10:50.268142: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2022-04-26 21:10:50.268475: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: cusolver64_11.dll not found
+2022-04-26 21:10:50.268793: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2022-04-26 21:10:50.269117: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2022-04-26 21:10:50.269211: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1766] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-04-26 21:10:50.269647: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-26 21:10:50.270920: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-04-26 21:10:50.271045: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      
+INFO:root:---S0-2: Identify IoC with Regex in text!---
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(215, 227), match='rundll32.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1191, 1203), match='explorer.exe'>
+DEBUG:root:Find IoC matching: ExeFile - <re.Match object; span=(1469, 1481), match='explorer.exe'>
+DEBUG:root:Find IoC matching: Registry - <re.Match object; span=(499, 526), match='HKCU\\Software\\Classes\\CLSID'>
+DEBUG:root:Replaced with: rundll32.exe - executable
+DEBUG:root:Replaced with: HKCU\Software\Classes\CLSID - registry
+DEBUG:root:Replaced with: explorer.exe - executable
+DEBUG:root:Replaced with: explorer.exe - executable
+INFO:root:---S1-1: Parse clean text to NLP doc!---
+INFO:root:---Add Regex-based NER Pipe!---
+2022-04-26 21:10:52.422673: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+INFO:root:---S1-1: Parsing NLP doc to get Attack Graph!---
+INFO:root:---S1-1.0: Parsing NLP doc to get Coreference!---
+DEBUG:root:---coref_origiin:---
+ malware-executable
+DEBUG:root:malware-executable
+DEBUG:root:---coref_origiin:---
+ file-file
+DEBUG:root:file-file
+INFO:root:---S1-1.1: Parsing NLP doc to get Attack Graph Nodes!---
+INFO:root:---S1-1.2: Parsing NLP doc to get Attack Graph Edges!---
+DEBUG:root:task#system#2
+DEBUG:root:file#file#10
+DEBUG:root:file#file#16
+DEBUG:root:file#file#10
+DEBUG:root:payload#executable#20
+DEBUG:root:malware#executable#5
+DEBUG:root:malware#executable#23
+DEBUG:root:malware#executable#5
+DEBUG:root:Related sentence: The first task of the malware is to install the file credprov.tlb in %APPDATA%\Microsoft\. This file is the main payload of the malware.
+DEBUG:root:command#executable#30
+DEBUG:root:%#file#44
+DEBUG:root:order#file#32
+DEBUG:root:file#file#37
+DEBUG:root:Related sentence: The dropper executes the following command in order to install a second file: executable %APPDATA%\Microsoft\credprov.tlb,Install %APPDATA%\Microsoft\shdocvw.tlp.
+DEBUG:root:file#file#49
+DEBUG:root:Related sentence: The second file is shdocw.tlp.
+DEBUG:root:files#file#55
+DEBUG:root:libraries#file#60
+DEBUG:root:windows#file#58
+DEBUG:root:Related sentence: The two files are Microsoft Windows dynamic libraries.
+DEBUG:root:malware#executable#75
+DEBUG:root:registry#registry#79
+DEBUG:root:%#file#92
+DEBUG:root:Related sentence: To be started during the boot process of the infected machine, the malware creates the following registry key: registry\{42aedc87-2188-41fd-b9a3-0c966feabec1}\InprocServer32 = %
+DEBUG:root:registry#registry#96
+DEBUG:root:shdocvw.tlp#executable#104
+DEBUG:root:compfun#executable#124
+DEBUG:root:Related sentence: This registry key is used to associate the library shdocvw.tlp to the object 42aedc87-2188-41fd-b9a3-0c966feabec1 as previously explained in the article about COMpfun.
+DEBUG:root:system#system#142
+DEBUG:root:Related sentence: The purpose is to load the library into each and every process executed on the infected system.
+DEBUG:root:file#file#160
+DEBUG:root:malware#executable#149
+DEBUG:root:Related sentence: If the version of the malware is older than 3.26, the dropper creates an additional file called winview.ocx.
+DEBUG:root:file#file#168
+DEBUG:root:file#file#176
+DEBUG:root:Related sentence: We noticed that the file name is still the same as the file name used by Agent.
+DEBUG:root:btz#executable#182
+DEBUG:root:Related sentence: BTZ in the past.
+DEBUG:root:payload#executable#225
+DEBUG:root:Related sentence: This library is the real payload.
+DEBUG:root:communication#file#241
+DEBUG:root:tool#network#235
+DEBUG:root:server#executable#247
+DEBUG:root:order#file#259
+DEBUG:root:command#executable#244
+DEBUG:root:firewall#file#266
+DEBUG:root:system#system#269
+DEBUG:root:products#network#274
+DEBUG:root:Related sentence: Its features are common for a Remote Administration Tool (RAT): ComRAT’s communication to the command and control server is performed by the browser process and not by executable in order to avoid being blocked by a firewall on the system or any additional security products.
+WARNING:root:---Draw attack graph with dot!---
+DEBUG:root:task#system#2
+DEBUG:root:command#executable#30
+DEBUG:root:%#file#44
+DEBUG:root:%#file#92
+DEBUG:root:registry#registry#96
+DEBUG:root:shdocvw.tlp#executable#104
+DEBUG:root:system#system#142
+DEBUG:root:btz#executable#182
+DEBUG:root:communication#file#241
+DEBUG:root:tool#network#235
+DEBUG:root:server#executable#247
+DEBUG:root:order#file#259
+DEBUG:root:products#network#274
+DEBUG:graphviz.files:write 1598 bytes to 'G.gv'
+DEBUG:graphviz.backend:run ['dot', '-Kdot', '-Tpdf', '-O', 'G.gv']
+DEBUG:graphviz.backend:view: 'G.gv.pdf'

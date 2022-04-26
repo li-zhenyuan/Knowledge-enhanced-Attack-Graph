@@ -1,0 +1,39 @@
+graph G {
+	"tactics#file#3" [label="tactics#file#3##tactics##" shape=rectangle]
+	"screenshots#file#54" [label="screenshots#file#54##screenshots document##" shape=rectangle]
+	"pages#network#99" [label="pages#network#99##phishing pages##" shape=diamond]
+	"email#network#107" [label="email#network#107##email course##" shape=diamond]
+	"ip#executable#116" [label="ip#executable#116##IP##" shape=oval]
+	"mx#file#120" [label="mx#file#120##MX##" shape=rectangle]
+	"network#network#123" [label="network#network#123##network##gelirler.gov.tr" shape=diamond]
+	"network#network#127" [label="network#network#127##network##212.133.164.130" shape=diamond]
+	"records#file#131" [label="records#file#131##SPF records##" shape=rectangle]
+	"genelge#network#164" [label="genelge#network#164##SAYILI GENELGE##" shape=diamond]
+	"macro#executable#198" [label="macro#executable#198##macro##" shape=oval]
+	"loader#network#271" [label="loader#network#271##loader runtime URLMON##" shape=diamond]
+	"kernel32#file#309" [label="kernel32#file#309##kernel32##" shape=rectangle]
+	"payload#executable#321" [label="payload#executable#321##payload##" shape=oval]
+	"network#network#324" [label="network#network#324##network##hxxp://unifscon[.]com/R9_Sys.exe" shape=diamond]
+	"contractor#executable#336" [label="contractor#executable#336##contractor##" shape=oval]
+	"change#network#359" [label="change#network#359##IP resolution change C2 network##civita2.no-ip.biz" shape=diamond]
+	"tactics#file#3" -- "email#network#107"
+	"screenshots#file#54" -- "loader#network#271"
+	"screenshots#file#54" -- "email#network#107"
+	"screenshots#file#54" -- "macro#executable#198"
+	"screenshots#file#54" -- "genelge#network#164"
+	"pages#network#99" -- "email#network#107"
+	"email#network#107" -- "mx#file#120"
+	"email#network#107" -- "screenshots#file#54"
+	"email#network#107" -- "macro#executable#198"
+	"email#network#107" -- "ip#executable#116"
+	"ip#executable#116" -- "email#network#107"
+	"mx#file#120" -- "network#network#123"
+	"network#network#123" -- "network#network#127"
+	"records#file#131" -- "pages#network#99"
+	"macro#executable#198" -- "screenshots#file#54"
+	"macro#executable#198" -- "email#network#107"
+	"loader#network#271" -- "kernel32#file#309"
+	"payload#executable#321" -- "network#network#324"
+	"change#network#359" -- "email#network#107"
+	"change#network#359" -- "contractor#executable#336"
+}

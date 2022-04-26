@@ -1,0 +1,21 @@
+graph G {
+	"email#network#12" [label="email#network#12##email##" shape=diamond]
+	"office#file#60" [label="office#file#60##Office 365##" shape=rectangle]
+	"payload#executable#117" [label="payload#executable#117##payload script##" shape=oval]
+	"success#network#164" [label="success#network#164##success##" shape=diamond]
+	"c&c#network#167" [label="c&c#network#167##C&C##" shape=diamond]
+	"infection#executable#174" [label="infection#executable#174##infection##" shape=oval]
+	"network#network#227" [label="network#network#227##network##" shape=diamond]
+	"credentials#file#221" [label="credentials#file#221##credentials##" shape=rectangle]
+	"email#network#12" -- "office#file#60"
+	"office#file#60" -- "office#file#60"
+	"office#file#60" -- "email#network#12"
+	"payload#executable#117" -- "success#network#164"
+	"payload#executable#117" -- "payload#executable#117"
+	"payload#executable#117" -- "c&c#network#167"
+	"payload#executable#117" -- "credentials#file#221"
+	"success#network#164" -- "payload#executable#117"
+	"infection#executable#174" -- "payload#executable#117"
+	"network#network#227" -- "credentials#file#221"
+	"credentials#file#221" -- "network#network#227"
+}
