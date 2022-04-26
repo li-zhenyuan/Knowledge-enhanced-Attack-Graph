@@ -1,1 +1,0 @@
-Copied files via SCP and connected via SSH from the ta1-pivot-2 host.  Sent files to the target included the privilege escalation driver load_helper and an elevate client.  Connected to target using SSH with stolen credentials.  Loaded the driver, and used it to gain root privileges.  As root, exfil’d /etc/passwd, /etc/shadow, and the admin’s home directory Documents files.
