@@ -25,8 +25,9 @@ python attackGraph.py
 python techniqueIdentifier.py
 ```
 
-Sample Input and output can be found [here](https://github.com/li-zhenyuan/Knowledge-enhanced-Attack-Graph/tree/main/Results).
-Data Model required can bed found [here](https://drive.google.com/drive/folders/1zVGPpN-i-BLlpFqQERscFGb45PkhfkUm?usp=sharing).
+ - Sample Input and output can be found **[here](https://github.com/li-zhenyuan/Knowledge-enhanced-Attack-Graph/tree/main/Results)**.
+
+ - Data Model required can bed found **[here](https://drive.google.com/drive/folders/1zVGPpN-i-BLlpFqQERscFGb45PkhfkUm?usp=sharing)**.
 
 ---
 
