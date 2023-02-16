@@ -10,7 +10,7 @@ cffi==1.15.0
 chardet==4.0.0
 charset-normalizer==2.0.12
 click==8.0.4
-coreferee==1.0.1
+coreferee==1.2.0
 coreferee-model-en @ https://github.com/msg-systems/coreferee/raw/master/models/coreferee_model_en.zip
 cryptography==36.0.1
 cycler==0.11.0
@@ -48,7 +48,7 @@ packaging==21.3
 pathy==0.6.1
 pdfminer.six==20211012
 pdfplumber==0.6.0
-Pillow==9.0.1
+Pillow==9.2.0
 preshed==3.0.6
 protobuf==3.19.4
 pyasn1==0.4.8
@@ -88,3 +88,4 @@ Werkzeug==2.0.3
 wrapt==1.14.0
 XlsxWriter==3.0.3
 zipp==3.7.0
+torch==1.13.1
